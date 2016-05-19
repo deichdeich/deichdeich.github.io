@@ -112,7 +112,7 @@ images[1] = "IMG_1254.JPG",
 images[2] = "IMG_1485.JPG"
 var imgCount = images.length;
 var randomCount = Math.round(Math.random() * (imgCount - 2)) + 1;
-document.body.style.backgroundImage = "url(\'http://reed.edu/~deichal/" + images[randomCount] + "\')";
+document.body.style.backgroundImage = "url(\'deichdeich.github.io/" + images[randomCount] + "\')";
 }
 </script>
 </head>
@@ -121,7 +121,7 @@ document.body.style.backgroundImage = "url(\'http://reed.edu/~deichal/" + images
 <script>
 function pic(){
     document.getElementById("pic").style.marginBottom = "-245px"
-    document.getElementById("pic").innerHTML = "<img src = \"http://reed.edu/~deichal/intheoffice.png\" height=\"245\" width=\"326\">";
+    document.getElementById("pic").innerHTML = "<img src = \"deichdeich.github.io/intheoffice.png\" height=\"245\" width=\"326\">";
 }
 function restore(){
     document.getElementById("pic").style.marginBottom = ""
@@ -151,20 +151,20 @@ function addDescription(section){
             clearLinks()
             document.getElementById("a2").innerHTML="<u>&mdash; Population Statistics of Young Stars in Andromeda</u>";
             document.getElementById("newbox").style.height="550px"
-            document.getElementById("newbox").innerHTML = "<center><img src = \"http://reed.edu/~deichal/phat.png\"></center><br><small><small>image copyright Julianne Dalcanton</small></small><br><br><p><a href=\"https://github.com/deichdeich/armpit-full\">GitHub repository</a><br>The Panchromatic Hubble Andromeda Treasury (PHAT) is a survey of more than 117 million unique star measurements from the Andromeda galaxy (Dalcanton+ 2012).  Since 2014, I have worked at the University of Utah to determine extinction and metallicity of a subset of young main sequence PHAT objects.  I presented this project at the winter 2015 meeting of AAS, where it was awarded a Chambliss Honorable Mention for undergraduate research.<br><br>The heart of the project is the ARMPIT (Andromeda Reddening and Metallicity from Padova Isochrone Tracks) Python package.  ARMPIT contains routines for determining the extinction and metallicity from photometric data, as well as performing simulations of stellar populations.  Development is ongoing, and you can check the project out on <a href=\"https://github.com/deichdeich/armpit-full\">GitHub</a>"
+            document.getElementById("newbox").innerHTML = "<center><img src = \"deichdeich.github.io/phat.png\"></center><br><small><small>image copyright Julianne Dalcanton</small></small><br><br><p><a href=\"https://github.com/deichdeich/armpit-full\">GitHub repository</a><br>The Panchromatic Hubble Andromeda Treasury (PHAT) is a survey of more than 117 million unique star measurements from the Andromeda galaxy (Dalcanton+ 2012).  Since 2014, I have worked at the University of Utah to determine extinction and metallicity of a subset of young main sequence PHAT objects.  I presented this project at the winter 2015 meeting of AAS, where it was awarded a Chambliss Honorable Mention for undergraduate research.<br><br>The heart of the project is the ARMPIT (Andromeda Reddening and Metallicity from Padova Isochrone Tracks) Python package.  ARMPIT contains routines for determining the extinction and metallicity from photometric data, as well as performing simulations of stellar populations.  Development is ongoing, and you can check the project out on <a href=\"https://github.com/deichdeich/armpit-full\">GitHub</a>"
         }
         else if(section == 3){
             clearLinks()
             document.getElementById("a3").innerHTML="<u>&mdash; Physics of a Modified E&M</u>";
             document.getElementById("newbox").style.height="475px";
-            document.getElementById("newbox").innerHTML = "<p><center><img src = \"http://reed.edu/~deichal/mhdsim.png\"></center><br><a href = \"em_final.pdf\" target=\"new\">PDF</a><br>The final project for my E&M II class.  I analyzed a Lagrangian similar to the standard E&M Lagrangian, but with an additional coupling term.  We were to find most of the analogues of the basic physics that we had already studied for standard E&M.</p><p>The final part of the project was left up to the individual student.  I chose to derive the equations of magnetohydrodynamics for this system and perform some CFD modeling.  I modeled this by editing the <a href=\"http://plutocode.ph.unito.it/\">PLUTO</a> MHD simulation code.  You can read the <a href = \"em_final.pdf\" target=\"new\">PDF</a> of the report.<br><br>"
+            document.getElementById("newbox").innerHTML = "<p><center><img src = \"deichdeich.github.io/mhdsim.png\"></center><br><a href = \"em_final.pdf\" target=\"new\">PDF</a><br>The final project for my E&M II class.  I analyzed a Lagrangian similar to the standard E&M Lagrangian, but with an additional coupling term.  We were to find most of the analogues of the basic physics that we had already studied for standard E&M.</p><p>The final part of the project was left up to the individual student.  I chose to derive the equations of magnetohydrodynamics for this system and perform some CFD modeling.  I modeled this by editing the <a href=\"http://plutocode.ph.unito.it/\">PLUTO</a> MHD simulation code.  You can read the <a href = \"em_final.pdf\" target=\"new\">PDF</a> of the report.<br><br>"
         }
         else if(section == 4){
             clearLinks()
             document.getElementById("a4").innerHTML="<u>&mdash; Photometry of VVV Survey Data</u>";
 
             document.getElementById("newbox").style.height="550px"
-            document.getElementById("newbox").innerHTML = "<p><center><img src = \"http://reed.edu/~deichal/vvvclusters.png\"></center><br>In 2013, I worked at the Cerro-Tololo Interamerican Observatory (CTIO) in La Serena, Chile.  This was an NSF-funded Research Experience for Undergraduates (REU).  While there, I worked with Dr. Alexandre Roman-Lopes of the Universidad de La Serena and Andrea Kunder of CTIO in characterizing data from the Vista Variables in the Via Lactea (VVV) Survey.  I applied PSF and aperture photometry to the data with the DAOPHOT package, and wrote numerous data analysis scripts in Python.  By matching sources with the 2MASS survey, I derived correlation functions between the two surveys, which significantly reduced error, and has wider application in the use of VVV data.  I presented the project at the winter 2014 meeting of the AAS conference in Washington, DC.</p>"
+            document.getElementById("newbox").innerHTML = "<p><center><img src = \"deichdeich.github.io/vvvclusters.png\"></center><br>In 2013, I worked at the Cerro-Tololo Interamerican Observatory (CTIO) in La Serena, Chile.  This was an NSF-funded Research Experience for Undergraduates (REU).  While there, I worked with Dr. Alexandre Roman-Lopes of the Universidad de La Serena and Andrea Kunder of CTIO in characterizing data from the Vista Variables in the Via Lactea (VVV) Survey.  I applied PSF and aperture photometry to the data with the DAOPHOT package, and wrote numerous data analysis scripts in Python.  By matching sources with the 2MASS survey, I derived correlation functions between the two surveys, which significantly reduced error, and has wider application in the use of VVV data.  I presented the project at the winter 2014 meeting of the AAS conference in Washington, DC.</p>"
         }
         else if(section == 5){
         clearLinks()
@@ -198,7 +198,7 @@ Portland, OR 97202
 <br>
 deichal <i>at</i> reed.edu
 <br>
-<a href="http://reed.edu/~deichal/alex-deich-cv.pdf" download>CV</a>
+<a href="deichdeich.github.io/alex-deich-cv.pdf" download>CV</a>
 </div>
 <div class = "row">
     <div>
