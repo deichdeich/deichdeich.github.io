@@ -1,0 +1,267 @@
+\documentclass[11pt]{paper}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\newcommand{\answer}[1]{Answer: \textbf{(#1)}.}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{2001 Physics GRE Solutions\blfootnote{Alex Deich\\ \phantom{x}\hspace{1.3em}July 2016}}
+\author{}
+%\date{\today}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{Pendulum bob}
+This is \emph{total} acceleration, so there will be two components acting on the bob: gravity and tension.  Tension acts in the direction of the string, and gravity always points straight down.  For this reason, we can immediately rule out (A) and (E), as those are clearly ignoring any force other than what is along the string.  Furthermore, at point \emph{c}, the string (and therefore the tension) is pointing in the same direction as gravity, so the arrow should be pointing totally along the string.  This rules out (B) and (D).\\
+
+\answer{C}
+
+\section{Friction on a turntable}
+There are two forces which must cancel out:  Centripetal and frictional.\\
+Therefore:
+\begin{align}
+m \omega^2 r &= m g \mu_s,\\
+\Rightarrow r &= \frac{g \mu_s}{\omega^2}.
+\end{align}
+However, the units need to be taken care of.  We are given a frequency $\nu = 33.3$ revolutions per minute, while $[g] = [\text{m}][\text{s}]^{-2}$.  We want to convert $[\nu]$ to an angular frequency $[\omega] = [\text{rad}][\text{s}]^{-1}$.
+
+\begin{align}
+\omega &= 2 \pi \frac{\text{rad}}{\text{rev}} \frac{1 \text{min}}{60 \text{s}} \nu,\\
+\Rightarrow r &= \frac{9.8 \times 0.3}{\left(33.3 \times \frac{2 \pi}{60} \right)^2} = 0.242.
+\end{align}
+
+\answer{D}
+
+\section{Satellite orbit}
+I can't think of many clever ways to narrow down the answers.  It is probably just good to have Kepler's Third Law memorized:
+
+\begin{equation}
+T = 2\pi \sqrt{\frac{a^3}{GM}},
+\end{equation}
+where\\
+$T$ is the orbital period,\\
+$a$ is the semi-major axis, and\\
+$GM$ is the planet's mass times the gravitational constant.\\
+
+\answer{D}
+
+\section{One-dimensional inelastic collision}
+As usual, start with conservation of momentum:
+
+\begin{equation}
+m_1 v_1 + m_2 v_2 = (m_1 + m_2) v_{12}.
+\end{equation}
+With $m_1 = 2m$, $m_2 = m$ and $v_2 = 0$ (the problem states that the particle is at rest), we have
+
+\begin{align}
+2m v_1 &= 3m v_{12}\\
+\Rightarrow v_{12} &= \frac{2}{3} v_1.
+\end{align}
+
+Then, with conservation of energy,
+
+\begin{align}
+\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 &= \frac{1}{2} \left(m_1 + m_2\right) (v_{12})^2\\
+\Rightarrow \frac{1}{2} 2 m v_1^2  &= \left(\frac{1}{2} 3 m\right) \left(\frac{2}{3} v_1\right)^2\\
+\Rightarrow m v_1^2 &= \left(\frac{3}{2}m\right) \frac{4}{9} v_1^2\\
+\Rightarrow KE_i &= \frac{2}{3} KE_f
+\end{align}
+So the final energy is $\frac{2}{3}$ of the initial, meaning the system has lost a third of its kinetic energy.
+
+\answer{C}
+
+\section{Average kinetic energy of a 3D harmonic oscillator}
+The equipartition theorem says that there is $\frac{1}{2}k_B T$ of energy for each degree of freedom \emph{in the Hamiltonian}.  The Hamiltonian for a harmonic oscillator is 
+
+\begin{equation}
+H = \frac{1}{2m} \left( p_x^2 + p_y^2 + p_z^2 \right) + \frac{1}{2} k \left( q_x^2 + q_y^2 + q_z^2 \right),
+\end{equation}
+
+which has 6 degrees of freedom (3 positions and 3 momenta), so the average kinetic energy is 
+
+\begin{equation}
+\left< KE \right>  = 6 \times \frac{1}{2} k_B T = 3 k_B T.
+\end{equation}
+
+\answer{D}
+
+\section{Work done on a gas}
+Adiabatic means that heat is conserved.  \textbf{Adiabatic heating occurs when the pressure of a gas is increased from work done on it by its surroundings}. For an adiabatic process, $PV^\gamma = \text{const.}$, and the work done by applying pressure to a volume is $W = \int P dV$.  Using these, one can derive the worthy-of-memorizing equation for the work done on a gas in an adiabatic process:
+\begin{equation}
+W_{a} = -\frac{1}{1-\gamma} \left( P_f V_f - P_i V_i \right).
+\end{equation}
+Isothermal means that the temperature is conserved.  \textbf{An isothermal process occurs slowly enough to allow the system to continually adjust to the temperature of the reservoir through heat exchange}. Therefore, $P_i V_i = n R T_i = P_f V_f = n R T_f$, and using the same definition of work above, one can derive the worthy-of-memorizing equation for the work done on a gas in an isothermal process:
+\begin{equation}
+W_{i} = n R T_i \ln \left( \frac{V_f}{V_i}\right) = P_i V_i \ln \left( \frac{V_f}{V_i}\right).
+\end{equation}
+Right off the bat, we know that $V_f = 2V_i$, so neither $W_i$ nor $W_a$ will be equal to 0.  This eliminates (B) and (D).  Furthermore, we can see from the formulae that $W_i \neq W_a$.  This makes the problem as deciding whether $W_a$ is greater than $W_i$ or vice-versa.  One way to solve this would be by noting that for a monatomic gas, $\gamma = \frac{5}{3}$ and solving.
+
+Another method is this:  For an adiabat, $P \propto \frac{1}{V^\gamma}$, and $\gamma > 1$ for an ideal gas.  For an isotherm, $P \propto \frac{1}{V}$.  Therefore, for the same change in volume, the pressure of an adiabat changes more than the pressure of an isotherm.  Therefore, the adiabat does more work.\\
+
+\answer{E}
+
+\section{Two bar magnets}
+Going through the options:
+
+(A) cannot be true because both the magnets are standing on their north ends.  Matching polarities always repel.
+
+(C) seems to imply that there are magnetic monopoles, which don't exist.  In this picture, $\nabla \cdot \mathbf{B} \neq 0$.
+
+(D) doesn't work because you'd expect cylindrical symmetry.
+
+(E) would be good if there were longitudinal current through the cylinders, but there's not.\\
+
+\answer{B}
+
+\section{Charge induced on an infinite conductor}
+By the conservation of charge, there should be an equal and opposite charge induced on the top face of the conductor, giving an answer of $-Q$.\\
+
+\answer{D}
+
+\section{Charges on a circle}
+All the charges are symmetrically placed around the circle, so at the center, there is an equal contribution from every direction pointing towards the charges, giving a net magnitude of 0.  One suggestion from the Internet is to take the limit as infinite charges are equally placed around the circle:  This is a conducting ring, which has no field on the interior.\\
+
+\answer{A}
+
+\section{Energy across a capacitor}
+The energy stored in a capacitor can be derived by finding the work required to establish an electric field in the capacitor:
+\begin{equation}
+W = \int_0^Q V(q) dq = \int_0^Q \frac{q}{C} dq = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} CV^2 = \frac{1}{2} V Q,
+\end{equation}
+where
+
+V is the voltage difference across the capacitor,
+
+C is the effective capacitance, and
+
+Q is the total charge across one of the plates.
+
+Furthermore, it is helpful to remember the additive properties of capacitors.  In parallel, $n$ capacitors add normally:
+
+\begin{equation}
+C_{\text{eff}} = C_1 + C_2 + \dots + C_n.
+\end{equation}
+
+In series, the reciprocals add:
+\begin{equation}
+\frac{1}{C_{\text{eff}}} =\frac{1}{C_1} + \frac{1}{C_2} + \dots + \frac{1}{C_n}.
+\end{equation}
+
+So, for this problem we need the effective capacitance of two capacitors in series:
+
+\begin{align}
+\frac{1}{C_\text{eff}} &= \frac{1}{3\mu\text{F}} + \frac{1}{6\mu\text{F}},\\
+&= \frac{9}{18\mu\text{F}},\\
+\Rightarrow C_\text{eff} &= \frac{18}{9}\mu\text{F}.
+\end{align}
+
+Finally, using $\frac{1}{2}CV^2$ for the energy stored, we get 
+
+\begin{equation}
+\frac{1}{2} \times \frac{18}{9} \times 300^2 = 300^2 = 900,000.
+\end{equation}
+
+Not knowing the units is fine: There is only one answer which is 9 times some number of tens.\\
+
+\answer{A}
+
+\section{Two-lens image}
+
+This requires two applications of the thin-lens limit of the lensmaker's formula,
+\begin{equation}
+\frac{1}{d_o} + \frac{1}{d_i} = \frac{1}{f},
+\end{equation}
+where $d_o$ is the distance from the object to the lens, $d_i$ is the distance from the lens to the image, and $f$ is the focal length of the lens.
+
+For this problem, we apply the formula once for the object and the first lens, and then using that image as the ``object'' for the second lens.  Solving for $d_i$ for the first lens:
+\begin{align}
+\frac{1}{d_i} &= \frac{1}{20} - \frac{1}{40},\\
+&= \frac{1}{40},\\
+\Rightarrow d_i &= 40.
+\end{align}
+So the first image is 40 cm behind the first lens.  This places the new ``object'' 10 cm behind the second lens.  Because this is now on the opposite side of the second lens as the side which we established was positive for the first lens, we say that $d_o$ for the second lens is $-10$.
+
+Then, following through with the second lensmaker's equation,
+\begin{align}
+\frac{1}{d_i} &= \frac{1}{10} + \frac{1}{10},\\
+&= \frac{1}{5},\\
+\Rightarrow d_i &= 5.
+\end{align}
+
+So the final image is 5 cm behind the second lens.\\
+
+\answer{A}
+
+\section{Spherical concave mirror}
+We can start with the lensmaker's equation as used above,
+\begin{equation}
+\frac{1}{d_i} = \frac{1}{f} - \frac{1}{d_o}.
+\end{equation}
+
+Looking at the picture in the problem, we can see that $d_o < f$.  Therefore, $\frac{1}{d_o} > \frac{1}{f}$, and so $d_i$ will be negative, placing the image behind the mirror.\\
+
+\answer{E}
+
+\section{Resolving two stars}
+I can't think of any way to do this problem but to memorize the Rayleigh criterion:
+\begin{equation}
+\theta = 1.22\frac{\lambda}{D},
+\end{equation}
+which describes the requirement on the diameter of a lens, $D$, in order to resolve two objects separated by an angle $\theta$, at some wavelength of light, $\lambda$.
+
+In this particular problem, we have $\theta = 3 \times 10^{-5} \text{ rad}$, and $\lambda = 600\text{ nm}$.  Plugging it all in, we have
+\begin{equation}
+D = \frac{1.22 \times 600 \times 10^{-9}\text{ m}}{3 \times 10^{-5}\text{ rad}} = 2.4 \text{ cm}
+\end{equation}
+
+\answer{B}
+
+\section{Cylindrical gamma-ray detector}
+
+The ``8-centimeter-long'' fact is not useful.  All that matters is the flux through the face of the detector.  When the detector is \emph{right at} the source, it's collecting all of the radiation that leaves from that half of the source \--- hence it's collecting 50\% of emitted radiation.  At a distance of 1 meter, the radiation is now spread out over a sphere of surface area $4 \pi r^2 = 4 \pi \text{ m}^2$.  The face of the detector is only occupying $16 \pi \times 10^{-4} \text{ m}^2$.  Therefore, the fraction of radiation which is detected is a ratio of these two areas:
+
+\begin{equation}
+\frac{16 \pi \times 10^{-4} \text{ m}^2}{4 \pi \text{ m}^2} = 4 \times 10^{-4}.
+\end{equation}
+
+\answer{C}
+
+\section{Measurement precision}
+
+Precision is a measure of \emph{random} error.  If the precision is high, the there is low random error.  With low random error, the statistical variability is low, so the measurements are clustered closely regardless of how well they agree with the actual value.\\
+
+\answer{A}
+
+\section{Uncertainty}
+
+
+
+\end{document}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
