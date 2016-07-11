@@ -6,7 +6,9 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{epstopdf}
+\usepackage{physics}
 \usepackage{amsmath}
+\usepackage{gensymb}
 \newcommand{\answer}[1]{Answer: \textbf{(#1)}.}
 \newcommand\blfootnote[1]{%
   \begingroup
@@ -17,7 +19,7 @@
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
-\title{2001 Physics GRE Solutions\blfootnote{Alex Deich\\ \phantom{x}\hspace{1.3em}July 2016}}
+\title{2001 Physics GRE Solutions\blfootnote{Alex Deich, July 2016}}
 \author{}
 %\date{\today}                                           % Activate to display a given date or no date
 
@@ -246,9 +248,228 @@ Precision is a measure of \emph{random} error.  If the precision is high, the th
 \answer{A}
 
 \section{Uncertainty}
+In addition to generally knowing about random error estimation, you need to know two things specifically for this problem:  1) that radioactive decay follows a Poisson distribution, and 2) that the standard deviation of a Poisson distribution is the square root of the average.
 
+Then, you can estimate the expected uncertainty (usually taken as the error of the standard deviation, $\sigma_x$) from the fact that the error in the standard deviation, $\Delta\sigma_x$ goes as 
+\begin{equation}
+\Delta\sigma_x = \frac{\sigma_x}{\sqrt{N}},
+\end{equation}
+for $N$ trials.
 
+So, calculating the average, we have
+\begin{equation}
+\left<x\right> = \frac{3+0+2+1+2+4+0+1+2+5}{10} = 2,
+\end{equation}
+so the standard deviation is 
+\begin{equation}
+\sigma_x = \sqrt{\left<x\right>} = \sqrt{2}.
+\end{equation}
+Assuming that by ``uncertainty of 1 percent'' they mean that the error should be the average plus or minus 1\%, we are looking for an uncertainty of $\Delta\sigma_x = 0.002$.  So, using the fact mentioned above, we can solve for the number of trials required for this uncertainty.
+\begin{align}
+0.02 &= \frac{\sqrt{2}}{\sqrt{N}},\\
+\Rightarrow N &= \frac{2}{0.0004} = 5,000.
+\end{align}
 
+\answer{D}
+
+\section{Filling electron shells}
+For problems like these, I think it's best to just memorize how electron shells are filled up.  The rules I keep in mind are these:
+\begin{enumerate}
+\item $s$-orbitals can take 2 electrons, $p$-orbitals can take 6 and $d$-orbitals can take 10.
+\item The pattern is $s$-$s$-$p$-$s$-$p$-$s$-$d$.
+\item If the orbitals are in the right order, and they each have as many electrons as they can take (except, perhaps the last one), then that's the right answer.
+\end{enumerate}
+
+\answer{B}
+
+\section{Energy to remove a helium electron}
+The Bohr model is applicable here, because helium isn't too different from hydrogen.  The energy for an electron in the $n^{th}$ state of a hydrogenic atom with $Z$ protons is given by
+\begin{equation}
+E_n = Z^2 \frac{R_E}{n^2},
+\end{equation}
+where $R_E$ is a Rydberg, the energy of the ground state of hydrogen, $13.6\text{ eV}$.
+
+Because Helium has two protons ($Z=2$), it can accept two electrons into its ground state, so $n = 1$ for this problem.  If the helium were singly ionized and only had a single electron, as $\text{He+}$, then the energy to remove that electron would be, from the Bohr model above,
+\begin{equation}
+E_1 = 4 \times 13.6 \text{ eV} = 54.4.\text{ eV}.
+\end{equation}
+
+It's tempting to say that the energy required to remove the two electrons of neutral helium would just be $2 \times 54.4 \text{ eV} = 108.8 \text{ eV}$, but this is not the case.  Considering one electron at a time, one can see that the first one is not \emph{just} experiencing the tug of the nucleus, but is \emph{also} being pushed away by a Coulomb repulsion from the \emph{other electron}.  Therefore, we expect it to be slightly easier to remove the first of two electrons than to remove one solitary electron.
+
+In lieu of perturbation theory, we can subtract the theoretical value of 54.4 eV for a single ground state energy from the experimental value of 79 eV for complete ionization.  What's left over will be the energy that was required to remove an electron whose exist was being pushed along by a Coulomb repulsion.  So, 
+\begin{equation}
+79 \text{ eV} - 54.4 \text{ eV} = 24.6 \text{ eV}.
+\end{equation}
+
+\answer{A}
+
+\section{Source of the Sun's energy}
+It is not necessary to know the whole proton-proton chain to answer this problem.  Just note that a helium has 4 things of roughly proton mass (2 protons and 2 neutrons), and that $\text{n} + \text{e}^- \rightarrow \text{p}$.  So in order to make helium, you need 4 hydrogens and enough energy to collide half of the electrons and protons.\\
+
+\answer{B}
+
+\section{Definition of bremsstrahlung}
+The way I remember this is that bremsstrahlung is German for ``breaking radiation'' which reminds me that it's analogous to breaking the sound barrier (it doesn't matter that they're different meanings of ``break'').  The only answer that sounds like it has anything to do with breaking a sound barrier is the one that mentions rapid deceleration in a medium.\\
+
+\answer{E}
+
+\section{Comparing Lyman-$\alpha$ and Balmer-$\alpha$ wavelengths}
+This requires knowing the Rydberg formula for the energy, $E$, of a photon released in the transition from one energy level, $n_i$ to another, $n_f$:
+\begin{equation}
+E = E_f - E_i = R_E \left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right),
+\end{equation}
+where $R_E$ is the Rydberg energy, $13.6 \text{ eV}$.  The energy of a photon emitted by a Lyman-$\alpha$ transition (from $n=2$ to $n=1$) is then
+
+\begin{equation}
+E_{L\alpha} = R_E \left(1 - \frac{1}{4}\right) = \frac{3}{4}R_E.
+\end{equation}
+
+While Balmer-$\alpha$ transitions (from $n=3$ to $n=2$) release photons with energies of 
+\begin{equation}
+E_{B\alpha} = R_E \left(\frac{1}{4} - \frac{1}{9}\right) = \frac{5}{36}R_E,
+\end{equation}
+and, taking the ratio,
+
+\begin{align}
+\frac{E_{L\alpha}}{E_{B\alpha}} &= \frac{3 \times 36}{4 \times 5},\\
+&= \frac{27}{5}.
+\end{align}
+Finally, the problem is asking for the wavelength of the light.  $E = hc/\lambda$, and taking the ratio has dealt with the implicit $hc$, so we only need to take the reciprocal of $27/5$.\\
+
+\answer{B}
+
+\section{Orbital system parameters}
+
+The hint is in the phrase ``very small moon''.  The question is implying that the mass of the moon is negligible compared to the mass of the planet.  This means that the center of gravity will be very close to the center of the planet, and so you can treat the planet as stationary.  Then, think about the equations of orbital motion.  Kepler's Third Law (problem 3) describes the period and semi major axes of the orbit, but makes no mention of mass.  If you're solving for a circular orbit with forces (or any orbit, but circular is easy), the smaller mass will cancel:
+\begin{equation}
+\frac{G M m}{r^2} = \frac{m v^2}{r}
+\end{equation}
+
+There are probably other examples, but these should be sufficient to convince you the answer is the moon's mass.\\
+
+\answer{A}
+
+\section{Particle accelerating around a circle}
+I think this problem is worded confusingly.  There's a particle going around a circle at a rate of $10\text{ ms}^{-1}$, and so it's experiencing the standard centripetal acceleration of
+\begin{equation}
+\mathbf{a}_{\text{c}} = - \frac{v^2}{r}\mathbf{\hat{r}} = -\frac{100}{10}\mathbf{\hat{r}} = -10 \mathbf{\hat{r}} .
+\end{equation}
+
+ But this particle is \emph{also} undergoing a tangential acceleration of $10 \text{ ms}^{-2}$, in the direction of the particle's velocity.  That means that the particle is experiencing two orthogonal accelerations of equal magnitude.  The only way that these can combine is to form a vector at 45\degree to both.  To answer the question, note that one of the accelerations is in the same direction as the velocity, so the angle is the same.\\
+
+\answer{C}
+
+\section{Throwing a stone}
+There is no air resistance, so $v_x$ should be constant, so we should only consider solutions with plot II in the first column.  The ball starts by going up, so $v_y$ is at positive at first, and should undergo constant deceleration.  As the ball begins to fall, $v_y$ is negative.  The only plot which fits this description is III.\\
+
+\answer{C}
+
+\section{Moment of inertia of packed pennies}
+To do this problem, refer to the front of the test for the moment of inertia of a solid disk about an axis going through its center: $I = \frac{1}{2}mr^2$.  A very quick way I did this was to say that the whole collection of pennies was a solid disk of mass $7m$ and radius $3r$.  Then,
+\begin{align}
+I &= \frac{1}{2} m r^2,\\
+m &\rightarrow 7m, r \rightarrow 3r,\\
+&= \frac{1}{2} \times 7m \times \left(3r\right)^2,\\
+&= \frac{63}{2} m r^2.
+\end{align}
+
+The available answer this is closest to is $55/2$, which is the correct answer.  However, if the correct answer weren't also the largest, this estimate is not nearly close enough to be sure.  A rigorous way to do this is to use the parallel axis theorem.
+
+If you know the moment of inertia of an object around one axis, the parallel axis theorem provides a way to calculate the moment of inertia around any other axis which is parallel to the original.  In this case, we know the moment of inertia of one penny around the axis that goes through its center of mass,
+\begin{equation}
+I_{\text{CM}} = \frac{1}{2}mr^2
+\end{equation}
+
+If we now rotate that penny around an axis a distance $d$ from its center, the parallel axis theorem says that the new moment of inertia is given by
+\begin{equation}
+I = I_{\text{CM}} + m d^2
+\end{equation}
+
+In calculating the contribution to the total angular momentum of each extremal penny in the arrangement given in the problem, we are rotating each of the exterior pennies around an axis $2r$ from their centers.  Then, we can add these moments to the moment of the middle penny being rotated around \emph{its} center to get the total moment of inertia.  For the moment of inertia of each exterior penny,
+\begin{align}
+I_\text{ext.} &= I_{\text{CM}} + m \left(2r\right)^2,\\
+&= \frac{1}{2}mr^2 + m \times 4 r^2,\\
+&= \frac{9}{2}mr^2.
+\end{align}
+
+So each exterior penny contributes $\left(9/2\right)mr^2$ to the total moment of inertia which we can now calculate by summing the moments of all the constituents.
+\begin{align}
+I_\text{tot.} &= I_{\text{CM}} + 6 \times \frac{9}{2}mr^2,\\
+&= \frac{1}{2}mr^2 + \frac{54}{2}mr^2,\\
+&= \frac{55}{2}mr^2.
+\end{align}
+
+\answer{E}
+
+\section{Speed of the end of a falling rod}
+This problem also requires looking at the front of the test for (or memorizing) the moment of inertia of a rod of length $L$ and mass $M$ about its center of mass (so that it's spinning like a baton): $I = \frac{1}{12}ML^2$.  However, the rod in the problem is not rotating around its center of mass.  It's pivoting on one end, a distance $L/2$ from its center of mass.  We can get the moment of inertia of this rotation with the parallel axis theorem.
+\begin{align}
+I &= I_\text{CM} + Md^2,\\
+d &\rightarrow \frac{L}{2},\\
+I &= M\frac{L^2}{12} + M\frac{L^2}{4},\\
+&= \frac{1}{3}ML^2.
+\end{align}
+Now we can use conservation of energy to solve for the speed of the end of the rod.  Setting the rotational energy equal to the gravitational potential energy from the rod's center of mass (which is located at $L/2$),
+\begin{align}
+\frac{1}{2}I\omega^2 &= Mg\frac{L}{2},\\
+\Rightarrow \omega^2 &= \frac{MgL}{I},\\
+&= \frac{3g}{L}.
+\end{align}
+To convert the radial speed, $\omega$ to the linear speed of the end of the rod, we note that $\omega = v/r$, and in the case of the end of the rod, $r=L$.  So,
+\begin{align}
+\frac{v^2}{L^2} &= \frac{3g}{L},\\
+\Rightarrow{v} &= \sqrt{3gL}.
+\end{align}
+
+\answer{C}
+
+\section{Eigenvalues of the Hamiltonian operator}
+An axiom of quantum mechanics is that the Hamiltonian operator is hermitian, and a requirement of hermitian operators is that their eigenvalues are always real.  If the Hamiltonian operator weren't hermitian, then observations of a particle's energy could give imaginary results, which would have no physical meaning.\\
+
+\answer{A}
+
+\section{Orthogonal states}
+That two vectors are orthogonal means their inner product is equal to zero.  Taking the inner product of $\psi_1$ and $\psi_2$,
+
+\begin{equation}
+\left< \psi_1 | \psi_2 \right> = (5 \times 1) + ((-3) \times (-5)) + (2 \times x) = 20+2x
+\end{equation}
+
+The problem asks for the value of $x$ which ensures $\psi_1$ and $\psi_2$ are orthogonal, which, from demanding the above inner product be equal to zero, is $-10$.\\
+
+\answer{E}
+
+\section{Expectation value of an operator}
+The whole point of eigenvalues is that you can replace an operator acting on an eigenvector with the corresponding eigenvalue, a scalar.  In this case, we take the inner product of the wavefunction with the wavefunction after it has been acted upon by the operator $\hat{O}$,
+\begin{equation}
+\bra{\psi}\ket{ \hat{O} \psi}.
+\end{equation}
+To calculate $\ket{\hat{O} \psi}$, we can just push the operator through $\psi$,
+\begin{align}
+\ket{\hat{O} \psi} &= \frac{1}{\sqrt{6}} \hat{O} \psi_{-1} + \frac{1}{\sqrt{2}} \hat{O} \psi_{1} + \frac{1}{\sqrt{3}} \hat{O} \psi_{2},\\
+&\text{replacing the operator with the eigenvalues,}\\
+&= \frac{1}{\sqrt{6}} (-1)  \psi_{-1} + \frac{1}{\sqrt{2}} (1)  \psi_{1}+ \frac{1}{\sqrt{3}} (2)  \psi_{2},\\
+&= -\frac{1}{\sqrt{6}} \psi_{-1} + \frac{1}{\sqrt{2}}  \psi_{1}+ \frac{2}{\sqrt{3}}\psi_{2}.
+\end{align}
+
+Then, calculating the inner product with the original wavefunction,
+\begin{align}
+\bra{\psi}\ket{ \hat{O} \psi} &= \left(-\frac{1}{\sqrt{6}} \times \frac{1}{\sqrt{6}}\right) + \left(\frac{1}{\sqrt{2}}  \times \frac{1}{\sqrt{2}} \right) + \left(\frac{1}{\sqrt{3}} \times \frac{2}{\sqrt{3}}\right),\\
+&= \frac{1}{6} + \frac{1}{2}+ \frac{2}{3} = 1.
+\end{align}
+
+\answer{C}
+
+\section{Possible Hydrogen wavefunctions}
+Any wavefunction must be normalizable, which is to say
+\begin{equation}
+\int_{-\infty}^\infty \psi^*\psi dr = 1,
+\end{equation}
+because between the limits of $\pm\infty$, the particle must be \emph{somewhere} (that is, if you're in position space; the analogous requirement in momentum space is that the particle must have \emph{some} finite momentum).  The only function which is normalizable is option I.\\
+
+\answer{A}  
+
+\section{}
 \end{document}  
 
 
