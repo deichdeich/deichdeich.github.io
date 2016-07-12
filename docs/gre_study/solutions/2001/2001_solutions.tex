@@ -469,6 +469,46 @@ because between the limits of $\pm\infty$, the particle must be \emph{somewhere}
 
 \answer{A}  
 
+\section{Energy levels in positronium}
+To derive the ground state energy of positronium, we can treat it as hydrogenic and use the Bohr model.  The Bohr model predicts that the energy of different levels are proportional to the reduced mass, $\mu = \frac{m_1 m_2}{m_1 + m_2}$, of the system,
+\begin{equation}
+E_n = -\frac{\mu q_e^4}{8 h^2\epsilon_0^2} \frac{1}{n^2}.
+\end{equation}
+
+In the case of hydrogen, $m_1$ and $m_2$ are the masses of the proton and electron, respectively.  In that case, $m_p \gg m_{e^-}$, and so $\mu\approx m_{e^-}$.  In this case, the positron and electron are the same mass, so $\mu = m_e/2$, roughly half the mass of hydrogen.  Everything else in the equation for $E_n$ stays the same: they're all constants (besides $n$, the energy level).  This means that we can just divide in half any hydrogen energy to get the corresponding positronium energy.  So, the ground state of positronium should be
+\begin{equation}
+\frac{13.6}{2} = 6.8.
+\end{equation}
+Now we can use the Rydberg equation for energy of a photon emitted from an electron transitioning from state $n_i$ to $n_f$,
+\begin{equation}
+E = E_1 \left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right),
+\end{equation}
+where $E_1$, rather than the Rydberg from the last time we applied this equation to hydrogen, is now the ground state energy of positronium, $6.8 \text{ eV}$.  Plugging everything in, an electron transitioning from the $n = 3$ state to the $n=1$ state of positronium will emit a photon with energy
+\begin{equation}
+E = 6.8 \times \left(1 - \frac{1}{9}\right) = 6.8 \times \frac{8}{9} = 6.0 \text{ eV}.
+\end{equation}
+
+\answer{A}
+
+\section{Relativistic momentum}
+The total energy of a particle is given by
+\begin{equation}
+E = \sqrt{m^2 c^4 + p^2 c^2},
+\end{equation}
+and we are told that the total energy is equal to twice its rest energy, or
+\begin{equation}
+E = 2 m c^2.
+\end{equation}
+Plugging in for the total energy and solving, we have
+\begin{align}
+2 m c^2 &= \sqrt{m^2 c^4 + p^2 c^2},\\
+\Rightarrow 4 m^2 c^4 &= m^2 c^4 + p^2 c^2,\\
+\Rightarrow p^2 c^2 &= 3 m^2 c^4,\\
+\Rightarrow p &= \sqrt{3} m c.
+\end{align}
+
+\answer{D}
+
 \section{}
 \end{document}  
 
