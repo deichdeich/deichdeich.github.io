@@ -8,6 +8,7 @@
 \usepackage{epstopdf}
 \usepackage{physics}
 \usepackage{amsmath}
+\usepackage{enumitem}
 \usepackage{gensymb}
 \newcommand{\answer}[1]{Answer: \textbf{(#1)}.}
 \newcommand\blfootnote[1]{%
@@ -143,13 +144,7 @@ The energy stored in a capacitor can be derived by finding the work required to 
 \begin{equation}
 W = \int_0^Q V(q) dq = \int_0^Q \frac{q}{C} dq = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} CV^2 = \frac{1}{2} V Q,
 \end{equation}
-where
-
-V is the voltage difference across the capacitor,
-
-C is the effective capacitance, and
-
-Q is the total charge across one of the plates.
+where $V$ is the voltage difference across the capacitor, $C$ is the effective capacitance, and $Q$ is the total charge across one of the plates.
 
 Furthermore, it is helpful to remember the additive properties of capacitors.  In parallel, $n$ capacitors add normally:
 
@@ -452,10 +447,10 @@ To calculate $\ket{\hat{O} \psi}$, we can just push the operator through $\psi$,
 &= -\frac{1}{\sqrt{6}} \psi_{-1} + \frac{1}{\sqrt{2}}  \psi_{1}+ \frac{2}{\sqrt{3}}\psi_{2}.
 \end{align}
 
-Then, calculating the inner product with the original wavefunction,
+Then, calculating the inner product of this acted-upon wavefunction with the original wavefunction,
 \begin{align}
 \bra{\psi}\ket{ \hat{O} \psi} &= \left(-\frac{1}{\sqrt{6}} \times \frac{1}{\sqrt{6}}\right) + \left(\frac{1}{\sqrt{2}}  \times \frac{1}{\sqrt{2}} \right) + \left(\frac{1}{\sqrt{3}} \times \frac{2}{\sqrt{3}}\right),\\
-&= \frac{1}{6} + \frac{1}{2}+ \frac{2}{3} = 1.
+&= -\frac{1}{6} + \frac{1}{2}+ \frac{2}{3} = 1.
 \end{align}
 
 \answer{C}
@@ -509,7 +504,257 @@ Plugging in for the total energy and solving, we have
 
 \answer{D}
 
+\section{Decaying pion}
+
+This problem is really about being comfortable with changing between relativistic reference frames.  Is proper time longer or shorter than a time at rest?  What about proper distance?  This gets really confusing, and I have a few ways of remembering how it goes.  First, I think about proper time.  I know that any spacetime interval is conserved between reference frames.  If you have an interval, $\Delta s^2 = -c\Delta t^2 + \Delta x^2$ in one reference frame, you know that it's the same if you measure it in coordinates which are moving (I'll denote moving coordinates \--- and therefore proper length and time \--- with a bar):
+
+\begin{equation}
+\Delta s^2 = -c\Delta t^2 + \Delta x^2 = \Delta \bar{s}^2 = -c\Delta \bar{t}^2 + \Delta \bar{x}^2
+\end{equation}
+
+Then, I think about my own reference frame.  When I'm stopped, all of my motion is through time, which I am accomplishing at $c$.  If I speed up, my $\Delta s$ must stay the same, and so I must be accomplishing less of my travel through time and more through space.  This helps me recall that \textbf{moving clocks run slow}, so a moving clock will measure \emph{less} time than a clock at rest.  Then, I know that lengths do the opposite thing, so I know that \textbf{moving rulers shrink} and that a proper length is \emph{longer} than a length at rest.
+
+Now, if I'm given a moving time, $\Delta \bar{t}$, I know that to get the time at rest, $\Delta {t}$, I need to change it by a factor of $\gamma$.  But $\gamma$ is a somewhat messy fraction.  Do I multiply or divide $\Delta \bar{t}$ by $\gamma$ in order to make it smaller?  I have no mnemonic for this; I just remember that $\gamma$ works like a regular number (for $v<c$) and that multiplying will make things bigger and dividing makes things smaller.  Now I have the equations $\Delta t = \gamma \Delta \bar{t}$ and $\Delta x = \frac{1}{\gamma} \Delta \bar{x}$.
+
+So, this question gives a time interval of the pion when it's moving, $\Delta \bar{t} = 10^{-8} \text{ s}$, a length interval at rest, $\Delta x = 30\text{ m}$, and asks for the speed which reconciles these two numbers.  A trick which eluded me for a surprisingly long time was to rewrite the length interval as a time interval.  This allows us to use $\Delta t = \gamma \Delta \bar{t}$ (remember, the time at rest must be bigger than the moving time, so we multiply by $\gamma$).
+
+\begin{align}
+\Delta t &= \gamma \Delta \bar{t},\\
+\Delta t &\rightarrow \frac{\Delta x}{v},\\
+\Rightarrow \frac{\Delta x}{v} &= \gamma\Delta \bar{t} = \sqrt{\frac{1}{1-v^2/c^2}}\Delta \bar{t},\\
+\Rightarrow v &= \sqrt{\frac{1}{c^2\Delta \bar{t}^2+\Delta x^2}}c\Delta x.
+\end{align}
+
+First, do these units work out?  Yes:  The denominator of the fraction has $[\text{m}]^2/[\text{s}]^2 \times [\text{s}]^2$, which gives $[\text{m}]^2$.  This is added to another $[\text{m}]^2$, and it's in the denominator of a square root, ultimately giving a factor of $1/[\text{m}]$.  That leaves us with $[\text{m}]/[\text{s}] \times [\text{m}]/[\text{m}] = [\text{m}]/[\text{s}]$, which is a velocity.  Good.
+
+Now we are given $\Delta x = 30 \text{ m}$ and $\Delta \bar{t} = 10^{-8}\text{ s}$.  Furthermore, a few of the answers (except the first one) are with 10\% of the approximation $c = 3\times10^8 \text{ ms}^{-1}$ so that tells us we should use $c = 2.98\times 10^{8}\text { ms}^{-1}$ instead.  So,
+\begin{align}
+v &= \sqrt{\frac{1}{2.98\times10^{16} \times 10^{-16}+900}} 30c,\\
+&= \sqrt{\frac{1}{902.98}} 30c,\\
+&= .998 c = 2.98\times10^8 \text{ ms}^{-1}.
+\end{align}
+
+\answer{D}
+
+\section{Making events simultaneous}
+In one frame, the two events are separated by a spacetime interval $\Delta s^2 = -c \Delta t^2 + \Delta x^2$.  This same interval is observed by a moving frame (with coordinates $\bar{t}$ and $\bar{x}$).  If the events are simultaneous, then we know that $\Delta \bar{t} = 0$, and so
+\begin{equation}
+\Delta s^2 = -c \Delta t^2 + \Delta x^2 = \Delta \bar{x}^2.
+\end{equation}
+Furthermore, we know that any separation in space must be real, so $\Delta \bar{x}^2 > 0$.  Therefore,
+\begin{align}
+-c \Delta t^2 + \Delta x^2 &> 0,\\
+\Rightarrow\Delta x^2 &> c \Delta t^2,\\
+\Rightarrow\frac{\Delta x^2}{\Delta t^2} &> c.
+\end{align}
+Alternately, you could note that the requirement that $\Delta\bar{x}>0$ requires also that $\Delta s>0$, which, with this metric signature, is a space-like interval.  Such intervals require faster-than-light travel.\\
+
+\answer{C}
+
+\section{Temperature dependence of a blackbody}
+This is just about having memorized the blackbody relationship, which is that the energy per time (power, $P$) per area, $A$, is proportional to the fourth power of temperature, $T$ by $\sigma \approx 5.67 \times 10^{-8}\text{W}\text{m}^{-2}\text{K}^{-4}$, the Stefan-Boltzmann constant:
+\begin{equation}
+\frac{P}{A} = \sigma T^4.
+\end{equation}
+Therefore, if an object triples its temperature, its energy per time per area will increase by a factor of $3^4 = 81$.\\
+
+\answer{E}
+
+\section{An expanding adiabatic gas}
+Refer to the answer to question 6 and consider each of the answers.\\
+(A) is true because an adiabatic process is defined as one which conserves heat.\\
+(B) is true because a change in entropy can be written $\Delta S = \Delta Q/T$ for a change in heat $\Delta Q$ and temperature T.  For an adiabatic process, $\Delta Q = 0$.\\
+(C) is true because the change of internal energy is the negative of the work done on or by the gas, which is defined as $W = \int P dV$.\\
+(D) is true for the same reason as (C).\\
+(E) is \emph{not} true because this process is \emph{adiabatic}, which makes no promises about temperature, unlike an isothermal process.\\
+
+\answer{E}
+
+\section{A $PV$ Diagram}
+First I will go over the rigorous way to calculate the answer, then I will go over some quick tricks for $PV$ diagrams.
+
+Rigorously, you have to remember the equations relating work, pressure and volume, and then calculate the work for each segment.  The solution will be the sum of each.  The trick comes in not knowing the exact pressure at $B$.  There are a couple of ways to deal with this.
+
+The relevant equations are 
+\begin{equation}
+W = \int_{V_1}^{V_2} P dV,
+\end{equation}
+and, for an isothermal process,
+\begin{equation}
+W = P_i V_i \ln\left(\frac{V_f}{V_i}\right).
+\end{equation}
+Now, going counter-clockwise starting at $A$, we compute the work done in segment $AB$.  Normally, we would use the integral $W = \int P dV$, but this is just a flat line with constant pressure, so we can write it as a simple difference:
+\begin{align}
+W_{AB} &= P\Delta V,\\
+&= 200 \times \left(V_b - 2\right).
+\end{align}
+Then, for the segment $BC$, we can't really use the integral formulation for work, because it's some curve we don't know.  Instead, we'll use the logarithm for isothermal work:
+\begin{align}
+W_{BC} &= P_f V_f \ln\left(\frac{V_f}{V_i}\right),\\
+&= 500 \times 2 \times \ln \left(\frac{2}{V_b}\right).
+\end{align}
+Finally, for $CA$, there is no change in volume, so the work done is 0.  So the total work is just $W = W_{AB}+W_{BC}$.  However, there's still the unknown quantity $V_b$.  We can solve for this by noting that the fact that the path from B to C is isothermal, the quantity $PV$ will be conserved along it:
+\begin{align}
+P_B V_B &= P_C V_C,\\
+\Rightarrow 200 \times V_B &= 500 \times 2,\\
+\Rightarrow V_B &= 5.
+\end{align}
+Now, plugging $V_B$ into the equation for total work,
+\begin{align}
+W &= 200 \times \left(5 - 2\right) + 500 \times 2 \times \ln{\left(\frac{2}{5}\right)}, \\
+&= 600 + 400  \ln{\left(\frac{2}{5}\right)}.
+\end{align}
+To quickly estimate $\ln{\left(2/5\right)}$, note that $e \approx 2.7\approx5/2 = \left(2/5\right)^{-1}$.  So, $\ln{\left(2/5\right)}\approx -1$.  Then,
+\begin{align}
+W &= 600 \times 1000\times-1 = -400.
+\end{align}
+Now, there are some ways to really speed up the calculation of this problem.  First, if a $PV$ cycle is counter-clockwise, then that means that there is work being done on the system and the total work of the system will be negative.  This immediately knocks out the first two solutions for this problem.  Furthermore, you know that the answer is not 0 because there is only one segment which can contribute 0 work, and the other paths must be contributing non-zero work to the process.  This leaves (D) and (E) as the possible answers.  Then, to calculate the area, you can approximate the cycle as a triangle and wind up with a sufficiently accurate answer.
+
+So, we can measure the length of $AB$ with our pencil, and see that it's approximately as long as the distance from the origin to the ``2'' on the $x$-axis.  That means the area of the triangle $ABC$ is approximately $1/2 \times \left(500-200\right) \times 2 = 300$.  So, the work calculated this way is $-300$, which agrees even better with the provided solution than the rigorous method above.\\
+
+\answer{D}
+\section{RLC circuit component values}
+This problem requires you to know that the current is maximized at the resonant frequency.  The resonant frequency, $\omega$, occurs when the complex impedance of the circuit vanishes.  That is to say,
+\begin{align}
+X_L &= X_C,\\
+\Rightarrow \omega L &= \frac{1}{\omega C},\\
+\Rightarrow C &= \frac{1}{\omega^2 L},
+\end{align}
+for a circuit with a capacitor of capacitance $C$ and an inductor of inductance $L$.  Plugging in the values provided, we have
+\begin{align}
+C &= \frac{1}{(10^3 \text{ rad}/\text{s})^2 \times 25 \times 10^{-3} \text{ H}},\\
+&= \frac{1}{25} \times 10^{-3} \text{ F},\\
+&= 40 \times 10^{-6} \text{ F}.
+\end{align}
+
+\answer{D}
+
+\section{High-pass filters}
+First I'll give a qualitative solution requiring little written math, and then I'll go through the rigorous method.  The qualitative solution is better for the test itself, as it takes very little time, but I wouldn't understand it if I didn't know the mathematical solution.
+
+Qualitatively, recall what high- and low-pass filters \emph{do}: A high-pass filter takes in an AC signal, and if the frequency is sufficiently high produces an output signal such that $V_\text{in} \approx V_\text{out}$.  Otherwise, if the frequency is too low, no signal is passed to the output wire.  Another way to say this is that the voltage drop measured across the whole circuit should be approximately the same as the drop measured across the input.  Low-pass filters are reversed; their goal is to measure a \emph{lower} voltage drop, and allow lower frequencies through.
+
+Now recall the equations for the complex impedance of capacitors and inductors:
+\begin{align}
+Z_C &= \frac{1}{i\omega C},\\
+Z_L &= i\omega L.
+\end{align}
+So as the frequency increases, it is $X_L$ that gets large, while $X_C$ gets small.  Now, which of the circuits will measure a higher voltage drop across the element labeled ``Out''?  Going through each option:
+\begin{enumerate}[label=\Roman*.]
+\item The inductor's complex impedance is proportional to frequency.  At high frequencies (for a high-pass filter), the inductor will have a high voltage drop, leaving the resistor with a relatively small one.  This is \emph{not} a high-pass filter.\\
+\item The resistor's impedance does not depend on frequency, but as said above, the inductor's impedance rises linearly.  Therefore, at high frequencies, the inductor will have a higher drop than the resistor.  This \emph{is} a high-pass filter.\\
+\item The capacitor's inductance is inversely proportional to frequency.  By the reverse logic of circuit I, this \emph{is} a high-pass filter.\\
+\item By the reasoning for the above circuits, this is \emph{not} a high-pass filter.
+\end{enumerate}
+
+Now, to solve this rigorously but slowly, you need to know that the total impedance is the quadrature sum of all complex impedances,
+\begin{equation}
+Z_\text{tot.} = R + i\left(\omega L - \frac{1}{\omega C}\right),
+\end{equation}
+for a circuit with a resistor, inductor and capacitor.  
+\begin{enumerate}[label=*]
+\item It is worth memorizing, though unnecessary for this specific problem, that total impedance is a complex number.  This allows you to talk about the angle $\phi$ between the real and the complex components.  This produces the handy reformulating of the total impedance as
+\begin{align}
+Z_\text{tot.} &= \left|Z\right|e^{i\phi},\\
+\left|Z\right|&=\sqrt{R^2 + Z_C^2 + Z_L^2},\\
+\phi &= \arctan \left( \frac{Z_\text{eff.}}{R_\text{eff.}}\right),
+\end{align}
+where $Z_\text{eff.}$ and $R_\text{eff.}$ are the effective complex impedances and effective resistances, respectively.
+\end{enumerate}
+So, to do this problem, you must find the output voltage by using Ohm's law, $V = IZ$ (for complex impedance $Z$), and look at the behavior of the circuit as $\omega \rightarrow \infty$.  You can solve for $I$ with $I = V_\text{in.}/Z$, which is to say dividing the \emph{input} voltage by whatever impedance it encounters.  This is also helpful because it will give an output voltage in terms of the input voltage, and comparing those two is exactly what we need to do to determine if something is a high- or low-pass filter.  Going through each circuit, we have:
+\begin{enumerate}[label=\Roman*.]
+\item In this case, $Z = R + i\omega L$.  Therefore, $I = V_\text{in.}/\left(R+i\omega L\right),$ and so the output voltage is this current multiplied by the resistor at the end,
+\begin{equation}
+V_\text{out.} = R\frac{V_\text{in.}}{R+i\omega L}.
+\end{equation}
+Now, look at the behavior at high frequency.  As $\omega \rightarrow \infty$, $V_\text{out.} \rightarrow 0$.  Therefore, at high frequency, the output turns off.  This is therefore \emph{not} a high-pass filter.
+
+\item Here, $Z = R + i\omega L$ as before, but now the current must pass by the inductor instead of the resistor.  Therefore, the output voltage is multiplied by the inductor's complex impedance instead,
+\begin{equation}
+V_\text{out.} = i\omega L\frac{V_\text{in.}}{R+i\omega L}. 
+\end{equation}
+Whether or not this converges provides an opportunity to review L'H\^{o}pital's rule.  If the limits of numerator and the denominator exist, and they both converge to either $0$ or $\pm \infty$, then L'H\^{o}pital's rule applies, which says that not only does the limit of the fraction exist, but that it is equal to the limit of the derivative of the numerator divided by the derivative of the denominator.  In math,
+\begin{align}
+\lim_{x\rightarrow c} \frac{f(x)}{g(x)} &= \lim_{x\rightarrow c} \frac{f'(x)}{g'(x)},\\
+\text{provided that } \lim_{x\rightarrow c} f(x) &= \lim_{x\rightarrow c} g(x) = 0 \text{ or } \pm \infty.
+\end{align}
+Here, we can quickly check that this condition is satisfied, and so we need only take the derivative of the numerator and the denominator with respect to $\omega$ and examine the limit of that.
+\begin{align}
+\lim_{\omega\rightarrow \infty} \frac{V_\text{in.} i L}{iL} = V_\text{in.}.
+\end{align}
+So we have $V_\text{out.} \approx V_\text{in.}$ and this is a high-pass filter.
+
+\item Here, $Z = R + 1/i\omega C$.  The circuit is analogous to the first one in setting up the equation for the output voltage: you just swap out $i \omega L$ for $1/i\omega C$.  So,
+\begin{equation}
+V_\text{out.} = R\frac{V_\text{in.}}{R+1/i\omega C}.
+\end{equation}
+In the limit as $\omega$ gets large, then, the denominator approaches $R$.  This cancels with the $R$ in the numerator, leaving an output voltage equal to the input.  Therefore, this is a high-pass filter.
+
+\item As before, $Z = R + 1/i\omega C$, but the final circuit element is the capacitor.  So the the output voltage will be
+\begin{equation}
+V_\text{out.} = \left(1/i\omega C\right)\frac{V_\text{in.}}{R+1/i\omega C},
+\end{equation}
+which goes to $0$ as $\omega \rightarrow \infty$.  This is a low-pass filter.
+\end{enumerate}
+
+\answer{D}
+
+\section{An RL circuit}
+As soon as the switch is closed, the battery is going to be pumping the inductor full of current, and it will eventually become impenetrable.  Right away, this removes all the possible solutions which are not decaying, leaving only (D) and (E).  Then you must have memorized the \emph{time constant}, $\tau$.  You can derive $\tau$ by examining the response of the differential equation governing the system to a step function (provided here by flipping the switch).  The time constant represents the amount of time for the system to decay if it continued at the original rate.  In the case of the RL circuit, the differential equation is $V = \ddot{Q}L + \dot{Q}R$, and the time constant is $\tau = L/R$.  For an RC circuit, by the way, $V = -RC\dot{V}$, with $\tau = RC$.
+
+Finally, we have $\tau = L/R$, and $L = 10 \text{ mH}$, and $R = 2 \Omega$.  So,
+\begin{equation}
+\tau = 10\times10^{-3}\text{ H}/2\Omega = 5\times10^{-3}\text{ s} = 5\text{ ms}.
+\end{equation}
+
+\answer{D}
+\section{Magnetic charge in Maxwell}
+The logic for this question is largely similar to a question about magnetic monopoles.  You make analogous equations for $\mathbf{B}$ that you already have for $\mathbf{E}$, and Maxwell's equations become symmetrical for $\mathbf{B}$ and $\mathbf{E}$.
+\begin{enumerate}[label=\Roman*.]
+\item Presumably, if magnetic charge exists, then it only sources magnetic fields when it's not moving, and would leave the electric field sourced by electric charge untouched.  This equation describes the electric field due to electric charge.
+\item For the same reason as above, we would expect the magnetic charge to source a diverging field, if it behaves like electric charge.
+\item We know that moving electric charge, electric current, does induce a curling magnetic field.  Therefore, by analogy, moving magnetic current would induce a curling electric field.
+\item The equation for the curl of the electric field now contains only contributions from the magnetic field and the magnetic current (if we follow the prescription we just established above).  Therefore, by analogy, the equation for the curl of the magnetic field should contain only contributions from the electric field and current, as it already does.
+\end{enumerate}
+\answer{E}
+
+\section{Current through loops}
+It is handy here to recall the rule of thumb that systems will induce current in such a way that the resulting magnetic field ``fights'' the change in magnetic flux.  (Some texts say ``nature abhors a change in flux'', but I've always personally found that statement difficult to understand.)  In the system provided, the center ring is moving towards $A$ and away from $B$.  Taking one ring at a time:
+\begin{itemize}
+\item{$B$}: The center ring is moving \emph{away} from ring $B$, so the flux is decreasing.  In order to try and maintain the magnetic field $B$ was experiencing, it will want a field pointing the same direction as the center ring, and so it will induce a current moving in the same direction, counterclockwise.
+\item{$A$}:  The center ring is moving \emph{towards} ring $A$, so its flux in increasing.  Therefore, $A$ will want a field pointing in the opposite direction of the center rings, so its current will be the opposite direction, clockwise
+\end{itemize}
+
+\answer{C}
+
+\section{Angular momentum commutation relations}
+
+
 \end{document}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
