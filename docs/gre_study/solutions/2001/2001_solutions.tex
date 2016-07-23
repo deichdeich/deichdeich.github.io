@@ -8,6 +8,7 @@
 \usepackage{epstopdf}
 \usepackage{physics}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{gensymb}
 \newcommand{\answer}[1]{Answer: \textbf{(#1)}.}
@@ -291,7 +292,7 @@ E_1 = 4 \times 13.6 \text{ eV} = 54.4.\text{ eV}.
 
 It's tempting to say that the energy required to remove the two electrons of neutral helium would just be $2 \times 54.4 \text{ eV} = 108.8 \text{ eV}$, but this is not the case.  Considering one electron at a time, one can see that the first one is not \emph{just} experiencing the tug of the nucleus, but is \emph{also} being pushed away by a Coulomb repulsion from the \emph{other electron}.  Therefore, we expect it to be slightly easier to remove the first of two electrons than to remove one solitary electron.
 
-In lieu of perturbation theory, we can subtract the theoretical value of 54.4 eV for a single ground state energy from the experimental value of 79 eV for complete ionization.  What's left over will be the energy that was required to remove an electron whose exist was being pushed along by a Coulomb repulsion.  So, 
+In lieu of perturbation theory, we can subtract the theoretical value of 54.4 eV for a single ground state energy from the experimental value of 79 eV for complete ionization.  What's left over will be the energy that was required to remove an electron whose exit was being pushed along by a Coulomb repulsion.  So, 
 \begin{equation}
 79 \text{ eV} - 54.4 \text{ eV} = 24.6 \text{ eV}.
 \end{equation}
@@ -728,6 +729,34 @@ It is handy here to recall the rule of thumb that systems will induce current in
 \answer{C}
 
 \section{Angular momentum commutation relations}
+For this problem, one can either recall the identity for combining commutators, or do the brute-force method and derive the general rule.  I'll do the latter.
+
+The given commutations, written out, are
+\begin{align}
+[L_x,L_y] &= L_xL_y - L_yL_x = i\hbar L_z,\\
+[L_y,L_z] &= L_yL_z - L_zL_y = i\hbar L_x, \text{and}\\
+[L_z,L_x] &= L_zL_x - L_xL_z=  i\hbar L_y.
+\end{align}
+So when we write out the desired commutation relation, it is clear that certain bits can be replaced by the relations above:
+\begin{align}
+[L_x L_y, L_z] &= L_x L_y L_z - L_zL_xL_y,\\
+&= L_x \left(i\hbar L_x + L_zL_y\right) - (i\hbar L_y + L_xL_z)L_y,\\
+&= i\hbar \left(L_x^2 - L_y^2\right).
+\end{align}
+
+\answer{D}
+
+\section{Energy of a particle in a box}
+This problem has a lot of red herrings.  The only thing you need to know are the energies of the energy eigenstates.  The measurement of the energy of a particle with a composite wavefunction will only give you the energy of one of the constituent wavefunctions.
+
+Therefore, the only equation we need to concern ourselves with is
+\begin{equation}
+E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} = n^2 E_1.
+\end{equation}
+
+So, we're looking for answers which are both square multiples of $E_1$ and appear in the composite wavefunction.  Incidentally, there's only one answer which is even a square, so we go with that one, but what if there were two which were perfect squares, say $9E_1$ and $25E_1$?  We would still go with $9E_1$ because we see that the wavefunction has $n=\sqrt{9}=3$ but not $n=\sqrt{25}=5$.\\
+
+\answer{D}
 
 
 \end{document}  
