@@ -12,6 +12,7 @@
 \usepackage{enumitem}
 \usepackage{gensymb}
 \newcommand{\answer}[1]{Answer: \textbf{(#1)}.}
+\newcommand{\units}[1]{\left[\text{#1}\right]}
 \newcommand\blfootnote[1]{%
   \begingroup
   \renewcommand\thefootnote{}\footnote{#1}%
@@ -81,7 +82,7 @@ Then, with conservation of energy,
 \frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 &= \frac{1}{2} \left(m_1 + m_2\right) (v_{12})^2\\
 \Rightarrow \frac{1}{2} 2 m v_1^2  &= \left(\frac{1}{2} 3 m\right) \left(\frac{2}{3} v_1\right)^2\\
 \Rightarrow m v_1^2 &= \left(\frac{3}{2}m\right) \frac{4}{9} v_1^2\\
-\Rightarrow KE_i &= \frac{2}{3} KE_f
+\Rightarrow KE_f &= \frac{2}{3} KE_i
 \end{align}
 So the final energy is $\frac{2}{3}$ of the initial, meaning the system has lost a third of its kinetic energy.
 
@@ -574,6 +575,7 @@ Refer to the answer to question 6 and consider each of the answers.\\
 \section{A $PV$ Diagram}
 First I will go over the rigorous way to calculate the answer, then I will go over some quick tricks for $PV$ diagrams.
 
+\subsubsection*{Rigorous solution}
 Rigorously, you have to remember the equations relating work, pressure and volume, and then calculate the work for each segment.  The solution will be the sum of each.  The trick comes in not knowing the exact pressure at $B$.  There are a couple of ways to deal with this.
 
 The relevant equations are 
@@ -609,6 +611,8 @@ To quickly estimate $\ln{\left(2/5\right)}$, note that $e \approx 2.7\approx5/2 
 \begin{align}
 W &= 600 \times 1000\times-1 = -400.
 \end{align}
+
+\subsubsection*{Qualitative solution}
 Now, there are some ways to really speed up the calculation of this problem.  First, if a $PV$ cycle is counter-clockwise, then that means that there is work being done on the system and the total work of the system will be negative.  This immediately knocks out the first two solutions for this problem.  Furthermore, you know that the answer is not 0 because there is only one segment which can contribute 0 work, and the other paths must be contributing non-zero work to the process.  This leaves (D) and (E) as the possible answers.  Then, to calculate the area, you can approximate the cycle as a triangle and wind up with a sufficiently accurate answer.
 
 So, we can measure the length of $AB$ with our pencil, and see that it's approximately as long as the distance from the origin to the ``2'' on the $x$-axis.  That means the area of the triangle $ABC$ is approximately $1/2 \times \left(500-200\right) \times 2 = 300$.  So, the work calculated this way is $-300$, which agrees even better with the provided solution than the rigorous method above.\\
@@ -632,7 +636,7 @@ C &= \frac{1}{(10^3 \text{ rad}/\text{s})^2 \times 25 \times 10^{-3} \text{ H}},
 
 \section{High-pass filters}
 First I'll give a qualitative solution requiring little written math, and then I'll go through the rigorous method.  The qualitative solution is better for the test itself, as it takes very little time, but I wouldn't understand it if I didn't know the mathematical solution.
-
+\subsubsection*{Qualitative solution}
 Qualitatively, recall what high- and low-pass filters \emph{do}: A high-pass filter takes in an AC signal, and if the frequency is sufficiently high produces an output signal such that $V_\text{in} \approx V_\text{out}$.  Otherwise, if the frequency is too low, no signal is passed to the output wire.  Another way to say this is that the voltage drop measured across the whole circuit should be approximately the same as the drop measured across the input.  Low-pass filters are reversed; their goal is to measure a \emph{lower} voltage drop, and allow lower frequencies through.
 
 Now recall the equations for the complex impedance of capacitors and inductors:
@@ -640,7 +644,7 @@ Now recall the equations for the complex impedance of capacitors and inductors:
 Z_C &= \frac{1}{i\omega C},\\
 Z_L &= i\omega L.
 \end{align}
-So as the frequency increases, it is $X_L$ that gets large, while $X_C$ gets small.  Now, which of the circuits will measure a higher voltage drop across the element labeled ``Out''?  Going through each option:
+So as the frequency increases, it is $Z_L$ that gets large, while $Z_C$ gets small.  Now, which of the circuits will measure a higher voltage drop across the element labeled ``Out''?  Going through each option:
 \begin{enumerate}[label=\Roman*.]
 \item The inductor's complex impedance is proportional to frequency.  At high frequencies (for a high-pass filter), the inductor will have a high voltage drop, leaving the resistor with a relatively small one.  This is \emph{not} a high-pass filter.\\
 \item The resistor's impedance does not depend on frequency, but as said above, the inductor's impedance rises linearly.  Therefore, at high frequencies, the inductor will have a higher drop than the resistor.  This \emph{is} a high-pass filter.\\
@@ -648,19 +652,20 @@ So as the frequency increases, it is $X_L$ that gets large, while $X_C$ gets sma
 \item By the reasoning for the above circuits, this is \emph{not} a high-pass filter.
 \end{enumerate}
 
-Now, to solve this rigorously but slowly, you need to know that the total impedance is the quadrature sum of all complex impedances,
+\subsubsection*{Rigorous solution}
+Now, to solve this rigorously but slowly, you need to know that the total impedance is the sum of all complex impedances,
 \begin{equation}
-Z_\text{tot.} = R + i\left(\omega L - \frac{1}{\omega C}\right),
+Z_\text{tot.} = R + i\left(\omega L + \frac{1}{\omega C}\right),
 \end{equation}
 for a circuit with a resistor, inductor and capacitor.  
 \begin{enumerate}[label=*]
 \item It is worth memorizing, though unnecessary for this specific problem, that total impedance is a complex number.  This allows you to talk about the angle $\phi$ between the real and the complex components.  This produces the handy reformulating of the total impedance as
 \begin{align}
 Z_\text{tot.} &= \left|Z\right|e^{i\phi},\\
-\left|Z\right|&=\sqrt{R^2 + Z_C^2 + Z_L^2},\\
+\left|Z\right|&=\sqrt{R_\text{eff}^2 + Z_C^2 + Z_L^2},\\
 \phi &= \arctan \left( \frac{Z_\text{eff.}}{R_\text{eff.}}\right),
 \end{align}
-where $Z_\text{eff.}$ and $R_\text{eff.}$ are the effective complex impedances and effective resistances, respectively.
+where $Z_\text{eff.} = Z_C + Z_L$ and $R_\text{eff.}$ are the effective complex impedances and effective resistances, respectively.
 \end{enumerate}
 So, to do this problem, you must find the output voltage by using Ohm's law, $V = IZ$ (for complex impedance $Z$), and look at the behavior of the circuit as $\omega \rightarrow \infty$.  You can solve for $I$ with $I = V_\text{in.}/Z$, which is to say dividing the \emph{input} voltage by whatever impedance it encounters.  This is also helpful because it will give an output voltage in terms of the input voltage, and comparing those two is exactly what we need to do to determine if something is a high- or low-pass filter.  Going through each circuit, we have:
 \begin{enumerate}[label=\Roman*.]
@@ -670,14 +675,14 @@ V_\text{out.} = R\frac{V_\text{in.}}{R+i\omega L}.
 \end{equation}
 Now, look at the behavior at high frequency.  As $\omega \rightarrow \infty$, $V_\text{out.} \rightarrow 0$.  Therefore, at high frequency, the output turns off.  This is therefore \emph{not} a high-pass filter.
 
-\item Here, $Z = R + i\omega L$ as before, but now the current must pass by the inductor instead of the resistor.  Therefore, the output voltage is multiplied by the inductor's complex impedance instead,
+\item Here, $Z = R + i\omega L$ as before, but now the current must pass by the inductor instead of the resistor.  Therefore, the input voltage is multiplied by the inductor's complex impedance instead,
 \begin{equation}
 V_\text{out.} = i\omega L\frac{V_\text{in.}}{R+i\omega L}. 
 \end{equation}
-Whether or not this converges provides an opportunity to review L'H\^{o}pital's rule.  If the limits of numerator and the denominator exist, and they both converge to either $0$ or $\pm \infty$, then L'H\^{o}pital's rule applies, which says that not only does the limit of the fraction exist, but that it is equal to the limit of the derivative of the numerator divided by the derivative of the denominator.  In math,
+Whether or not this converges provides an opportunity to review L'H\^{o}pital's rule.  If the limits of the numerator and the denominator exist, and they both converge to either $0$ or $\pm \infty$, then L'H\^{o}pital's rule applies, which says that not only does the limit of the fraction exist, but that it is equal to the limit of the derivative of the numerator divided by the derivative of the denominator.  In math,
 \begin{align}
 \lim_{x\rightarrow c} \frac{f(x)}{g(x)} &= \lim_{x\rightarrow c} \frac{f'(x)}{g'(x)},\\
-\text{provided that } \lim_{x\rightarrow c} f(x) &= \lim_{x\rightarrow c} g(x) = 0 \text{ or } \pm \infty.
+\text{provided that } \lim_{x\rightarrow c} f(x) &, \lim_{x\rightarrow c} g(x) = 0 \text{ or } \pm \infty.
 \end{align}
 Here, we can quickly check that this condition is satisfied, and so we need only take the derivative of the numerator and the denominator with respect to $\omega$ and examine the limit of that.
 \begin{align}
@@ -701,7 +706,7 @@ which goes to $0$ as $\omega \rightarrow \infty$.  This is a low-pass filter.
 \answer{D}
 
 \section{An RL circuit}
-As soon as the switch is closed, the battery is going to be pumping the inductor full of current, and it will eventually become impenetrable.  Right away, this removes all the possible solutions which are not decaying, leaving only (D) and (E).  Then you must have memorized the \emph{time constant}, $\tau$.  You can derive $\tau$ by examining the response of the differential equation governing the system to a step function (provided here by flipping the switch).  The time constant represents the amount of time for the system to decay if it continued at the original rate.  In the case of the RL circuit, the differential equation is $V = \ddot{Q}L + \dot{Q}R$, and the time constant is $\tau = L/R$.  For an RC circuit, by the way, $V = -RC\dot{V}$, with $\tau = RC$.
+As soon as the switch is closed, the battery is going to be pumping the inductor full of current, eventually leaving it impenetrable.  Right away, this removes all the possible solutions which are not decaying, leaving only (D) and (E).  Then you must have memorized the \emph{time constant}, $\tau$.  You can derive $\tau$ by examining the response of the differential equation governing the system to a step function (provided here by flipping the switch).  The time constant represents the amount of time for the system to decay if it continued at the original rate.  In the case of the RL circuit, the differential equation is $V = \ddot{Q}L + \dot{Q}R$, and the time constant is $\tau = L/R$.  For an RC circuit, by the way, $V = -RC\dot{V}$, with $\tau = RC$.
 
 Finally, we have $\tau = L/R$, and $L = 10 \text{ mH}$, and $R = 2 \Omega$.  So,
 \begin{equation}
@@ -723,7 +728,7 @@ The logic for this question is largely similar to a question about magnetic mono
 It is handy here to recall the rule of thumb that systems will induce current in such a way that the resulting magnetic field ``fights'' the change in magnetic flux.  (Some texts say ``nature abhors a change in flux'', but I've always personally found that statement difficult to understand.)  In the system provided, the center ring is moving towards $A$ and away from $B$.  Taking one ring at a time:
 \begin{itemize}
 \item{$B$}: The center ring is moving \emph{away} from ring $B$, so the flux is decreasing.  In order to try and maintain the magnetic field $B$ was experiencing, it will want a field pointing the same direction as the center ring, and so it will induce a current moving in the same direction, counterclockwise.
-\item{$A$}:  The center ring is moving \emph{towards} ring $A$, so its flux in increasing.  Therefore, $A$ will want a field pointing in the opposite direction of the center rings, so its current will be the opposite direction, clockwise
+\item{$A$}:  The center ring is moving \emph{towards} ring $A$, so its flux in increasing.  Therefore, $A$ will want a field pointing in the opposite direction of the center ring's, so its current will be the opposite direction, clockwise
 \end{itemize}
 
 \answer{C}
@@ -744,29 +749,329 @@ So when we write out the desired commutation relation, it is clear that certain 
 &= i\hbar \left(L_x^2 - L_y^2\right).
 \end{align}
 
+In the lines above, I have inadvertently derived the identity which you might memorize,
+\begin{equation}
+[AB,C] = [A,B]C + B[A,C].
+\end{equation}
+
 \answer{D}
 
 \section{Energy of a particle in a box}
-This problem has a lot of red herrings.  The only thing you need to know are the energies of the energy eigenstates.  The measurement of the energy of a particle with a composite wavefunction will only give you the energy of one of the constituent wavefunctions.
+This problem has a lot of red herrings.  The only thing you need to know are the energies of the energy eigenstates.  The measurement of the energy of a particle with a ensemble wavefunction will only give you the energy of one of the constituent wavefunctions.
 
 Therefore, the only equation we need to concern ourselves with is
 \begin{equation}
 E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} = n^2 E_1.
 \end{equation}
 
-So, we're looking for answers which are both square multiples of $E_1$ and appear in the composite wavefunction.  Incidentally, there's only one answer which is even a square, so we go with that one, but what if there were two which were perfect squares, say $9E_1$ and $25E_1$?  We would still go with $9E_1$ because we see that the wavefunction has $n=\sqrt{9}=3$ but not $n=\sqrt{25}=5$.\\
+So, we're looking for answers which are both square multiples of $E_1$ and appear in the ensemble wavefunction.  Incidentally, there's only one answer which is even a square, so we go with that one, but what if there were two which were perfect squares, say $9E_1$ and $25E_1$?  We would still go with $9E_1$ because we see that the wavefunction has an eigenstate in the state $n=\sqrt{9}=3$ but not in $n=\sqrt{25}=5$.\\
+
+\answer{D}
+
+\section{Harmonic oscillator eigenstates}
+This problem is largely similar to problem 29.  We're given the eigenvalues of an operator and asked to find the expectation value of some ensemble state.  The prescription is exactly the same:  Apply the operator to each constituent eigenfunction, and take the inner product of the ensemble state to determine the expectation value.
+
+The operator of interest is
+\begin{equation}
+H\ket{n} = \hbar \omega \left(n+\frac{1}{2}\right)\ket{n},
+\end{equation}
+which we will apply to the wavefunction
+\begin{align}
+\ket{\psi} &= \frac{1}{\sqrt{14}}\ket{1} - \frac{2}{\sqrt{14}}\ket{2} + \frac{3}{\sqrt{14}}\ket{3},\\
+&= \frac{1}{\sqrt{14}}\left(\ket{1} - 2\ket{2} + 3\ket{3}\right)
+\end{align}
+Then we will take the inner product $\bra{\psi}H\ket{\psi}$ to find the expectation value.  Applying the operator goes like this:
+\begin{align}
+H\ket{\psi} &=  \frac{1}{\sqrt{14}}\left(H\ket{1} - 2H\ket{2} + 3H\ket{3}\right),\\
+&=  \frac{1}{\sqrt{14}}\left(\hbar \omega \left(1+\frac{1}{2}\right)\ket{1} - 2\hbar \omega \left(2+\frac{1}{2}\right)\ket{2} + 3\hbar \omega \left(3+\frac{1}{2}\right)\ket{3}\right),\\
+&= \frac{\hbar \omega}{\sqrt{14}}\left( \frac{3}{2}\ket{1} - 2 \frac{5}{2}\ket{2} + 3 \frac{7}{2}\ket{3}\right).
+\end{align}
+Then, to take the inner product of $H\ket{\psi}$ with $\bra{\psi}$, multiply the coefficients of matching eigenfunctions (remember, the inner product is ultimately a dot product):
+\begin{align}
+\bra{\psi}H\ket{\psi} &= \frac{1}{\sqrt{14}} \times \frac{\hbar\omega}{\sqrt{14}}\left(1\times\frac{3}{2} + 2\times2 \frac{5}{2}+3\times 3 \frac{7}{2}\right),\\
+&= \frac{43}{14}\hbar\omega.
+\end{align}
+
+\answer{B}
+
+\section{Dependence of the de Broglie wavelength on a potential}
+This problem is asking us to manipulate two equations which depend on momentum (de Broglie wavelength and classical kinetic energy) and asks us to find the wavelength when the energy changes.  The actual calculations are relatively straightforward; I think most of the trick to this problem is in remembering the de Broglie wavelength and that classically, kinetic energy is related to momentum.
+
+So, before the particle enters the potential (while it's still free), it has a wavelength and energy
+\begin{align}
+\lambda &= \frac{h}{p}, \text{ and}\\
+E &= \frac{p^2}{2m},
+\end{align}
+respectively.  Afterward, the particle will have some wavelength, $\lambda'$, and energy, $E'$,
+\begin{align}
+\lambda' &= \frac{h}{p'},\\
+E' &= \frac{p^2}{2m} - V = E - V.
+\end{align}
+And, because we want an equation for $\lambda'$, I'll combine the two equations above like so:
+\begin{equation}
+\lambda' = \frac{h}{\sqrt{2m(E-V)}}
+\end{equation}
+It is difficult at first glance to see what the best way is to relate the equations describing the particle before and after entering the potential.  I think it is easiest is to see that Plank's constant is going to be the same in both, and to write out Plank's constant in terms of the relevant quantities.  (This is sort of using a ``conservation of Plank's constant'', but that's also sort of dumb\footnote{$h$ is a fundamental constant, so it's not really conserved, it's an invariant. Thanks to my colleague Mike Sommer for pointing out this little piece of pedantry.}.).
+
+So, we can write Plank's constant in terms of the particle's energy and wavelength before it hits the potential:
+\begin{align}
+\lambda &= \frac{h}{p},\\
+p &= \sqrt{2mE},\\
+\Rightarrow \lambda &= \frac{h}{\sqrt{2mE}},\\
+\Rightarrow h &= \lambda\sqrt{2mE}.
+\end{align}
+Then, we can plug this in for $h$ in the equation for $\lambda'$:
+\begin{align}
+\lambda' &= \lambda \frac{\sqrt{2mE}}{\sqrt{2m(E-V)}},\\
+&= \lambda \sqrt{\frac{E}{E-V}},\\
+&= \lambda \left(\frac{E-V}{E}\right)^{-1/2},\\
+&= \lambda \left(1-\frac{V}{E}\right)^{-1/2}.
+\end{align}
+
+\answer{E}
+\section{The change in entropy of an expanding container}
+I'm aware of two solutions to this which are both pretty quick; which one you should use depends on whether you're more comfortable with the equations of statistical mechanics or thermal physics.  I'll go over both here.
+\subsubsection*{Thermal physics solution}
+For this solution, you must know the second law of thermal dynamics (which you should absolutely have memorized in general anyway),
+\begin{equation}
+\Delta S = \int \frac{1}{T}dQ.
+\end{equation}
+Then, the solution requires recognizing that the expansion of the container from $V\rightarrow2V$ is isothermal (``A sealed and \emph{thermally insulated} container...'').  That means that the total heat change will be equal to the work done on the system, $dQ = dW$, and we already know from problem 6 that $W = \int PdV$ and, for an isotherm, $W = nRT\ln(V_f/V_i)$.  Therefore,
+\begin{align}
+dQ &= PdV,\\
+\Rightarrow \Delta S &= \int \frac{P}{T}dV = nRT\ln(2V/V),\\
+&= nRT\ln(2). 
+\end{align}
+\subsubsection*{Statistical mechanics solution}
+In stat mech, the relevant definition of entropy is
+\begin{equation}
+\Delta S = k_B \ln\Omega,
+\end{equation}
+where $\Omega$ is the number of microstates of the system.  Every additional particle will contribute one microstate for every particle already in the system.  That is to say, $n$ particles will have $2^n$ microstates.  Therefore,
+\begin{align}
+\Delta S &= k_B \ln\left(2^n\right),\\
+&= k_B n\ln(2).
+\end{align}
+Then, we know that $k_B = R/N_A$, where $N_A$ is Avogadro's number.  So,
+\begin{align}
+\Delta S = nR\ln(2)
+\end{align}
+
+\answer{B}
+
+\section{Estimating the root-mean-square velocity of a gas}
+This problem is kind of scary, but there's a nice approximation.  If you remember that root-mean-square is kind of an average, then you can treat the gasses classically, and compare the velocities derived from their kinetic energies.  Furthermore, because we know that the gasses are kept at the same constant temperature, we know from the equipartition theorem that their kinetic energies are both equal to $3/2k_BT$.  This means that their kinetic energies are equal, so, 
+\begin{align}
+KE_{O_2} &= \frac{1}{2}m_{O_2}v_{O_2}^2,\\
+KE_{N_2} &= \frac{1}{2}m_{N_2}v_{N_2}^2,\\
+\Rightarrow \frac{v_{O_2}}{v_{N_2}} &= \sqrt{\frac{m_{O_2}}{{m_{N_2}}}},\\
+&= \sqrt{\frac{32}{28}} = \sqrt{\frac{8}{7}}
+\end{align}
+
+\answer{C}
+\section{Partition function and degeneracy}
+I can think of no clever way to do this other than to have the Maxwell-Boltzmann partition theorem memorized.  This says,
+\begin{equation}
+Z = \sum_i g_i e^{-\epsilon_i/k_BT},
+\end{equation}
+where $g$ and $\epsilon$ are the degeneracy and energy of a given state, respectively.  Now, we are told that there are two states, each with a degeneracy of 2, and one has energy equal to $\epsilon$ while the other has $2\epsilon$.  So,
+\begin{align}
+Z &= 2e^{\epsilon/k_BT}+2e^{2\epsilon/k_BT},\\
+&= 2\left[e^{\epsilon/k_BT}+e^{2\epsilon/k_BT}\right].
+\end{align}
+
+\answer{E}
+
+\section{Speed of sound in a cold flute}
+It is sufficient for this problem to know that the speed of sound goes as $\sqrt{T}$, so for temperatures greater than 0, speed of sound in a gas goes linearly to first order, $v \approx c + kT$, for some gas-specific constants $c$ and $k$.  Therefore, for small changes in temperature, the change in sound speed is proportional to the change in temperature.  That means that if the temperature drops 3\%, so does the sound speed.  3\% of 440 is $3/100\times440 = 3\times4.4 = 13.2$, so the new speed of sound is $440-13.2 = 426.8$\\
+
+\answer{B}
+
+\section{Light loss through polarizers}
+Every time light passes through a polarizing filter, the only thing that passes is the component of the electric field (and associated magnetic field) which is parallel to the polarization.  This means that final filter will not block all the light, even though it is perpendicular to the first filter:  The light coming through the second filter has a component of electric field pointing in the direction of the last polarizer, and so some of it will pass through.
+
+For an incident beam of light with intensity $I_0$, the intensity, $I$, after passing through a filter of angle $\theta$ will be  $I = I_0 \cos{\theta}$.  Each filter is rotated $45\degree$, with respect to the one before it, so the beam of light incident on each filter will be reduced by a factor of $\cos{45\degree} = 1/2$.  As a polarizer will cut in half the intensity of unpolarized light, the sequence of filters will render the final intensity $I_0 \rightarrow I_0/2 \rightarrow I_0/4 \rightarrow I_0/8$.\\
+
+\answer{B}
+
+\section{Volume of a primitive unit cell}
+A primitive unit cell is a cell for which every lattice point is connected by a vertex.  While the Simple Cubic (SC) lattice is its own primitive cell, the Body-Centered Cubic (BCC) and Face-Centered Cubic (FCC) have lattice points hanging out in between vertices.  A handy rule is that the volume of a primitive cell is $a^3/N$ where $a$ is the side length of the conventional cell and $N$ is the number of unique lattice points required to define the primitive cell.  SC lattices require only 1 point to uniquely define the cell, so that confirms that it is its own primitive cell with volume $a^3$.  BCC and FCC require 2 and 4 unique points, respectively, so they have volumes of $a^3/2$ and $a^3/4$.\\
+
+\answer{C}
+
+\section{Temperature dependence of a semiconductor's resistivity}
+While I don't know of any clever way to rigorously do this problem, and it ultimately needs you to just know that $\rho \propto 1/T$, there is an argument to make the answer guessable.  Semiconductors rely on the constituent atoms having some electrons in the conduction band of the p-type material available to make the jump to holes in the n-type.  If the temperature is sufficiently low, however, these atoms will hunker down in their potential wells and refuse to jump.  Therefore, you expect it to have very high resistivity at low temperatures, and, thankfully, there is only one plot which looks like that.\\
+
+\answer{B}
+
+
+\section{Estimating impulse}
+Even if you didn't know that impulse is the integral of force, the problem gives you a well-defined and easy to calculate geometrical shape.  It is my experience that such problems usually want something having to do with the area of the geometrical shape.  Here, the area is given by
+\begin{equation}
+A = J = \frac{1}{2}\times2\times2 = 2.
+\end{equation}
+
+\answer{C}
+
+\section{Conservation of momentum at an angle}
+When the smaller particle has come to a stop, it has deposited momentum $mv$ into the particle with mass $2m$, which breaks up into $m$-sized particles.  We know exactly how much momentum these particles have in the $x$-direction: $mv/2$.  That they now have a component of momentum in $y$ means that their total speed must be greater than $v/2$.\\
+
+\answer{E}
+
+\section{Volume of gas required to float a mass}
+When a body is in a fluid, the fluid will push on the body, causing a buoyant force.  The buoyant force can be calculated by integrating the pressure due to the surrounding fluid over the surface area of the body.  It works out to
+\begin{equation}
+\mathbf{f} = \rho_f g V_b \mathbf{\hat{r}},
+\end{equation}
+for a body of volume $V_b$ in a fluid with density $\rho_f$.  $g$ is the force due to gravity, and the force points in the opposite direction that gravity is acting.  Based on this equation, we can see that the density of helium provided in the question is not useful.  You need only the density of the surrounding fluid, air.
+
+So, this question is asking us to solve for the volume of helium, $V_b$, required for the buoyant force to impart $10\text{m}/\text{s}^2 \times 300 \text{ kg} = 3000 \text{ N}$.  Rearranging the equation above and plugging in, we have
+\begin{align}
+V_b &= \frac{\mathbf{f}}{\rho_f g},\\
+&= \frac{3000}{1.29 \times 10},\\
+&\approx \frac{3000}{13} \approx 230.\\
+\end{align}
 
 \answer{D}
 
 
-\end{document}  
+\section{Force due to a jet of water}
+This is a perfect opportunity for unit analysis.  The only solution with units of force is the first one:
+\begin{align}
+\left[\rho v^2 A\right] &= \frac{\units{kg}}{\units{m}^3} \frac{\units{m}^2}{\units{s}^2}\units{m}^2,\\
+&= \frac{\units{kg}\units{m}}{\units{s}^2}.
+\end{align}
 
+\answer{A}
 
+\section{Deflection of a proton in electric and magnetic fields}
+This problem is all about manipulating the equation for Lorentz force, which, for a particle of charge $q$ traveling with a velocity $\mathbf{v}$, and interacting with electric and magnetic fields $\mathbf{E}$ and $\mathbf{B}$, reads
+\begin{equation}
+\mathbf{F} = q\mathbf{E}+q\mathbf{v} \cross \mathbf{B}.
+\end{equation}
+Then, there are two tricks which together make up the bulk of the solution.
 
+For one, we know how fast the proton is going because it has been accelerated through a potential $V$.  The potential will accelerate the proton according to $F = q\mathbf{E} = -q\nabla V$.  Note that this is \emph{not} the same $\mathbf{E}$ as the electric field pointing in the $x$-direction as described in the problem.  This is merely the initial electric field used to get the proton up to speed; it is forgotten thereafter.
 
+Two, that the proton does not deflect from its trajectory means that it is not experiencing a net force.  That means that
+\begin{align}
+\mathbf{F} &= q\mathbf{E}+q\mathbf{v} \cross \mathbf{B} = 0,\\
+\Rightarrow \mathbf{E} &= -\mathbf{v} \cross \mathbf{B}.
+\end{align}
+So the force due to the electric field is equal to force due to the magnetic field when the proton is traveling with velocity $\mathbf{v}$.
 
+Now, when the proton accelerates through a potential with double the magnitude of the original, the new velocity, $\mathbf{v}'$ will also be double:
+\begin{align}
+\mathbf{F} &= -q\nabla V,\\
+\Rightarrow \mathbf{v} &= \frac{1}{m_p} \int \nabla V dt, \text{ (for proton mass $m_p$)}\\
+V &\rightarrow 2V,\\
+\Rightarrow \mathbf{v}' &= \frac{2}{m_p} \int \nabla V dt = 2\mathbf{v}.
+\end{align}
 
+So now the total force will be
 
+\begin{align}
+\mathbf{F} &= q\left(-\mathbf{v} \cross \mathbf{B}\right)+q\left(2\mathbf{v} \cross \mathbf{B}\right).
+\end{align}
+
+The magnetic contribution is now greater than the electric contribution, so the proton will deflect in the direction that the magnetic field wills it.  By the right-hand rule, that is the $-x$-direction.\\
+
+\answer{B}
+
+\section{LC circuit-SHO equivalence}
+The equation of motion for a simple harmonic oscillator is
+\begin{equation}
+m\frac{d^2x}{dt^2} + kx = 0,
+\end{equation}
+for a particle of mass $m$ on a spring with spring constant $k$.  Comparing with the equation given for the LC circuit, we can draw analogies between the coefficients of like terms:
+\begin{align}
+m &\rightarrow L,\\
+k &\rightarrow 1/C.
+\end{align}
+Finally, because $Q$ is the quantity whose time-evolution you care about (it's being differentiated), it is playing the role of $x$.\\
+
+\answer{B}
+
+\section{Flux of a sheet through a sphere}
+Electric flux is defined
+\begin{equation}
+\Phi = \int \mathbf{E}\cdot d\mathbf{a},
+\end{equation}
+which is one of the first applications of Gauss' law one sees in E\&M.  Because it's integrating the electric field over a surface area, it is equal to the charge enclosed in that surface divided by $\epsilon_0$:
+\begin{equation}
+\Phi = \int \mathbf{E}\cdot d\mathbf{a} = \frac{Q_{\text{enc.}}}{\epsilon_0}.
+\end{equation}
+So that's what we want to find for this problem: The charge enclosed by the sphere.  This means finding the area of the circle of sheet which intersects the sphere.
+
+I found the radius of this circle by drawing the radius of the sphere, $R$, to where the sheet meets the edge of the sphere.  This makes a right triangle, with sides $R$, $x$, and $\sqrt{R^2-x^2}$.  The area of the circle with radius $\sqrt{R^2-x^2}$ is $\pi\left(R^2-x^2\right)$.  Then, the total charge contained on this circle is this area times the charge density.  Divide this by $\epsilon_0$ to get the electric flux through the sphere,
+\begin{equation}
+\Phi = \frac{\pi\left(R^2-x^2\right)\sigma}{\epsilon_0}.
+\end{equation}
+
+This agrees with some limits, as well: When $x=R$, the sheet is outside of the sphere, and so the total flux through the sphere should be 0.  Furthermore, when $x=0$, the greatest amount of the sheet is contained in the sphere, and so the flux should be maximized.\\
+
+\answer{D}
+
+\section{Electromagnetic wave hitting conductor}
+This question requires you to memorize the boundary conditions for electromagnetic waves which are changing media.  I'll spend this problem talking about what these boundary conditions mean because they're a point of personal confusion, then I'll apply them to the problem of waves hitting a conductor.
+\subsubsection*{Boundary conditions in E\&M}
+The boundary conditions for electric and magnetic fields are
+\begin{align}
+\text{(i) } \mathbf{E}_{1}^{\parallel} &= \mathbf{E}_{2}^{\parallel}, \quad \text{(ii) }\epsilon_1\mathbf{E}_{1}^{\perp} = \epsilon_2\mathbf{E}_{2}^{\perp} + \sigma_f,\\
+\text{(ii) }\mathbf{B}_{1}^{\perp}&=\mathbf{B}_{2}^{\perp}, \text{ and } \text{(iv) } \frac{1}{\mu_1}\mathbf{B}_{1}^{\parallel} = \frac{1}{\mu_2}\mathbf{B}_{2}^{\parallel} + \left(\mathbf{K}_f \cross \hat{\mathbf{n}}\right).
+\end{align}
+These describe how the electromagnetic field in one medium ($\mathbf{E}_1$ and $\mathbf{B}_1$) is related to the electromagnetic field in another medium ($\mathbf{E}_2$ and $\mathbf{B}_2$) \emph{right at the boundary}.  $\epsilon_1$ and $\epsilon_2$ are the permittivities of the two media, and $\mu_1$ and $\mu_2$ are the permeabilities.  $\sigma_f$ is the free surface charge and $\mathbf{K}_f$ is the free surface current.  Finally, $\hat{\mathbf{n}}$ is a unit vector pointing perpendicularly from the surface.
+
+These equations describe how the components of $\mathbf{E}$ and $\mathbf{B}$ which are parallel ($\parallel$) and perpendicular ($\perp$) change on either side of a boundary between media.  What I consider the important lesson from these boundary conditions is that the parallel components of $\mathbf{E}$ are \emph{continuous}, while the perpendicular components are \emph{dis}continuous.  The story for the magnetic field is swapped.  Knowing these boundary conditions goes a long way to helping us solve problems of reflection and transmission of electromagnetic waves.
+
+\subsubsection*{Reflection and transmission of electromagnetic waves on perfect conductors}
+Applying the above to reflection and transmission necessarily makes the assumption that when an electromagnetic wave comes in contact with a conductor, some of the wave will be transmitted and some of the wave will be reflected.
+
+Thinking only about the electric field for a moment, this means that the total field on the left side will be composed of the incident field, $E_I$ and the reflected field, $E_R$.  The right side will only be composed of the transmitted field, $E_T$.  In this case, there is no component of the electric field perpendicular to the conductor:  The wave is traveling perpendicular to the conductor, so $\mathbf{E}$ and $\mathbf{B}$ must both necessarily be parallel (If it helps, recall the Poynting vector, $\mathbf{S} = \frac{1}{\mu}\left(\mathbf{E} \cross \mathbf{B}\right)$, points in the direction of travel, so both the fields must be perpendicular to the direction of travel.  In this case, that means they're parallel to the conductor.).
+
+So right away, we can apply two of the boundary conditions.  Condition (i) implies that
+\begin{equation}
+E_I + E_R = E_T,
+\end{equation}
+and we know there is no perpendicular component, so $\sigma_f = 0$ by (ii).  The question asks about the total fields on the left side of the conductor, so it would be really great if we knew something about $E_T$.  Unfortunately, I don't know of a quick way to derive $E_T$\footnote{For the full thing, see p.396-7 of Griffiths, 3ed.}, but when confronted with a problem like this, I think about how if you get inside a metal cage, your phone won't have a signal.  That must mean that the transmitted electric field is 0.  Therefore, $E_I = -E_R$, and so the total field on the left side of the conductor is 0.  Because of the way the answers are provided, this is sufficient to give you the correct answer, but I'll provide an argument for why the magnetic field should be double the incident field.
+
+The reflected electric wave is traveling the exact opposite direction of the incident wave, and so the Poynting vector of the reflected wave will read
+\begin{equation}
+\mathbf{S}_R = -\mathbf{S}_I = \mu\left(-\mathbf{E}_I\cross\mathbf{B}_R\right),
+\end{equation}
+which, when you go through the right-hand rule, reveals that $B_R$ must be pointing in the same direction as $B_I$.  Thus $\mathbf{B}$ will constructively interfere, and, as it's in phase, it will double its magnitude.
+
+This is a long way of saying a general truth about waves incident on conductors: \textbf{Conductors kill the electric field and double the magnetic field.}\\
+
+\answer{C}
+
+\section{Deriving mass from cyclotron frequency}
+``Cyclotron frequency'' just means that a magnetic field is making a particle going in a circle.  Therefore, to find its mass, we can set centrifugal force equal to Lorentz force and solve for mass:
+\begin{align}
+m\omega^2 r &= 2qvB,\\
+\Rightarrow m &= \frac{2qvB}{\omega^2 r},\\
+&= \frac{2q\omega B}{\omega^2},\\
+&= \frac{2qB}{\omega}.
+\end{align}
+Where above I have used the fact that $\omega = v/r$ to cancel one of the $\omega$'s in the denominator.  Then, before plugging in, make sure to notice that you need to convert the normal frequency, given in Hertz, to an angular frequency.  This is especially treacherous here, as one of the incorrect answers is equal to what you would get if you forget to do this.
+\begin{equation}
+\omega = 2\pi \nu = 2\pi\times1600\text{ Hz}.
+\end{equation}
+
+Then we can plug in.  In the interest of speed, notice that none of the answers have the same coefficient being multiplied by some number of tens.  This means we can drop all orders of magnitude from the calculation, and only worry about finding the number in front.
+
+\begin{align}
+m &= \frac{2qB}{\omega},\\
+&\text{ (get the electron charge provided from the front of the test)}\\
+&= \frac{2\times 16 \times \pi}{2\pi \times 16 \times 4},\\
+&= \frac{1}{4},\\
+&= .25.
+\end{align}
+And there is only answer which is $.25$ times some number of tens.\\
+
+\answer{A}
+
+\end{document}
 
 
 
