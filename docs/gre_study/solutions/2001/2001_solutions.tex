@@ -11,6 +11,13 @@
 \usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{gensymb}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
 \newcommand{\answer}[1]{Answer: \textbf{(#1)}.}
 \newcommand{\units}[1]{\left[\text{#1}\right]}
 \newcommand\blfootnote[1]{%
@@ -28,7 +35,8 @@
 
 \begin{document}
 \maketitle
-
+\tableofcontents
+\newpage
 \section{Pendulum bob}
 This is \emph{total} acceleration, so there will be two components acting on the bob: gravity and tension.  Tension acts in the direction of the string, and gravity always points straight down.  For this reason, we can immediately rule out (A) and (E), as those are clearly ignoring any force other than what is along the string.  Furthermore, at point \emph{c}, the string (and therefore the tension) is pointing in the same direction as gravity, so the arrow should be pointing totally along the string.  This rules out (B) and (D).\\
 
@@ -1020,7 +1028,7 @@ The boundary conditions for electric and magnetic fields are
 \text{(i) } \mathbf{E}_{1}^{\parallel} &= \mathbf{E}_{2}^{\parallel}, \quad \text{(ii) }\epsilon_1\mathbf{E}_{1}^{\perp} = \epsilon_2\mathbf{E}_{2}^{\perp} + \sigma_f,\\
 \text{(ii) }\mathbf{B}_{1}^{\perp}&=\mathbf{B}_{2}^{\perp}, \text{ and } \text{(iv) } \frac{1}{\mu_1}\mathbf{B}_{1}^{\parallel} = \frac{1}{\mu_2}\mathbf{B}_{2}^{\parallel} + \left(\mathbf{K}_f \cross \hat{\mathbf{n}}\right).
 \end{align}
-These describe how the electromagnetic field in one medium ($\mathbf{E}_1$ and $\mathbf{B}_1$) is related to the electromagnetic field in another medium ($\mathbf{E}_2$ and $\mathbf{B}_2$) \emph{right at the boundary}.  $\epsilon_1$ and $\epsilon_2$ are the permittivities of the two media, and $\mu_1$ and $\mu_2$ are the permeabilities.  $\sigma_f$ is the free surface charge and $\mathbf{K}_f$ is the free surface current.  Finally, $\hat{\mathbf{n}}$ is a unit vector pointing perpendicularly from the surface.
+These describe how the electromagnetic field in one medium ($\mathbf{E}_1$ and $\mathbf{B}_1$) is related to the electromagnetic field in another (adjacent) medium ($\mathbf{E}_2$ and $\mathbf{B}_2$) \emph{right at the boundary between the media}.  $\epsilon_1$ and $\epsilon_2$ are the permittivities of the two media, and $\mu_1$ and $\mu_2$ are the permeabilities.  $\sigma_f$ is the free surface charge and $\mathbf{K}_f$ is the free surface current.  Finally, $\hat{\mathbf{n}}$ is a unit vector pointing perpendicularly from the surface.
 
 These equations describe how the components of $\mathbf{E}$ and $\mathbf{B}$ which are parallel ($\parallel$) and perpendicular ($\perp$) change on either side of a boundary between media.  What I consider the important lesson from these boundary conditions is that the parallel components of $\mathbf{E}$ are \emph{continuous}, while the perpendicular components are \emph{dis}continuous.  The story for the magnetic field is swapped.  Knowing these boundary conditions goes a long way to helping us solve problems of reflection and transmission of electromagnetic waves.
 
@@ -1046,12 +1054,12 @@ This is a long way of saying a general truth about waves incident on conductors:
 \answer{C}
 
 \section{Deriving mass from cyclotron frequency}
-``Cyclotron frequency'' just means that a magnetic field is making a particle going in a circle.  Therefore, to find its mass, we can set centrifugal force equal to Lorentz force and solve for mass:
+``Cyclotron frequency'' just means that a magnetic field is making a particle going in a circle.  Therefore, to find its mass, we can set the centrifugal force equal to the Lorentz force and solve for mass:
 \begin{align}
-m\omega^2 r &= 2qvB,\\
-\Rightarrow m &= \frac{2qvB}{\omega^2 r},\\
-&= \frac{2q\omega B}{\omega^2},\\
-&= \frac{2qB}{\omega}.
+m\omega^2 r &= 2q_evB,\\
+\Rightarrow m &= \frac{2q_evB}{\omega^2 r},\\
+&= \frac{2q_e\omega B}{\omega^2},\\
+&= \frac{2q_eB}{\omega}.
 \end{align}
 Where above I have used the fact that $\omega = v/r$ to cancel one of the $\omega$'s in the denominator.  Then, before plugging in, make sure to notice that you need to convert the normal frequency, given in Hertz, to an angular frequency.  This is especially treacherous here, as one of the incorrect answers is equal to what you would get if you forget to do this.
 \begin{equation}
@@ -1061,8 +1069,8 @@ Where above I have used the fact that $\omega = v/r$ to cancel one of the $\omeg
 Then we can plug in.  In the interest of speed, notice that none of the answers have the same coefficient being multiplied by some number of tens.  This means we can drop all orders of magnitude from the calculation, and only worry about finding the number in front.
 
 \begin{align}
-m &= \frac{2qB}{\omega},\\
-&\text{ (get the electron charge provided from the front of the test)}\\
+m &= \frac{2q_eB}{\omega},\\
+&\text{ (get the electron charge from the front of the test)}\\
 &= \frac{2\times 16 \times \pi}{2\pi \times 16 \times 4},\\
 &= \frac{1}{4},\\
 &= .25.
