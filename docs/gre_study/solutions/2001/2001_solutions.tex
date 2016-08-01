@@ -15,7 +15,7 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true, %set true if you want colored links
-    linktoc=all,     %set to all if you want both sections and subsections linked
+    linktoc=all,     %set to all if you want both sections and subsubsections linked
     linkcolor=blue,  %choose some color if you want links to stand out
 }
 \newcommand{\answer}[1]{Answer: \textbf{(#1)}.}
@@ -37,7 +37,7 @@
 \maketitle
 \tableofcontents
 \newpage
-\section{Pendulum bob}
+\section{Acceleration on a pendulum bob}
 This is \emph{total} acceleration, so there will be two components acting on the bob: gravity and tension.  Tension acts in the direction of the string, and gravity always points straight down.  For this reason, we can immediately rule out (A) and (E), as those are clearly ignoring any force other than what is along the string.  Furthermore, at point \emph{c}, the string (and therefore the tension) is pointing in the same direction as gravity, so the arrow should be pointing totally along the string.  This rules out (B) and (D).\\
 
 \answer{C}
@@ -1078,6 +1078,105 @@ m &= \frac{2q_eB}{\omega},\\
 And there is only answer which is $.25$ times some number of tens.\\
 
 \answer{A}
+
+\section{Deriving temperature from wavelength of peak blackbody radiation}
+
+There are two equations about blackbody radiation which show up in GRE problems.  One relates power per unit area of the body to its temperature,
+
+\begin{equation}
+P = \sigma T^4,
+\end{equation}
+where $\sigma$ is the Stefan-Boltzmann constant.  The other relates the temperature of the body to the wavelength of peak intensity, $\lambda_\text{max}$,
+\begin{equation}
+\lambda_\text{max} = \frac{b}{T},
+\end{equation}
+
+where $b$ is Wien's displacement constant.  That the problem gives us $b$ as well as $\lambda_\text{max}$ suggests we should use the second equation.  Using the first would require not only knowing $\sigma$, but integrating the intensity curve.
+
+Plugging in,
+\begin{align}
+T &= \frac{b}{\lambda_\text{max}},\\
+&\approx \frac{3\times 10^{-3}\text{ m K}}{2\times 10^{-6}\text{ m}},\\
+&= 1.5\times 10^3 \text{ K}.
+\end{align}
+
+\answer{D}
+
+\section{The many uses of electromagnetic radiation}
+
+Going through each option,
+
+(A):  When an atom emits E\&M radiation, it is usually due to the actions of its electrons gaining and losing energy.  These processes either emit or absorb electromagnetic radiation, and have relatively little to do with the nucleus.  There are notable exceptions, however.  In gamma decay, a nucleus can decay which produces a gamma ray.  Of course, this example isn't relevant here because gamma radiation is not infrared, visible, or ultraviolet.  The other common exception is called ``internal conversion'' which occurs when an excited nucleus ejects an interior electron following an electromagnetic interaction.  An outer electron will then fall down and fill the hole left by the ejected electron.  However, this transition generally produces an x-ray photon, which is also not included in the options.  (A) is not true.
+
+(B):  In general, what appears as a peak in an emission spectrum will appear as a trough in an absorption spectrum, but they correspond to the same wavelengths.  (B) is true.
+
+(C):  As light produced in the star's interior travels through the stellar atmosphere, it will be absorbed by elements in the cooler outer layers.  We can look at these absorption spectra in spectrographs on Earth to determine the elements in the star.  (C) is true.
+
+(D):  Similarly to (C), we can use light from the background to perform spectroscopy on galactic dust.
+
+(E):  Atoms emit single-wavelength lines, and when there are a lot of atoms near each other with similar electron shells, nearby lines will blur together.  When we look at the spectra of molecules, these regions where the lines coalesce are called ``bands''.\\
+
+\answer{A}
+
+\section{High-temperature limit for molar heat capacity}
+
+Every time $T$ appears in this equation, it is in the denominator of a $h\nu/kT$ term.  That means that as $T\rightarrow \infty$, $h\nu/kT\rightarrow0$.  This means that this question is a perfect time to use Taylor approximation.  For notation's sake, make the substitution $h\nu/kT\rightarrow x$ and expand about small $x$.
+
+The numerator is a simple exponential, whose expansion is definitely something you should have memorized.  To second order, the Taylor expansion for $e^x$ goes
+\begin{equation}
+e^x \approx 1 + x + \frac{x^2}{2}.
+\end{equation}
+
+The denominator isn't as common, and you might not necessarily know it off the top of your head.  No matter, it's only a couple of derivatives away.
+
+To find the $n^\text{th}$ Taylor expansion about a point $p$, we want to fill in the $a_0 \dots a_n$ in
+
+\begin{equation}
+f(x) \approx a_0 + a_1x + a_2x^2 + \dots + a_nx^n,
+\end{equation}
+
+where $a_n$ is given by
+
+\begin{equation}
+a_n = \frac{1}{n!}\frac{d^n f(p)}{dx^n}.
+\end{equation}
+
+So here we want to find the value of the function $f(x) = \left(e^x-1\right)^2$ and expand about ``small $x$,'' or $x=0$.
+
+So, finding the $a_n$ to second order about $x=0$, we have
+
+\begin{align}
+a_0 &= \frac{1}{0!} \left(\frac{d^0}{dx^0}\left(e^x-1\right)^2\right)\Big|_{x=0},\\
+&= 1\left(1-1\right)^2,\\
+&=0.\\\\
+a_1 &= \frac{1}{1!} \left(\frac{d}{dx}\left(e^x-1\right)^2\right)\Big|_{x=0},\\
+&= 1 \left(2(e^x)(e^x-1)\right)\Big|_{x=0},\\
+&= 2(1-1),\\
+&= 0.\\\\
+a_2 &= \frac{1}{2!} \left(\frac{d^2}{dx^2}\left(e^x-1\right)^2\right)\Big|_{x=0},\\
+&= \frac{1}{2} \left(2e^x(e^x-1) + 2e^x(e^x)\right)\Big|_{x=0},\\
+&= \frac{1}{2} \left(2\right),\\
+&= 1.
+\end{align}
+So, we have that $a_2 = 1$, so to second order, $(e^x-1) \approx x^2$.  That means that our original equation now reads
+\begin{align}
+C &= 3kN_A\left(\frac{h\nu}{kT}\right)^2\frac{e^{h\nu/kT}}{\left(e^{h\nu/kT}-1\right)^2},\\
+&\frac{h\nu}{kT} \rightarrow x,\\
+&= 3kN_Ax^2\frac{e^{x}}{\left(e^{x}-1\right)^2},\\
+&\approx 3kN_Ax^2\frac{1+x+\frac{x^2}{2}}{x^2},\\
+&= 3kN_A\left(1+x+\frac{x^2}{2}\right).
+\end{align}
+The last equality above came from canceling the $x^2$'s.  In the limit as $x\rightarrow0$ now, all terms with $x$ vanish, leaving
+\begin{align}
+\lim_{x\rightarrow0} 3kN_A\left(1+x+\frac{x^2}{2}\right) = 3kN_A.
+\end{align}
+
+\answer{D}
+
+\section{Combined half-life}
+I'll go over a rigorous method first to show where the solution comes from, then go over a speed-friendly way to conceptualize the answer.
+
+\subsubsection*{Rigorous solution}
 
 \end{document}
 
