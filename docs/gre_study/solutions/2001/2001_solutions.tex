@@ -1177,6 +1177,117 @@ The last equality above came from canceling the $x^2$'s.  In the limit as $x\rig
 I'll go over a rigorous method first to show where the solution comes from, then go over a speed-friendly way to conceptualize the answer.
 
 \subsubsection*{Rigorous solution}
+Radioactive \emph{decay} is described by a \emph{decay}ing exponential.  That is to say, the total amount of stuff at a given time is described by an equation of the form
+
+\begin{equation}
+N(t) = N_0 \left(\frac{1}{2}\right)^{t/T_{\frac{1}{2}}},
+\end{equation}
+where $N_0$ is the original amount of stuff, and $T_{\frac{1}{2}}$ is the ``half-life'', a constant describing the amount of time required for the half of the sample to decay\footnote{The formulation used here is in terms of the half-life (notice it's $1/2$ being exponentiated), but you might be more familiar with the formulation in terms of a so-called ``decay constant'', $\lambda \equiv \ln{2}\left(1/T_{\frac{1}{2}}\right)$, which goes $N(t) = N_0 e^{-\lambda t}$.}.
+
+So for this problem, a sample is decaying simultaneously via two processes with half-lives $T_{\gamma\frac{1}{2}}$ and $T_{\beta\frac{1}{2}}$, and we're asked to find the effective half-life of the whole sample.  The way I did this was to say that each process has its own decay function $N_\gamma(t)$ and $N_\beta(t)$, and the amount of the whole sample would be the sum of these two decay functions, $N(t) = N_\gamma(t) + N_\beta(t)$.  $N(t)$ would then have a half-life of its own which we could just read off the equation.
+
+Adding $N_\gamma(t)$ and $N_\beta(t)$ isn't straightforward though, because their half-lives are stuck inside exponentials, which don't add in a nice way.  To deal with this, I took their derivatives and added those derivatives.
+
+\begin{align}
+N(t) &= N_\gamma(t) + N_\beta(t),\\
+\Rightarrow\frac{d}{dt}N(t) &= \frac{d}{dt}N_\gamma(t) + \frac{d}{dt}N_\beta(t),\\
+\Rightarrow\frac{\ln{\left(2\right)}}{T_{\frac{1}{2}}}N(t)&= \frac{\ln{\left({2}\right)}}{T_{\gamma\frac{1}{2}}}N(t) + \frac{\ln{\left(2\right)}}{T_{\beta\frac{1}{2}}}N(t),\\
+\Rightarrow \frac{1}{T_\frac{1}{2}} &= \frac{1}{T_{\gamma\frac{1}{2}}} + \frac{1}{T_{\beta\frac{1}{2}}}.
+\end{align}
+A-ha! That confirms what we already knew about decaying functions(even if we forgot it before doing this problem):  The \emph{reciprocals} of half-lives add.  (This should look a lot like how capacitors and resistors add in series and parallel, respectively.  The derivations are very similar.)  Solving for $T_{\frac{1}{2}}$, then,
+
+\begin{align}
+T_{\frac{1}{2}} &= \frac{T_{\gamma\frac{1}{2}}T_{\beta\frac{1}{2}}}{T_{\gamma\frac{1}{2}}+T_{\beta\frac{1}{2}}},\\
+&=\frac{24\times36}{24+36},\\
+&=\frac{864}{60},\\
+&=14.4.
+\end{align}
+
+\subsubsection*{Qualitative solution}
+So if you forget all that about decaying functions, here's an argument you can make to get close to the right answer.  You know that if both processes had the same half-life, then the effective half-life for the whole sample would be half that.  This gives an upper and lower bound on the answer.  If both processes had the faster half-life, then the whole sample would have a half-life of $24/2 = 12$ minutes.  If they were both the slower half life, it would the effective half-life would be $36/2 = 18$ minutes.  Therefore, the answer will be somewhere in between $12$ and $18$, and there is only one answer available which is that.\\
+
+\answer{D}
+
+\section{Binding energy}
+For any bound system, the ``binding energy'' is the work required to assemble the system.  Binding energy is a relevant quantity for things like orbital systems, collections of charges, and atomic nuclei.  In the latter case, it is an intrinsic property due to the strong force, and is responsible for making the rest mass slightly higher than simply the sum of the constituent nucleons.  Importantly, because binding energy represents how far down a potential well a particle sits, it is a \emph{negative} energy.  There is a possible answer in this problem which takes advantage of the possible mix-up.
+
+In this problem, we are given the number of nucleons of an atom of uranium, and the amount of energy per nucleon.  We are then told it splits into two equal pieces, each of which has $100\text{ MeV}$ of kinetic energy.  That means that there's a total of $2\times100\text{ MeV} = 200\text{ MeV}$ of energy which is \emph{not} used in binding the daughter nuclei.  So, the binding energy per nucleon in the daughter nuclei is going to be half the parent binding energy minus the energy which went into imparting a kinetic energy on the daughter nuclei.
+
+The process which occurs is
+\begin{equation}
+{}^{238}\text{U} \rightarrow {}^{119}\text{X} + {}^{119}\text{X} + 200\text{ MeV},
+\end{equation}
+where $\text{X}$ is some unknown daughter nucleus.  The change energy of this process is
+\begin{equation}
+238 \times -7.6 = 119 \times -E_B + 119 \times -E_B + 200,
+\end{equation}
+where $E_B$ is the binding energy per nucleon of the daughter nucleus, $X$.  Notice I've stuck negative signs on all the energies for the reason stated above.  Now, we can solve for $E_B$.  For the sake of computation, I make the approximation of $238 \approx 240$ and $119\approx 120$.
+\begin{align}
+240 \times -7.6 &= 120 \times -E_B + 120 \times -E_B + 200,\\
+-240 \times -7.6 &= -240 \times E_B + 200,\\
+\Rightarrow E_B &= \frac{-240\times7.6-200}{-240},\\
+&=7.6+\frac{5}{7},\\
+&=8.3.
+\end{align}
+Or, if you don't have time to figure out $5/7$, you know that the answer is greater than $7.6$, and there is only one such answer available.\\
+
+\answer{E}
+
+\section{Possible decay modes of Beryllium}
+It is sufficient for this problem to know what the numbers on the left side of an atomic symbol mean.  For a generic nucleus $\text{X}$, ${}^A_Z \text{X}$ gives the number of protons, $Z$ (the ``atomic number'') and the number of protons-plus-neutrons, $A$ (the total number of nucleons or ``mass number'').  In the decay process given, ${}^7_4\text{Be}\rightarrow{}^7_3\text{Li}$, it is apparent that the nucleus loses one proton ($4\rightarrow3$), while the total number of nucleons stays the same ($7\rightarrow7$).  Going through the available answers:
+
+(A): An alpha particle is a neutral helium atom, with two protons and two neutrons.  If the beryllium atom were to lose an alpha particle, then its mass number would be $A = 7-4=3$ and its atomic number would be $Z=3-2=1$.  This is not the case.
+
+(B): Emitting an electron by itself does nothing to change the number of nucleons.
+
+(C): Emitting a neutron would change $A = 7-1=6$ and do nothing to $Z$.  This is not the case.
+
+(D): Emitting a positron by itself would also do nothing to the nucleus.
+
+(E): When a proton collides with a neutron, it creates a neutron and a neutrino: $p + e^- \rightarrow n + \nu$.  This both makes the atomic number decrease by one, while leaving the mass number the same.\\
+
+\answer{E} 
+
+\section{Thin-film refraction}
+Something you should absolutely have memorized is the equation for thin-film interference.  For a beam of light of wavelength $\lambda$ going from one medium with refractive index $n_1$ to another with index $n_2$ at an angle $\theta$ to the horizontal, there are conditions on the thickness $d$ of the first medium and the relative sizes of $n_1$ and $n_2$ if the reflected light is going to constructively interfere.  They are inverses of each other, and are summed up in the table below:
+\begin{table}[h]
+\centering
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{lll}
+                                  & $n_1<n_2$  & $n_1>n_2$     \\ \cline{2-3} 
+\multicolumn{1}{l|}{constructive} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = m\lambda$} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = \left(m+\frac{1}{2}\right)\lambda$} \\ \cline{2-3} 
+\multicolumn{1}{l|}{destructive}  & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = \left(m+\frac{1}{2}\right)\lambda$} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = m\lambda$} \\ \cline{2-3} 
+\end{tabular}
+\egroup
+\end{table}
+
+Here, $m$ is an integer, meaning that there are multiple lengths which will allow for interference.  The justifications for this table come from the fact that an index of refraction is defined as $n=c/v$, where $v$ is the speed of light in a medium.  Then, if $n_1>n_2$, there will be a phase change of $180\degree$ in the reflected light.  That puts a constraint on how thick the medium can be because the you need a whole wavelength of light to travel the thickness of the film, and the light's speed is determined by the index of refraction\footnote{For a full derivation, see Griffiths E\&M 3ed., p.384-9.}.
+
+In this case, the light travels from oil ($n_1 = 1.2$) to glass ($n_2 = 1.6$) and reflects ``most strongly'' at normal incidence.  That means that it experiences constructive interference at $\theta = 0$.  That the question wants the smallest non-zero possible size of the film means $m=1$.  Referring to the table above, we want the equation describing constructive interference for $n_1<n_2$.  Therefore, we have
+\begin{align}
+2dn_1\cos{\theta} &= m\lambda,\\
+\Rightarrow d &= \frac{m\lambda}{2n_1\cos{\theta}},\\
+d &=\frac{1\times480}{2\times1.2\times1},\\
+&=\frac{480}{2}\frac{10}{12},\\
+&=200.
+\end{align}
+
+\answer{B}
+
+\section{Diffraction}
+Like problem 69, this requires having memorized the equations for constructive and destructive interference for single- and double-slit refraction.  Arranged in a table, they are
+\begin{table}[h]
+\centering
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{lll}
+                                  & single-slit  & double-slit    \\ \cline{2-3} 
+\multicolumn{1}{l|}{constructive} & \multicolumn{1}{l|}{$a\sin{\theta} = (m+\frac{1}{2})\lambda$} & \multicolumn{1}{l|}{$a\sin{\theta} = m\lambda$} \\ \cline{2-3} 
+\multicolumn{1}{l|}{destructive}  & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = \left(m+\frac{1}{2}\right)\lambda$} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = m\lambda$} \\ \cline{2-3} 
+\end{tabular}
+\egroup
+\end{table}
 
 \end{document}
 
