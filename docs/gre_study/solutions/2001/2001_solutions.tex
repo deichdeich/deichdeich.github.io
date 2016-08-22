@@ -26,6 +26,23 @@
   \addtocounter{footnote}{-1}%
   \endgroup
 }
+% indentation
+\renewenvironment{indent}
+    {\begin{list}{}
+    {\setlength{\topsep}{0pt}
+    \setlength{\leftmargin}{30pt}
+    \setlength{\rightmargin}{0pt}
+    \setlength{\listparindent}{0pt}
+    \setlength{\itemindent}{0pt}
+    \setlength{\parsep}{7pt plus 1pt}}
+    \item }{\end{list}}
+
+\newenvironment{titlemize}[1]{%
+  \begin{indent}
+  \emph{#1}
+  \begin{enumerate}}
+  {\end{enumerate}
+  \end{indent}}
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
@@ -145,7 +162,7 @@ By the conservation of charge, there should be an equal and opposite charge indu
 \answer{D}
 
 \section{Charges on a circle}
-All the charges are symmetrically placed around the circle, so at the center, there is an equal contribution from every direction pointing towards the charges, giving a net magnitude of 0.  One suggestion from the Internet is to take the limit as infinite charges are equally placed around the circle:  This is a conducting ring, which has no field on the interior.\\
+All the charges are symmetrically placed around the circle, so at the center, there is an equal contribution from every direction pointing towards the charges, giving a net magnitude of 0.  One suggestion I like is to take the limit as infinite charges are equally placed around the circle:  This is a conducting ring, which has no field on the interior.\\
 
 \answer{A}
 
@@ -345,7 +362,7 @@ Finally, the problem is asking for the wavelength of the light.  $E = hc/\lambda
 
 \section{Orbital system parameters}
 
-The hint is in the phrase ``very small moon''.  The question is implying that the mass of the moon is negligible compared to the mass of the planet.  This means that the center of gravity will be very close to the center of the planet, and so you can treat the planet as stationary.  Then, think about the equations of orbital motion.  Kepler's Third Law (problem 3) describes the period and semi major axes of the orbit, but makes no mention of mass.  If you're solving for a circular orbit with forces (or any orbit, but circular is easy), the smaller mass will cancel:
+The hint is in the phrase ``very small moon''.  The question is implying that the mass of the moon is negligible compared to the mass of the planet.  This means that the center of gravity will be very close to the center of the planet, and so you can treat the planet as stationary.  Then, think about the equations of orbital motion.  Kepler's Third Law (problem \hyperlink{section.3}{3}) describes the period and semi major axes of the orbit, but makes no mention of mass.  If you're solving for a circular orbit with forces (or any orbit, but circular is easy), the smaller mass will cancel:
 \begin{equation}
 \frac{G M m}{r^2} = \frac{m v^2}{r}
 \end{equation}
@@ -777,7 +794,7 @@ So, we're looking for answers which are both square multiples of $E_1$ and appea
 \answer{D}
 
 \section{Harmonic oscillator eigenstates}
-This problem is largely similar to problem 29.  We're given the eigenvalues of an operator and asked to find the expectation value of some ensemble state.  The prescription is exactly the same:  Apply the operator to each constituent eigenfunction, and take the inner product of the ensemble state to determine the expectation value.
+This problem is largely similar to problem \hyperlink{section.29}{29}.  We're given the eigenvalues of an operator and asked to find the expectation value of some ensemble state.  The prescription is exactly the same:  Apply the operator to each constituent eigenfunction, and take the inner product of the ensemble state to determine the expectation value.
 
 The operator of interest is
 \begin{equation}
@@ -844,7 +861,7 @@ For this solution, you must know the second law of thermal dynamics (which you s
 \begin{equation}
 \Delta S = \int \frac{1}{T}dQ.
 \end{equation}
-Then, the solution requires recognizing that the expansion of the container from $V\rightarrow2V$ is isothermal (``A sealed and \emph{thermally insulated} container...'').  That means that the total heat change will be equal to the work done on the system, $dQ = dW$, and we already know from problem 6 that $W = \int PdV$ and, for an isotherm, $W = nRT\ln(V_f/V_i)$.  Therefore,
+Then, the solution requires recognizing that the expansion of the container from $V\rightarrow2V$ is isothermal (``A sealed and \emph{thermally insulated} container...'').  That means that the total heat change will be equal to the work done on the system, $dQ = dW$, and we already know from problem \hyperlink{section.6}{6} that $W = \int PdV$ and, for an isotherm, $W = nRT\ln(V_f/V_i)$.  Therefore,
 \begin{align}
 dQ &= PdV,\\
 \Rightarrow \Delta S &= \int \frac{P}{T}dV = nRT\ln(2V/V),\\
@@ -1122,53 +1139,28 @@ Going through each option,
 
 Every time $T$ appears in this equation, it is in the denominator of a $h\nu/kT$ term.  That means that as $T\rightarrow \infty$, $h\nu/kT\rightarrow0$.  This means that this question is a perfect time to use Taylor approximation.  For notation's sake, make the substitution $h\nu/kT\rightarrow x$ and expand about small $x$.
 
-The numerator is a simple exponential, whose expansion is definitely something you should have memorized.  To second order, the Taylor expansion for $e^x$ goes
+The numerator is a simple exponential, whose expansion is definitely something you should have memorized.  To first order, the Taylor expansion for $e^x$ goes
 \begin{equation}
-e^x \approx 1 + x + \frac{x^2}{2}.
+e^x \approx 1 + x.
 \end{equation}
 
-The denominator isn't as common, and you might not necessarily know it off the top of your head.  No matter, it's only a couple of derivatives away.
+The denominator isn't as common, and you might not necessarily know it off the top of your head.  That's okay though\--- if we're really stuck we can take some derivatives, but in this case the denominator contains the numerator, and we can use \emph{its} Taylor expansion to get the expansion of the whole denominator.
 
-To find the $n^\text{th}$ Taylor expansion about a point $p$, we want to fill in the $a_0 \dots a_n$ in
-
-\begin{equation}
-f(x) \approx a_0 + a_1x + a_2x^2 + \dots + a_nx^n,
-\end{equation}
-
-where $a_n$ is given by
-
-\begin{equation}
-a_n = \frac{1}{n!}\frac{d^n f(p)}{dx^n}.
-\end{equation}
-
-So here we want to find the value of the function $f(x) = \left(e^x-1\right)^2$ and expand about ``small $x$,'' or $x=0$.
-
-So, finding the $a_n$ to second order about $x=0$, we have
-
+Take the denominator, $(e^x-1)^2$,  expand $e^x\rightarrow1+x$, and do some arithmetic:
 \begin{align}
-a_0 &= \frac{1}{0!} \left(\frac{d^0}{dx^0}\left(e^x-1\right)^2\right)\Big|_{x=0},\\
-&= 1\left(1-1\right)^2,\\
-&=0.\\\\
-a_1 &= \frac{1}{1!} \left(\frac{d}{dx}\left(e^x-1\right)^2\right)\Big|_{x=0},\\
-&= 1 \left(2(e^x)(e^x-1)\right)\Big|_{x=0},\\
-&= 2(1-1),\\
-&= 0.\\\\
-a_2 &= \frac{1}{2!} \left(\frac{d^2}{dx^2}\left(e^x-1\right)^2\right)\Big|_{x=0},\\
-&= \frac{1}{2} \left(2e^x(e^x-1) + 2e^x(e^x)\right)\Big|_{x=0},\\
-&= \frac{1}{2} \left(2\right),\\
-&= 1.
+(1+x - 1)^2 &= x^2.
 \end{align}
-So, we have that $a_2 = 1$, so to second order, $(e^x-1) \approx x^2$.  That means that our original equation now reads
+So to second order, $(e^x-1)^2 \approx x^2$.  That means that our original equation now reads
 \begin{align}
 C &= 3kN_A\left(\frac{h\nu}{kT}\right)^2\frac{e^{h\nu/kT}}{\left(e^{h\nu/kT}-1\right)^2},\\
 &\frac{h\nu}{kT} \rightarrow x,\\
 &= 3kN_Ax^2\frac{e^{x}}{\left(e^{x}-1\right)^2},\\
-&\approx 3kN_Ax^2\frac{1+x+\frac{x^2}{2}}{x^2},\\
-&= 3kN_A\left(1+x+\frac{x^2}{2}\right).
+&\approx 3kN_Ax^2\frac{1+x}{x^2},\\
+&= 3kN_A\left(1+x\right).
 \end{align}
 The last equality above came from canceling the $x^2$'s.  In the limit as $x\rightarrow0$ now, all terms with $x$ vanish, leaving
 \begin{align}
-\lim_{x\rightarrow0} 3kN_A\left(1+x+\frac{x^2}{2}\right) = 3kN_A.
+\lim_{x\rightarrow0} 3kN_A\left(1+x\right) = 3kN_A.
 \end{align}
 
 \answer{D}
@@ -1217,11 +1209,11 @@ The process which occurs is
 \begin{equation}
 {}^{238}\text{U} \rightarrow {}^{119}\text{X} + {}^{119}\text{X} + 200\text{ MeV},
 \end{equation}
-where $\text{X}$ is some unknown daughter nucleus.  The change energy of this process is
+where $\text{X}$ is some unknown daughter nucleus.  The change in energy of this process is
 \begin{equation}
 238 \times -7.6 = 119 \times -E_B + 119 \times -E_B + 200,
 \end{equation}
-where $E_B$ is the binding energy per nucleon of the daughter nucleus, $X$.  Notice I've stuck negative signs on all the energies for the reason stated above.  Now, we can solve for $E_B$.  For the sake of computation, I make the approximation of $238 \approx 240$ and $119\approx 120$.
+where $E_B$ is the binding energy per nucleon of the daughter nucleus, X.  Notice I've stuck negative signs on all the energies for the reason stated above.  Now, we can solve for $E_B$.  For the sake of computation, I make the approximation of $238 \approx 240$ and $119\approx 120$.
 \begin{align}
 240 \times -7.6 &= 120 \times -E_B + 120 \times -E_B + 200,\\
 -240 \times -7.6 &= -240 \times E_B + 200,\\
@@ -1268,7 +1260,7 @@ In this case, the light travels from oil ($n_1 = 1.2$) to glass ($n_2 = 1.6$) an
 \begin{align}
 2dn_1\cos{\theta} &= m\lambda,\\
 \Rightarrow d &= \frac{m\lambda}{2n_1\cos{\theta}},\\
-d &=\frac{1\times480}{2\times1.2\times1},\\
+&=\frac{1\times480}{2\times1.2\times1},\\
 &=\frac{480}{2}\frac{10}{12},\\
 &=200.
 \end{align}
@@ -1276,7 +1268,7 @@ d &=\frac{1\times480}{2\times1.2\times1},\\
 \answer{B}
 
 \section{Diffraction}
-Like problem 69, this requires having memorized the equations for constructive and destructive interference for single- and double-slit refraction.  Arranged in a table, they are
+Like problem \hyperlink{section.69}{69}, this requires having memorized the equations for constructive and destructive interference for single- and double-slit refraction.  Arranged in a table, they are
 \begin{table}[h]
 \centering
 \bgroup
@@ -1284,16 +1276,447 @@ Like problem 69, this requires having memorized the equations for constructive a
 \begin{tabular}{lll}
                                   & single-slit  & double-slit    \\ \cline{2-3} 
 \multicolumn{1}{l|}{constructive} & \multicolumn{1}{l|}{$a\sin{\theta} = (m+\frac{1}{2})\lambda$} & \multicolumn{1}{l|}{$a\sin{\theta} = m\lambda$} \\ \cline{2-3} 
-\multicolumn{1}{l|}{destructive}  & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = \left(m+\frac{1}{2}\right)\lambda$} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = m\lambda$} \\ \cline{2-3} 
+\multicolumn{1}{l|}{destructive}  & \multicolumn{1}{l|}{$a\sin{\theta} = m\lambda$} & \multicolumn{1}{l|}{$a\sin{\theta} = \left(m+\frac{1}{2}\right)\lambda$} \\ \cline{2-3} 
 \end{tabular}
 \egroup
 \end{table}
 
+here, $a$ is the distance between the slits, and $\theta$ is the angle between the slit and the maximum or minimum.  That means that the quantity $a\sin{\theta}$ is the distance between maxima or minima on the screen. Annoyingly and confusingly, it's the inverse table for constructive interference in multiple media from problem \hyperlink{section.69}{69}.  I know of no good mnemonic to remember this; please email me if you have one.
+
+However, for this problem, you need to know surprisingly little about which equation to use.  Instead, it is sufficient to know that they are all linear in $\lambda$, and that they describe the distance between maxima or minima (it doesn't matter which).  So, because the separation is proportional to $\lambda$, it will be \emph{inversely} proportional to $\nu$ by the fact that $\lambda = c/\nu$.
+
+\begin{align}
+a\sin{\theta}  = k\frac{c}{\nu} &= 1\text{ mm}, \text{ (for some arbitrary constant k)}\\
+\Rightarrow k\frac{c}{2\nu} &= \frac{1}{2}\text{ mm}.
+\end{align}
+
+\answer{B}
+
+\section{Doppler shift for light}
+The relativistic doppler shift is given by
+\begin{equation}
+\lambda = \sqrt{\frac{c+v}{c-v}}\bar{\lambda},
+\end{equation}
+where $\lambda$ is the wavelength in the lab frame, and $\bar{\lambda}$ is the wavelength in the moving frame, which is traveling at $v$ with respect to the lab.  In this case, the direction of travel is the sign of the velocity in the numerator.  If the object is moving towards the observer, the signs in the numerator and denominator are switched.
+
+In this case, we know that the wavelength is increasing, so the object is moving away from the observer.  Furthermore, we have
+\begin{align}
+\lambda &= \sqrt{\frac{c+v}{c-v}}\bar{\lambda},\\
+\Rightarrow v &= \frac{(\lambda/\bar{\lambda}^2-1}{(\lambda/\bar{\lambda})^2+1}c,\\
+&\approx \frac{(600/120)^2-1}{(600/120)^2+1}c,\\
+&= \frac{5^2-1}{5^2+1}c,\\
+&=\frac{24}{26}c = \frac{12}{13}c>.9c
+\end{align}
+
+\answer{D}
+
+\section{Two masses on a spring}
+Surprisingly little work is needed for this.  The rigorous solution is two applications of Hooke's law, but there are several conceptual arguments I can make that require very little math.
+\subsubsection*{Rigorous solution}
+When the string breaks, the force exerted on the top block ($m_1$) by the spring ($F_s$) is proportional to how far the spring is displaced.  This is determined by how much gravity pulls ($F_g$) the bottom block ($m_2$) before the string breaks.  We can solve for this because nothing is accelerating so the net force is 0:
+\begin{align}
+F_s - F_g &= 0,\\
+\Rightarrow kx_2 &= -mg,\\
+\Rightarrow x_2 &= -\frac{mg}{k}.
+\end{align}
+Here, we have defined the coordinate system so that gravity is pulling in the negative direction, and the spring is pulling $m_2$ in the opposite direction.
+
+When the string breaks, the force on $m_1$ due to the spring is proportional to the difference in the displacements of $m_1$ and $m_2$,
+\begin{equation}
+F_{m_1} = m\ddot{x}_1 = -k(x_2-x_1).
+\end{equation}
+
+But we know $x_1$ and $x_2$ at the very moment the string breaks.  $x_1$ is at its equilibrium position, it's $0$, and we solved for $x_2$ above.  Therefore, the total force on $m_1$ is the spring force plus the force due to gravity,
+
+\begin{align}
+F_T =m\ddot{x}_1&= -k(\frac{mg}{k}-0) -mg,\\
+&= -mg-mg= -2mg,\\
+\Rightarrow\ddot{x}_1 &= -2g.
+\end{align}
+
+\subsubsection*{Qualitative solution}
+One way to think of this is to see that the center of mass of the system doesn't care about the spring, and will fall like a point object.  That means we have a system of mass $2m$, and we're looking for the acceleration solely due to gravity on an $m$-sized piece of it: $m\ddot{x} = -2mg \Rightarrow \ddot{x} = -2g$.
+
+But I think a solution that requires still \emph{less} work is to realize that the upper block will necessarily be accelerating faster than $g$, because it's being pulled both by gravity and the spring.  There is only one answer available which is greater than $g$.\\
+
+\answer{E}
+
+\section{Suspending a mass with friction}
+The general prescription I followed to solve this was to first find the normal force $F_B$, which is supporting $B$ against gravity.  This gives me $B$'s acceleration, and I know that $A$ must be accelerating at the same rate.  The force is then the sum of their masses times this acceleration.
+
+Because $B$ is stopped, its net force is 0, and we can solve for the acceleration:
+\begin{align}
+\mu F_B &= m_Bg,\\
+\Rightarrow \mu (m_B a) &= m_Bg,\\
+\Rightarrow a &= \frac{g}{\mu}.
+\end{align}
+
+Then, the force required to apply this acceleration to both $A$ and $B$ is
+\begin{align}
+F &= (m_A + m_B)a,\\
+&= (m_A + m_B)\frac{g}{\mu},\\
+&= (16 + 4)\times\frac{10}{1/2},\\
+&=400\text{ N}.
+\end{align}
+
+\answer{D}
+
+
+\section{A Lagrangian}
+Calculus of variations gives an equation of motion \--- the path which minimizes the time integral of the Lagrangian \--- as
+\begin{equation}
+\frac{d}{dt}\left(\frac{d L}{d\dot{q}}\right) - \frac{dL}{dq} = 0,
+\end{equation}
+where $q$ is a generalized coordinate.  Calculating the relevant quantities,
+\begin{align}
+\frac{d L}{d\dot{q}} = 2a\dot{q}, &\text{	} \frac{dL}{dq} = 4bq^3,\\
+\Rightarrow\frac{d}{dt}\left(\frac{d L}{d\dot{q}}\right) - \frac{dL}{dq} &= 2a\ddot{q} - 4bq^3 = 0,\\
+\Rightarrow\ddot{q} &= \frac{2a}{b}q^3.
+\end{align}
+
+\answer{D}
+
+\section{Rotations}
+For me, this problem is all about knowing how matrix multiplication works.  The given equation,
+\begin{equation}
+\begin{pmatrix}
+a_x\\
+a_y\\
+a_z\\
+\end{pmatrix}
+\begin{pmatrix}
+1/2 & \sqrt{3}/2 & 0\\
+-\sqrt{3}/2 & 1/2 & 0\\
+0 & 0 &1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_x'\\
+a_y'\\
+a_z'\\
+\end{pmatrix},
+\end{equation}
+gives a prescription for how to find the components of the primed vector.  They are
+\begin{align}
+a_x' &= \frac{1}{2}a_x + \frac{\sqrt{3}}{2}a_y, \\
+ a_y' &= -\frac{\sqrt{3}}{2}a_x + \frac{1}{2}a_y,\\
+ a_z' &= a_z.
+\end{align}
+So we can take a simple vector and see what it becomes.  By the relationship above, we can transform the vector (1,0,0) like this:
+\begin{equation}
+\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}
+\begin{pmatrix}
+1/2 & \sqrt{3}/2 & 0\\
+-\sqrt{3}/2 & 1/2 & 0\\
+0 & 0 &1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1/2\\
+-\sqrt{3}/2\\
+0
+\end{pmatrix}.
+\end{equation}
+So this transformation has taken a vector pointing to the right and shrunk its $x$-component, and made its $y$-component negative.  The z-component stays the same.  This is a counter-clockwise rotation about its z-axis, reducing the possible answers down to (B) and (E).  We can get the angle from the fact that the sine of the angle will be equal to the change in $x$: $\sin{\theta} = \sqrt{3}/2 \Rightarrow \theta = 60\degree$.  This requires knowing your unit circle.\\
+
+\answer{E}
+
+\section{Kinetic energy of conduction band electrons}
+This problem is mostly just a bunch of trivia, with little hope of figuring it out with no knowledge \emph{a priori}.  Going through the options:
+
+(A): Electrons are bound within the potential wells of atoms, and so actually have fewer degrees of freedom than atoms do.
+
+(B): If this were true, then the metal would be radiating energy somehow.  In my experience, metals generally just sit there.
+
+(C): In an ideal Fermi gas, the interactions of the fermions themselves (in this case, the electrons) contribute to the total energy, because no more than two particles with the same quantum numbers can coexist in the same state.  In this case, conduction band electrons are generally treated as a Fermi gas.
+
+(D): While the electrons move randomly at highly relativistic speeds, their aggregate motion is actually quite slow.
+
+(E): Electrons and phonons have much different length and energy scales (as phonons are waves in the lattice itself), so they do not interact with each other very strongly.\\
+
+\answer{C}
+
+\section{Number of particles in a state given the energy}
+
+Have memorized the equation for number of particles in a state $i$ given its energy, $E_i$ and degeneracy $g_i$:
+
+\begin{equation}
+N_i = g_ie^{-E_i/kT}.
+\end{equation}
+
+Then, for this problem, $E_A = E_B+.1$ so
+\begin{align}
+\frac{N_A}{N_B} &= \frac{g e^{-(E_B+0.1)/kT}}{g e^{-(E_B)/kT}},\\
+&=e^{-[(E_B+0.1)+E_B]/kT},\\
+&=e^{-0.1/.025},\\
+&=e^{-4}.
+\end{align}
+
+Alternatively, if you don't remember the above equation, you might remember that a state with higher energy is less likely than a state with lower energy, so you would expect the exponent to be negative.  Then, if you're comparing two states, you might guess that the ratio between the energy difference of the states and $kT$ is an important quantity.\\
+
+\answer{E}
+
+\section{Conservation in a particle decay}
+
+For questions of lepton and baryon number conservation I have a mnemonic:  \textbf{L}eptons are the \textbf{l}ittle, fast things like electrons, muons, and neutrinos.  \textbf{B}aryons are the \textbf{b}ig, slow things, like protons and neutrons.  Not sophisticated, but it works.
+
+Then, I know that regular particles (not anti-particles) contribute $+1$ to lepton and baryon numbers, and anti-particles contribute $-1$.  Then, I check to see if the number of leptons and baryons are the same on either side of the reaction.
+
+So, which of the given quantities both has an associated conservation law and is not conserved in the hypothetical decay of a muon into an electron and neutrino?
+
+(A): Charge seems like it's conserved.  Muons have negative charge, as do electrons, while neutrinos have no charge (\emph{neu}trinos are \emph{neu}tral).  So, on both sides of the reaction, charge is $-1$.
+
+(B): There is no law of conservation of mass in particle physics, because mass and energy are the same thing.
+
+(C): There is nothing stopping energy and momentum from being conserved here.
+
+(D): There are no baryons on either side of the equation, so baryon number is conserved (it's $0$ on both sides).
+
+(E): Every particle involved here is a lepton, but where there is only one at the beginning (the muon), there are two at the end (electron and neutrino).  It is a generally accepted truth among the learned that $1\neq2$, so we can conclude that lepton number is not conserved.\\
+
+\answer{E}
+
+\section{Relativistic momentum II}
+Like problem \hyperlink{section.32}{32}, this is asking for an application of the equation for relativistic energy,
+
+\begin{equation}
+E^2 = p^2c^2 + m^2c^4,
+\end{equation}
+where E is the total energy of a particle of rest mass $m$ and momentum $p$.  Solving for $m$ and plugging in, we have 
+\begin{align}
+m &= \sqrt{\frac{E^2}{c^4}-\frac{p^2}{c^2}},\\
+&= \sqrt{100-64},\\
+&=\sqrt{36} = 6\text{ GeV}/c^2.
+\end{align}
+\answer{D}
+
+\section{Speed in a moving reference frame}
+This question requires you to know two things.  First, that the index of refraction is defined
+\begin{equation}
+n\equiv c/v,
+\end{equation}
+where $v$ is the speed of light in the medium.  Second, how one combines velocity in relativistic reference frames.  If a particle (or whatever) is traveling with speed $\bar{v}$ in a frame which itself is moving with speed $V$ with respect to the lab frame, then the lab will measure that particle traveling at a speed
+\begin{equation}
+v = \frac{V + \bar{v}}{1+\frac{V\bar{v}}{c^2}}.
+\end{equation}
+
+So in this problem, we use the index of refraction of water to get the speed of light in the moving reference frame, then use the above equation to get the speed as measured in the lab.
+
+The index of refraction is given as $n = 4/3$, so the local speed of light in the moving frame is $\bar{v} = 3/4 c$.  Then, the tube of water is moving at $V = c/2$ with respect to the lab, so the speed of light as measured in the lab is going to be
+\begin{align}
+v &= \frac{1/2c + 3/4c}{1+\frac{1/2c\times3/4 c}{c^2}},\\
+&= \frac{5/4c}{1+3/8},\\
+&=\frac{5}{4}\frac{8}{11}c =\frac{10}{11}c.
+\end{align}
+
+\answer{D}
+
+\section{Orbital angular momentum eigenvalues}
+
+For states like hydrogenic electrons, which can be broken into radial and angular solutions, the angular piece needs to contain information for both the total angular momentum and the momentum in the $z$-direction.  This is generally denoted $Y^m_l(\theta,\phi)$, for $z$-angular momentum $m$ and total angular momentum $l$.  Then, we know that the operators for total angular momentum squared and $z$-angular momentum have the eigenvalues
+\begin{align}
+L_zY^m_l(\theta,\phi) &= \hbar m Y^m_l(\theta,\phi),\\
+\mathbf{L}^2Y^m_l(\theta,\phi) &= \hbar^2 l(l+1)Y^m_l(\theta,\phi).
+\end{align}
+
+So we want to find the angular momentum wavefunction with $z$-angular momentum $-\hbar$ and total angular momentum squared $6\hbar^2$.  The $z$-direction is easiest: $\hbar m = -\hbar\Rightarrow m=-1$.  That narrows down the possible solutions to (B) and (E).  Solving for the total angular momentum squared, we find
+\begin{align}
+\hbar^2 l(l+1) = 6\hbar^2,\\
+\Rightarrow l =2.
+\end{align}
+
+\answer{B}
+
+\section{Spin eigenfunctions for a triplet state}
+The solution to this problem really comes from knowing what the ``triplet state'' is and why it's called that, and that comes from a discussion of the addition of angular momenta\footnote{This solution is largely a summary of Griffith's QM 3ed. p. 165-167, which I strongly suggest you check out if you're having trouble with this problem and problem \hyperlink{section.83}{83}.}.
+
+First, a quick review of angular momentum in quantum mechanics:  In general, angular momentum comes in two, distinct flavors: orbital and spin.  Orbital angular momentum comes from solving the Schr\"{o}dinger equation in three dimensions, and separating the solution into a radial and angular component.  The angular component, the $Y_l^m(\theta,\phi)$ in problem \hyperlink{section.81}{81}, is the orbital angular momentum.  This is a continuous function of $\theta$ and $\phi$ and is largely analogous with its classical counterpart.
+
+Spin angular momentum, on the other hand, is a distinct, immutable quantity possessed by every particle.  It's not a function (it's just a number), and it is not really a ``spin'' \--- that concept is poorly defined for something with no spatial extent, like an electron.  However, it is mathematically identical to any other kind of angular momentum.  It commutes just like in problem \hyperlink{section.43}{43}, and a change in spin angular momentum imparts a torque on the particle, just like a classical angular momentum.
+
+Furthermore, spin has the same observables as orbital angular momentum: total spin, $s$, and $z$-component, $m$.  They have certain allowed values, depending on what kind of particle they refer to:
+\begin{equation}
+s = 0, \frac{1}{2}, 1, \frac{3}{2},\dots;\text{	}m = -s,-s+1,\dots,s-1,s.
+\end{equation}
+For each of these values, there is an assumed factor of $\hbar/2$.
+
+Notationally, one writes the ket of a particle's spin as $\ket{sm}$.  In the case of two particles with the same total momentum, it is common to assume that $s$ is known, and to only care about the sign of $m$.  In other words, if you were talking about two electrons, or a state with an electron and a proton (which are both spin-$1/2$ particles), you might write the state of the system as $\ket{\uparrow\uparrow}$, if they both had $m=1/2$.  In general, there are four ways to arrange the $z$-directions of the spins of a two-particle system:
+\begin{equation}
+\ket{\uparrow\uparrow},\ket{\uparrow\downarrow},\ket{\downarrow\uparrow},\ket{\downarrow\downarrow}.
+\end{equation}
+
+These states refer to two particles simultaneously, but they are perfectly normal quantum states, and we can act on them with operators like we would on any old single-particle state.  Specifically, we can act on the two-particle state with spin angular-momentum operators and ask what the total spin is of the complete system.  It turns out that there are three ways to combine the above four states such that they have total spin angular momentum of $s=1$.  This is the ``triplet state''.  Similarly, it turns out that the only remaining option is to have $s=0$, and this is the ``singlet state''.
+
+Now, to know what the triplet state is, you really have to know how angular momenta add.  If I want to measure the total spin of a two-particle state, I can define the operator
+\begin{equation}
+\mathbf{S} = \mathbf{S}^{(1)}+\mathbf{S}^{(2)}, 
+\end{equation}
+where the two operators with $(1)$ and $(2)$ exponents act only on particles 1 and 2, respectively.  As in the Griffiths cited, you find that the $z$-components of a generic state add, $m=m_1+m_2$:
+\begin{align}
+S_z\chi_1\chi_2 &= (S^{(1)}+S^{(2)})\chi_1\chi_2,\\
+&=\left(S^{(1)}\chi_1\right)\chi_2 + \chi_1\left(S^{(2)}\chi_2\right),\\
+&=\left(\hbar m_1\chi_1\right)\chi_2 + \chi_1\left(\hbar m_2 \chi_2\right),\\
+&=\hbar(m_1+m_2)\chi_1\chi_2.
+\end{align}
+
+So if the $z$-component of the spin angular momentum simply adds, for a two-particle state with two spin-$1/2$ particles, there are 4 options for the value of $m$:
+\begin{align}
+&\ket{\uparrow\uparrow}:m=1;\\
+&\ket{\uparrow\downarrow}:m=0;\\
+&\ket{\downarrow\uparrow}:m=0;\\
+&\ket{\downarrow\downarrow}:m=-1.
+\end{align}
+
+That there are two states with the same value of $m$ should tip you off that something's wrong, because $m$ should go from $-s$ to $s$ in half-integer steps. The answer is that the four states above are \emph{not} the eigenstates of the total angular momentum operator $S^2$, and so are not states of definite $s$.  We can get these eigenfunctions, and from them the values of $s$, by applying the lowering operator to $\ket{\uparrow\uparrow}$\footnote{It would also work to apply $S_+$ to $\ket{\downarrow\downarrow}$.  I suggest doing so for practice.}:
+\begin{align}
+S_-\ket{\uparrow\uparrow} &= \left(S^{(1)}_-+S^{(2)}_-\right)\ket{\uparrow\uparrow},\\
+&=\left(S^{(1)}_-\uparrow\right)\uparrow + \uparrow\left(S^{(2)}_-\uparrow\right),\\
+&=\left(\hbar\sqrt{s(s+1)-m(m-1)}\downarrow\right)\uparrow + \uparrow\left(\hbar\sqrt{s(s+1)-m(m-1)}\downarrow\right),\\
+&=\hbar\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)-\frac{1}{2}\left(\frac{1}{2}-1\right)}\left(\downarrow\uparrow + \uparrow\downarrow\right),\\
+&=\hbar\sqrt{\frac{1}{2}\times\frac{3}{2}+\frac{1}{4}}\left(\downarrow\uparrow + \uparrow\downarrow\right),\\
+&=\hbar\left(\downarrow\uparrow + \uparrow\downarrow\right).
+\end{align}
+This is one of the eigenfuncions of $S^2$ for a two-particle system, and provides the answer to this question.
+
+Now, applying the lowering operator to this state, we have
+\begin{align}
+S_-\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right) &=\left(S^{(1)}_-+S^{(2)}_-\right)\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right),\\
+&=\left(S_-^{(1)}\downarrow\right)\uparrow+\left(S_-^{(1)}\uparrow\right)\downarrow+\downarrow\left(S_-^{(2)}\uparrow\right)+\uparrow\left(S_-^{(2)}\downarrow\right),\\
+&=0+\hbar\downarrow\downarrow + \hbar\downarrow\downarrow+0,\\
+&=2\hbar\ket{\downarrow\downarrow}.
+\end{align}
+Writing the three states together, we have, for all states for eigenstates of $S^2$ with $s=1$,
+
+\begin{table}[h]
+\centering
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{ll}
+state                   & $m$                       \\ \hline
+\multicolumn{1}{|l|}{$\ket{\uparrow\uparrow}$} & \multicolumn{1}{l|}{1}  \\ \hline
+\multicolumn{1}{|l|}{$\frac{1}{\sqrt{2}}\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right)$} & \multicolumn{1}{l|}{0}  \\ \hline
+\multicolumn{1}{|l|}{$\ket{\downarrow\downarrow}$} & \multicolumn{1}{l|}{-1} \\ \hline
+\end{tabular}
+\egroup
+\end{table}
+This is the triplet state.  The coefficients are slightly different for the sake of normalization.
+
+The remaining state with $m=0$ is the state which has $s=0$:$\frac{1}{\sqrt{2}}(\ket{\downarrow\uparrow}-\ket{\downarrow\uparrow})$.  This is the singlet state.
+
+For an intuitive approach about why $m$ can be $0$ in two distinct states, I think of the triplet $m=0$ state as being like if all of the spin is in, say, the $x$-direction, but both electrons are spinning up.  So the total spin angular momentum will still be 1, but none of it will be in the $z$-direction.  The singlet $m=0$ might also have both electrons spinning in entirely the $x$-direction (or whatever) but where one is spinning up, the other is spinning down, so their total spin is 0.  This is, of course, not rigorous and should not be given too much consideration, but I find it nonetheless helpful.
+
+So to answer the question, we are given that $\ket{\alpha} = \ket{\uparrow}$ and $\ket{\beta} = \ket{\downarrow}$.  By inspection, we can see that options I and III are members of the triplet state.\\
+
+\answer{D}
+
+\section{Eigenstates of $S_x$}
+Despite the language about spin, this problem is more about knowing how to find the eigensystem of a matrix than it is about quantum.  The problem gives you the eigenvectors and eigenvalues of a matrix (the functions of definite $z$-spin), and asks you to find the eigenfunctions of another matrix, and to give them in terms of the eigenfunctions of the first.  That is, it wants the eigenfunctions of the $\sigma_x$ operator written as linear combinations of the $S_z$ operator.  Specifically, it wants the function associated with the eigenvalue $-\hbar/2$.  Because we're dealing with the Pauli spin matrix, we can actually assume the $\hbar/2$ and just look for the vector associated with the eigenvalue of $-1$.
+
+For the sake of simplicity, let's say that
+\begin{equation}
+\ket{\uparrow} = 
+\begin{pmatrix}
+1\\0
+\end{pmatrix},
+\text{ and } 
+\ket{\downarrow} = 
+\begin{pmatrix}
+0\\1
+\end{pmatrix}.
+\end{equation}
+
+Then, to find the eigenvalues of the $\sigma_x$, we solve the characteristic equation:
+\begin{align}
+\det\left(\sigma_x - \lambda I\right) &= 0,\\
+\Rightarrow \begin{vmatrix}
+-\lambda & 1\\
+1 & -\lambda
+\end{vmatrix}
+&=0.\\
+\Rightarrow \lambda^2 -1&= 0,\\
+\Rightarrow \lambda &= \pm 1.
+\end{align}
+
+So our eigenvalues are $\pm1$.  To find the vectors associated with these, we can take a generic vector $(\alpha,\beta)$, multiply it by $\sigma_x$, and set the result equal to multiplying it by an eigenvalue.
+
+Because the problem asks for the state with eigenvalue $-\hbar/2$, we will just look at the $-1$ case:
+\begin{align}
+\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\alpha\\
+\beta
+\end{pmatrix}
+&= - \begin{pmatrix}
+\alpha\\
+\beta
+\end{pmatrix},\\
+\Rightarrow\begin{pmatrix}
+\beta\\
+\alpha
+\end{pmatrix}
+&= -\begin{pmatrix}
+\alpha\\
+\beta
+\end{pmatrix}.
+\end{align}
+So we have the constraint that $\alpha = -\beta$ and vice-versa.  The smallest whole numbers which satisfy this constraint are $\alpha = 1$ and $\beta = -1$.  This gives a vector of
+\begin{align}
+\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}
+ &= \begin{pmatrix}
+1\\
+0
+\end{pmatrix}
+-\begin{pmatrix}
+0\\
+1
+\end{pmatrix},\\
+&=\ket{\uparrow}-\ket{\downarrow}.
+\end{align}
+Throw in a factor of $1/\sqrt{2}$ for normalization, and you get the answer.\\
+
+\answer{C}
+
+\section{Transition selection rules}
+
+Selection rules come from applying time-independent perturbation to hydrogen, and specifically the likelihood of spontaneous emission and absorption\footnote{See p.306, and p.315-318 of Griffiths QM, 3ed. for a complete treatment.}.  When you do this, it turns out that there are many transitions for which the expectation value is 0.
+
+
+A quick review: you can reduce the problem of spontaneous emission from state $\psi_1$ to $\psi_2$ to calculating the matrix elements of $\bra{\psi_2}\mathbf{r}\ket{\psi_1}$.  In the case of hydrogen, symmetry permits you to rewrite this in terms of the quantum numbers $\bra{nlm}\mathbf{r}\ket{n'l'm'}$, where the primed numbers refer to the original state.  Then, in the words of David Griffiths, ``clever exploitation of angular momentum commutation relations and the hermiticity of the angular momentum operators yields a set of powerful constraints on [the matrix elements of the expectation value of spontaneous emission].''\footnote{Griffiths QM, 3ed. p.315}
+
+Doing the math results in the following selection rules, which you should memorize:
+\begin{center}
+\fbox{\parbox{0.35\textwidth}{\emph{No transitions occur unless}:
+\begin{enumerate}
+\item $\Delta m = 0 \text{ or } \pm 1$.
+\item $\Delta l = \pm 1$.
+\item Therefore, $\Delta j = 0 \text{ or } \pm 1$.
+\end{enumerate}}}
+\end{center}
+
+Answering this problem then requires looking at the transitions provided and figuring out which of them are allowed by the rules.  Going through the options:
+
+$A$: $\Delta l = 0$, so we can right away rule it out as an option.
+
+$B$: $\Delta l = -1$, and $\Delta j = 1$, so this is allowed.
+
+$C$: $\Delta l = -1$, and $\Delta j = 0$, so this is allowed.
+
+I think that the diagram is pretty confusing though; it looks like transition $C$ starts at the same level as $A$ starts, where $l=0$.  Instead, the $l$ labels are more like headers to columns, and path $C$ starts with the same $l$ as $B$, 1.\\
+
+\answer{D}
+
+\section{Nichrome wire}
 \end{document}
-
-
-
-
 
 
 
