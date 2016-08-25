@@ -76,7 +76,7 @@ However, the units need to be taken care of.  We are given a frequency $\nu = 33
 \answer{D}
 
 \section{Satellite orbit}
-I can't think of many clever ways to narrow down the answers.  It is probably just good to have Kepler's Third Law memorized:
+I can't think of many clever ways to really narrow down the answers.  It is probably just good to have Kepler's Third Law memorized:
 
 \begin{equation}
 T = 2\pi \sqrt{\frac{a^3}{GM}},
@@ -2050,7 +2050,7 @@ Filling in the placeholders,
 \end{align}
 The absolute value signs come from the fact that $\delta\theta'$ is an angular distance, and so must be positive.
 
-If you didn't have enough time to go through all this algebra, you can make a reasonable guess by first doing dimensional analysis.  Only three of the answers are unitless: (B), (D), and (E).  Then you might choose the one with $\tan\theta'$ because the Taylor expansion gives you both $\sin\theta'$ and $\cos\theta'$.\\
+If you didn't have enough time to go through all this algebra, you can make a reasonable guess by first doing dimensional analysis.  The answer, an angle, is unitless, and only three of the answers are unitless: (B), (D), and (E).  Then you might choose the one with $\tan\theta'$ because the Taylor expansion gives you both $\sin\theta'$ and $\cos\theta'$, so you might expect the answer to combine them.\\
 
 \answer{E}
 
@@ -2061,7 +2061,7 @@ This problem is perfect for dimensional analysis.  If you know that $kT$ has dim
 \end{equation}
 will have units of energy.  There is only one answer with such units.
 
-Alternatively, you can see that the expression is some dividing kind of energy by the total number of things, and that sounds a lot like a kind of average.  This is more obvious if you remember that $e^{-E_i/kT}$ is the partition function, which is related to the probability that a given particle is in a state $i$.\\
+Alternatively, you can see that the expression is dividing some kind of energy by the total number of something, and that sounds a lot like a kind of average.  This is more obvious if you remember that $e^{-E_i/kT}$ is the partition function, which is related to the probability that a given particle is in a state $i$.\\
 
 \answer{A}
 
@@ -2089,6 +2089,30 @@ Setting $T_i = T_f$, we have
 \end{align}
 
 \answer{D}
+
+\section{Michelson interferometer}
+The light that is redirected to the movable mirror has to take a longer path than the light that is not.  The difference in path length is $2d$, because it has to go out to the mirror and back again.  Therefore, you expect a maximum (a fringe) whenever this extra path length is equal to at least one wavelength, or $2d = \lambda \Rightarrow d=\lambda/2$.  If it's equal to multiple wavelengths, then you'll get multiple fringes.  Therefore, the condition on $d$ for getting a fringe in an interferometer is
+\begin{equation}
+	d = \frac{m\lambda}{2},
+\end{equation}
+where $m$ is the number of fringes, an integer.
+
+In this case, we know the wavelength of red light, $\lambda_r$ and the number of fringes it produces, $m_r$.  Using this, we can solve for the distance:
+\begin{equation}
+	d = \frac{m_r\lambda_r}{2}.
+\end{equation}
+
+Now we can get the wavelength of green light:
+
+\begin{align}
+	d = \frac{m_r\lambda_r}{2} &= \frac{m_g\lambda_g}{2},\\
+	\Rightarrow \lambda_g &= \frac{m_r\lambda_r}{m_g},\\
+	&= \frac{85865 \times 632.82 \text{ nm}}{100000},\\
+	&\approx 86 \times 6.3\text{ nm},\\
+	&= 86\times6\text{ nm} + 86/3\text{ nm},\\
+	&= 544\text{ nm}.
+\end{align}
+\answer{B}
 \end{document}
 
 
