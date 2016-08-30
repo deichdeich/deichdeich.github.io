@@ -7,6 +7,8 @@
 \usepackage{amssymb}
 \usepackage{epstopdf}
 \usepackage{physics}
+\usepackage{longtable}
+\usepackage{tabularx}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{enumitem}
@@ -1059,7 +1061,7 @@ This question requires you to memorize the boundary conditions for electromagnet
 The boundary conditions for electric and magnetic fields are
 \begin{align}
 \text{(i) } \mathbf{E}_{1}^{\parallel} &= \mathbf{E}_{2}^{\parallel}, \quad \text{(ii) }\epsilon_1\mathbf{E}_{1}^{\perp} = \epsilon_2\mathbf{E}_{2}^{\perp} + \sigma_f,\\
-\text{(ii) }\mathbf{B}_{1}^{\perp}&=\mathbf{B}_{2}^{\perp}, \text{ and } \text{(iv) } \frac{1}{\mu_1}\mathbf{B}_{1}^{\parallel} = \frac{1}{\mu_2}\mathbf{B}_{2}^{\parallel} + \left(\mathbf{K}_f \cross \hat{\mathbf{n}}\right).
+\text{(iii) }\mathbf{B}_{1}^{\perp}&=\mathbf{B}_{2}^{\perp}, \text{ and } \text{(iv) } \frac{1}{\mu_1}\mathbf{B}_{1}^{\parallel} = \frac{1}{\mu_2}\mathbf{B}_{2}^{\parallel} + \left(\mathbf{K}_f \cross \hat{\mathbf{n}}\right).
 \end{align}
 These describe how the electromagnetic field in one medium ($\mathbf{E}_1$ and $\mathbf{B}_1$) is related to the electromagnetic field in another (adjacent) medium ($\mathbf{E}_2$ and $\mathbf{B}_2$) \emph{right at the boundary between the media}.  $\epsilon_1$ and $\epsilon_2$ are the permittivities of the two media, and $\mu_1$ and $\mu_2$ are the permeabilities.  $\sigma_f$ is the free surface charge and $\mathbf{K}_f$ is the free surface current.  Finally, $\hat{\mathbf{n}}$ is a unit vector pointing perpendicularly from the surface.
 
@@ -1797,7 +1799,7 @@ In this case, $\mathbf{B} = -B_0\mathbf{\hat{x}}$, and we are told that the coil
 \end{equation}
 and therefore
 \begin{equation}
-	\frac{d\phi}{dt} = B_0 \omega \pi r^2 \cos\left(\omega t\right).
+	\frac{d\phi}{dt} = -B_0 \omega \pi r^2 \cos\left(\omega t\right).
 \end{equation}
 Then, we can use the equation above for induced voltage with Ohm's law to get the induced current:
 \begin{align}
@@ -1862,7 +1864,7 @@ When the child walks to the center, however, $R$ vanishes for the child, and so 
 \answer{E}
 
 \section{Series and parallel springs}
-There are a few ways to do this, and the one which makes the most sense is to look at the energies of the two scenarios.  You can also look at the forces, but this is a bit more involved\footnote{A full treatment of the force method can be found, at the time of this writing, on the Wikipedia page \url{https://en.wikipedia.org/wiki/Series_and_parallel_springs}.}.
+There are a few ways to do this, and the one which makes the most sense to me is to look at the energies of the two scenarios.  You can also look at the forces, but this is a bit more involved\footnote{A full treatment of the force method can be found, at the time of this writing, on the Wikipedia page \url{https://en.wikipedia.org/wiki/Series_and_parallel_springs}.}.
 
 A spring with spring constant $k$ has the potential
 \begin{equation}
@@ -1926,7 +1928,7 @@ The Hamiltonian for a classical system is defined
 \begin{equation}
 	H\equiv T+U,
 \end{equation}
-for kinetic and potential energies $T$ and $U$, respectively.  Right away, we can reduce the possible answers to (B) and (E), because, as discussed in problem \hyperlink{section.90}{90}, the potential energy for a spring is $U = \frac{1}{2}kx^2$.  That means that there should not be any minus signs anywhere in the Hamiltonian.  Then, (B) would imply that the spring's potential went as $kx^2$, which it doesn't.\\
+for kinetic and potential energies $T$ and $U$, respectively.  Right away, we can reduce the possible answers to (B) and (E), because, as discussed in problem \hyperlink{section.90}{90}, the potential energy for a spring is $U = \frac{1}{2}kx^2$.  That means that there should not be any minus signs anywhere in the Hamiltonian.  Then, (B) would imply that the spring's potential was $kx^2$, which it isn't.\\
 
 \answer{E}
 
@@ -1966,6 +1968,8 @@ If you have a Hamiltonian that looks a lot like some simple Hamiltonian except f
 \end{equation}
 where $\Delta H$ is the perturbation.  In this case, we're perturbing the quantum harmonic oscillator ($H_0 = \frac{1}{2}kx^2$) by a linear combination of ladder operators, $\Delta H = V\left(a + a^\dagger\right)^2$, where $V$ is some constant.
 
+Perturbed Hamiltonians will give small corrections to the energies and energy states.  Perturbation theory is the process of determining these corrections.
+
 Ladder operators are operators which act on quantum harmonic oscillator energy states and return either the next higher or the next lower state scaled by some number:
 \begin{align}
 	a\ket{n} &= \sqrt{n}\ket{n-1},\\
@@ -1986,7 +1990,7 @@ To do this, expand $\Delta H$ and calculate.  I will first calculate $\Delta H\k
 	&= V\left[a\sqrt{n}\ket{n-1} + a\sqrt{n+1}\ket{n+1} + a^\dagger \sqrt{n}\ket{n-1} + a^\dagger \sqrt{n+1}\ket{n+1}\right],\\
 	&=V\left[\sqrt{n(n-1)}\ket{n-2} + (n+1)\ket{n} + n\ket{n} + \sqrt{(n+1)(n+2)}\ket{n+2}\right].
 \end{align}
-Now, when taking the inner product of this with $\bra{n}$, the first and last wave functions vanish:  States of definite energy form an orthonormal basis, so $\ket{n-2}$ and $\ket{n+2}$ are orthogonal to $\ket{n}$ and thus their inner product will be 0.
+Now, when taking the inner product of this with $\bra{n}$, the first and last wave functions vanish:  States of definite energy form an orthogonal basis, so $\ket{n-2}$ and $\ket{n+2}$ are orthogonal to $\ket{n}$ and thus their inner product will be 0.
 
 However, because $\bra{n}\ket{n}=1$, we can say
 \begin{equation}
@@ -2000,12 +2004,12 @@ so, for $n=2$,
 \answer{E}
 
 \section{Electric field inside a medium}
-This problem can (and should, I think) be solved with dimensional analysis and some logic.  First, we're looking for an answer with units of electric field.  We know that $K$ is unitless because $\epsilon = K\epsilon_0$.  That means that the only answers with the units of electric field are (A), (C), and (E).  Then, we expect the field inside the medium to be \emph{less} than $E_0$ because it takes energy to move the charges around in a dielectric.  There is only one answer which is less than $E_0$.\\
+This problem can (and should, I think) be solved with dimensional analysis and some logic.  First, we're looking for an answer with units of electric field.  We know that $K$ is unitless because $\epsilon = K\epsilon_0$.  That means that the only answers with the units of electric field are (A), (C), and (E).  Then, we expect the field inside the medium to be \emph{less} than $E_0$ because it takes energy to move the charges around in a dielectric.  There is only one answer with units of electric field and which is less than $E_0$.\\
 
 \answer{A}
 
 \section{Radiation from a pulsing sphere}
-Radiation is the bits of electromagnetic energy that make it to infinity.  Specifically, the power radiated what you get when you take the limit at infinity of the surface integral of the Poynting vector $\mathbf{S}$ (recall that the Poynting vector has units of power per area):
+Radiation is the bits of electromagnetic power that make it to infinity.  Specifically, the power radiated is what you get when you take the limit at infinity of the surface integral of the Poynting vector $\mathbf{S}$ (recall that the Poynting vector has units of power per area):
 \begin{equation}
 	P_\text{rad} = \lim_{r\rightarrow\infty}P(\mathbf{r}) = \lim_{r\rightarrow\infty} \int \frac{1}{\mu_0}\left(\mathbf{E}\cross\mathbf{B}\right) \cdot d\mathbf{a}.
 \end{equation}
@@ -2129,6 +2133,255 @@ Now we can get the wavelength of green light:
 	&= 544\text{ nm}.
 \end{align}
 \answer{B}
+
+\newpage
+\section*{Equation tables}
+\label{sec:eqtab}
+\addcontentsline{toc}{section}{\nameref{sec:eqtab}}
+\markright{Equation tables}
+\subsubsection*{Classical mechanics}
+\label{subsec:classical}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:classical}}
+
+
+%%%%%%%%%%%%%%%%%%% CLASSICAL TABLE %%%%%%%%%%%%%%%%%%%%%%%
+
+\centering
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{Centripetal acceleration} & \multicolumn{1}{l|}{$a_c = \omega^2r = v^2/r$} \\ \hline
+\multicolumn{1}{|l|}{Torque} & \multicolumn{1}{l|}{$\tau = \mathbf{r}\cross\mathbf{F} = \frac{dI}{dt}$} \\ \hline
+\multicolumn{1}{|l|}{Rotational kinetic energy} & \multicolumn{1}{l|}{$T_r = \frac{1}{2}I\omega^2$} \\ \hline
+\multicolumn{1}{|l|}{Translational kinetic energy} & \multicolumn{1}{l|}{$T_t = \frac{1}{2}mv^2$} \\ \hline
+\multicolumn{1}{|l|}{Angular momentum} & \multicolumn{1}{l|}{$L = I\omega$} \\ \hline
+\multicolumn{1}{|l|}{Parallel axis theorem} & \multicolumn{1}{l|}{$I = I_\text{cm} + md^2$} \\ \hline
+\multicolumn{1}{|l|}{Translational momentum} & \multicolumn{1}{l|}{$p = mv$} \\ \hline
+\multicolumn{1}{|l|}{Hooke's law} & \multicolumn{1}{l|}{$F = -kx$} \\ \hline
+\multicolumn{1}{|l|}{Frequency of a spring} & \multicolumn{1}{l|}{$\omega = \sqrt{\frac{k}{m}}$} \\ \hline
+\multicolumn{1}{|l|}{SHO potential} & \multicolumn{1}{l|}{$U = \frac{1}{2}kx^2$} \\ \hline
+\multicolumn{1}{|l|}{Speed of sound in a gas} & \multicolumn{1}{l|}{$v = \sqrt{\frac{\gamma RT}{M}}$} \\ \hline
+\multicolumn{1}{|l|}{Buoyant force} & \multicolumn{1}{l|}{$\mathbf{F} = \rho g V \mathbf{\hat{r}}$} \\ \hline
+\multicolumn{1}{|l|}{Force due to friction} & \multicolumn{1}{l|}{$\mathbf{F} = -\mu g \mathbf{\hat{v}}$} \\ \hline
+\multicolumn{1}{|l|}{Lagrangian} & \multicolumn{1}{l|}{$L = T-U$} \\ \hline
+\multicolumn{1}{|l|}{Hamiltonian} & \multicolumn{1}{l|}{$H = T+U$} \\ \hline
+\multicolumn{1}{|l|}{Lagrangian equation of motion} & \multicolumn{1}{l|}{$\frac{d}{dt}\left(\frac{dL}{d\dot{q}}\right)-\frac{dL}{dq} = 0$} \\ \hline
+\multicolumn{1}{|l|}{Hamiltonian equations of motion} & \multicolumn{1}{l|}{$\frac{dp}{dt} = -\frac{dH}{dq}, \frac{dq}{dt} = +\frac{dH}{dp}$} \\ \hline
+\multicolumn{1}{|l|}{Work} & \multicolumn{1}{l|}{$W = -\int F \cdot d\mathbf{\hat{r}} = -\Delta U$} \\ \hline
+\multicolumn{1}{|l|}{Force in terms of potential} & \multicolumn{1}{l|}{$F = -\nabla U$} \\ \hline
+\multicolumn{1}{|l|}{Power} & \multicolumn{1}{l|}{$P = \frac{dE}{dt}$} \\ \hline
+\multicolumn{1}{|l|}{Impulse} & \multicolumn{1}{l|}{$J = \int F dt$} \\ \hline
+\multicolumn{1}{|l|}{Kepler's third law} & \multicolumn{1}{l|}{$T = 2\pi\sqrt{\frac{a^3}{GM}}$} \\ \hline
+\multicolumn{1}{|l|}{Gravitational force} & \multicolumn{1}{l|}{$\mathbf{F} = -\frac{GMm}{r^2}\mathbf{\hat{r}}$} \\ \hline\\\\
+\end{longtable}
+\egroup
+
+
+
+%%%% EM TABLE %%%%%%%%
+\subsubsection*{Electromagnetism}
+\label{subsec:em}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:em}}
+
+\centering
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{Maxwell's equations} & \multicolumn{1}{l|}{\begin{tabular}{@{}c@{}c@{}c@{}}$\nabla\cdot\mathbf{E} = \frac{\rho}{\epsilon_0}$ & $\nabla\cross\mathbf{E} = -\frac{d\mathbf{B}}{dt}$ \\ $\nabla\cdot\mathbf{B} = 0$ & \phantom{.........}$\nabla\cross\mathbf{B} = \mu_0\mathbf{J}+\mu_0\epsilon_0\frac{d\mathbf{E}}{dt}$\end{tabular}} \\ \hline
+\multicolumn{1}{|l|}{Lorentz force} & \multicolumn{1}{l|}{$\mathbf{F} = q\mathbf{E} + q\left(\mathbf{v}\cross\mathbf{B}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Biot-Savart law} & \multicolumn{1}{l|}{$\mathbf{B}\left(\mathbf{r}\right) = \frac{\mu_0}{4\pi}\int \frac{Id\mathbf{l}\cross\mathbf{\hat{r}'}}{\left|\mathbf{r'}^2\right|}$} \\ \hline
+
+\multicolumn{1}{|l|}{Electric field in terms of potentials} & \multicolumn{1}{l|}{$\mathbf{E} = -\nabla V - \frac{d\mathbf{A}}{dt}$} \\ \hline
+\multicolumn{1}{|l|}{Magnetic field in terms of potentials} & \multicolumn{1}{l|}{$\mathbf{B} = \nabla\cross\mathbf{A}$} \\ \hline
+\multicolumn{1}{|l|}{Field energy} & \multicolumn{1}{l|}{$U = \frac{1}{2}\int \left(\epsilon_0 E^2 + \frac{1}{\mu_0}B^2\right)d\tau$} \\ \hline
+\multicolumn{1}{|l|}{Field momentum} & \multicolumn{1}{l|}{$\mathbf{P} = \epsilon_0\int\left(\mathbf{E}\cross\mathbf{B}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Poynting vector} & \multicolumn{1}{l|}{$\mathbf{S} = \frac{1}{\mu_0}\left(\mathbf{E}\cross\mathbf{B}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Larmor formula} & \multicolumn{1}{l|}{$P = \frac{\mu_0}{6\pi c}q^2a^2$} \\ \hline
+\multicolumn{1}{|l|}{Electric field of a point charge} & \multicolumn{1}{l|}{$\mathbf{E} = \frac{Q}{4\pi\epsilon_0}\mathbf{\hat{r}}$} \\ \hline
+\multicolumn{1}{|l|}{Electric field of an infinite sheet} & \multicolumn{1}{l|}{$\mathbf{E} = \frac{\sigma}{2\epsilon_0}\mathbf{\hat{n}}$} \\ \hline
+\multicolumn{1}{|l|}{Electric field of an infinite wire} & \multicolumn{1}{l|}{$\mathbf{E} = \frac{\lambda}{2\pi s\epsilon_0}\mathbf{\hat{s}}$} \\ \hline
+\multicolumn{1}{|l|}{Electric, magnetic field inside a hollow sphere} & \multicolumn{1}{l|}{$\mathbf{E},\mathbf{B} = 0$} \\ \hline
+\multicolumn{1}{|l|}{Electric dipole moment} & \multicolumn{1}{l|}{$\mathbf{p} = q\mathbf{d}$} \\ \hline
+\multicolumn{1}{|l|}{Electric potential dipole term} & \multicolumn{1}{l|}{$V_\text{dip} = \frac{1}{4\pi\epsilon_0}\frac{\mathbf{p}\cdot\mathbf{\hat{r}}}{r^2}$} \\ \hline
+\multicolumn{1}{|l|}{Electric potential of a dipole} & \multicolumn{1}{l|}{$V = \frac{p\cos\theta}{4\pi \epsilon_0 r^2}$} \\ \hline
+\multicolumn{1}{|l|}{Electric field inside a hollow sphere} & \multicolumn{1}{l|}{$\mathbf{E} = 0$} \\ \hline
+\multicolumn{1}{|l|}{Magnetic field of a steady line current} & \multicolumn{1}{l|}{$\mathbf{B} = \frac{\mu_0 I}{2\pi s}\mathbf{\hat{\theta}}$} \\ \hline
+\multicolumn{1}{|l|}{Magnetic field of the middle of a solenoid} & \multicolumn{1}{l|}{$\mathbf{B} = \mu_0 n I\mathbf{\hat{z}}$} \\ \hline
+\multicolumn{1}{|l|}{Induced voltage} & \multicolumn{1}{l|}{$\varepsilon = -\frac{d\phi}{dt}$} \\ \hline
+\multicolumn{1}{|l|}{Magnetic dipole moment} & \multicolumn{1}{l|}{$\mathbf{m} = I\mathbf{a}$} \\ \hline
+\multicolumn{1}{|l|}{Vector potential dipole term} & \multicolumn{1}{l|}{$\mathbf{A}_\text{dip}\left(\mathbf{r}\right) = \frac{\mu_0}{4\pi}\frac{\mathbf{m}\cross\mathbf{\hat{r}}}{r^2}$} \\ \hline
+\multicolumn{1}{|l|}{Vector potential of a dipole} & \multicolumn{1}{l|}{$\mathbf{A}\left(\mathbf{r}\right) = \frac{\mu_0}{4\pi}\frac{m \sin \theta}{r^2}\mathbf{\hat{\phi}}$} \\ \hline
+\multicolumn{1}{|l|}{Flux of some vector field $\mathbf{F}$} & \multicolumn{1}{l|}{$\phi = \int \mathbf{F}\cdot d\mathbf{A}$} \\ \hline
+\multicolumn{1}{|l|}{Boundary conditions for $\mathbf{E}$} & \multicolumn{1}{l|}{$\mathbf{E}_{1}^{\parallel} = \mathbf{E}_{2}^{\parallel}$, $\epsilon_1\mathbf{E}_{1}^{\perp} = \epsilon_2\mathbf{E}_{2}^{\perp} + \sigma_f$} \\ \hline
+\multicolumn{1}{|l|}{Boundary conditions for $\mathbf{B}$} & \multicolumn{1}{l|}{$\mathbf{B}_{1}^{\perp} =\mathbf{B}_{2}^{\perp}$, $\frac{1}{\mu_1}\mathbf{B}_{1}^{\parallel} = \frac{1}{\mu_2}\mathbf{B}_{2}^{\parallel} + \left(\mathbf{K}_f \cross \hat{\mathbf{n}}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Resistivity} & \multicolumn{1}{l|}{$\rho = \frac{RA}{L}$}\\\hline
+\end{longtable}
+\egroup
+
+
+%%%%%%%%%%% CIRCUIT TABLE %%%%%%%%%%
+\subsubsection*{Circuits}
+\label{subsec:cir}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:cir}}
+
+\centering
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{Ohm's law} & \multicolumn{1}{l|}{$V=IR$} \\ \hline
+\multicolumn{1}{|l|}{Effective resistance in series} & \multicolumn{1}{l|}{$R_\text{eff.} = R_1 + R_2 + \dots$} \\ \hline
+\multicolumn{1}{|l|}{Effective resistance in parallel} & \multicolumn{1}{l|}{$R_\text{eff.}^{-1} = R_1^{-1} + R_2^{-1} + \dots$} \\ \hline
+
+\multicolumn{1}{|l|}{Effective capacitance in series} & \multicolumn{1}{l|}{$C_\text{eff.}^{-1} = C_1^{-1} + C_2^{-1} + \dots$} \\ \hline
+
+\multicolumn{1}{|l|}{Effective capacitance in parallel} & \multicolumn{1}{l|}{$C_\text{eff.} = C_1 + C_2 + \dots$} \\ \hline
+\multicolumn{1}{|l|}{Complex resistor impedance} & \multicolumn{1}{l|}{$Z_R = R_\text{eff.}$} \\ \hline
+\multicolumn{1}{|l|}{Complex capacitor impedance} & \multicolumn{1}{l|}{$Z_C = \frac{1}{i\omega C}$} \\ \hline
+\multicolumn{1}{|l|}{Complex inductor impedance} & \multicolumn{1}{l|}{$Z_L = i\omega L$} \\ \hline
+\multicolumn{1}{|l|}{Total complex impedance} & \multicolumn{1}{l|}{$Z_\text{tot.} = Z_R + Z_L + Z_C = |Z|e^{i\phi}$} \\ \hline
+\multicolumn{1}{|l|}{Total impedance length} & \multicolumn{1}{l|}{$|Z| = \sqrt{Z_R^2 + Z_C^2 + Z_L^2}$} \\ \hline
+\multicolumn{1}{|l|}{Total impedance phase} & \multicolumn{1}{l|}{$\phi = \arctan\left(\frac{Z_\text{eff.}}{Z_R}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Energy stored in a capacitor} & \multicolumn{1}{l|}{$W = \frac{Q^2}{2C} = \frac{CV^2}{2} = \frac{VQ}{2}$} \\ \hline
+\multicolumn{1}{|l|}{Time-evolution of an RLC circuit} & \multicolumn{1}{l|}{$\ddot{q} + \frac{R}{L}\dot{q} + \frac{1}{LC}q = 0$} \\ \hline
+\multicolumn{1}{|l|}{RLC resonant frequency} & \multicolumn{1}{l|}{$\omega_0 = \frac{1}{\sqrt{LC}}$} \\ \hline
+\multicolumn{1}{|l|}{RLC damping} & \multicolumn{1}{l|}{$\beta = \frac{R}{2L}$} \\ \hline
+\multicolumn{1}{|l|}{RL circuit time constant} & \multicolumn{1}{l|}{$\tau = \frac{L}{R}$} \\ \hline
+\multicolumn{1}{|l|}{RC circuit time constant} & \multicolumn{1}{l|}{$\tau = RC$} \\ \hline
+\multicolumn{1}{|l|}{Voltage divider output voltage} & \multicolumn{1}{l|}{$V_\text{out} = \frac{R_2}{R_1+R_2}V_\text{in}$} \\ \hline
+\end{longtable}
+\egroup
+
+
+%%%%%%%%%%%%%% OPTICS TABLE %%%%%%%%%%%%%%%%%%%
+\subsubsection*{Optics}
+\label{subsec:op}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:op}}
+
+\centering
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{Snell's law} & \multicolumn{1}{l|}{$\frac{\sin\theta_1}{\sin\theta_2} = \frac{n_1}{n_2} = \frac{\lambda_1}{\lambda_2}$} \\ \hline
+\multicolumn{1}{|l|}{Index of refraction} & \multicolumn{1}{l|}{$n =\frac{c}{v} = \frac{1}{\beta}$} \\ \hline
+\multicolumn{1}{|l|}{Thin-lens limit of the lens maker's formula} & \multicolumn{1}{l|}{$\frac{1}{d_i} + \frac{1}{d_o} = \frac{1}{f}$} \\ \hline
+\multicolumn{1}{|l|}{Raleigh criterion} & \multicolumn{1}{l|}{$\theta = 1.22\frac{\lambda}{D}$} \\ \hline
+\multicolumn{1}{|l|}{Polarizer intensity} & \multicolumn{1}{l|}{$I = I_0\cos\theta$} \\ \hline
+\multicolumn{1}{|l|}{Condition for a fringe in a Michelson interferometer} & \multicolumn{1}{l|}{$d = \frac{m\lambda}{2}$} \\ \hline
+
+
+\end{longtable}
+Conditions for maxima and minima in \textbf{thin-film refraction}
+\begin{tabular}{lll}
+                                  & $n_1<n_2$  & $n_1>n_2$     \\ \cline{2-3} 
+\multicolumn{1}{l|}{maxima} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = m\lambda$} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = \left(m+\frac{1}{2}\right)\lambda$} \\ \cline{2-3} 
+\multicolumn{1}{l|}{minima}  & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = \left(m+\frac{1}{2}\right)\lambda$} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = m\lambda$} \\ \cline{2-3}\\ 
+\end{tabular}
+
+\egroup
+Conditions for maxima and minima in \textbf{slit refraction}
+\begin{table}[h]
+\centering
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{lll}
+                                  & single-slit  & double-slit    \\ \cline{2-3} 
+\multicolumn{1}{l|}{maxima} & \multicolumn{1}{l|}{$a\sin{\theta} = (m+\frac{1}{2})\lambda$} & \multicolumn{1}{l|}{$a\sin{\theta} = m\lambda$} \\ \cline{2-3} 
+\multicolumn{1}{l|}{minima}  & \multicolumn{1}{l|}{$a\sin{\theta} = m\lambda$} & \multicolumn{1}{l|}{$a\sin{\theta} = \left(m+\frac{1}{2}\right)\lambda$} \\ \cline{2-3}\\ 
+\end{tabular}
+\egroup
+\end{table}
+\newpage
+\subsubsection*{Relativity}
+\label{subsec:rel}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:rel}}
+\emph{All barred quantities are moving with respect to the unbarred quantities.}
+\centering
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{Lorentz factor} & \multicolumn{1}{l|}{$\gamma = \sqrt{\frac{1}{1-\frac{v^2}{c^2}}}>1 \text{ for }v<c$} \\ \hline
+\multicolumn{1}{|l|}{Velocity addition} & \multicolumn{1}{l|}{$v = \left(V+\bar{v}\right)\left(1+V\bar{v}/c^2\right)^{-1}$} \\ \hline
+\multicolumn{1}{|l|}{Relativistic energy} & \multicolumn{1}{l|}{$E = \sqrt{m^2c^4 + p^2c^2}$} \\ \hline
+\multicolumn{1}{|l|}{Relativistic mass} & \multicolumn{1}{l|}{$m = \frac{\bar{m}}{\gamma}$} \\ \hline
+\multicolumn{1}{|l|}{Energy of a photon} & \multicolumn{1}{l|}{$E = h\omega = h\nu = \frac{\hbar c}{\lambda}$} \\ \hline
+
+\multicolumn{1}{|l|}{Momentum of a photon} & \multicolumn{1}{l|}{$p = \frac{\hbar}{\lambda}$} \\ \hline
+\multicolumn{1}{|l|}{Doppler shift for light} & \multicolumn{1}{l|}{$\lambda = \frac{\sqrt{c+v}}{\sqrt{c-v}}\bar{\lambda}$} \\ \hline
+\multicolumn{1}{|l|}{Time dilation} & \multicolumn{1}{l|}{$\Delta t = \gamma \Delta \bar{t}$} \\ \hline
+\multicolumn{1}{|l|}{Length contraction} & \multicolumn{1}{l|}{$\Delta x = \frac{\Delta \bar{x}}{\gamma}$} \\ \hline
+\multicolumn{1}{|l|}{Spacetime interval} & \multicolumn{1}{l|}{$\Delta s = -c \Delta t + \Delta x + \Delta y + \Delta z$} \\ \hline\\
+
+
+\end{longtable}
+
+
+
+\subsubsection*{Quantum mechanics}
+\label{subsec:qm}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:qm}}
+
+
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{Schr\"{o}dinger equation} & \multicolumn{1}{l|}{$i\hbar \frac{\partial}{\partial t}\Psi\left(\mathbf{r},t\right) = \left[\frac{-\hbar^2}{2m}\nabla^2 + V\left(\mathbf{r},t\right)\right]\Psi\left(\mathbf{r},t\right) = \hat{H}\Psi\left(\mathbf{r},t\right)$} \\ \hline
+\multicolumn{1}{|l|}{The point of the Hamiltonian} & \multicolumn{1}{l|}{$\hat{H}\Psi\left(\mathbf{r},t\right) = E\Psi\left(\mathbf{r},t\right)$} \\ \hline
+\multicolumn{1}{|l|}{Bohr model (Hydrogenic) energies} & \multicolumn{1}{l|}{$E_n = -\frac{Z^2q_e^4 \mu}{8\hbar^2\epsilon_0^2 n^2} = -13.6\frac{Z^2}{n^2}\text{ eV}$} \\ \hline
+\multicolumn{1}{|l|}{Reduced mass} & \multicolumn{1}{l|}{$\mu = \frac{m_1 m_2}{m_1+m_2}\approx m_2 \text{ for } m_1 \gg m_2$} \\ \hline
+\multicolumn{1}{|l|}{Rydberg energy} & \multicolumn{1}{l|}{$R_E = 13.6\text{ eV}$} \\ \hline
+\multicolumn{1}{|l|}{Bohr radius} & \multicolumn{1}{l|}{$r_1 = a_0 = \frac{4\pi\epsilon_0\hbar^2}{q_e^2m_e}$} \\ \hline
+\multicolumn{1}{|l|}{Allowed orbital radii} & \multicolumn{1}{l|}{$r_n = n^2 r_1$} \\ \hline
+\multicolumn{1}{|l|}{Energy difference between two orbitals} & \multicolumn{1}{l|}{$\Delta E = E_f - E_i = R_E\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Normalization condition} & \multicolumn{1}{l|}{$\bra{\psi}\ket{\psi} = \int\psi^*\psi = 1$} \\ \hline
+\multicolumn{1}{|l|}{Behavior of a commutator} & \multicolumn{1}{l|}{$\left[A,B\right] = AB-BA$} \\ \hline
+\multicolumn{1}{|l|}{Angular momentum commutation relations} & \multicolumn{1}{l|}{$\left[L_x,L_y\right] = L_z$, $\left[L_y,L_z\right] = L_x$, $\left[L_z,L_x\right] = L_y$} \\ \hline
+\multicolumn{1}{|l|}{Angular momentum eigenvalues} & \multicolumn{1}{l|}{$\Delta s = -c \Delta t + \Delta x + \Delta y + \Delta z$} \\ \hline
+\multicolumn{1}{|l|}{$z$-angular momentum eigenvalues} & \multicolumn{1}{l|}{$\Delta s = -c \Delta t + \Delta x + \Delta y + \Delta z$} \\ \hline
+\multicolumn{1}{|l|}{Angular momentum squared eigenvalues} & \multicolumn{1}{l|}{$\Delta s = -c \Delta t + \Delta x + \Delta y + \Delta z$} \\ \hline
+\multicolumn{1}{|l|}{Particle in a box energies} & \multicolumn{1}{l|}{$E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} = n^2 E_1$} \\ \hline
+
+
+\end{longtable}
+
+\subsubsection*{Thermal \& statistical mechanics}
+\label{subsec:tsm}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:tsm}}
+
+
+\subsubsection*{Particle \& atomic physics}
+\label{subsec:pap}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:pap}}
+
+\subsubsection*{Mathematical miscellany}
+\label{subsec:misc}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:misc}}
+
+\subsubsection*{E\&M spectrum wavelength values}
+\label{subsec:spect}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:spect}}
+
+\subsubsection*{Powers of 10 names}
+\label{subsec:pow}
+\addcontentsline{toc}{subsubsection}{\nameref{subsec:pow}}
+
+%\end{table}
 \end{document}
 
 
