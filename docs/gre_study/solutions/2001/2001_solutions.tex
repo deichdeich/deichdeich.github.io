@@ -66,7 +66,7 @@ I have also attempted, when reasonable, to do the problems first in a rigorous, 
 
 If you find any typos, please e-mail me.  I'll get you a candy bar, or something.\\
 
-Alex Deich,\\
+Alex Deich\\
 \phantom{.}\hspace{10pt} xdeich@gmail.com\\
 \phantom{.}\hspace{10pt} August, 2016
 \newpage
@@ -149,7 +149,7 @@ which has 6 degrees of freedom (3 positions and 3 momenta), so the average kinet
 \section{Work done on a gas}
 Adiabatic means that heat is conserved.  \textbf{Adiabatic heating occurs when the pressure of a gas is increased from work done on it by its surroundings}. For an adiabatic process, $PV^\gamma = \text{const.}$, and the work done by applying pressure to a volume is $W = \int P dV$.  Using these, one can derive the worthy-of-memorizing equation for the work done on a gas in an adiabatic process:
 \begin{equation}
-W_{a} = -\frac{1}{1-\gamma} \left( P_f V_f - P_i V_i \right).
+W_{a} = \frac{1}{1-\gamma}P_iV_i^\gamma\left(V_f^{1-\gamma} - V_i^{1-\gamma}\right).
 \end{equation}
 Isothermal means that the temperature is conserved.  \textbf{An isothermal process occurs slowly enough to allow the system to continually adjust to the temperature of the reservoir through heat exchange}. Therefore, $P_i V_i = n R T_i = P_f V_f = n R T_f$, and using the same definition of work above, one can derive the worthy-of-memorizing equation for the work done on a gas in an isothermal process:
 \begin{equation}
@@ -705,10 +705,10 @@ for a circuit with a resistor, inductor and capacitor.
 \item It is worth memorizing, though unnecessary for this specific problem, that total impedance is a complex number.  This allows you to talk about the angle $\phi$ between the real and the complex components.  This produces the handy reformulating of the total impedance as
 \begin{align}
 Z_\text{tot.} &= \left|Z\right|e^{i\phi},\\
-\left|Z\right|&=\sqrt{R_\text{eff}^2 + Z_C^2 + Z_L^2},\\
-\phi &= \arctan \left( \frac{Z_\text{eff.}}{R_\text{eff.}}\right),
+\left|Z\right|&=\sqrt{R_\text{eff}^2 + \left(Z_C - Z_L\right)^2},\\
+\phi &= \arctan \left( \frac{Z_C - Z_L}{R_\text{eff.}}\right),
 \end{align}
-where $Z_\text{eff.} = Z_C + Z_L$ and $R_\text{eff.}$ are the effective complex impedances and effective resistances, respectively.
+
 \end{enumerate}
 So, to do this problem, you must find the output voltage by using Ohm's law, $V = IZ$ (for complex impedance $Z$), and look at the behavior of the circuit as $\omega \rightarrow \infty$.  You can solve for $I$ with $I = V_\text{in.}/Z$, which is to say dividing the \emph{input} voltage by whatever impedance it encounters.  This is also helpful because it will give an output voltage in terms of the input voltage, and comparing those two is exactly what we need to do to determine if something is a high- or low-pass filter.  Going through each circuit, we have:
 \begin{enumerate}[label=\Roman*.]
@@ -905,8 +905,8 @@ Then, we know that $k_B = R/N_A$, where $N_A$ is Avogadro's number.  So,
 \section{Estimating the root-mean-square velocity of a gas}
 This problem is kind of scary, but there's a nice approximation.  If you remember that root-mean-square is kind of an average, then you can treat the gasses classically, and compare the velocities derived from their kinetic energies.  Furthermore, because we know that the gasses are kept at the same constant temperature, we know from the equipartition theorem that their kinetic energies are both equal to $3/2k_BT$.  This means that their kinetic energies are equal, so, 
 \begin{align}
-KE_{O_2} &= \frac{1}{2}m_{O_2}v_{O_2}^2,\\
-KE_{N_2} &= \frac{1}{2}m_{N_2}v_{N_2}^2,\\
+KE_{O_2} &= \frac{1}{2}m_{O_2}v_{O_2}^2 = \frac{3}{2}k_B T,\\
+KE_{N_2} &= \frac{1}{2}m_{N_2}v_{N_2}^2 = \frac{3}{2}k_B T,\\
 \Rightarrow \frac{v_{O_2}}{v_{N_2}} &= \sqrt{\frac{m_{O_2}}{{m_{N_2}}}},\\
 &= \sqrt{\frac{32}{28}} = \sqrt{\frac{8}{7}}
 \end{align}
@@ -1119,7 +1119,7 @@ And there is only answer which is $.25$ times some number of tens.\\
 There are two equations about blackbody radiation which show up in GRE problems.  One relates power per unit area of the body to its temperature,
 
 \begin{equation}
-P = \sigma T^4,
+\frac{P}{A} = \sigma T^4,
 \end{equation}
 where $\sigma$ is the Stefan-Boltzmann constant.  The other relates the temperature of the body to the wavelength of peak intensity, $\lambda_\text{max}$,
 \begin{equation}
@@ -1978,7 +1978,7 @@ Ladder operators are operators which act on quantum harmonic oscillator energy s
 
 Then, the important thing to remember about perturbation theory, and what David Griffiths says ``may well be the most important equation in quantum mechanics,'' \textbf{the first-order correction to the energy is given by the expectation value of the perturbation on the unperturbed state}\footnote{For a full derivation, see Griffiths QM, 3ed. p.222-3.}:
 \begin{equation}
-	E_1 = \bra{n}\Delta H\ket{n}.
+	E_n^1 = \bra{n}\Delta H\ket{n}.
 \end{equation}
 
 And this tells us how to answer this problem: Expand out the operator $\Delta H$ and take the inner product on some arbitrary state $\ket{n}$, and plug in for $n=2$.  This will be the first-order correction to that state of definite energy.
@@ -1994,11 +1994,11 @@ Now, when taking the inner product of this with $\bra{n}$, the first and last wa
 
 However, because $\bra{n}\ket{n}=1$, we can say
 \begin{equation}
-	E_1 = \bra{n}V\left(a+a^\dagger\right)^2\ket{n} = V\left[(n+1) + n\right],
+	E_n^1 = \bra{n}V\left(a+a^\dagger\right)^2\ket{n} = V\left[(n+1) + n\right],
 \end{equation}
 so, for $n=2$,
 \begin{equation}
-	E_1 = V(3+2) = 5V.
+	E_2^1 = V(3+2) = 5V.
 \end{equation}
 
 \answer{E}
@@ -2075,13 +2075,13 @@ If you didn't have enough time to go through all this algebra, you can make a re
 \answer{E}
 
 \section{A quantum state in thermal equilibrium}
-This problem is perfect for dimensional analysis.  If you know that $kT$ has dimensions of energy, then $e^{-E_i/kT}$ is dimensionless.  Therefore,
+This problem is perfect for dimensional analysis.  If you know that $k_B T$ has dimensions of energy, then $e^{-E_i/k_B T}$ is dimensionless.  Therefore,
 \begin{equation}
-	\frac{\sum\limits_i E_i e^{-E_i/kT}}{\sum\limits_i e^{-E_i/kT}}
+	\frac{\sum\limits_i E_i e^{-E_i/k_B T}}{\sum\limits_i e^{-E_i/k_B T}}
 \end{equation}
 will have units of energy.  There is only one answer with such units.
 
-Alternatively, you can see that the expression is dividing some kind of energy by the total number of something, and that sounds a lot like a kind of average.  This is more obvious if you remember that $e^{-E_i/kT}$ is the partition function, which is related to the probability that a given particle is in a state $i$.\\
+Alternatively, you can see that the expression is dividing some kind of energy by the total number of something, and that sounds a lot like a kind of average.  This is more obvious if you remember that $e^{-E_i/k_B T}$ is the partition function, which is related to the probability that a given particle is in a state $i$.\\
 
 \answer{A}
 
@@ -2138,14 +2138,13 @@ Now we can get the wavelength of green light:
 \section*{Equation tables}
 \label{sec:eqtab}
 \addcontentsline{toc}{section}{\nameref{sec:eqtab}}
-\markright{Equation tables}
 \subsubsection*{Classical mechanics}
 \label{subsec:classical}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:classical}}
 
 
 %%%%%%%%%%%%%%%%%%% CLASSICAL TABLE %%%%%%%%%%%%%%%%%%%%%%%
-
+\markright{Equation tables - Classical mechanics}
 \centering
 %\begin{table}[h]
 \label{my-label}
@@ -2180,12 +2179,12 @@ Now we can get the wavelength of green light:
 \egroup
 
 
-
+\newpage
 %%%% EM TABLE %%%%%%%%
 \subsubsection*{Electromagnetism}
+\markright{Equation tables - Electromagnetism}
 \label{subsec:em}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:em}}
-
 \centering
 %\begin{table}[h]
 \label{my-label}
@@ -2200,7 +2199,7 @@ Now we can get the wavelength of green light:
 \multicolumn{1}{|l|}{Electric field in terms of potentials} & \multicolumn{1}{l|}{$\mathbf{E} = -\nabla V - \frac{d\mathbf{A}}{dt}$} \\ \hline
 \multicolumn{1}{|l|}{Magnetic field in terms of potentials} & \multicolumn{1}{l|}{$\mathbf{B} = \nabla\cross\mathbf{A}$} \\ \hline
 \multicolumn{1}{|l|}{Field energy} & \multicolumn{1}{l|}{$U = \frac{1}{2}\int \left(\epsilon_0 E^2 + \frac{1}{\mu_0}B^2\right)d\tau$} \\ \hline
-\multicolumn{1}{|l|}{Field momentum} & \multicolumn{1}{l|}{$\mathbf{P} = \epsilon_0\int\left(\mathbf{E}\cross\mathbf{B}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Field momentum} & \multicolumn{1}{l|}{$\mathbf{P} = \epsilon_0\int\left(\mathbf{E}\cross\mathbf{B}\right)d\tau$} \\ \hline
 \multicolumn{1}{|l|}{Poynting vector} & \multicolumn{1}{l|}{$\mathbf{S} = \frac{1}{\mu_0}\left(\mathbf{E}\cross\mathbf{B}\right)$} \\ \hline
 \multicolumn{1}{|l|}{Larmor formula} & \multicolumn{1}{l|}{$P = \frac{\mu_0}{6\pi c}q^2a^2$} \\ \hline
 \multicolumn{1}{|l|}{Electric field of a point charge} & \multicolumn{1}{l|}{$\mathbf{E} = \frac{Q}{4\pi\epsilon_0}\mathbf{\hat{r}}$} \\ \hline
@@ -2224,9 +2223,11 @@ Now we can get the wavelength of green light:
 \end{longtable}
 \egroup
 
-
+\newpage
 %%%%%%%%%%% CIRCUIT TABLE %%%%%%%%%%
+
 \subsubsection*{Circuits}
+\markright{Equation tables - Circuits}
 \label{subsec:cir}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:cir}}
 
@@ -2247,9 +2248,9 @@ Now we can get the wavelength of green light:
 \multicolumn{1}{|l|}{Complex resistor impedance} & \multicolumn{1}{l|}{$Z_R = R_\text{eff.}$} \\ \hline
 \multicolumn{1}{|l|}{Complex capacitor impedance} & \multicolumn{1}{l|}{$Z_C = \frac{1}{i\omega C}$} \\ \hline
 \multicolumn{1}{|l|}{Complex inductor impedance} & \multicolumn{1}{l|}{$Z_L = i\omega L$} \\ \hline
-\multicolumn{1}{|l|}{Total complex impedance} & \multicolumn{1}{l|}{$Z_\text{tot.} = Z_R + Z_L + Z_C = |Z|e^{i\phi}$} \\ \hline
-\multicolumn{1}{|l|}{Total impedance length} & \multicolumn{1}{l|}{$|Z| = \sqrt{Z_R^2 + Z_C^2 + Z_L^2}$} \\ \hline
-\multicolumn{1}{|l|}{Total impedance phase} & \multicolumn{1}{l|}{$\phi = \arctan\left(\frac{Z_\text{eff.}}{Z_R}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Total complex impedance} & \multicolumn{1}{l|}{$Z_\text{tot.} = |Z|e^{i\phi}$} \\ \hline
+\multicolumn{1}{|l|}{Total impedance magnitude} & \multicolumn{1}{l|}{$|Z| = \sqrt{Z_R^2 + \left(Z_C - Z_L\right)^2}$} \\ \hline
+\multicolumn{1}{|l|}{Total impedance phase} & \multicolumn{1}{l|}{$\phi = \arctan\left(\frac{Z_C - Z_L}{Z_R}\right)$} \\ \hline
 \multicolumn{1}{|l|}{Energy stored in a capacitor} & \multicolumn{1}{l|}{$W = \frac{Q^2}{2C} = \frac{CV^2}{2} = \frac{VQ}{2}$} \\ \hline
 \multicolumn{1}{|l|}{Time-evolution of an RLC circuit} & \multicolumn{1}{l|}{$\ddot{q} + \frac{R}{L}\dot{q} + \frac{1}{LC}q = 0$} \\ \hline
 \multicolumn{1}{|l|}{RLC resonant frequency} & \multicolumn{1}{l|}{$\omega_0 = \frac{1}{\sqrt{LC}}$} \\ \hline
@@ -2260,9 +2261,10 @@ Now we can get the wavelength of green light:
 \end{longtable}
 \egroup
 
-
+\newpage
 %%%%%%%%%%%%%% OPTICS TABLE %%%%%%%%%%%%%%%%%%%
 \subsubsection*{Optics}
+\markright{Equation tables - Optics}
 \label{subsec:op}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:op}}
 
@@ -2290,7 +2292,7 @@ Conditions for maxima and minima in \textbf{thin-film refraction}
 \end{tabular}
 
 \egroup
-Conditions for maxima and minima in \textbf{slit refraction}
+Conditions for maxima and minima in \textbf{slit diffraction}
 \begin{table}[h]
 \centering
 \bgroup
@@ -2303,7 +2305,10 @@ Conditions for maxima and minima in \textbf{slit refraction}
 \egroup
 \end{table}
 \newpage
+
+%%%%%%%%%%% RELATIVITY TABLE %%%%%%%%%%%%%%%%%%%
 \subsubsection*{Relativity}
+\markright{Equation tables - Relativity}
 \label{subsec:rel}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:rel}}
 \emph{All barred quantities are moving with respect to the unbarred quantities.}
@@ -2328,10 +2333,11 @@ Conditions for maxima and minima in \textbf{slit refraction}
 
 
 \end{longtable}
+\newpage
 
-
-
+%%%%%%%%%%%%%% QUANTUM TABLE %%%%%%%%%%%%%%%%%
 \subsubsection*{Quantum mechanics}
+\markright{Equation tables - Quantum mechanics}
 \label{subsec:qm}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:qm}}
 
@@ -2351,37 +2357,174 @@ Conditions for maxima and minima in \textbf{slit refraction}
 \multicolumn{1}{|l|}{Energy difference between two orbitals} & \multicolumn{1}{l|}{$\Delta E = E_f - E_i = R_E\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right)$} \\ \hline
 \multicolumn{1}{|l|}{Normalization condition} & \multicolumn{1}{l|}{$\bra{\psi}\ket{\psi} = \int\psi^*\psi = 1$} \\ \hline
 \multicolumn{1}{|l|}{Behavior of a commutator} & \multicolumn{1}{l|}{$\left[A,B\right] = AB-BA$} \\ \hline
-\multicolumn{1}{|l|}{Angular momentum commutation relations} & \multicolumn{1}{l|}{$\left[L_x,L_y\right] = L_z$, $\left[L_y,L_z\right] = L_x$, $\left[L_z,L_x\right] = L_y$} \\ \hline
-\multicolumn{1}{|l|}{Angular momentum eigenvalues} & \multicolumn{1}{l|}{$\Delta s = -c \Delta t + \Delta x + \Delta y + \Delta z$} \\ \hline
-\multicolumn{1}{|l|}{$z$-angular momentum eigenvalues} & \multicolumn{1}{l|}{$\Delta s = -c \Delta t + \Delta x + \Delta y + \Delta z$} \\ \hline
-\multicolumn{1}{|l|}{Angular momentum squared eigenvalues} & \multicolumn{1}{l|}{$\Delta s = -c \Delta t + \Delta x + \Delta y + \Delta z$} \\ \hline
+\multicolumn{1}{|l|}{Angular momentum commutators} & \multicolumn{1}{l|}{$\left[L_x,L_y\right] = L_z$, $\left[L_y,L_z\right] = L_x$, $\left[L_z,L_x\right] = L_y$} \\ \hline
+\multicolumn{1}{|l|}{Angular momentum squared commutators} & \multicolumn{1}{l|}{$\left[L^2,L_y\right] = \left[L^2,L_z\right] = \left[L^2,L_x\right] = 0$} \\ \hline
+\multicolumn{1}{|l|}{$L_z$ eigenvalues} & \multicolumn{1}{l|}{$L_z Y_l^m = \hbar m Y_l^m$} \\ \hline
+\multicolumn{1}{|l|}{$L^2$ eigenvalues} & \multicolumn{1}{l|}{$L^2 Y_l^m = \hbar l(l+1) Y_l^m$} \\ \hline
+\multicolumn{1}{|l|}{$L_z$ and $L^2$ simultaneous eigenvalues} & \multicolumn{1}{l|}{Same as above, with $m\in \left(-l\dots l\right)$} \\ \hline
 \multicolumn{1}{|l|}{Particle in a box energies} & \multicolumn{1}{l|}{$E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} = n^2 E_1$} \\ \hline
-
+\multicolumn{1}{|l|}{QHO energies} & \multicolumn{1}{l|}{$E_n = \hbar \omega \left(n + \frac{1}{2}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Hydrogen ground state wavefunction} & \multicolumn{1}{l|}{$\psi\left(\mathbf{r},\theta,\phi\right) = \frac{1}{2a_0^{3/2}\sqrt{\pi}}e^{-\mathbf{r}/a_0}$} \\ \hline
+\multicolumn{1}{|l|}{First order correction to the energy} & \multicolumn{1}{l|}{$E_n^1 = \bra{n}\Delta H\ket{n}$} \\ \hline
+\multicolumn{1}{|l|}{First order correction to the wavefunction} & \multicolumn{1}{l|}{$\psi_n^1 = \Sigma_{m\neq n}\frac{\bra{\psi^0}\Delta H \ket{\psi^0}}{E_n^0 - E_m^0}\psi_m^0$} \\ \hline
 
 \end{longtable}
+\begin{center}
+Transition selection rules\\[4pt]
+\fbox{\parbox{0.35\textwidth}{\emph{No transitions occur unless}:
+\begin{enumerate}
+\item $\Delta m = 0 \text{ or } \pm 1$.
+\item $\Delta l = \pm 1$.
+\item Therefore, $\Delta j = 0 \text{ or } \pm 1$.
+\end{enumerate}}}\\[50pt]
+\end{center}
 
+\newpage
+%%%%%%%%%%%%%%% THERMAL TABLE %%%%%%%%%%%%%%%%
 \subsubsection*{Thermal \& statistical mechanics}
+\markright{Equation tables - Thermal \& statistical mechanics}
 \label{subsec:tsm}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:tsm}}
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{First law of thermodynamics} & \multicolumn{1}{l|}{$\Delta U = Q+W$} \\ \hline
+\multicolumn{1}{|l|}{Second law of thermodynamics} & \multicolumn{1}{l|}{Entropy increases} \\ \hline
+\multicolumn{1}{|l|}{Equipartition theorem} & \multicolumn{1}{l|}{$\frac{1}{2}k_BT$ per degree of freedom in the Hamiltonian} \\ \hline
+\multicolumn{1}{|l|}{Ideal gas law} & \multicolumn{1}{l|}{$PV=nRT$} \\ \hline
+\multicolumn{1}{|l|}{Gas constant} & \multicolumn{1}{l|}{$R = N_A k_B$ for Avogadro's constant $N_A$.} \\ \hline
+\multicolumn{1}{|l|}{If the $PV$ diagram goes counterclockwise...} & \multicolumn{1}{l|}{the work is negative.} \\ \hline
+\multicolumn{1}{|l|}{Work, generally} & \multicolumn{1}{l|}{$W = \int P dV$} \\ \hline
+\multicolumn{1}{|l|}{Adiabatic condition} & \multicolumn{1}{l|}{$PV^\gamma = \text{const.}$} \\ \hline
+\multicolumn{1}{|l|}{Work in an adiabatic process} & \multicolumn{1}{l|}{$W = \frac{1}{1-\gamma}P_i V_i^{\gamma}\left(V_f^{1-\gamma}-V_i^{1-\gamma}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Isothermal condition} & \multicolumn{1}{l|}{$T = \text{const.}$} \\ \hline
+\multicolumn{1}{|l|}{Work in an isothermal process} & \multicolumn{1}{l|}{$P_iV_i = \ln\left(\frac{V_f}{V_i}\right)$} \\ \hline
+\multicolumn{1}{|l|}{Heat in an isothermal process} & \multicolumn{1}{l|}{$Q = -W$} \\ \hline
+\multicolumn{1}{|l|}{Isobaric condition} & \multicolumn{1}{l|}{$P = \text{const.}$} \\ \hline
+\multicolumn{1}{|l|}{Work in an isobaric process} & \multicolumn{1}{l|}{$W = P\Delta V$} \\ \hline
+\multicolumn{1}{|l|}{Heat capacity of a monatomic gas} & \multicolumn{1}{l|}{$\gamma = 5/3$} \\ \hline
+\multicolumn{1}{|l|}{Thermal physics definition of entropy} & \multicolumn{1}{l|}{$\Delta S = \int 1/T dQ$} \\ \hline
+\multicolumn{1}{|l|}{Statistical mechanics definition of entropy} & \multicolumn{1}{l|}{$\Delta S = k_B \ln \Omega$} \\ \hline
+\multicolumn{1}{|l|}{Canonical partition function} & \multicolumn{1}{l|}{$Z = \Sigma e^{-\epsilon_i/k_BT}$} \\ \hline
+\multicolumn{1}{|l|}{Maxwell-Boltzmann partition function} & \multicolumn{1}{l|}{$Z = \Sigma g_i e^{-\epsilon_i/k_BT}$} \\ \hline
+\multicolumn{1}{|l|}{Power of a blackbody} & \multicolumn{1}{l|}{$P = A \sigma T^4$} \\ \hline
+\multicolumn{1}{|l|}{Blackbody peak wavelength} & \multicolumn{1}{l|}{$\lambda_\text{max} = \frac{b}{T}$} \\ \hline\\\\
+\end{longtable}
 
-
+\newpage
+%%%%%%%%%%%%%% PARTICLE TABLE %%%%%%%%%%%%%%%%%%
 \subsubsection*{Particle \& atomic physics}
+\markright{Equation tables - Particle \& atomic physics}
 \label{subsec:pap}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:pap}}
+\centering
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{Pattern for filling electron shells} & \multicolumn{1}{l|}{$s-s-p-s-p-s-d$} \\ \hline
+\multicolumn{1}{|l|}{What $A,Z$ on ${}^A_Z\text{X}$ mean} & \multicolumn{1}{l|}{$A$: mass number (protons + neutrons), $Z$: atomic number (protons)} \\ \hline
+\multicolumn{1}{|l|}{Alpha particle} & \multicolumn{1}{l|}{Helium nucleus, ${}^4_2\text{He}$, stopped by a sheet of paper} \\ \hline
+\multicolumn{1}{|l|}{Beta particle} & \multicolumn{1}{l|}{$\text{e}^-$, $\text{e}^+$, stopped by a sheet of metal} \\ \hline
+\multicolumn{1}{|l|}{Gamma particle} & \multicolumn{1}{l|}{$\gamma$, stopped by lead} \\ \hline
+\multicolumn{1}{|l|}{Alpha decay} & \multicolumn{1}{l|}{${}^A_Z \text{X} \rightarrow {}^{A-4}_{Z-2}\text{X} + {}^4_2\text{He}$} \\ \hline
+\multicolumn{1}{|l|}{Beta${}^-$ decay} & \multicolumn{1}{l|}{$\text{n} \rightarrow \text{p} + \text{e}^- + \bar{\nu}_\text{e}$} \\ \hline
+\multicolumn{1}{|l|}{Beta${}^+$ decay} & \multicolumn{1}{l|}{$\text{p} \rightarrow \text{n} + \text{e}^+ + \nu_\text{e}$} \\ \hline
+\multicolumn{1}{|l|}{Common leptons} & \multicolumn{1}{l|}{$\text{e},\mu,\nu$} \\ \hline
+\multicolumn{1}{|l|}{Common baryons} & \multicolumn{1}{l|}{$\text{p},\text{n}$} \\ \hline
+\multicolumn{1}{|l|}{Lepton spin} & \multicolumn{1}{l|}{$1/2$} \\ \hline
+\multicolumn{1}{|l|}{Lepton charge} & \multicolumn{1}{l|}{$-1,0,1$} \\ \hline\\\\
+\end{longtable}
 
+\newpage
+
+%%%%%%%%%%%%% MATH TABLE %%%%%%%%%%%%%%%%%%
 \subsubsection*{Mathematical miscellany}
+\markright{Equation tables - Mathematical miscellany}
 \label{subsec:misc}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:misc}}
-
+\centering
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Name}       & \textbf{Equation}          \\ \hline
+\multicolumn{1}{|l|}{Characteristic equation for eigensystems} & \multicolumn{1}{l|}{$\det\left(\mathbf{M}-\lambda\mathbf{I}\right)=0$} \\ \hline
+\multicolumn{1}{|l|}{Fourier transform} & \multicolumn{1}{l|}{$F(k) = \int f(x)e^{-2\pi i x k} dx$} \\ \hline
+\multicolumn{1}{|l|}{Inverse Fourier transform} & \multicolumn{1}{l|}{$f(x) = \int F(k)e^{2\pi i x k} dk$} \\ \hline
+\multicolumn{1}{|l|}{Taylor series} & \multicolumn{1}{l|}{$f(x)|_{x=a} = \Sigma \frac{1}{n!}f^{(n)}(a)(x-a)^n$} \\ \hline
+\multicolumn{1}{|l|}{Mean} & \multicolumn{1}{l|}{$\mu = \Sigma n_i / N$} \\ \hline
+\multicolumn{1}{|l|}{Variance} & \multicolumn{1}{l|}{$\sigma = \Sigma(n_i - \mu)^2/N$} \\ \hline
+\multicolumn{1}{|l|}{Standard deviation} & \multicolumn{1}{l|}{$\sigma = \sqrt{\sigma^2}$} \\ \hline
+\multicolumn{1}{|l|}{Standard deviation of a Poisson distribution} & \multicolumn{1}{l|}{$\sigma = \sqrt{\mu}$} \\ \hline
+\multicolumn{1}{|l|}{Error in the standard deviation of a Poisson distribution} & \multicolumn{1}{l|}{$\Delta\sigma = \frac{\sigma}{\sqrt{N}}$} \\ \hline
+\end{longtable}
+The first few terms in the MacLaurin series of some common functions
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Function}       & \textbf{Series}          \\ \hline
+\multicolumn{1}{|l|}{$e^x$} & \multicolumn{1}{l|}{$1+x+\frac{x^2}{2}$} \\ \hline
+\multicolumn{1}{|l|}{$\ln(1-x)$} & \multicolumn{1}{l|}{$-x-\frac{x^2}{2}$} \\ \hline
+\multicolumn{1}{|l|}{$\ln(1+x)$} & \multicolumn{1}{l|}{$x-\frac{x^2}{2}$} \\ \hline
+\multicolumn{1}{|l|}{$(1+x)^\alpha$} & \multicolumn{1}{l|}{$1+\alpha x +\frac{\alpha(\alpha-1)}{2!}x^2$} \\ \hline
+\multicolumn{1}{|l|}{$\sin{x}$} & \multicolumn{1}{l|}{$x-\frac{x^3}{3!}+\frac{x^5}{5!}$} \\ \hline
+\multicolumn{1}{|l|}{$\cos{x}$} & \multicolumn{1}{l|}{$1-\frac{x^2}{4!}+\frac{x^4}{4!}$} \\ \hline
+\multicolumn{1}{|l|}{$\tan{x}$} & \multicolumn{1}{l|}{$x+\frac{x^3}{3}+\frac{2x^5}{15}$} \\ \hline
+\end{longtable}
+\newpage
+%%%%%%%%%%%% SPECTRUM TABLE %%%%%%%%%%%%%%%%%
 \subsubsection*{E\&M spectrum wavelength values}
+\markright{Equation tables - E\&M spectrum wavelength values}
 \label{subsec:spect}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:spect}}
+%\begin{table}[h]
+\label{my-label}
+\bgroup
+\def\arraystretch{2}
+\begin{longtable}{ll}
+\textbf{Common name}       & \textbf{Wavelength range}          \\ \hline
+\multicolumn{1}{|l|}{Gamma rays} & \multicolumn{1}{l|}{$<0.2\text{ nm}$} \\ \hline
+\multicolumn{1}{|l|}{X-rays} & \multicolumn{1}{l|}{$0.01\text{ nm} - 10 \text{ nm}$} \\ \hline
+\multicolumn{1}{|l|}{Ultraviolet} & \multicolumn{1}{l|}{$10\text{ nm} - 400\text{ nm}$} \\ \hline
+\multicolumn{1}{|l|}{Visible} & \multicolumn{1}{l|}{$360\text{ nm} - 750\text{ nm}$} \\ \hline
+\multicolumn{1}{|l|}{Infrared} & \multicolumn{1}{l|}{$750\text{ nm} - 1\text{ mm}$} \\ \hline
+\multicolumn{1}{|l|}{Microwave} & \multicolumn{1}{l|}{$1\text{ mm} - 1 \text{ m}$} \\ \hline
+\multicolumn{1}{|l|}{Radio} & \multicolumn{1}{l|}{$1\text{ m} - 100,000\text{ km}$} \\ \hline\\
+\end{longtable}
 
-\subsubsection*{Powers of 10 names}
+Visible spectrum values
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Wavelength range (nm)} & 380 \--- 450 & 450 \--- 495 & 495 \--- 570 & 570\---590 & 590 \--- 620 & 620\---750 \\ \hline
+\textbf{Common name} & Violet & Blue & Green & Yellow & Orange & Red  \\ \hline
+\end{tabular}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\newpage
+%%%%%%%%%%%% POWERS OF 10 TABLE %%%%%%%%%%%%%%%%%%%
+\subsubsection*{Powers of 10 prefixes}
+\markright{Equation tables - Powers of 10 prefixes}
 \label{subsec:pow}
 \addcontentsline{toc}{subsubsection}{\nameref{subsec:pow}}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Power} & $-15$ & $-12$ & $-9$ & $-6$ & $-3$ & $-2$ & $-1$ & 3 & 6 & 9 & 12 & 15\\ \hline
+\textbf{Prefix} & femto & pico & nano & micro & milli & centi & deci & kilo & mega & giga & tera & peta\\ \hline
+\end{tabular}
 
-%\end{table}
+
 \end{document}
 
 
