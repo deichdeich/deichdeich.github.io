@@ -1,0 +1,112 @@
+\contentsline {section}{\numberline {1}Acceleration on a pendulum bob}{6}{section.1}
+\contentsline {section}{\numberline {2}Friction on a turntable}{6}{section.2}
+\contentsline {section}{\numberline {3}Satellite orbit}{6}{section.3}
+\contentsline {section}{\numberline {4}One-dimensional inelastic collision}{7}{section.4}
+\contentsline {section}{\numberline {5}Average kinetic energy of a 3D harmonic oscillator}{7}{section.5}
+\contentsline {section}{\numberline {6}Work done on a gas}{8}{section.6}
+\contentsline {section}{\numberline {7}Two bar magnets}{8}{section.7}
+\contentsline {section}{\numberline {8}Charge induced on an infinite conductor}{9}{section.8}
+\contentsline {section}{\numberline {9}Charges on a circle}{9}{section.9}
+\contentsline {section}{\numberline {10}Energy across a capacitor}{9}{section.10}
+\contentsline {section}{\numberline {11}Two-lens image}{10}{section.11}
+\contentsline {section}{\numberline {12}Spherical concave mirror}{11}{section.12}
+\contentsline {section}{\numberline {13}Resolving two stars}{11}{section.13}
+\contentsline {section}{\numberline {14}Cylindrical gamma-ray detector}{12}{section.14}
+\contentsline {section}{\numberline {15}Measurement precision}{12}{section.15}
+\contentsline {section}{\numberline {16}Uncertainty}{12}{section.16}
+\contentsline {section}{\numberline {17}Filling electron shells}{13}{section.17}
+\contentsline {section}{\numberline {18}Energy to remove a helium electron}{13}{section.18}
+\contentsline {section}{\numberline {19}Source of the Sun's energy}{14}{section.19}
+\contentsline {section}{\numberline {20}Definition of bremsstrahlung}{14}{section.20}
+\contentsline {section}{\numberline {21}Comparing Lyman-$\alpha $ and Balmer-$\alpha $ wavelengths}{14}{section.21}
+\contentsline {section}{\numberline {22}Orbital system parameters}{15}{section.22}
+\contentsline {section}{\numberline {23}Particle accelerating around a circle}{15}{section.23}
+\contentsline {section}{\numberline {24}Throwing a stone}{16}{section.24}
+\contentsline {section}{\numberline {25}Moment of inertia of packed pennies}{16}{section.25}
+\contentsline {section}{\numberline {26}Speed of the end of a falling rod}{17}{section.26}
+\contentsline {section}{\numberline {27}Eigenvalues of the Hamiltonian operator}{18}{section.27}
+\contentsline {section}{\numberline {28}Orthogonal states}{18}{section.28}
+\contentsline {section}{\numberline {29}Expectation value of an operator}{18}{section.29}
+\contentsline {section}{\numberline {30}Possible Hydrogen wave functions}{19}{section.30}
+\contentsline {section}{\numberline {31}Energy levels in positronium}{19}{section.31}
+\contentsline {section}{\numberline {32}Relativistic momentum}{20}{section.32}
+\contentsline {section}{\numberline {33}Decaying pion}{21}{section.33}
+\contentsline {section}{\numberline {34}Making events simultaneous}{22}{section.34}
+\contentsline {section}{\numberline {35}Temperature dependence of a blackbody}{22}{section.35}
+\contentsline {section}{\numberline {36}An expanding adiabatic gas}{23}{section.36}
+\contentsline {section}{\numberline {37}A $PV$ Diagram}{23}{section.37}
+\contentsline {section}{\numberline {38}RLC circuit component values}{25}{section.38}
+\contentsline {section}{\numberline {39}High-pass filters}{25}{section.39}
+\contentsline {section}{\numberline {40}An RL circuit}{28}{section.40}
+\contentsline {section}{\numberline {41}Magnetic charge in Maxwell}{28}{section.41}
+\contentsline {section}{\numberline {42}Current through loops}{29}{section.42}
+\contentsline {section}{\numberline {43}Angular momentum commutation relations}{29}{section.43}
+\contentsline {section}{\numberline {44}Energy of a particle in a box}{30}{section.44}
+\contentsline {section}{\numberline {45}Harmonic oscillator eigenstates}{30}{section.45}
+\contentsline {section}{\numberline {46}Dependence of the de Broglie wavelength on a potential}{31}{section.46}
+\contentsline {section}{\numberline {47}The change in entropy of an expanding container}{33}{section.47}
+\contentsline {section}{\numberline {48}Estimating the root-mean-square velocity of a gas}{34}{section.48}
+\contentsline {section}{\numberline {49}Partition function and degeneracy}{34}{section.49}
+\contentsline {section}{\numberline {50}Speed of sound in a cold flute}{34}{section.50}
+\contentsline {section}{\numberline {51}Light loss through polarizers}{35}{section.51}
+\contentsline {section}{\numberline {52}Volume of a primitive unit cell}{35}{section.52}
+\contentsline {section}{\numberline {53}Temperature dependence of a semiconductor's resistivity}{35}{section.53}
+\contentsline {section}{\numberline {54}Estimating impulse}{36}{section.54}
+\contentsline {section}{\numberline {55}Conservation of momentum at an angle}{36}{section.55}
+\contentsline {section}{\numberline {56}Volume of gas required to float a mass}{36}{section.56}
+\contentsline {section}{\numberline {57}Force due to a jet of water}{37}{section.57}
+\contentsline {section}{\numberline {58}Deflection of a proton in electric and magnetic fields}{37}{section.58}
+\contentsline {section}{\numberline {59}LC circuit-SHO equivalence}{38}{section.59}
+\contentsline {section}{\numberline {60}Flux of a sheet through a sphere}{39}{section.60}
+\contentsline {section}{\numberline {61}Electromagnetic wave hitting conductor}{39}{section.61}
+\contentsline {section}{\numberline {62}Deriving mass from cyclotron frequency}{41}{section.62}
+\contentsline {section}{\numberline {63}Deriving temperature from wavelength of peak blackbody radiation}{42}{section.63}
+\contentsline {section}{\numberline {64}The many uses of electromagnetic radiation}{42}{section.64}
+\contentsline {section}{\numberline {65}High-temperature limit for molar heat capacity}{43}{section.65}
+\contentsline {section}{\numberline {66}Combined half-life}{44}{section.66}
+\contentsline {section}{\numberline {67}Binding energy}{45}{section.67}
+\contentsline {section}{\numberline {68}Possible decay modes of Beryllium}{46}{section.68}
+\contentsline {section}{\numberline {69}Thin-film refraction}{47}{section.69}
+\contentsline {section}{\numberline {70}Diffraction}{48}{section.70}
+\contentsline {section}{\numberline {71}Doppler shift for light}{49}{section.71}
+\contentsline {section}{\numberline {72}Two masses on a spring}{49}{section.72}
+\contentsline {section}{\numberline {73}Suspending a mass with friction}{50}{section.73}
+\contentsline {section}{\numberline {74}A Lagrangian}{51}{section.74}
+\contentsline {section}{\numberline {75}Rotations}{51}{section.75}
+\contentsline {section}{\numberline {76}Kinetic energy of conduction band electrons}{52}{section.76}
+\contentsline {section}{\numberline {77}Number of particles in a state given the energy}{52}{section.77}
+\contentsline {section}{\numberline {78}Conservation in a particle decay}{53}{section.78}
+\contentsline {section}{\numberline {79}Relativistic momentum II}{54}{section.79}
+\contentsline {section}{\numberline {80}Speed in a moving reference frame}{54}{section.80}
+\contentsline {section}{\numberline {81}Orbital angular momentum eigenvalues}{55}{section.81}
+\contentsline {section}{\numberline {82}Spin eigenfunctions for a triplet state}{55}{section.82}
+\contentsline {section}{\numberline {83}Eigenstates of $S_x$}{58}{section.83}
+\contentsline {section}{\numberline {84}Transition selection rules}{59}{section.84}
+\contentsline {section}{\numberline {85}Nichrome wire}{60}{section.85}
+\contentsline {section}{\numberline {86}Current induced in a spinning coil}{61}{section.86}
+\contentsline {section}{\numberline {87}Two balls and a point charge}{63}{section.87}
+\contentsline {section}{\numberline {88}The magnetic field of a bent wire}{63}{section.88}
+\contentsline {section}{\numberline {89}Child on a merry-go-round}{64}{section.89}
+\contentsline {section}{\numberline {90}Series and parallel springs}{64}{section.90}
+\contentsline {section}{\numberline {91}Determining a cylinder's moment of inertia}{65}{section.91}
+\contentsline {section}{\numberline {92}Hamiltonian for two particles on spring}{66}{section.92}
+\contentsline {section}{\numberline {93}The most likely position of a ground-state hydrogenic electron}{66}{section.93}
+\contentsline {section}{\numberline {94}Perturbation on the QHO Hamiltonian}{67}{section.94}
+\contentsline {section}{\numberline {95}Electric field inside a medium}{69}{section.95}
+\contentsline {section}{\numberline {96}Radiation from a pulsing sphere}{69}{section.96}
+\contentsline {section}{\numberline {97}Predicting the spread of refracted light}{69}{section.97}
+\contentsline {section}{\numberline {98}A quantum state in thermal equilibrium}{71}{section.98}
+\contentsline {section}{\numberline {99}Relativistic energy and momentum conservation}{72}{section.99}
+\contentsline {section}{\numberline {100}Michelson interferometer}{72}{section.100}
+\contentsline {section}{\nameref {sec:eqtab}}{74}{section*.15}
+\contentsline {subsubsection}{\nameref {subsec:classical}}{74}{section*.16}
+\contentsline {subsubsection}{\nameref {subsec:em}}{76}{section*.17}
+\contentsline {subsubsection}{\nameref {subsec:cir}}{78}{section*.18}
+\contentsline {subsubsection}{\nameref {subsec:op}}{79}{section*.19}
+\contentsline {subsubsection}{\nameref {subsec:rel}}{80}{section*.20}
+\contentsline {subsubsection}{\nameref {subsec:qm}}{81}{section*.21}
+\contentsline {subsubsection}{\nameref {subsec:tsm}}{83}{section*.22}
+\contentsline {subsubsection}{\nameref {subsec:pap}}{85}{section*.23}
+\contentsline {subsubsection}{\nameref {subsec:misc}}{86}{section*.24}
+\contentsline {subsubsection}{\nameref {subsec:spect}}{87}{section*.25}
+\contentsline {subsubsection}{\nameref {subsec:pow}}{88}{section*.26}

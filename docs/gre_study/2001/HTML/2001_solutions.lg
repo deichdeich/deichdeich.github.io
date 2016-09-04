@@ -1,0 +1,359 @@
+htfcss: cmtt font-family: monospace;
+htfcss: cmbsy font-weight: bold;
+htfcss: cmmi font-style: italic;
+htfcss: cmmib font-style: italic; font-weight: bold;
+htfcss: cmss   font-family: sans-serif;
+htfcss: cmssbx  font-family: sans-serif; font-weight: bold;
+htfcss: cmssbxo  font-family: sans-serif; font-style: oblique; font-weight: bold;
+htfcss: cmssdc  font-family: sans-serif;
+htfcss: cmssi  font-family: sans-serif; font-style: oblique;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmti  font-style: italic;
+htfcss: cmss   font-family: sans-serif;
+htfcss: cmssbx  font-family: sans-serif; font-weight: bold;
+htfcss: cmssbxo  font-family: sans-serif; font-style: oblique; font-weight: bold;
+htfcss: cmssdc  font-family: sans-serif;
+htfcss: cmssi  font-family: sans-serif; font-style: oblique;
+htfcss: cmsltt  font-style: oblique; font-family: monospace;
+htfcss: cmtt font-family: monospace;
+htfcss: cmss   font-family: sans-serif;
+htfcss: cmssbx  font-family: sans-serif; font-weight: bold;
+htfcss: cmssbxo  font-family: sans-serif; font-style: oblique; font-weight: bold;
+htfcss: cmssdc  font-family: sans-serif;
+htfcss: cmssi  font-family: sans-serif; font-style: oblique;
+File: 2001_solutions.html
+File: 2001_solutions.css
+File: 2001_solutions.tmp
+Css: p.noindent { text-indent: 0em }
+Css: td p.noindent { text-indent: 0em; margin-top:0em; }
+Css: p.nopar { text-indent: 0em; }
+Css: p.indent{ text-indent: 1.5em }
+Css: @media print {div.crosslinks {visibility:hidden;}}
+Css: a img { border-top: 0; border-left: 0; border-right: 0; }
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+Css: center { margin-top:1em; margin-bottom:1em; }
+Css: td center { margin-top:0em; margin-bottom:0em; }
+Css: .Canvas { position:relative; }
+Css: img.math{vertical-align:middle;}
+Css: li p.indent { text-indent: 0em }
+Css: li p:first-child{ margin-top:0em; }
+Css: li p:last-child, li div:last-child { margin-bottom:0.5em; }
+Css: li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+Css: .enumerate1 {list-style-type:decimal;}
+Css: .enumerate2 {list-style-type:lower-alpha;}
+Css: .enumerate3 {list-style-type:lower-roman;}
+Css: .enumerate4 {list-style-type:upper-alpha;}
+Css: div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+Css: .obeylines-h,.obeylines-v {white-space: nowrap; }
+Css: div.obeylines-v p { margin-top:0; margin-bottom:0; }
+Css: .overline{ text-decoration:overline; }
+Css: .overline img{ border-top: 1px solid black; }
+Css: td.displaylines {text-align:center; white-space:nowrap;}
+Css: .centerline {text-align:center;}
+Css: .rightline {text-align:right;}
+Css: div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }
+Css: .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.fbox {display:table}
+Css: div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.minipage{width:100%;}
+Css: div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+Css: div.center div {text-align: left;}
+Css: div.flushright, div.flushright div.flushright {text-align: right;}
+Css: div.flushright div {text-align: left;}
+Css: div.flushleft {text-align: left;}
+Css: .underline{ text-decoration:underline; }
+Css: .underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+Css: .framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: .framebox-c {text-align:center;}
+Css: .framebox-l {text-align:left;}
+Css: .framebox-r {text-align:right;}
+Css: span.thank-mark{ vertical-align: super }
+Css: span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+Css: div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+Css: table.tabular td p{margin-top:0em;}
+Css: table.tabular {margin-left: auto; margin-right: auto;}
+Css: td p:first-child{ margin-top:0em; }
+Css: td p:last-child{ margin-bottom:0em; }
+Css: div.td00{ margin-left:0pt; margin-right:0pt; }
+Css: div.td01{ margin-left:0pt; margin-right:5pt; }
+Css: div.td10{ margin-left:5pt; margin-right:0pt; }
+Css: div.td11{ margin-left:5pt; margin-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: td.td00{ padding-left:0pt; padding-right:0pt; }
+Css: td.td01{ padding-left:0pt; padding-right:5pt; }
+Css: td.td10{ padding-left:5pt; padding-right:0pt; }
+Css: td.td11{ padding-left:5pt; padding-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: .hline hr, .cline hr{ height : 1px; margin:0px; }
+Css: .tabbing-right {text-align:right;}
+Css: span.TEX {letter-spacing: -0.125em; }
+Css: span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}
+Css: a span.TEX span.E {text-decoration: none; }
+Css: span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}
+Css: span.LATEX span.TEX{ position:relative; left: -0.4em; }
+Css: div.float, div.figure {margin-left: auto; margin-right: auto;}
+Css: div.float img {text-align:center;}
+Css: div.figure img {text-align:center;}
+Css: .marginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+Css: .marginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+Css: table.equation {width:100%;}
+Css: .equation td{text-align:center; }
+Css: td.equation { margin-top:1em; margin-bottom:1em; } 
+Css: td.equation-label { width:5%; text-align:center; }
+Css: td.eqnarray4 { width:5%; white-space: normal; }
+Css: td.eqnarray2 { width:5%; }
+Css: table.eqnarray-star, table.eqnarray {width:100%;}
+Css: div.eqnarray{text-align:center;}
+Css: div.array {text-align:center;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.pmatrix img{vertical-align:middle;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.bar-css {text-decoration:overline;}
+Css: img.cdots{vertical-align:middle;}
+Css: .figure img.graphics {margin-left:10%;}
+Css: .equation td{text-align:center; }
+Css: .equation-star td{text-align:center; }
+Css: table.equation-star { width:100%; }
+Css: table.equation { width:100%; }
+Css: table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:100%; margin-left:5%; white-space: nowrap;}
+Css: table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+Css: td.align-label { width:5%; text-align:center; }
+Css: td.align-odd { text-align:right; padding-right:0.3em;}
+Css: td.align-even { text-align:left; padding-right:0.6em;}
+Css: table.multline, table.multline-star {width:100%;}
+Css: td.gather {text-align:center; }
+Css: table.gather {width:100%;}
+Css: div.gather-star {text-align:center;}
+Css: dt.enumerate-enumitem{float:left; clear:left; margin-left:1em; margin-right:1em;}
+--- needs --- 2001_solutions.idv[2] ==> 2001_solutions0x.png ---
+--- needs --- 2001_solutions.idv[3] ==> 2001_solutions1x.png ---
+--- needs --- 2001_solutions.idv[4] ==> 2001_solutions2x.png ---
+--- needs --- 2001_solutions.idv[5] ==> 2001_solutions3x.png ---
+--- needs --- 2001_solutions.idv[7] ==> 2001_solutions4x.png ---
+--- needs --- 2001_solutions.idv[9] ==> 2001_solutions5x.png ---
+--- needs --- 2001_solutions.idv[11] ==> 2001_solutions6x.png ---
+--- needs --- 2001_solutions.idv[13] ==> 2001_solutions7x.png ---
+--- needs --- 2001_solutions.idv[14] ==> 2001_solutions8x.png ---
+--- needs --- 2001_solutions.idv[15] ==> 2001_solutions9x.png ---
+--- needs --- 2001_solutions.idv[16] ==> 2001_solutions10x.png ---
+--- needs --- 2001_solutions.idv[17] ==> 2001_solutions11x.png ---
+--- needs --- 2001_solutions.idv[18] ==> 2001_solutions12x.png ---
+--- needs --- 2001_solutions.idv[19] ==> 2001_solutions13x.png ---
+--- needs --- 2001_solutions.idv[20] ==> 2001_solutions14x.png ---
+--- needs --- 2001_solutions.idv[21] ==> 2001_solutions15x.png ---
+--- needs --- 2001_solutions.idv[22] ==> 2001_solutions16x.png ---
+--- needs --- 2001_solutions.idv[23] ==> 2001_solutions17x.png ---
+--- needs --- 2001_solutions.idv[24] ==> 2001_solutions18x.png ---
+--- needs --- 2001_solutions.idv[26] ==> 2001_solutions19x.png ---
+--- needs --- 2001_solutions.idv[28] ==> 2001_solutions20x.png ---
+--- needs --- 2001_solutions.idv[30] ==> 2001_solutions21x.png ---
+--- needs --- 2001_solutions.idv[32] ==> 2001_solutions22x.png ---
+--- needs --- 2001_solutions.idv[34] ==> 2001_solutions23x.png ---
+--- needs --- 2001_solutions.idv[36] ==> 2001_solutions24x.png ---
+--- needs --- 2001_solutions.idv[37] ==> 2001_solutions25x.png ---
+--- needs --- 2001_solutions.idv[39] ==> 2001_solutions26x.png ---
+--- needs --- 2001_solutions.idv[41] ==> 2001_solutions27x.png ---
+--- needs --- 2001_solutions.idv[43] ==> 2001_solutions28x.png ---
+--- needs --- 2001_solutions.idv[45] ==> 2001_solutions29x.png ---
+--- needs --- 2001_solutions.idv[46] ==> 2001_solutions30x.png ---
+--- needs --- 2001_solutions.idv[47] ==> 2001_solutions31x.png ---
+--- needs --- 2001_solutions.idv[48] ==> 2001_solutions32x.png ---
+--- needs --- 2001_solutions.idv[49] ==> 2001_solutions33x.png ---
+--- needs --- 2001_solutions.idv[50] ==> 2001_solutions34x.png ---
+--- needs --- 2001_solutions.idv[51] ==> 2001_solutions35x.png ---
+--- needs --- 2001_solutions.idv[53] ==> 2001_solutions36x.png ---
+--- needs --- 2001_solutions.idv[55] ==> 2001_solutions37x.png ---
+--- needs --- 2001_solutions.idv[56] ==> 2001_solutions38x.png ---
+--- needs --- 2001_solutions.idv[57] ==> 2001_solutions39x.png ---
+--- needs --- 2001_solutions.idv[58] ==> 2001_solutions40x.png ---
+--- needs --- 2001_solutions.idv[59] ==> 2001_solutions41x.png ---
+--- needs --- 2001_solutions.idv[60] ==> 2001_solutions42x.png ---
+--- needs --- 2001_solutions.idv[61] ==> 2001_solutions43x.png ---
+--- needs --- 2001_solutions.idv[62] ==> 2001_solutions44x.png ---
+--- needs --- 2001_solutions.idv[64] ==> 2001_solutions45x.png ---
+--- needs --- 2001_solutions.idv[66] ==> 2001_solutions46x.png ---
+--- needs --- 2001_solutions.idv[67] ==> 2001_solutions47x.png ---
+--- needs --- 2001_solutions.idv[69] ==> 2001_solutions48x.png ---
+--- needs --- 2001_solutions.idv[71] ==> 2001_solutions49x.png ---
+--- needs --- 2001_solutions.idv[73] ==> 2001_solutions50x.png ---
+--- needs --- 2001_solutions.idv[75] ==> 2001_solutions51x.png ---
+--- needs --- 2001_solutions.idv[77] ==> 2001_solutions52x.png ---
+--- needs --- 2001_solutions.idv[79] ==> 2001_solutions53x.png ---
+--- needs --- 2001_solutions.idv[81] ==> 2001_solutions54x.png ---
+--- needs --- 2001_solutions.idv[82] ==> 2001_solutions55x.png ---
+--- needs --- 2001_solutions.idv[84] ==> 2001_solutions56x.png ---
+--- needs --- 2001_solutions.idv[86] ==> 2001_solutions57x.png ---
+--- needs --- 2001_solutions.idv[88] ==> 2001_solutions58x.png ---
+--- needs --- 2001_solutions.idv[90] ==> 2001_solutions59x.png ---
+--- needs --- 2001_solutions.idv[92] ==> 2001_solutions60x.png ---
+--- needs --- 2001_solutions.idv[94] ==> 2001_solutions61x.png ---
+--- needs --- 2001_solutions.idv[96] ==> 2001_solutions62x.png ---
+--- needs --- 2001_solutions.idv[97] ==> 2001_solutions63x.png ---
+--- needs --- 2001_solutions.idv[98] ==> 2001_solutions64x.png ---
+--- needs --- 2001_solutions.idv[100] ==> 2001_solutions65x.png ---
+--- needs --- 2001_solutions.idv[102] ==> 2001_solutions66x.png ---
+--- needs --- 2001_solutions.idv[104] ==> 2001_solutions67x.png ---
+--- needs --- 2001_solutions.idv[106] ==> 2001_solutions68x.png ---
+--- needs --- 2001_solutions.idv[107] ==> 2001_solutions69x.png ---
+--- needs --- 2001_solutions.idv[108] ==> 2001_solutions70x.png ---
+--- needs --- 2001_solutions.idv[109] ==> 2001_solutions71x.png ---
+--- needs --- 2001_solutions.idv[110] ==> 2001_solutions72x.png ---
+--- needs --- 2001_solutions.idv[112] ==> 2001_solutions73x.png ---
+--- needs --- 2001_solutions.idv[114] ==> 2001_solutions74x.png ---
+--- needs --- 2001_solutions.idv[115] ==> 2001_solutions75x.png ---
+--- needs --- 2001_solutions.idv[116] ==> 2001_solutions76x.png ---
+--- needs --- 2001_solutions.idv[118] ==> 2001_solutions77x.png ---
+--- empty picture --- 2001_solutions.idv[118] ---
+--- needs --- 2001_solutions.idv[119] ==> 2001_solutions78x.png ---
+--- needs --- 2001_solutions.idv[120] ==> 2001_solutions79x.png ---
+--- needs --- 2001_solutions.idv[121] ==> 2001_solutions80x.png ---
+--- needs --- 2001_solutions.idv[122] ==> 2001_solutions81x.png ---
+--- needs --- 2001_solutions.idv[123] ==> 2001_solutions82x.png ---
+--- needs --- 2001_solutions.idv[125] ==> 2001_solutions83x.png ---
+--- empty picture --- 2001_solutions.idv[125] ---
+--- needs --- 2001_solutions.idv[126] ==> 2001_solutions84x.png ---
+--- needs --- 2001_solutions.idv[128] ==> 2001_solutions85x.png ---
+--- needs --- 2001_solutions.idv[129] ==> 2001_solutions86x.png ---
+--- needs --- 2001_solutions.idv[130] ==> 2001_solutions87x.png ---
+--- needs --- 2001_solutions.idv[131] ==> 2001_solutions88x.png ---
+--- needs --- 2001_solutions.idv[132] ==> 2001_solutions89x.png ---
+--- empty picture --- 2001_solutions.idv[132] ---
+--- needs --- 2001_solutions.idv[134] ==> 2001_solutions90x.png ---
+--- needs --- 2001_solutions.idv[135] ==> 2001_solutions91x.png ---
+--- needs --- 2001_solutions.idv[136] ==> 2001_solutions92x.png ---
+--- needs --- 2001_solutions.idv[137] ==> 2001_solutions93x.png ---
+--- needs --- 2001_solutions.idv[138] ==> 2001_solutions94x.png ---
+--- empty picture --- 2001_solutions.idv[138] ---
+--- needs --- 2001_solutions.idv[139] ==> 2001_solutions95x.png ---
+--- needs --- 2001_solutions.idv[140] ==> 2001_solutions96x.png ---
+--- needs --- 2001_solutions.idv[141] ==> 2001_solutions97x.png ---
+--- needs --- 2001_solutions.idv[143] ==> 2001_solutions98x.png ---
+--- empty picture --- 2001_solutions.idv[143] ---
+--- needs --- 2001_solutions.idv[145] ==> 2001_solutions99x.png ---
+--- needs --- 2001_solutions.idv[147] ==> 2001_solutions100x.png ---
+--- needs --- 2001_solutions.idv[149] ==> 2001_solutions101x.png ---
+--- needs --- 2001_solutions.idv[150] ==> 2001_solutions102x.png ---
+--- needs --- 2001_solutions.idv[151] ==> 2001_solutions103x.png ---
+--- needs --- 2001_solutions.idv[152] ==> 2001_solutions104x.png ---
+--- needs --- 2001_solutions.idv[153] ==> 2001_solutions105x.png ---
+--- needs --- 2001_solutions.idv[154] ==> 2001_solutions106x.png ---
+--- needs --- 2001_solutions.idv[155] ==> 2001_solutions107x.png ---
+--- needs --- 2001_solutions.idv[156] ==> 2001_solutions108x.png ---
+--- needs --- 2001_solutions.idv[157] ==> 2001_solutions109x.png ---
+--- needs --- 2001_solutions.idv[158] ==> 2001_solutions110x.png ---
+--- needs --- 2001_solutions.idv[159] ==> 2001_solutions111x.png ---
+--- needs --- 2001_solutions.idv[160] ==> 2001_solutions112x.png ---
+--- empty picture --- 2001_solutions.idv[160] ---
+--- needs --- 2001_solutions.idv[162] ==> 2001_solutions113x.png ---
+--- needs --- 2001_solutions.idv[163] ==> 2001_solutions114x.png ---
+--- needs --- 2001_solutions.idv[164] ==> 2001_solutions115x.png ---
+--- needs --- 2001_solutions.idv[165] ==> 2001_solutions116x.png ---
+--- needs --- 2001_solutions.idv[166] ==> 2001_solutions117x.png ---
+--- needs --- 2001_solutions.idv[167] ==> 2001_solutions118x.png ---
+--- needs --- 2001_solutions.idv[168] ==> 2001_solutions119x.png ---
+--- needs --- 2001_solutions.idv[169] ==> 2001_solutions120x.png ---
+--- empty picture --- 2001_solutions.idv[169] ---
+--- needs --- 2001_solutions.idv[171] ==> 2001_solutions121x.png ---
+--- needs --- 2001_solutions.idv[173] ==> 2001_solutions122x.png ---
+--- needs --- 2001_solutions.idv[174] ==> 2001_solutions123x.png ---
+--- needs --- 2001_solutions.idv[176] ==> 2001_solutions124x.png ---
+--- needs --- 2001_solutions.idv[178] ==> 2001_solutions125x.png ---
+--- needs --- 2001_solutions.idv[180] ==> 2001_solutions126x.png ---
+--- needs --- 2001_solutions.idv[182] ==> 2001_solutions127x.png ---
+--- needs --- 2001_solutions.idv[184] ==> 2001_solutions128x.png ---
+--- needs --- 2001_solutions.idv[186] ==> 2001_solutions129x.png ---
+--- needs --- 2001_solutions.idv[187] ==> 2001_solutions130x.png ---
+--- needs --- 2001_solutions.idv[189] ==> 2001_solutions131x.png ---
+--- empty picture --- 2001_solutions.idv[189] ---
+--- needs --- 2001_solutions.idv[190] ==> 2001_solutions132x.png ---
+--- needs --- 2001_solutions.idv[192] ==> 2001_solutions133x.png ---
+--- needs --- 2001_solutions.idv[193] ==> 2001_solutions134x.png ---
+--- needs --- 2001_solutions.idv[194] ==> 2001_solutions135x.png ---
+--- needs --- 2001_solutions.idv[195] ==> 2001_solutions136x.png ---
+--- needs --- 2001_solutions.idv[196] ==> 2001_solutions137x.png ---
+--- needs --- 2001_solutions.idv[198] ==> 2001_solutions138x.png ---
+--- empty picture --- 2001_solutions.idv[198] ---
+--- needs --- 2001_solutions.idv[199] ==> 2001_solutions139x.png ---
+--- needs --- 2001_solutions.idv[200] ==> 2001_solutions140x.png ---
+--- needs --- 2001_solutions.idv[202] ==> 2001_solutions141x.png ---
+--- empty picture --- 2001_solutions.idv[202] ---
+--- needs --- 2001_solutions.idv[203] ==> 2001_solutions142x.png ---
+--- needs --- 2001_solutions.idv[205] ==> 2001_solutions143x.png ---
+--- needs --- 2001_solutions.idv[206] ==> 2001_solutions144x.png ---
+--- empty picture --- 2001_solutions.idv[206] ---
+--- needs --- 2001_solutions.idv[208] ==> 2001_solutions145x.png ---
+--- needs --- 2001_solutions.idv[210] ==> 2001_solutions146x.png ---
+--- needs --- 2001_solutions.idv[212] ==> 2001_solutions147x.png ---
+--- needs --- 2001_solutions.idv[214] ==> 2001_solutions148x.png ---
+--- needs --- 2001_solutions.idv[216] ==> 2001_solutions149x.png ---
+--- empty picture --- 2001_solutions.idv[216] ---
+--- needs --- 2001_solutions.idv[217] ==> 2001_solutions150x.png ---
+--- needs --- 2001_solutions.idv[218] ==> 2001_solutions151x.png ---
+--- needs --- 2001_solutions.idv[219] ==> 2001_solutions152x.png ---
+--- empty picture --- 2001_solutions.idv[219] ---
+--- needs --- 2001_solutions.idv[221] ==> 2001_solutions153x.png ---
+--- empty picture --- 2001_solutions.idv[221] ---
+--- needs --- 2001_solutions.idv[223] ==> 2001_solutions154x.png ---
+--- needs --- 2001_solutions.idv[224] ==> 2001_solutions155x.png ---
+--- needs --- 2001_solutions.idv[225] ==> 2001_solutions156x.png ---
+--- needs --- 2001_solutions.idv[226] ==> 2001_solutions157x.png ---
+--- empty picture --- 2001_solutions.idv[226] ---
+--- needs --- 2001_solutions.idv[227] ==> 2001_solutions158x.png ---
+--- needs --- 2001_solutions.idv[228] ==> 2001_solutions159x.png ---
+--- needs --- 2001_solutions.idv[229] ==> 2001_solutions160x.png ---
+--- needs --- 2001_solutions.idv[231] ==> 2001_solutions161x.png ---
+--- empty picture --- 2001_solutions.idv[231] ---
+--- needs --- 2001_solutions.idv[232] ==> 2001_solutions162x.png ---
+--- needs --- 2001_solutions.idv[234] ==> 2001_solutions163x.png ---
+--- needs --- 2001_solutions.idv[235] ==> 2001_solutions164x.png ---
+--- needs --- 2001_solutions.idv[236] ==> 2001_solutions165x.png ---
+--- empty picture --- 2001_solutions.idv[236] ---
+--- needs --- 2001_solutions.idv[238] ==> 2001_solutions166x.png ---
+--- needs --- 2001_solutions.idv[239] ==> 2001_solutions167x.png ---
+--- needs --- 2001_solutions.idv[240] ==> 2001_solutions168x.png ---
+--- empty picture --- 2001_solutions.idv[240] ---
+--- needs --- 2001_solutions.idv[242] ==> 2001_solutions169x.png ---
+--- needs --- 2001_solutions.idv[243] ==> 2001_solutions170x.png ---
+--- empty picture --- 2001_solutions.idv[243] ---
+--- needs --- 2001_solutions.idv[245] ==> 2001_solutions171x.png ---
+--- needs --- 2001_solutions.idv[247] ==> 2001_solutions172x.png ---
+--- needs --- 2001_solutions.idv[248] ==> 2001_solutions173x.png ---
+--- needs --- 2001_solutions.idv[249] ==> 2001_solutions174x.png ---
+--- needs --- 2001_solutions.idv[250] ==> 2001_solutions175x.png ---
+--- needs --- 2001_solutions.idv[251] ==> 2001_solutions176x.png ---
+--- empty picture --- 2001_solutions.idv[251] ---
+--- needs --- 2001_solutions.idv[253] ==> 2001_solutions177x.png ---
+--- characters ---
+Font("cmr","5","5","100")
+Font("cmr","10","10","109")
+Font("cmssbx","10","10","172")
+Font("cmsltt","10","10","144")
+Font("cmssbx","10","10","120")
+Font("cmti","10","10","109")
+Font("cmbx","10","10","109")
+Font("cmr","8","8","100")
+Font("cmr","6","6","100")
+Font("cmmi","10","10","109")
+Font("cmmi","8","8","100")
+Font("cmmi","6","6","100")
+Font("cmsy","10","10","109")
+Font("cmsy","8","8","100")
+Font("cmsy","6","6","100")
+Font("cmex","10","10","109")
+Font("msbm","10","10","109")
+Font("cmmi","12","12","100")
+Font("cmssbx","10","10","109")
+Font("cmr","9","9","100")
+Font("cmmi","9","9","100")
+Font("cmsy","9","9","100")
+Font("cmex","9","9","100")
+Font("cmbsy","10","10","109")
+Font("cmtt","9","9","100")

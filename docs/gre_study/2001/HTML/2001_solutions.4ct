@@ -1,0 +1,102 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {1}Acceleration on a pendulum bob}}{6}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {2}Friction on a turntable}}{6}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {3}Satellite orbit}}{8}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {4}One-dimensional inelastic collision}}{8}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {5}Average kinetic energy of a 3D harmonic oscillator}}{10}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {6}Work done on a gas}}{11}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {7}Two bar magnets}}{13}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {8}Charge induced on an infinite conductor}}{13}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {9}Charges on a circle}}{14}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {10}Energy across a capacitor}}{14}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {11}Two-lens image}}{17}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {12}Spherical concave mirror}}{19}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {13}Resolving two stars}}{19}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {14}Cylindrical gamma-ray detector}}{21}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {15}Measurement precision}}{21}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {16}Uncertainty}}{22}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {17}Filling electron shells}}{24}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {18}Energy to remove a helium electron}}{24}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {19}Source of the Sun's energy}}{26}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {20}Definition of bremsstrahlung}}{26}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {21}Comparing Lyman-$\alpha $ and Balmer-$\alpha $ wavelengths}}{27}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {22}Orbital system parameters}}{29}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {23}Particle accelerating around a circle}}{30}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {24}Throwing a stone}}{31}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {25}Moment of inertia of packed pennies}}{31}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {26}Speed of the end of a falling rod}}{35}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {27}Eigenvalues of the Hamiltonian operator}}{38}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {28}Orthogonal states}}{38}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {29}Expectation value of an operator}}{39}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {30}Possible Hydrogen wave functions}}{41}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {31}Energy levels in positronium}}{42}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {32}Relativistic momentum}}{44}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {33}Decaying pion}}{46}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {34}Making events simultaneous}}{49}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {35}Temperature dependence of a blackbody}}{51}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {36}An expanding adiabatic gas}}{51}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {37}A $PV$ Diagram}}{52}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {38}RLC circuit component values}}{57}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {39}High-pass filters}}{59}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {40}An RL circuit}}{64}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {41}Magnetic charge in Maxwell}}{65}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {42}Current through loops}}{66}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {43}Angular momentum commutation relations}}{66}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {44}Energy of a particle in a box}}{67}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {45}Harmonic oscillator eigenstates}}{68}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {46}Dependence of the de Broglie wavelength on a potential}}{69}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {47}The change in entropy of an expanding container}}{71}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {48}Estimating the root-mean-square velocity of a gas}}{73}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {49}Partition function and degeneracy}}{74}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {50}Speed of sound in a cold flute}}{74}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {51}Light loss through polarizers}}{75}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {52}Volume of a primitive unit cell}}{75}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {53}Temperature dependence of a semiconductor's resistivity}}{76}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {54}Estimating impulse}}{76}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {55}Conservation of momentum at an angle}}{77}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {56}Volume of gas required to float a mass}}{77}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {57}Force due to a jet of water}}{78}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {58}Deflection of a proton in electric and magnetic fields}}{79}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {59}LC circuit-SHO equivalence}}{80}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {60}Flux of a sheet through a sphere}}{81}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {61}Electromagnetic wave hitting conductor}}{82}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {62}Deriving mass from cyclotron frequency}}{85}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {63}Deriving temperature from wavelength of peak blackbody radiation}}{86}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {64}The many uses of electromagnetic radiation}}{87}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {65}High-temperature limit for molar heat capacity}}{88}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {66}Combined half-life}}{89}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {67}Binding energy}}{91}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {68}Possible decay modes of Beryllium}}{93}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {69}Thin-film refraction}}{93}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {70}Diffraction}}{95}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {71}Doppler shift for light}}{95}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {72}Two masses on a spring}}{96}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {73}Suspending a mass with friction}}{98}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {74}A Lagrangian}}{99}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {75}Rotations}}{100}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {76}Kinetic energy of conduction band electrons}}{101}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {77}Number of particles in a state given the energy}}{101}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {78}Conservation in a particle decay}}{102}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {79}Relativistic momentum II}}{103}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {80}Speed in a moving reference frame}}{104}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {81}Orbital angular momentum eigenvalues}}{105}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {82}Spin eigenfunctions for a triplet state}}{106}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {83}Eigenstates of $S_x$}}{109}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {84}Transition selection rules}}{111}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {85}Nichrome wire}}{112}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {86}Current induced in a spinning coil}}{114}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {87}Two balls and a point charge}}{116}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {88}The magnetic field of a bent wire}}{117}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {89}Child on a merry-go-round}}{118}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {90}Series and parallel springs}}{119}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {91}Determining a cylinder's moment of inertia}}{121}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {92}Hamiltonian for two particles on spring}}{122}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {93}The most likely position of a ground-state hydrogenic electron}}{123}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {94}Perturbation on the QHO Hamiltonian}}{124}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {95}Electric field inside a medium}}{126}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {96}Radiation from a pulsing sphere}}{126}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {97}Predicting the spread of refracted light}}{127}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {98}A quantum state in thermal equilibrium}}{130}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {99}Relativistic energy and momentum conservation}}{131}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{Q1-1-0}{}{\numberline {100}Michelson interferometer}}{132}\relax 
+\par 

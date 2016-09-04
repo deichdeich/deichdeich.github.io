@@ -1,0 +1,2157 @@
+\documentclass[11pt]{paper}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{gensymb}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsubsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+\newcommand{\answer}[1]{Answer: \textbf{(#1)}.}
+\newcommand{\units}[1]{\left[\text{#1}\right]}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+% indentation
+\renewenvironment{indent}
+    {\begin{list}{}
+    {\setlength{\topsep}{0pt}
+    \setlength{\leftmargin}{30pt}
+    \setlength{\rightmargin}{0pt}
+    \setlength{\listparindent}{0pt}
+    \setlength{\itemindent}{0pt}
+    \setlength{\parsep}{7pt plus 1pt}}
+    \item }{\end{list}}
+
+\newenvironment{titlemize}[1]{%
+  \begin{indent}
+  \emph{#1}
+  \begin{enumerate}}
+  {\end{enumerate}
+  \end{indent}}
+
+\renewcommand{\contentsname}{Problems}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{2001 Physics GRE Solutions}
+\author{}
+%\date{\today}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\section*{Why and how I wrote this}
+I needed a way to hold myself accountable for studying for the GRE.  Writing this solution guide proved not only to be an excellent way of making sure I studied, but also worked really well for retention.  Writing a couple of paragraphs per problem really forced me to slow down, and \LaTeX'ing all of the equations burned them into my memory.  I absolutely recommend making one of these guides as a way to study.
+
+I wrote each solution to try to make the work for that solution as transparent as possible.  That means that in addition to showing more math than is often necessary, I write a significant amount of prose for each problem in an attempt to explain my reasoning.  I did this largely in reaction to similar guides I found on the Internet, which usually write as little as possible for each problem.  This had the effect of often making the solution obscured while simultaneously making me feel dumb for not getting it.
+
+I have attempted to balance this desire for transparency with not showing an insane amount of work.  I usually simplify equations down to the level of cancelations, and you'll probably find yourself rolling your eyes a little bit.
+
+I have also attempted, when reasonable, to do the problems first in a rigorous, theory-driven way and then in a speed-friendly test-taking way.  I find that the speed-friendly method is much easier to recall if you know the theory underpinning it.  In cases like problem \hyperlink{section.82}{82}, which are largely about knowing a fact instead of doing math, I spend time reviewing the theory behind that fact.
+
+If you find any typos, please e-mail me.  I'll get you a candy bar, or something.\\
+
+Alex Deich,\\
+\phantom{.}\hspace{10pt} xdeich@gmail.com\\
+\phantom{.}\hspace{10pt} August, 2016
+\newpage
+\tableofcontents
+\newpage
+\section{Acceleration on a pendulum bob}
+This is \emph{total} acceleration, so there will be two components acting on the bob: gravity and tension.  Tension acts in the direction of the string, and gravity always points straight down.  For this reason, we can immediately rule out (A) and (E), as those are clearly ignoring any force other than what is along the string.  Furthermore, at point \emph{c}, the string (and therefore the tension) is pointing in the same direction as gravity, so the arrow should be pointing totally along the string.  This rules out (B) and (D).\\
+
+\answer{C}
+
+\section{Friction on a turntable}
+There are two forces which must cancel out:  Centripetal and frictional.\\
+Therefore:
+\begin{align}
+m \omega^2 r &= m g \mu_s,\\
+\Rightarrow r &= \frac{g \mu_s}{\omega^2}.
+\end{align}
+However, the units need to be taken care of.  We are given a frequency $\nu = 33.3$ revolutions per minute, while $[g] = [\text{m}][\text{s}]^{-2}$.  We want to convert $[\nu]$ to an angular frequency $[\omega] = [\text{rad}][\text{s}]^{-1}$.
+
+\begin{align}
+\omega &= 2 \pi \frac{\text{rad}}{\text{rev}} \frac{1 \text{min}}{60 \text{s}} \nu,\\
+\Rightarrow r &= \frac{9.8 \times 0.3}{\left(33.3 \times \frac{2 \pi}{60} \right)^2} = 0.242.
+\end{align}
+
+\answer{D}
+
+\section{Satellite orbit}
+I can't think of many clever ways to really narrow down the answers.  It is probably just good to have Kepler's Third Law memorized:
+
+\begin{equation}
+T = 2\pi \sqrt{\frac{a^3}{GM}},
+\end{equation}
+where\\
+$T$ is the orbital period,\\
+$a$ is the semi-major axis, and\\
+$GM$ is the planet's mass times the gravitational constant.\\
+
+\answer{D}
+
+\section{One-dimensional inelastic collision}
+As usual, start with conservation of momentum:
+
+\begin{equation}
+m_1 v_1 + m_2 v_2 = (m_1 + m_2) v_{12}.
+\end{equation}
+With $m_1 = 2m$, $m_2 = m$ and $v_2 = 0$ (the problem states that the particle is at rest), we have
+
+\begin{align}
+2m v_1 &= 3m v_{12}\\
+\Rightarrow v_{12} &= \frac{2}{3} v_1.
+\end{align}
+
+Then, with conservation of energy,
+
+\begin{align}
+\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 &= \frac{1}{2} \left(m_1 + m_2\right) (v_{12})^2\\
+\Rightarrow \frac{1}{2} 2 m v_1^2  &= \left(\frac{1}{2} 3 m\right) \left(\frac{2}{3} v_1\right)^2\\
+\Rightarrow m v_1^2 &= \left(\frac{3}{2}m\right) \frac{4}{9} v_1^2\\
+\Rightarrow KE_f &= \frac{2}{3} KE_i
+\end{align}
+So the final energy is $\frac{2}{3}$ of the initial, meaning the system has lost a third of its kinetic energy.\\
+
+\answer{C}
+
+\section{Average kinetic energy of a 3D harmonic oscillator}
+The equipartition theorem says that there is $\frac{1}{2}k_B T$ of energy for each degree of freedom \emph{in the Hamiltonian}.  The Hamiltonian for a harmonic oscillator is 
+
+\begin{equation}
+H = \frac{1}{2m} \left( p_x^2 + p_y^2 + p_z^2 \right) + \frac{1}{2} k \left( q_x^2 + q_y^2 + q_z^2 \right),
+\end{equation}
+
+which has 6 degrees of freedom (3 positions and 3 momenta), so the average kinetic energy is 
+
+\begin{equation}
+\left< KE \right>  = 6 \times \frac{1}{2} k_B T = 3 k_B T.
+\end{equation}
+
+\answer{D}
+
+\section{Work done on a gas}
+Adiabatic means that heat is conserved.  \textbf{Adiabatic heating occurs when the pressure of a gas is increased from work done on it by its surroundings}. For an adiabatic process, $PV^\gamma = \text{const.}$, and the work done by applying pressure to a volume is $W = \int P dV$.  Using these, one can derive the worthy-of-memorizing equation for the work done on a gas in an adiabatic process:
+\begin{equation}
+W_{a} = -\frac{1}{1-\gamma} \left( P_f V_f - P_i V_i \right).
+\end{equation}
+Isothermal means that the temperature is conserved.  \textbf{An isothermal process occurs slowly enough to allow the system to continually adjust to the temperature of the reservoir through heat exchange}. Therefore, $P_i V_i = n R T_i = P_f V_f = n R T_f$, and using the same definition of work above, one can derive the worthy-of-memorizing equation for the work done on a gas in an isothermal process:
+\begin{equation}
+W_{i} = n R T_i \ln \left( \frac{V_f}{V_i}\right) = P_i V_i \ln \left( \frac{V_f}{V_i}\right).
+\end{equation}
+Right off the bat, we know that $V_f = 2V_i$, so neither $W_i$ nor $W_a$ will be equal to 0.  This eliminates (B) and (D).  Furthermore, we can see from the formulae that $W_i \neq W_a$.  This makes the problem as deciding whether $W_a$ is greater than $W_i$ or vice-versa.  One way to solve this would be by noting that for a monatomic gas, $\gamma = \frac{5}{3}$ and solving.
+
+Another method is this:  For an adiabat, $P \propto \frac{1}{V^\gamma}$, and $\gamma > 1$ for an ideal gas.  For an isotherm, $P \propto \frac{1}{V}$.  Therefore, for the same change in volume, the pressure of an adiabat changes more than the pressure of an isotherm.  Therefore, the adiabat does more work.\\
+
+\answer{E}
+
+\section{Two bar magnets}
+Going through the options:
+
+(A) cannot be true because both the magnets are standing on their north ends.  Matching polarities always repel.
+
+(C) seems to imply that there are magnetic monopoles, which don't exist.  In this picture, $\nabla \cdot \mathbf{B} \neq 0$.
+
+(D) doesn't work because you'd expect cylindrical symmetry.
+
+(E) would be good if there were longitudinal current through the cylinders, but there's not.\\
+
+\answer{B}
+
+\section{Charge induced on an infinite conductor}
+By the conservation of charge, there should be an equal and opposite charge induced on the top face of the conductor, giving an answer of $-Q$.\\
+
+\answer{D}
+
+\section{Charges on a circle}
+All the charges are symmetrically placed around the circle, so at the center, there is an equal contribution from every direction pointing towards the charges, giving a net magnitude of 0.  One suggestion I like is to take the limit as infinite charges are equally placed around the circle:  This is a conducting ring, which has no field on the interior.\\
+
+\answer{A}
+
+\section{Energy across a capacitor}
+The energy stored in a capacitor can be derived by finding the work required to establish an electric field in the capacitor:
+\begin{equation}
+W = \int_0^Q V(q) dq = \int_0^Q \frac{q}{C} dq = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} CV^2 = \frac{1}{2} V Q,
+\end{equation}
+where $V$ is the voltage difference across the capacitor, $C$ is the effective capacitance, and $Q$ is the total charge across one of the plates.
+
+Furthermore, it is helpful to remember the additive properties of capacitors.  In parallel, $n$ capacitors add normally:
+
+\begin{equation}
+C_{\text{eff}} = C_1 + C_2 + \dots + C_n.
+\end{equation}
+
+In series, the reciprocals add:
+\begin{equation}
+\frac{1}{C_{\text{eff}}} =\frac{1}{C_1} + \frac{1}{C_2} + \dots + \frac{1}{C_n}.
+\end{equation}
+
+So, for this problem we need the effective capacitance of two capacitors in series:
+
+\begin{align}
+\frac{1}{C_\text{eff}} &= \frac{1}{3\mu\text{F}} + \frac{1}{6\mu\text{F}},\\
+&= \frac{9}{18\mu\text{F}},\\
+\Rightarrow C_\text{eff} &= \frac{18}{9}\mu\text{F}.
+\end{align}
+
+Finally, using $\frac{1}{2}CV^2$ for the energy stored, we get 
+
+\begin{equation}
+\frac{1}{2} \times \frac{18}{9} \times 300^2 = 300^2 = 900,000.
+\end{equation}
+
+Not knowing the units is fine: There is only one answer which is 9 times some number of tens.\\
+
+\answer{A}
+
+\section{Two-lens image}
+
+This requires two applications of the thin-lens limit of the lensmaker's formula,
+\begin{equation}
+\frac{1}{d_o} + \frac{1}{d_i} = \frac{1}{f},
+\end{equation}
+where $d_o$ is the distance from the object to the lens, $d_i$ is the distance from the lens to the image, and $f$ is the focal length of the lens.
+
+For this problem, we apply the formula once for the object and the first lens, and then using that image as the ``object'' for the second lens.  Solving for $d_i$ for the first lens:
+\begin{align}
+\frac{1}{d_i} &= \frac{1}{20} - \frac{1}{40},\\
+&= \frac{1}{40},\\
+\Rightarrow d_i &= 40.
+\end{align}
+So the first image is 40 cm behind the first lens.  This places the new ``object'' 10 cm behind the second lens.  Because this is now on the opposite side of the second lens as the side which we established was positive for the first lens, we say that $d_o$ for the second lens is $-10$.
+
+Then, following through with the second lensmaker's equation,
+\begin{align}
+\frac{1}{d_i} &= \frac{1}{10} + \frac{1}{10},\\
+&= \frac{1}{5},\\
+\Rightarrow d_i &= 5.
+\end{align}
+
+So the final image is 5 cm behind the second lens.\\
+
+\answer{A}
+
+\section{Spherical concave mirror}
+We can start with the lensmaker's equation as used above,
+\begin{equation}
+\frac{1}{d_i} = \frac{1}{f} - \frac{1}{d_o}.
+\end{equation}
+
+Looking at the picture in the problem, we can see that $d_o < f$.  Therefore, $\frac{1}{d_o} > \frac{1}{f}$, and so $d_i$ will be negative, placing the image behind the mirror.\\
+
+\answer{E}
+
+\section{Resolving two stars}
+I can't think of any way to do this problem but to memorize the Rayleigh criterion:
+\begin{equation}
+\theta = 1.22\frac{\lambda}{D},
+\end{equation}
+which describes the requirement on the diameter of a lens, $D$, in order to resolve two objects separated by an angle $\theta$, at some wavelength of light, $\lambda$.
+
+In this particular problem, we have $\theta = 3 \times 10^{-5} \text{ rad}$, and $\lambda = 600\text{ nm}$.  Plugging it all in, we have
+\begin{equation}
+D = \frac{1.22 \times 600 \times 10^{-9}\text{ m}}{3 \times 10^{-5}\text{ rad}} = 2.4 \text{ cm}
+\end{equation}
+
+\answer{B}
+
+\section{Cylindrical gamma-ray detector}
+
+The ``8-centimeter-long'' fact is not useful.  All that matters is the flux through the face of the detector.  When the detector is \emph{right at} the source, it's collecting all of the radiation that leaves from that half of the source \--- hence it's collecting 50\% of emitted radiation.  At a distance of 1 meter, the radiation is now spread out over a sphere of surface area $4 \pi r^2 = 4 \pi \text{ m}^2$.  The face of the detector is only occupying $16 \pi \times 10^{-4} \text{ m}^2$.  Therefore, the fraction of radiation which is detected is a ratio of these two areas:
+
+\begin{equation}
+\frac{16 \pi \times 10^{-4} \text{ m}^2}{4 \pi \text{ m}^2} = 4 \times 10^{-4}.
+\end{equation}
+
+\answer{C}
+
+\section{Measurement precision}
+
+Precision is a measure of \emph{random} error.  If the precision is high, the there is low random error.  With low random error, the statistical variability is low, so the measurements are clustered closely regardless of how well they agree with the actual value.\\
+
+\answer{A}
+
+\section{Uncertainty}
+In addition to generally knowing about random error estimation, you need to know two things specifically for this problem:  1) that radioactive decay follows a Poisson distribution, and 2) that the standard deviation of a Poisson distribution is the square root of the average.
+
+Then, you can estimate the expected uncertainty (usually taken as the error of the standard deviation, $\sigma_x$) from the fact that the error in the standard deviation, $\Delta\sigma_x$ goes as 
+\begin{equation}
+\Delta\sigma_x = \frac{\sigma_x}{\sqrt{N}},
+\end{equation}
+for $N$ trials.
+
+So, calculating the average, we have
+\begin{equation}
+\left<x\right> = \frac{3+0+2+1+2+4+0+1+2+5}{10} = 2,
+\end{equation}
+so the standard deviation is 
+\begin{equation}
+\sigma_x = \sqrt{\left<x\right>} = \sqrt{2}.
+\end{equation}
+Assuming that by ``uncertainty of 1 percent'' they mean that the error should be the average plus or minus 1\%, we are looking for an uncertainty of $\Delta\sigma_x = 0.002$.  So, using the fact mentioned above, we can solve for the number of trials required for this uncertainty.
+\begin{align}
+0.02 &= \frac{\sqrt{2}}{\sqrt{N}},\\
+\Rightarrow N &= \frac{2}{0.0004} = 5,000.
+\end{align}
+
+\answer{D}
+
+\section{Filling electron shells}
+For problems like these, I think it's best to just memorize how electron shells are filled up.  The rules I keep in mind are these:
+\begin{enumerate}
+\item $s$-orbitals can take 2 electrons, $p$-orbitals can take 6 and $d$-orbitals can take 10.
+\item The pattern is $s$-$s$-$p$-$s$-$p$-$s$-$d$.
+\item If the orbitals are in the right order, and they each have as many electrons as they can take (except, perhaps the last one), then that's the right answer.
+\end{enumerate}
+
+\answer{B}
+
+\section{Energy to remove a helium electron}
+The Bohr model is applicable here, because helium isn't too different from hydrogen.  The energy for an electron in the $n^{th}$ state of a hydrogenic atom with $Z$ protons is given by
+\begin{equation}
+E_n = Z^2 \frac{R_E}{n^2},
+\end{equation}
+where $R_E$ is a Rydberg, the energy of the ground state of hydrogen, $13.6\text{ eV}$.
+
+Because Helium has two protons ($Z=2$), it can accept two electrons into its ground state, so $n = 1$ for this problem.  If the helium were singly ionized and only had a single electron, as $\text{He+}$, then the energy to remove that electron would be, from the Bohr model above,
+\begin{equation}
+E_1 = 4 \times 13.6 \text{ eV} = 54.4.\text{ eV}.
+\end{equation}
+
+It's tempting to say that the energy required to remove the two electrons of neutral helium would just be $2 \times 54.4 \text{ eV} = 108.8 \text{ eV}$, but this is not the case.  Considering one electron at a time, one can see that the first one is not \emph{just} experiencing the tug of the nucleus, but is \emph{also} being pushed away by a Coulomb repulsion from the \emph{other electron}.  Therefore, we expect it to be slightly easier to remove the first of two electrons than to remove one solitary electron.
+
+In lieu of perturbation theory, we can subtract the theoretical value of 54.4 eV for a single ground state energy from the experimental value of 79 eV for complete ionization.  What's left over will be the energy that was required to remove an electron whose exit was being pushed along by a Coulomb repulsion.  So, 
+\begin{equation}
+79 \text{ eV} - 54.4 \text{ eV} = 24.6 \text{ eV}.
+\end{equation}
+
+\answer{A}
+
+\section{Source of the Sun's energy}
+It is not necessary to know the whole proton-proton chain to answer this problem.  Just note that a helium has 4 things of roughly proton mass (2 protons and 2 neutrons), and that $\text{n} + \text{e}^- \rightarrow \text{p}$.  So in order to make helium, you need 4 hydrogens and enough energy to collide half of the electrons and protons.\\
+
+\answer{B}
+
+\section{Definition of bremsstrahlung}
+The way I remember this is that bremsstrahlung is German for ``breaking radiation'' which reminds me that it's analogous to breaking the sound barrier (it doesn't matter that they're different meanings of ``break'').  The only answer that sounds like it has anything to do with breaking a sound barrier is the one that mentions rapid deceleration in a medium.\\
+
+\answer{E}
+
+\section{Comparing Lyman-$\alpha$ and Balmer-$\alpha$ wavelengths}
+This requires knowing the Rydberg formula for the energy, $E$, of a photon released in the transition from one energy level, $n_i$ to another, $n_f$:
+\begin{equation}
+E = E_f - E_i = R_E \left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right),
+\end{equation}
+where $R_E$ is the Rydberg energy, $13.6 \text{ eV}$.  The energy of a photon emitted by a Lyman-$\alpha$ transition (from $n=2$ to $n=1$) is then
+
+\begin{equation}
+E_{L\alpha} = R_E \left(1 - \frac{1}{4}\right) = \frac{3}{4}R_E.
+\end{equation}
+
+While Balmer-$\alpha$ transitions (from $n=3$ to $n=2$) release photons with energies of 
+\begin{equation}
+E_{B\alpha} = R_E \left(\frac{1}{4} - \frac{1}{9}\right) = \frac{5}{36}R_E,
+\end{equation}
+and, taking the ratio,
+
+\begin{align}
+\frac{E_{L\alpha}}{E_{B\alpha}} &= \frac{3 \times 36}{4 \times 5},\\
+&= \frac{27}{5}.
+\end{align}
+Finally, the problem is asking for the wavelength of the light.  $E = hc/\lambda$, and taking the ratio has dealt with the implicit $hc$, so we only need to take the reciprocal of $27/5$.\\
+
+\answer{B}
+
+\section{Orbital system parameters}
+
+The hint is in the phrase ``very small moon''.  The question is implying that the mass of the moon is negligible compared to the mass of the planet.  This means that the center of gravity will be very close to the center of the planet, and so you can treat the planet as stationary.  Then, think about the equations of orbital motion.  Kepler's Third Law (problem \hyperlink{section.3}{3}) describes the period and semi major axes of the orbit, but makes no mention of mass.  If you're solving for a circular orbit with forces (or any orbit, but circular is easy), the smaller mass will cancel:
+\begin{equation}
+\frac{G M m}{r^2} = \frac{m v^2}{r}
+\end{equation}
+
+There are probably other examples, but these should be sufficient to convince you the answer is the moon's mass.\\
+
+\answer{A}
+
+\section{Particle accelerating around a circle}
+I think this problem is worded confusingly.  There's a particle going around a circle at a rate of $10\text{ ms}^{-1}$, and so it's experiencing the standard centripetal acceleration of
+\begin{equation}
+\mathbf{a}_{\text{c}} = - \frac{v^2}{r}\mathbf{\hat{r}} = -\frac{100}{10}\mathbf{\hat{r}} = -10 \mathbf{\hat{r}} .
+\end{equation}
+
+ But this particle is \emph{also} undergoing a tangential acceleration of $10 \text{ ms}^{-2}$, in the direction of the particle's velocity.  That means that the particle is experiencing two orthogonal accelerations of equal magnitude.  The only way that these can combine is to form a vector at 45\degree to both.  To answer the question, note that one of the accelerations is in the same direction as the velocity, so the angle is the same.\\
+
+\answer{C}
+
+\section{Throwing a stone}
+There is no air resistance, so $v_x$ should be constant, so we should only consider solutions with plot II in the first column.  The ball starts by going up, so $v_y$ is at positive at first, and should undergo constant deceleration.  As the ball begins to fall, $v_y$ is negative.  The only plot which fits this description is III.\\
+
+\answer{C}
+
+\section{Moment of inertia of packed pennies}
+To do this problem, refer to the front of the test for the moment of inertia of a solid disk about an axis going through its center: $I = \frac{1}{2}mr^2$.  A very quick way I did this was to say that the whole collection of pennies was a solid disk of mass $7m$ and radius $3r$.  Then,
+\begin{align}
+I &= \frac{1}{2} m r^2,\\
+m &\rightarrow 7m, r \rightarrow 3r,\\
+&= \frac{1}{2} \times 7m \times \left(3r\right)^2,\\
+&= \frac{63}{2} m r^2.
+\end{align}
+
+The available answer this is closest to is $55/2$, which is the correct answer.  However, if the correct answer weren't also the largest, this estimate is not nearly close enough to be sure.  A rigorous way to do this is to use the parallel axis theorem.
+
+If you know the moment of inertia of an object around one axis, the parallel axis theorem provides a way to calculate the moment of inertia around any other axis which is parallel to the original.  In this case, we know the moment of inertia of one penny around the axis that goes through its center of mass,
+\begin{equation}
+I_{\text{CM}} = \frac{1}{2}mr^2
+\end{equation}
+
+If we now rotate that penny around an axis a distance $d$ from its center, the parallel axis theorem says that the new moment of inertia is given by
+\begin{equation}
+I = I_{\text{CM}} + m d^2
+\end{equation}
+
+In calculating the contribution to the total angular momentum of each extremal penny in the arrangement given in the problem, we are rotating each of the exterior pennies around an axis $2r$ from their centers.  Then, we can add these moments to the moment of the middle penny being rotated around \emph{its} center to get the total moment of inertia.  For the moment of inertia of each exterior penny,
+\begin{align}
+I_\text{ext.} &= I_{\text{CM}} + m \left(2r\right)^2,\\
+&= \frac{1}{2}mr^2 + m \times 4 r^2,\\
+&= \frac{9}{2}mr^2.
+\end{align}
+
+So each exterior penny contributes $\left(9/2\right)mr^2$ to the total moment of inertia which we can now calculate by summing the moments of all the constituents.
+\begin{align}
+I_\text{tot.} &= I_{\text{CM}} + 6 \times \frac{9}{2}mr^2,\\
+&= \frac{1}{2}mr^2 + \frac{54}{2}mr^2,\\
+&= \frac{55}{2}mr^2.
+\end{align}
+
+\answer{E}
+
+\section{Speed of the end of a falling rod}
+This problem also requires looking at the front of the test for (or memorizing) the moment of inertia of a rod of length $L$ and mass $M$ about its center of mass (so that it's spinning like a baton): $I = \frac{1}{12}ML^2$.  However, the rod in the problem is not rotating around its center of mass.  It's pivoting on one end, a distance $L/2$ from its center of mass.  We can get the moment of inertia of this rotation with the parallel axis theorem.
+\begin{align}
+I &= I_\text{CM} + Md^2,\\
+d &\rightarrow \frac{L}{2},\\
+I &= M\frac{L^2}{12} + M\frac{L^2}{4},\\
+&= \frac{1}{3}ML^2.
+\end{align}
+Now we can use conservation of energy to solve for the speed of the end of the rod.  Setting the rotational energy equal to the gravitational potential energy from the rod's center of mass (which is located at $L/2$),
+\begin{align}
+\frac{1}{2}I\omega^2 &= Mg\frac{L}{2},\\
+\Rightarrow \omega^2 &= \frac{MgL}{I},\\
+&= \frac{3g}{L}.
+\end{align}
+To convert the radial speed, $\omega$ to the linear speed of the end of the rod, we note that $\omega = v/r$, and in the case of the end of the rod, $r=L$.  So,
+\begin{align}
+\frac{v^2}{L^2} &= \frac{3g}{L},\\
+\Rightarrow{v} &= \sqrt{3gL}.
+\end{align}
+
+\answer{C}
+
+\section{Eigenvalues of the Hamiltonian operator}
+An axiom of quantum mechanics is that the Hamiltonian operator is hermitian, and a requirement of hermitian operators is that their eigenvalues are always real.  If the Hamiltonian operator weren't hermitian, then observations of a particle's energy could give imaginary results, which would have no physical meaning.\\
+
+\answer{A}
+
+\section{Orthogonal states}
+That two vectors are orthogonal means their inner product is equal to zero.  Taking the inner product of $\psi_1$ and $\psi_2$,
+
+\begin{equation}
+\bra{\psi_1}\ket{\psi_2} = (5 \times 1) + ((-3) \times (-5)) + (2 \times x) = 20+2x
+\end{equation}
+
+The problem asks for the value of $x$ which ensures $\psi_1$ and $\psi_2$ are orthogonal, which, from demanding the above inner product be equal to zero, is $-10$.\\
+
+\answer{E}
+
+\section{Expectation value of an operator}
+The whole point of eigenvalues is that you can replace an operator acting on an eigenvector with the corresponding eigenvalue, a scalar.  In this case, we take the inner product of the wave function with the wave function after it has been acted upon by the operator $\hat{O}$,
+\begin{equation}
+\bra{\psi}\ket{ \hat{O} \psi}.
+\end{equation}
+To calculate $\ket{\hat{O} \psi}$, we can just push the operator through $\psi$,
+\begin{align}
+\ket{\hat{O} \psi} &= \frac{1}{\sqrt{6}} \hat{O} \psi_{-1} + \frac{1}{\sqrt{2}} \hat{O} \psi_{1} + \frac{1}{\sqrt{3}} \hat{O} \psi_{2},\\
+&\text{replacing the operator with the eigenvalues,}\\
+&= \frac{1}{\sqrt{6}} (-1)  \psi_{-1} + \frac{1}{\sqrt{2}} (1)  \psi_{1}+ \frac{1}{\sqrt{3}} (2)  \psi_{2},\\
+&= -\frac{1}{\sqrt{6}} \psi_{-1} + \frac{1}{\sqrt{2}}  \psi_{1}+ \frac{2}{\sqrt{3}}\psi_{2}.
+\end{align}
+
+Then, calculating the inner product of this acted-upon wave function with the original wave function,
+\begin{align}
+\bra{\psi}\ket{ \hat{O} \psi} &= \left(-\frac{1}{\sqrt{6}} \times \frac{1}{\sqrt{6}}\right) + \left(\frac{1}{\sqrt{2}}  \times \frac{1}{\sqrt{2}} \right) + \left(\frac{1}{\sqrt{3}} \times \frac{2}{\sqrt{3}}\right),\\
+&= -\frac{1}{6} + \frac{1}{2}+ \frac{2}{3} = 1.
+\end{align}
+
+\answer{C}
+
+\section{Possible Hydrogen wave functions}
+Any wave function must be normalizable, which is to say
+\begin{equation}
+\int_{-\infty}^\infty \psi^*\psi dr = 1,
+\end{equation}
+because between the limits of $\pm\infty$, the particle must be \emph{somewhere} (that is, if you're in position space; the analogous requirement in momentum space is that the particle must have \emph{some} finite momentum).  The only function which is normalizable is option I.\\
+
+\answer{A}  
+
+\section{Energy levels in positronium}
+To derive the ground state energy of positronium, we can treat it as hydrogenic and use the Bohr model.  The Bohr model predicts that the energy of different levels are proportional to the reduced mass, $\mu = \frac{m_1 m_2}{m_1 + m_2}$, of the system,
+\begin{equation}
+E_n = -\frac{\mu q_e^4}{8 h^2\epsilon_0^2} \frac{1}{n^2}.
+\end{equation}
+
+In the case of hydrogen, $m_1$ and $m_2$ are the masses of the proton and electron, respectively.  In that case, $m_p \gg m_{e^-}$, and so $\mu\approx m_{e^-}$.  In this case, the positron and electron are the same mass, so $\mu = m_e/2$, roughly half the mass of hydrogen.  Everything else in the equation for $E_n$ stays the same: they're all constants (besides $n$, the energy level).  This means that we can just divide in half any hydrogen energy to get the corresponding positronium energy.  So, the ground state of positronium should be
+\begin{equation}
+\frac{13.6}{2} = 6.8.
+\end{equation}
+Now we can use the Rydberg equation for energy of a photon emitted from an electron transitioning from state $n_i$ to $n_f$,
+\begin{equation}
+E = E_1 \left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right),
+\end{equation}
+where $E_1$, rather than the Rydberg from the last time we applied this equation to hydrogen, is now the ground state energy of positronium, $6.8 \text{ eV}$.  Plugging everything in, an electron transitioning from the $n = 3$ state to the $n=1$ state of positronium will emit a photon with energy
+\begin{equation}
+E = 6.8 \times \left(1 - \frac{1}{9}\right) = 6.8 \times \frac{8}{9} = 6.0 \text{ eV}.
+\end{equation}
+
+\answer{A}
+
+\section{Relativistic momentum}
+The total energy of a particle is given by
+\begin{equation}
+E = \sqrt{m^2 c^4 + p^2 c^2},
+\end{equation}
+and we are told that the total energy is equal to twice its rest energy, or
+\begin{equation}
+E = 2 m c^2.
+\end{equation}
+Plugging in for the total energy and solving, we have
+\begin{align}
+2 m c^2 &= \sqrt{m^2 c^4 + p^2 c^2},\\
+\Rightarrow 4 m^2 c^4 &= m^2 c^4 + p^2 c^2,\\
+\Rightarrow p^2 c^2 &= 3 m^2 c^4,\\
+\Rightarrow p &= \sqrt{3} m c.
+\end{align}
+
+\answer{D}
+
+\section{Decaying pion}
+
+This problem is really about being comfortable with changing between relativistic reference frames.  Is proper time longer or shorter than a time at rest?  What about proper distance?  This gets really confusing, and I have a few ways of remembering how it goes.  First, I think about proper time.  I know that any spacetime interval is conserved between reference frames.  If you have an interval, $\Delta s^2 = -c\Delta t^2 + \Delta x^2$ in one reference frame, you know that it's the same if you measure it in coordinates which are moving (I'll denote moving coordinates \--- and therefore proper length and time \--- with a bar):
+
+\begin{equation}
+\Delta s^2 = -c\Delta t^2 + \Delta x^2 = \Delta \bar{s}^2 = -c\Delta \bar{t}^2 + \Delta \bar{x}^2
+\end{equation}
+
+Then, I think about my own reference frame.  When I'm stopped, all of my motion is through time, which I am accomplishing at $c$.  If I speed up, my $\Delta s$ must stay the same, and so I must be accomplishing less of my travel through time and more through space.  This helps me recall that \textbf{moving clocks run slow}, so a moving clock will measure \emph{less} time than a clock at rest.  Then, I know that lengths do the opposite thing, so I know that \textbf{moving rulers shrink} and that a proper length is \emph{longer} than a length at rest.
+
+Now, if I'm given a moving time, $\Delta \bar{t}$, I know that to get the time at rest, $\Delta {t}$, I need to change it by a factor of $\gamma$.  But $\gamma$ is a somewhat messy fraction.  Do I multiply or divide $\Delta \bar{t}$ by $\gamma$ in order to make it smaller?  I have no mnemonic for this; I just remember that $\gamma$ works like a regular number (for $v<c$) and that multiplying will make things bigger and dividing makes things smaller.  Now I have the equations $\Delta t = \gamma \Delta \bar{t}$ and $\Delta x = \frac{1}{\gamma} \Delta \bar{x}$.
+
+So, this question gives a time interval of the pion when it's moving, $\Delta \bar{t} = 10^{-8} \text{ s}$, a length interval at rest, $\Delta x = 30\text{ m}$, and asks for the speed which reconciles these two numbers.  A trick which eluded me for a surprisingly long time was to rewrite the length interval as a time interval.  This allows us to use $\Delta t = \gamma \Delta \bar{t}$ (remember, the time at rest must be bigger than the moving time, so we multiply by $\gamma$).
+
+\begin{align}
+\Delta t &= \gamma \Delta \bar{t},\\
+\Delta t &\rightarrow \frac{\Delta x}{v},\\
+\Rightarrow \frac{\Delta x}{v} &= \gamma\Delta \bar{t} = \sqrt{\frac{1}{1-v^2/c^2}}\Delta \bar{t},\\
+\Rightarrow v &= \sqrt{\frac{1}{c^2\Delta \bar{t}^2+\Delta x^2}}c\Delta x.
+\end{align}
+
+First, do these units work out?  Yes:  The denominator of the fraction has $[\text{m}]^2/[\text{s}]^2 \times [\text{s}]^2$, which gives $[\text{m}]^2$.  This is added to another $[\text{m}]^2$, and it's in the denominator of a square root, ultimately giving a factor of $1/[\text{m}]$.  That leaves us with $[\text{m}]/[\text{s}] \times [\text{m}]/[\text{m}] = [\text{m}]/[\text{s}]$, which is a velocity.  Good.
+
+Now we are given $\Delta x = 30 \text{ m}$ and $\Delta \bar{t} = 10^{-8}\text{ s}$.  Furthermore, a few of the answers (except the first one) are with 10\% of the approximation $c = 3\times10^8 \text{ ms}^{-1}$ so that tells us we should use $c = 2.98\times 10^{8}\text { ms}^{-1}$ instead.  So,
+\begin{align}
+v &= \sqrt{\frac{1}{2.98\times10^{16} \times 10^{-16}+900}} 30c,\\
+&= \sqrt{\frac{1}{902.98}} 30c,\\
+&= .998 c = 2.98\times10^8 \text{ ms}^{-1}.
+\end{align}
+
+\answer{D}
+
+\section{Making events simultaneous}
+In one frame, the two events are separated by a spacetime interval $\Delta s^2 = -c \Delta t^2 + \Delta x^2$.  This same interval is observed by a moving frame (with coordinates $\bar{t}$ and $\bar{x}$).  If the events are simultaneous, then we know that $\Delta \bar{t} = 0$, and so
+\begin{equation}
+\Delta s^2 = -c \Delta t^2 + \Delta x^2 = \Delta \bar{x}^2.
+\end{equation}
+Furthermore, we know that any separation in space must be real, so $\Delta \bar{x}^2 > 0$.  Therefore,
+\begin{align}
+-c \Delta t^2 + \Delta x^2 &> 0,\\
+\Rightarrow\Delta x^2 &> c \Delta t^2,\\
+\Rightarrow\frac{\Delta x^2}{\Delta t^2} &> c.
+\end{align}
+Alternately, you could note that the requirement that $\Delta\bar{x}>0$ requires also that $\Delta s>0$, which, with this metric signature, is a space-like interval.  Such intervals require faster-than-light travel.\\
+
+\answer{C}
+
+\section{Temperature dependence of a blackbody}
+This is just about having memorized the blackbody relationship, which is that the energy per time (power, $P$) per area, $A$, is proportional to the fourth power of temperature, $T$ by $\sigma \approx 5.67 \times 10^{-8}\text{W}\text{m}^{-2}\text{K}^{-4}$, the Stefan-Boltzmann constant:
+\begin{equation}
+\frac{P}{A} = \sigma T^4.
+\end{equation}
+Therefore, if an object triples its temperature, its energy per time per area will increase by a factor of $3^4 = 81$.\\
+
+\answer{E}
+
+\section{An expanding adiabatic gas}
+Refer to the answer to question 6 and consider each of the answers.\\
+(A) is true because an adiabatic process is defined as one which conserves heat.\\
+(B) is true because a change in entropy can be written $\Delta S = \Delta Q/T$ for a change in heat $\Delta Q$ and temperature T.  For an adiabatic process, $\Delta Q = 0$.\\
+(C) is true because the change of internal energy is the negative of the work done on or by the gas, which is defined as $W = \int P dV$.\\
+(D) is true for the same reason as (C).\\
+(E) is \emph{not} true because this process is \emph{adiabatic}, which makes no promises about temperature, unlike an isothermal process.\\
+
+\answer{E}
+
+\section{A $PV$ Diagram}
+First I will go over the rigorous way to calculate the answer, then I will go over some quick tricks for $PV$ diagrams.
+
+\subsubsection*{Rigorous solution}
+Rigorously, you have to remember the equations relating work, pressure and volume, and then calculate the work for each segment.  The solution will be the sum of each.  The trick comes in not knowing the exact pressure at $B$.  There are a couple of ways to deal with this.
+
+The relevant equations are 
+\begin{equation}
+W = \int_{V_1}^{V_2} P dV,
+\end{equation}
+and, for an isothermal process,
+\begin{equation}
+W = P_i V_i \ln\left(\frac{V_f}{V_i}\right).
+\end{equation}
+Now, going counter-clockwise starting at $A$, we compute the work done in segment $AB$.  Normally, we would use the integral $W = \int P dV$, but this is just a flat line with constant pressure, so we can write it as a simple difference:
+\begin{align}
+W_{AB} &= P\Delta V,\\
+&= 200 \times \left(V_b - 2\right).
+\end{align}
+Then, for the segment $BC$, we can't really use the integral formulation for work, because it's some curve we don't know.  Instead, we'll use the logarithm for isothermal work:
+\begin{align}
+W_{BC} &= P_f V_f \ln\left(\frac{V_f}{V_i}\right),\\
+&= 500 \times 2 \times \ln \left(\frac{2}{V_b}\right).
+\end{align}
+Finally, for $CA$, there is no change in volume, so the work done is 0.  So the total work is just $W = W_{AB}+W_{BC}$.  However, there's still the unknown quantity $V_b$.  We can solve for this by noting that the fact that the path from B to C is isothermal, the quantity $PV$ will be conserved along it:
+\begin{align}
+P_B V_B &= P_C V_C,\\
+\Rightarrow 200 \times V_B &= 500 \times 2,\\
+\Rightarrow V_B &= 5.
+\end{align}
+Now, plugging $V_B$ into the equation for total work,
+\begin{align}
+W &= 200 \times \left(5 - 2\right) + 500 \times 2 \times \ln{\left(\frac{2}{5}\right)}, \\
+&= 600 + 400  \ln{\left(\frac{2}{5}\right)}.
+\end{align}
+To quickly estimate $\ln{\left(2/5\right)}$, note that $e \approx 2.7\approx5/2 = \left(2/5\right)^{-1}$.  So, $\ln{\left(2/5\right)}\approx -1$.  Then,
+\begin{align}
+W &= 600 \times 1000\times-1 = -400.
+\end{align}
+
+\subsubsection*{Qualitative solution}
+Now, there are some ways to really speed up the calculation of this problem.  First, if a $PV$ cycle is counter-clockwise, then that means that there is work being done on the system and the total work of the system will be negative.  This immediately knocks out the first two solutions for this problem.  Furthermore, you know that the answer is not 0 because there is only one segment which can contribute 0 work, and the other paths must be contributing non-zero work to the process.  This leaves (D) and (E) as the possible answers.  Then, to calculate the area, you can approximate the cycle as a triangle and wind up with a sufficiently accurate answer.
+
+So, we can measure the length of $AB$ with our pencil, and see that it's approximately as long as the distance from the origin to the ``2'' on the $x$-axis.  That means the area of the triangle $ABC$ is approximately $1/2 \times \left(500-200\right) \times 2 = 300$.  So, the work calculated this way is $-300$, which agrees even better with the provided solution than the rigorous method above.\\
+
+\answer{D}
+\section{RLC circuit component values}
+This problem requires you to know that the current is maximized at the resonant frequency.  The resonant frequency, $\omega$, occurs when the complex impedance of the circuit vanishes.  That is to say,
+\begin{align}
+X_L &= X_C,\\
+\Rightarrow \omega L &= \frac{1}{\omega C},\\
+\Rightarrow C &= \frac{1}{\omega^2 L},
+\end{align}
+for a circuit with a capacitor of capacitance $C$ and an inductor of inductance $L$.  Plugging in the values provided, we have
+\begin{align}
+C &= \frac{1}{(10^3 \text{ rad}/\text{s})^2 \times 25 \times 10^{-3} \text{ H}},\\
+&= \frac{1}{25} \times 10^{-3} \text{ F},\\
+&= 40 \times 10^{-6} \text{ F}.
+\end{align}
+
+\answer{D}
+
+\section{High-pass filters}
+First I'll give a qualitative solution requiring little written math, and then I'll go through the rigorous method.  The qualitative solution is better for the test itself, as it takes very little time, but I wouldn't understand it if I didn't know the mathematical solution.
+\subsubsection*{Qualitative solution}
+Qualitatively, recall what high- and low-pass filters \emph{do}: A high-pass filter takes in an AC signal, and if the frequency is sufficiently high produces an output signal such that $V_\text{in} \approx V_\text{out}$.  Otherwise, if the frequency is too low, no signal is passed to the output wire.  Another way to say this is that the voltage drop measured across the whole circuit should be approximately the same as the drop measured across the input.  Low-pass filters are reversed; their goal is to measure a \emph{lower} voltage drop, and allow lower frequencies through.
+
+Now recall the equations for the complex impedance of capacitors and inductors:
+\begin{align}
+Z_C &= \frac{1}{i\omega C},\\
+Z_L &= i\omega L.
+\end{align}
+So as the frequency increases, it is $Z_L$ that gets large, while $Z_C$ gets small.  Now, which of the circuits will measure a higher voltage drop across the element labeled ``Out''?  Going through each option:
+\begin{enumerate}[label=\Roman*.]
+\item The inductor's complex impedance is proportional to frequency.  At high frequencies (for a high-pass filter), the inductor will have a high voltage drop, leaving the resistor with a relatively small one.  This is \emph{not} a high-pass filter.\\
+\item The resistor's impedance does not depend on frequency, but as said above, the inductor's impedance rises linearly.  Therefore, at high frequencies, the inductor will have a higher drop than the resistor.  This \emph{is} a high-pass filter.\\
+\item The capacitor's inductance is inversely proportional to frequency.  By the reverse logic of circuit I, this \emph{is} a high-pass filter.\\
+\item By the reasoning for the above circuits, this is \emph{not} a high-pass filter.
+\end{enumerate}
+
+\subsubsection*{Rigorous solution}
+Now, to solve this rigorously but slowly, you need to know that the total impedance is the sum of all complex impedances,
+\begin{equation}
+Z_\text{tot.} = R + i\left(\omega L + \frac{1}{\omega C}\right),
+\end{equation}
+for a circuit with a resistor, inductor and capacitor.  
+\begin{enumerate}[label=*]
+\item It is worth memorizing, though unnecessary for this specific problem, that total impedance is a complex number.  This allows you to talk about the angle $\phi$ between the real and the complex components.  This produces the handy reformulating of the total impedance as
+\begin{align}
+Z_\text{tot.} &= \left|Z\right|e^{i\phi},\\
+\left|Z\right|&=\sqrt{R_\text{eff}^2 + Z_C^2 + Z_L^2},\\
+\phi &= \arctan \left( \frac{Z_\text{eff.}}{R_\text{eff.}}\right),
+\end{align}
+where $Z_\text{eff.} = Z_C + Z_L$ and $R_\text{eff.}$ are the effective complex impedances and effective resistances, respectively.
+\end{enumerate}
+So, to do this problem, you must find the output voltage by using Ohm's law, $V = IZ$ (for complex impedance $Z$), and look at the behavior of the circuit as $\omega \rightarrow \infty$.  You can solve for $I$ with $I = V_\text{in.}/Z$, which is to say dividing the \emph{input} voltage by whatever impedance it encounters.  This is also helpful because it will give an output voltage in terms of the input voltage, and comparing those two is exactly what we need to do to determine if something is a high- or low-pass filter.  Going through each circuit, we have:
+\begin{enumerate}[label=\Roman*.]
+\item In this case, $Z = R + i\omega L$.  Therefore, $I = V_\text{in.}/\left(R+i\omega L\right),$ and so the output voltage is this current multiplied by the resistor at the end,
+\begin{equation}
+V_\text{out.} = R\frac{V_\text{in.}}{R+i\omega L}.
+\end{equation}
+Now, look at the behavior at high frequency.  As $\omega \rightarrow \infty$, $V_\text{out.} \rightarrow 0$.  Therefore, at high frequency, the output turns off.  This is therefore \emph{not} a high-pass filter.
+
+\item Here, $Z = R + i\omega L$ as before, but now the current must pass by the inductor instead of the resistor.  Therefore, the input voltage is multiplied by the inductor's complex impedance instead,
+\begin{equation}
+V_\text{out.} = i\omega L\frac{V_\text{in.}}{R+i\omega L}. 
+\end{equation}
+Whether or not this converges provides an opportunity to review L'H\^{o}pital's rule.  If the limits of the numerator and the denominator exist, and they both converge to either $0$ or $\pm \infty$, then L'H\^{o}pital's rule applies, which says that not only does the limit of the fraction exist, but that it is equal to the limit of the derivative of the numerator divided by the derivative of the denominator.  In math,
+\begin{align}
+\lim_{x\rightarrow c} \frac{f(x)}{g(x)} &= \lim_{x\rightarrow c} \frac{f'(x)}{g'(x)},\\
+\text{provided that } \lim_{x\rightarrow c} f(x) &, \lim_{x\rightarrow c} g(x) = 0 \text{ or } \pm \infty.
+\end{align}
+Here, we can quickly check that this condition is satisfied, and so we need only take the derivative of the numerator and the denominator with respect to $\omega$ and examine the limit of that.
+\begin{align}
+\lim_{\omega\rightarrow \infty} \frac{V_\text{in.} i L}{iL} = V_\text{in.}.
+\end{align}
+So we have $V_\text{out.} \approx V_\text{in.}$ and this is a high-pass filter.
+
+\item Here, $Z = R + 1/i\omega C$.  The circuit is analogous to the first one in setting up the equation for the output voltage: you just swap out $i \omega L$ for $1/i\omega C$.  So,
+\begin{equation}
+V_\text{out.} = R\frac{V_\text{in.}}{R+1/i\omega C}.
+\end{equation}
+In the limit as $\omega$ gets large, then, the denominator approaches $R$.  This cancels with the $R$ in the numerator, leaving an output voltage equal to the input.  Therefore, this is a high-pass filter.
+
+\item As before, $Z = R + 1/i\omega C$, but the final circuit element is the capacitor.  So the the output voltage will be
+\begin{equation}
+V_\text{out.} = \left(1/i\omega C\right)\frac{V_\text{in.}}{R+1/i\omega C},
+\end{equation}
+which goes to $0$ as $\omega \rightarrow \infty$.  This is a low-pass filter.
+\end{enumerate}
+
+\answer{D}
+
+\section{An RL circuit}
+As soon as the switch is closed, the battery is going to be pumping the inductor full of current, eventually leaving it impenetrable.  Right away, this removes all the possible solutions which are not decaying, leaving only (D) and (E).  Then you must have memorized the \emph{time constant}, $\tau$.  You can derive $\tau$ by examining the response of the differential equation governing the system to a step function (provided here by flipping the switch).  The time constant represents the amount of time for the system to decay if it continued at the original rate.  In the case of the RL circuit, the differential equation is $V = \ddot{Q}L + \dot{Q}R$, and the time constant is $\tau = L/R$.  For an RC circuit, by the way, $V = -RC\dot{V}$, with $\tau = RC$.
+
+Finally, we have $\tau = L/R$, and $L = 10 \text{ mH}$, and $R = 2 \Omega$.  So,
+\begin{equation}
+\tau = 10\times10^{-3}\text{ H}/2\Omega = 5\times10^{-3}\text{ s} = 5\text{ ms}.
+\end{equation}
+
+\answer{D}
+\section{Magnetic charge in Maxwell}
+The logic for this question is largely similar to a question about magnetic monopoles.  You make analogous equations for $\mathbf{B}$ that you already have for $\mathbf{E}$, and Maxwell's equations become symmetrical for $\mathbf{B}$ and $\mathbf{E}$.
+\begin{enumerate}[label=\Roman*.]
+\item Presumably, if magnetic charge exists, then it only sources magnetic fields when it's not moving, and would leave the electric field sourced by electric charge untouched.  This equation describes the electric field due to electric charge.
+\item For the same reason as above, we would expect the magnetic charge to source a diverging field, if it behaves like electric charge.
+\item We know that moving electric charge, electric current, does induce a curling magnetic field.  Therefore, by analogy, moving magnetic current would induce a curling electric field.
+\item The equation for the curl of the electric field now contains only contributions from the magnetic field and the magnetic current (if we follow the prescription we just established above).  Therefore, by analogy, the equation for the curl of the magnetic field should contain only contributions from the electric field and current, as it already does.
+\end{enumerate}
+\answer{E}
+
+\section{Current through loops}
+It is handy here to recall the rule of thumb that systems will induce current in such a way that the resulting magnetic field ``fights'' the change in magnetic flux.  (Some texts say ``nature abhors a change in flux'', but I've always personally found that statement difficult to understand.)  In the system provided, the center ring is moving towards $A$ and away from $B$.  Taking one ring at a time:
+\begin{itemize}
+\item{$B$}: The center ring is moving \emph{away} from ring $B$, so the flux is decreasing.  In order to try and maintain the magnetic field $B$ was experiencing, it will want a field pointing the same direction as the center ring, and so it will induce a current moving in the same direction, counterclockwise.
+\item{$A$}:  The center ring is moving \emph{towards} ring $A$, so its flux in increasing.  Therefore, $A$ will want a field pointing in the opposite direction of the center ring's, so its current will be the opposite direction, clockwise
+\end{itemize}
+
+\answer{C}
+
+\section{Angular momentum commutation relations}
+For this problem, one can either recall the identity for combining commutators, or do the brute-force method and derive the general rule.  I'll do the latter.
+
+The given commutations, written out, are
+\begin{align}
+[L_x,L_y] &= L_xL_y - L_yL_x = i\hbar L_z,\\
+[L_y,L_z] &= L_yL_z - L_zL_y = i\hbar L_x, \text{and}\\
+[L_z,L_x] &= L_zL_x - L_xL_z=  i\hbar L_y.
+\end{align}
+So when we write out the desired commutation relation, it is clear that certain bits can be replaced by the relations above:
+\begin{align}
+[L_x L_y, L_z] &= L_x L_y L_z - L_zL_xL_y,\\
+&= L_x \left(i\hbar L_x + L_zL_y\right) - (i\hbar L_y + L_xL_z)L_y,\\
+&= i\hbar \left(L_x^2 - L_y^2\right).
+\end{align}
+
+In the lines above, I have inadvertently derived the identity which you might memorize,
+\begin{equation}
+[AB,C] = [A,B]C + B[A,C].
+\end{equation}
+
+\answer{D}
+
+\section{Energy of a particle in a box}
+This problem has a lot of red herrings.  The only thing you need to know are the energies of the energy eigenstates.  The measurement of the energy of a particle with a ensemble wave function will only give you the energy of one of the constituent wave functions.
+
+Therefore, the only equation we need to concern ourselves with is
+\begin{equation}
+E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} = n^2 E_1.
+\end{equation}
+
+So, we're looking for answers which are both square multiples of $E_1$ and appear in the ensemble wave function.  Incidentally, there's only one answer which is even a square, so we go with that one, but what if there were two which were perfect squares, say $9E_1$ and $25E_1$?  We would still go with $9E_1$ because we see that the wave function has an eigenstate in the state $n=\sqrt{9}=3$ but not in $n=\sqrt{25}=5$.\\
+
+\answer{D}
+
+\section{Harmonic oscillator eigenstates}
+This problem is largely similar to problem \hyperlink{section.29}{29}.  We're given the eigenvalues of an operator and asked to find the expectation value of some ensemble state.  The prescription is exactly the same:  Apply the operator to each constituent eigenfunction, and take the inner product of the ensemble state to determine the expectation value.
+
+The operator of interest is
+\begin{equation}
+H\ket{n} = \hbar \omega \left(n+\frac{1}{2}\right)\ket{n},
+\end{equation}
+which we will apply to the wave function
+\begin{align}
+\ket{\psi} &= \frac{1}{\sqrt{14}}\ket{1} - \frac{2}{\sqrt{14}}\ket{2} + \frac{3}{\sqrt{14}}\ket{3},\\
+&= \frac{1}{\sqrt{14}}\left(\ket{1} - 2\ket{2} + 3\ket{3}\right)
+\end{align}
+Then we will take the inner product $\bra{\psi}H\ket{\psi}$ to find the expectation value.  Applying the operator goes like this:
+\begin{align}
+H\ket{\psi} &=  \frac{1}{\sqrt{14}}\left(H\ket{1} - 2H\ket{2} + 3H\ket{3}\right),\\
+&=  \frac{1}{\sqrt{14}}\left(\hbar \omega \left(1+\frac{1}{2}\right)\ket{1} - 2\hbar \omega \left(2+\frac{1}{2}\right)\ket{2} + 3\hbar \omega \left(3+\frac{1}{2}\right)\ket{3}\right),\\
+&= \frac{\hbar \omega}{\sqrt{14}}\left( \frac{3}{2}\ket{1} - 2 \frac{5}{2}\ket{2} + 3 \frac{7}{2}\ket{3}\right).
+\end{align}
+Then, to take the inner product of $H\ket{\psi}$ with $\bra{\psi}$, multiply the coefficients of matching eigenfunctions (remember, the inner product is ultimately a dot product):
+\begin{align}
+\bra{\psi}H\ket{\psi} &= \frac{1}{\sqrt{14}} \times \frac{\hbar\omega}{\sqrt{14}}\left(1\times\frac{3}{2} + 2\times2 \frac{5}{2}+3\times 3 \frac{7}{2}\right),\\
+&= \frac{43}{14}\hbar\omega.
+\end{align}
+
+\answer{B}
+
+\section{Dependence of the de Broglie wavelength on a potential}
+This problem is asking us to manipulate two equations which depend on momentum (de Broglie wavelength and classical kinetic energy) and asks us to find the wavelength when the energy changes.  The actual calculations are relatively straightforward; I think most of the trick to this problem is in remembering the de Broglie wavelength and that classically, kinetic energy is related to momentum.
+
+So, before the particle enters the potential (while it's still free), it has a wavelength and energy
+\begin{align}
+\lambda &= \frac{h}{p}, \text{ and}\\
+E &= \frac{p^2}{2m},
+\end{align}
+respectively.  Afterward, the particle will have some wavelength, $\lambda'$, and energy, $E'$,
+\begin{align}
+\lambda' &= \frac{h}{p'},\\
+E' &= \frac{p^2}{2m} - V = E - V.
+\end{align}
+And, because we want an equation for $\lambda'$, I'll combine the two equations above like so:
+\begin{equation}
+\lambda' = \frac{h}{\sqrt{2m(E-V)}}
+\end{equation}
+It is difficult at first glance to see what the best way is to relate the equations describing the particle before and after entering the potential.  I think it is easiest is to see that Plank's constant is going to be the same in both, and to write out Plank's constant in terms of the relevant quantities.  (This is sort of using a ``conservation of Plank's constant'', but that's also sort of dumb\footnote{$h$ is a fundamental constant, so it's not really conserved, it's an invariant. Thanks to my colleague Mike Sommer for pointing out this little piece of pedantry.}.).
+
+So, we can write Plank's constant in terms of the particle's energy and wavelength before it hits the potential:
+\begin{align}
+\lambda &= \frac{h}{p},\\
+p &= \sqrt{2mE},\\
+\Rightarrow \lambda &= \frac{h}{\sqrt{2mE}},\\
+\Rightarrow h &= \lambda\sqrt{2mE}.
+\end{align}
+Then, we can plug this in for $h$ in the equation for $\lambda'$:
+\begin{align}
+\lambda' &= \lambda \frac{\sqrt{2mE}}{\sqrt{2m(E-V)}},\\
+&= \lambda \sqrt{\frac{E}{E-V}},\\
+&= \lambda \left(\frac{E-V}{E}\right)^{-1/2},\\
+&= \lambda \left(1-\frac{V}{E}\right)^{-1/2}.
+\end{align}
+
+\answer{E}
+\section{The change in entropy of an expanding container}
+I'm aware of two solutions to this which are both pretty quick; which one you should use depends on whether you're more comfortable with the equations of statistical mechanics or thermal physics.  I'll go over both here.
+\subsubsection*{Thermal physics solution}
+For this solution, you must know the second law of thermal dynamics (which you should absolutely have memorized in general anyway),
+\begin{equation}
+\Delta S = \int \frac{1}{T}dQ.
+\end{equation}
+Then, the solution requires recognizing that the expansion of the container from $V\rightarrow2V$ is isothermal (``A sealed and \emph{thermally insulated} container...'').  That means that the total heat change will be equal to the work done on the system, $dQ = dW$, and we already know from problem \hyperlink{section.6}{6} that $W = \int PdV$ and, for an isotherm, $W = nRT\ln(V_f/V_i)$.  Therefore,
+\begin{align}
+dQ &= PdV,\\
+\Rightarrow \Delta S &= \int \frac{P}{T}dV = nRT\ln(2V/V),\\
+&= nRT\ln(2). 
+\end{align}
+\subsubsection*{Statistical mechanics solution}
+In stat mech, the relevant definition of entropy is
+\begin{equation}
+\Delta S = k_B \ln\Omega,
+\end{equation}
+where $\Omega$ is the number of microstates of the system.  Every additional particle will contribute one microstate for every particle already in the system.  That is to say, $n$ particles will have $2^n$ microstates.  Therefore,
+\begin{align}
+\Delta S &= k_B \ln\left(2^n\right),\\
+&= k_B n\ln(2).
+\end{align}
+Then, we know that $k_B = R/N_A$, where $N_A$ is Avogadro's number.  So,
+\begin{align}
+\Delta S = nR\ln(2)
+\end{align}
+
+\answer{B}
+
+\section{Estimating the root-mean-square velocity of a gas}
+This problem is kind of scary, but there's a nice approximation.  If you remember that root-mean-square is kind of an average, then you can treat the gasses classically, and compare the velocities derived from their kinetic energies.  Furthermore, because we know that the gasses are kept at the same constant temperature, we know from the equipartition theorem that their kinetic energies are both equal to $3/2k_BT$.  This means that their kinetic energies are equal, so, 
+\begin{align}
+KE_{O_2} &= \frac{1}{2}m_{O_2}v_{O_2}^2,\\
+KE_{N_2} &= \frac{1}{2}m_{N_2}v_{N_2}^2,\\
+\Rightarrow \frac{v_{O_2}}{v_{N_2}} &= \sqrt{\frac{m_{O_2}}{{m_{N_2}}}},\\
+&= \sqrt{\frac{32}{28}} = \sqrt{\frac{8}{7}}
+\end{align}
+
+\answer{C}
+\section{Partition function and degeneracy}
+I can think of no clever way to do this other than to have the Maxwell-Boltzmann partition theorem memorized.  This says,
+\begin{equation}
+Z = \sum_i g_i e^{-\epsilon_i/k_BT},
+\end{equation}
+where $g$ and $\epsilon$ are the degeneracy and energy of a given state, respectively.  Now, we are told that there are two states, each with a degeneracy of 2, and one has energy equal to $\epsilon$ while the other has $2\epsilon$.  So,
+\begin{align}
+Z &= 2e^{\epsilon/k_BT}+2e^{2\epsilon/k_BT},\\
+&= 2\left[e^{\epsilon/k_BT}+e^{2\epsilon/k_BT}\right].
+\end{align}
+
+\answer{E}
+
+\section{Speed of sound in a cold flute}
+It is sufficient for this problem to know that the speed of sound goes as $\sqrt{T}$, so for temperatures greater than 0, speed of sound in a gas goes linearly to first order, $v \approx c + kT$, for some gas-specific constants $c$ and $k$.  Therefore, for small changes in temperature, the change in sound speed is proportional to the change in temperature.  That means that if the temperature drops 3\%, so does the sound speed.  3\% of 440 is $3/100\times440 = 3\times4.4 = 13.2$, so the new speed of sound is $440-13.2 = 426.8$\\
+
+\answer{B}
+
+\section{Light loss through polarizers}
+Every time light passes through a polarizing filter, the only thing that passes is the component of the electric field (and associated magnetic field) which is parallel to the polarization.  This means that final filter will not block all the light, even though it is perpendicular to the first filter:  The light coming through the second filter has a component of electric field pointing in the direction of the last polarizer, and so some of it will pass through.
+
+For an incident beam of light with intensity $I_0$, the intensity, $I$, after passing through a filter of angle $\theta$ will be  $I = I_0 \cos{\theta}$.  Each filter is rotated $45\degree$, with respect to the one before it, so the beam of light incident on each filter will be reduced by a factor of $\cos{45\degree} = 1/2$.  As a polarizer will cut in half the intensity of unpolarized light, the sequence of filters will render the final intensity $I_0 \rightarrow I_0/2 \rightarrow I_0/4 \rightarrow I_0/8$.\\
+
+\answer{B}
+
+\section{Volume of a primitive unit cell}
+A primitive unit cell is a cell for which every lattice point is connected by a vertex.  While the Simple Cubic (SC) lattice is its own primitive cell, the Body-Centered Cubic (BCC) and Face-Centered Cubic (FCC) have lattice points hanging out in between vertices.  A handy rule is that the volume of a primitive cell is $a^3/N$ where $a$ is the side length of the conventional cell and $N$ is the number of unique lattice points required to define the primitive cell.  SC lattices require only 1 point to uniquely define the cell, so that confirms that it is its own primitive cell with volume $a^3$.  BCC and FCC require 2 and 4 unique points, respectively, so they have volumes of $a^3/2$ and $a^3/4$.\\
+
+\answer{C}
+
+\section{Temperature dependence of a semiconductor's resistivity}
+While I don't know of any clever way to rigorously do this problem, and it ultimately needs you to just know that $\rho \propto 1/T$, there is an argument to make the answer guessable.  Semiconductors rely on the constituent atoms having some electrons in the conduction band of the p-type material available to make the jump to holes in the n-type.  If the temperature is sufficiently low, however, these atoms will hunker down in their potential wells and refuse to jump.  Therefore, you expect it to have very high resistivity at low temperatures, and, thankfully, there is only one plot which looks like that.\\
+
+\answer{B}
+
+
+\section{Estimating impulse}
+Even if you didn't know that impulse, $J$, is the integral of force, the problem gives you a well-defined and easy to calculate geometrical shape.  It is my experience that such problems usually want something having to do with the area of the geometrical shape.  Here, the area is given by
+\begin{equation}
+A = J = \frac{1}{2}\times2\times2 = 2.
+\end{equation}
+
+\answer{C}
+
+\section{Conservation of momentum at an angle}
+When the smaller particle has come to a stop, it has deposited momentum $mv$ into the particle with mass $2m$, which breaks up into $m$-sized particles.  We know exactly how much momentum these particles have in the $x$-direction: $mv/2$.  That they now have a component of momentum in $y$ means that their total speed must be greater than $v/2$.\\
+
+\answer{E}
+
+\section{Volume of gas required to float a mass}
+When a body is in a fluid, the fluid will push on the body, causing a buoyant force.  The buoyant force can be calculated by integrating the pressure due to the surrounding fluid over the surface area of the body.  It works out to
+\begin{equation}
+\mathbf{f} = \rho_f g V_b \mathbf{\hat{r}},
+\end{equation}
+for a body of volume $V_b$ in a fluid with density $\rho_f$.  $g$ is the force due to gravity, and the force points in the opposite direction that gravity is acting.  Based on this equation, we can see that the density of helium provided in the question is not useful.  You need only the density of the surrounding fluid, air.
+
+So, this question is asking us to solve for the volume of helium, $V_b$, required for the buoyant force to impart $10\text{m}/\text{s}^2 \times 300 \text{ kg} = 3000 \text{ N}$.  Rearranging the equation above and plugging in, we have
+\begin{align}
+V_b &= \frac{\mathbf{f}}{\rho_f g},\\
+&= \frac{3000}{1.29 \times 10},\\
+&\approx \frac{3000}{13} \approx 230.\\
+\end{align}
+
+\answer{D}
+
+
+\section{Force due to a jet of water}
+This is a perfect opportunity for unit analysis.  The only solution with units of force is the first one:
+\begin{align}
+\left[\rho v^2 A\right] &= \frac{\units{kg}}{\units{m}^3} \frac{\units{m}^2}{\units{s}^2}\units{m}^2,\\
+&= \frac{\units{kg}\units{m}}{\units{s}^2}.
+\end{align}
+
+\answer{A}
+
+\section{Deflection of a proton in electric and magnetic fields}
+This problem is all about manipulating the equation for Lorentz force, which, for a particle of charge $q$ traveling with a velocity $\mathbf{v}$, and interacting with electric and magnetic fields $\mathbf{E}$ and $\mathbf{B}$, reads
+\begin{equation}
+\mathbf{F} = q\mathbf{E}+q\mathbf{v} \cross \mathbf{B}.
+\end{equation}
+Then, there are two tricks which together make up the bulk of the solution.
+
+For one, we know how fast the proton is going because it has been accelerated through a potential $V$.  The potential will accelerate the proton according to $F = q\mathbf{E} = -q\nabla V$.  Note that this is \emph{not} the same $\mathbf{E}$ as the electric field pointing in the $x$-direction as described in the problem.  This is merely the initial electric field used to get the proton up to speed; it is forgotten thereafter.
+
+Two, that the proton does not deflect from its trajectory means that it is not experiencing a net force.  That means that
+\begin{align}
+\mathbf{F} &= q\mathbf{E}+q\mathbf{v} \cross \mathbf{B} = 0,\\
+\Rightarrow \mathbf{E} &= -\mathbf{v} \cross \mathbf{B}.
+\end{align}
+So the force due to the electric field is equal and opposite to force due to the magnetic field when the proton is traveling with velocity $\mathbf{v}$.
+
+Now, when the proton accelerates through a potential with double the magnitude of the original, the new velocity, $\mathbf{v}'$ will also be double:
+\begin{align}
+\mathbf{F} &= -q\nabla V = m_p\mathbf{a},  \text{ (for proton mass $m_p$),}\\
+\Rightarrow \mathbf{v} &= \frac{q}{m_p} \int \nabla V dt,\\
+V &\rightarrow 2V,\\
+\Rightarrow \mathbf{v}' &= \frac{2q}{m_p} \int \nabla V dt = 2\mathbf{v}.
+\end{align}
+
+So now the total force will be
+
+\begin{align}
+\mathbf{F} &= q\left(-\mathbf{v} \cross \mathbf{B}\right)+q\left(2\mathbf{v} \cross \mathbf{B}\right).
+\end{align}
+
+The magnetic contribution is now greater than the electric contribution, so the proton will deflect in the direction that the magnetic field wills it.  By the right-hand rule, that is the $-x$-direction.\\
+
+\answer{B}
+
+\section{LC circuit-SHO equivalence}
+The equation of motion for a simple harmonic oscillator is
+\begin{equation}
+m\frac{d^2x}{dt^2} + kx = 0,
+\end{equation}
+for a particle of mass $m$ on a spring with spring constant $k$.  Comparing with the equation given for the LC circuit, we can draw analogies between the coefficients of like terms:
+\begin{align}
+m &\rightarrow L,\\
+k &\rightarrow 1/C.
+\end{align}
+Finally, because $Q$ is the quantity whose time-evolution you care about (it's being differentiated), it is playing the role of $x$.\\
+
+\answer{B}
+
+\section{Flux of a sheet through a sphere}
+Electric flux is defined
+\begin{equation}
+\Phi = \int \mathbf{E}\cdot d\mathbf{a},
+\end{equation}
+which is one of the first applications of Gauss' law one sees in E\&M.  Because it's integrating the electric field over a surface area, it is equal to the charge enclosed in that surface divided by $\epsilon_0$:
+\begin{equation}
+\Phi = \int \mathbf{E}\cdot d\mathbf{a} = \frac{Q_{\text{enc.}}}{\epsilon_0}.
+\end{equation}
+So that's what we want to find for this problem: The charge enclosed by the sphere.  This means finding the area of the circle of sheet which intersects the sphere.
+
+I found the radius of this circle by drawing the radius of the sphere, $R$, to where the sheet meets the edge of the sphere.  This makes a right triangle, with sides $R$, $x$, and $\sqrt{R^2-x^2}$.  The area of the circle with radius $\sqrt{R^2-x^2}$ is $\pi\left(R^2-x^2\right)$.  Then, the total charge contained on this circle is this area times the charge density.  Divide this by $\epsilon_0$ to get the electric flux through the sphere,
+\begin{equation}
+\Phi = \frac{\pi\left(R^2-x^2\right)\sigma}{\epsilon_0}.
+\end{equation}
+
+This agrees with some limits, as well: When $x=R$, the sheet is outside of the sphere, and so the total flux through the sphere should be 0.  Furthermore, when $x=0$, the greatest amount of the sheet is contained in the sphere, and so the flux should be maximized.\\
+
+\answer{D}
+
+\section{Electromagnetic wave hitting conductor}
+This question requires you to memorize the boundary conditions for electromagnetic waves which are changing media.  I'll spend this problem talking about what these boundary conditions mean because they're a point of personal confusion, then I'll apply them to the problem of waves hitting a conductor.
+\subsubsection*{Boundary conditions in E\&M}
+The boundary conditions for electric and magnetic fields are
+\begin{align}
+\text{(i) } \mathbf{E}_{1}^{\parallel} &= \mathbf{E}_{2}^{\parallel}, \quad \text{(ii) }\epsilon_1\mathbf{E}_{1}^{\perp} = \epsilon_2\mathbf{E}_{2}^{\perp} + \sigma_f,\\
+\text{(ii) }\mathbf{B}_{1}^{\perp}&=\mathbf{B}_{2}^{\perp}, \text{ and } \text{(iv) } \frac{1}{\mu_1}\mathbf{B}_{1}^{\parallel} = \frac{1}{\mu_2}\mathbf{B}_{2}^{\parallel} + \left(\mathbf{K}_f \cross \hat{\mathbf{n}}\right).
+\end{align}
+These describe how the electromagnetic field in one medium ($\mathbf{E}_1$ and $\mathbf{B}_1$) is related to the electromagnetic field in another (adjacent) medium ($\mathbf{E}_2$ and $\mathbf{B}_2$) \emph{right at the boundary between the media}.  $\epsilon_1$ and $\epsilon_2$ are the permittivities of the two media, and $\mu_1$ and $\mu_2$ are the permeabilities.  $\sigma_f$ is the free surface charge and $\mathbf{K}_f$ is the free surface current.  Finally, $\hat{\mathbf{n}}$ is a unit vector pointing perpendicularly from the surface.
+
+These equations describe how the components of $\mathbf{E}$ and $\mathbf{B}$ which are parallel ($\parallel$) and perpendicular ($\perp$) change on either side of a boundary between media.  What I consider the important lesson from these boundary conditions is that the parallel components of $\mathbf{E}$ are \emph{continuous}, while the perpendicular components are \emph{dis}continuous.  The story for the magnetic field is swapped.  Knowing these boundary conditions goes a long way to helping us solve problems of reflection and transmission of electromagnetic waves.
+
+\subsubsection*{Reflection and transmission of electromagnetic waves on perfect conductors}
+Applying the above to reflection and transmission necessarily makes the assumption that when an electromagnetic wave comes in contact with a conductor, some of the wave will be transmitted and some of the wave will be reflected.
+
+Thinking only about the electric field for a moment, this means that the total field on the left side will be composed of the incident field, $E_I$ and the reflected field, $E_R$.  The right side will only be composed of the transmitted field, $E_T$.  In this case, there is no component of the electric field perpendicular to the conductor:  The wave is traveling perpendicular to the conductor, so $\mathbf{E}$ and $\mathbf{B}$ must both necessarily be parallel (If it helps, recall the Poynting vector, $\mathbf{S} = \frac{1}{\mu}\left(\mathbf{E} \cross \mathbf{B}\right)$, points in the direction of travel, so both the fields must be perpendicular to the direction of travel.  In this case, that means they're parallel to the conductor.).
+
+So right away, we can apply two of the boundary conditions.  Condition (i) implies that
+\begin{equation}
+E_I + E_R = E_T,
+\end{equation}
+and we know there is no perpendicular component, so $\sigma_f = 0$ by (ii).  The question asks about the total fields on the left side of the conductor, so it would be really great if we knew something about $E_T$.  Unfortunately, I don't know of a quick way to derive $E_T$\footnote{For the full thing, see p.396-7 of Griffiths, 3ed.}, but when confronted with a problem like this, I think about how if you get inside a metal cage, your phone won't have a signal.  That must mean that the transmitted electric field is 0.  Therefore, $E_I = -E_R$, and so the total field on the left side of the conductor is 0.  Because of the way the answers are provided, this is sufficient to give you the correct answer, but I'll provide an argument for why the magnetic field should be double the incident field.
+
+The reflected electric wave is traveling the exact opposite direction of the incident wave, and so the Poynting vector of the reflected wave will read
+\begin{equation}
+\mathbf{S}_R = -\mathbf{S}_I = \mu\left(-\mathbf{E}_I\cross\mathbf{B}_R\right),
+\end{equation}
+which, when you go through the right-hand rule, reveals that $B_R$ must be pointing in the same direction as $B_I$.  Thus $\mathbf{B}$ will constructively interfere, and, as it's in phase, it will double its magnitude.
+
+This is a long way of saying a general truth about waves incident on conductors: \textbf{Conductors kill the electric field and double the magnetic field.}\\
+
+\answer{C}
+
+\section{Deriving mass from cyclotron frequency}
+``Cyclotron frequency'' just means that a magnetic field is making a particle going in a circle.  Therefore, to find its mass, we can set the centrifugal force equal to the Lorentz force and solve for mass:
+\begin{align}
+m\omega^2 r &= 2q_evB,\\
+\Rightarrow m &= \frac{2q_evB}{\omega^2 r},\\
+&= \frac{2q_e\omega B}{\omega^2},\\
+&= \frac{2q_eB}{\omega}.
+\end{align}
+Where above I have used the fact that $\omega = v/r$ to cancel one of the $\omega$'s in the denominator.  Then, before plugging in, make sure to notice that you need to convert the normal frequency, given in Hertz, to an angular frequency.  This is especially treacherous here, as one of the incorrect answers is equal to what you would get if you forget to do this.
+\begin{equation}
+\omega = 2\pi \nu = 2\pi\times1600\text{ Hz}.
+\end{equation}
+
+Then we can plug in.  In the interest of speed, notice that none of the answers have the same coefficient being multiplied by some number of tens.  This means we can drop all orders of magnitude from the calculation, and only worry about finding the number in front.
+
+\begin{align}
+m &= \frac{2q_eB}{\omega},\\
+&\text{ (get the electron charge from the front of the test)}\\
+&= \frac{2\times 16 \times \pi}{2\pi \times 16 \times 4},\\
+&= \frac{1}{4},\\
+&= .25.
+\end{align}
+And there is only answer which is $.25$ times some number of tens.\\
+
+\answer{A}
+
+\section{Deriving temperature from wavelength of peak blackbody radiation}
+
+There are two equations about blackbody radiation which show up in GRE problems.  One relates power per unit area of the body to its temperature,
+
+\begin{equation}
+P = \sigma T^4,
+\end{equation}
+where $\sigma$ is the Stefan-Boltzmann constant.  The other relates the temperature of the body to the wavelength of peak intensity, $\lambda_\text{max}$,
+\begin{equation}
+\lambda_\text{max} = \frac{b}{T},
+\end{equation}
+
+where $b$ is Wien's displacement constant.  That the problem gives us $b$ as well as $\lambda_\text{max}$ suggests we should use the second equation.  Using the first would require not only knowing $\sigma$, but integrating the intensity curve.
+
+Plugging in,
+\begin{align}
+T &= \frac{b}{\lambda_\text{max}},\\
+&\approx \frac{3\times 10^{-3}\text{ m K}}{2\times 10^{-6}\text{ m}},\\
+&= 1.5\times 10^3 \text{ K}.
+\end{align}
+
+\answer{D}
+
+\section{The many uses of electromagnetic radiation}
+
+Going through each option,
+
+(A):  When an atom emits E\&M radiation, it is usually due to the actions of its electrons gaining and losing energy.  These processes either emit or absorb electromagnetic radiation, and have relatively little to do with the nucleus.  There are notable exceptions, however.  In gamma decay, a nucleus can decay which produces a gamma ray.  Of course, this example isn't relevant here because gamma radiation is not infrared, visible, or ultraviolet.  The other common exception is called ``internal conversion'' which occurs when an excited nucleus ejects an interior electron following an electromagnetic interaction.  An outer electron will then fall down and fill the hole left by the ejected electron.  However, this transition generally produces an x-ray photon, which is also not included in the options.  (A) is not true.
+
+(B):  In general, what appears as a peak in an emission spectrum will appear as a trough in an absorption spectrum, but they correspond to the same wavelengths.  (B) is true.
+
+(C):  As light produced in the star's interior travels through the stellar atmosphere, it will be absorbed by elements in the cooler outer layers.  We can look at these absorption spectra in spectrographs on Earth to determine the elements in the star.  (C) is true.
+
+(D):  Similarly to (C), we can use light from the background to perform spectroscopy on galactic dust.
+
+(E):  Atoms emit single-wavelength lines, and when there are a lot of atoms near each other with similar electron shells, nearby lines will blur together.  When we look at the spectra of molecules, these regions where the lines coalesce are called ``bands''.\\
+
+\answer{A}
+
+\section{High-temperature limit for molar heat capacity}
+
+Every time $T$ appears in this equation, it is in the denominator of a $h\nu/kT$ term.  That means that as $T\rightarrow \infty$, $h\nu/kT\rightarrow0$.  This means that this question is a perfect time to use Taylor approximation.  For notation's sake, make the substitution $h\nu/kT\rightarrow x$ and expand about small $x$.
+
+The numerator is a simple exponential, whose expansion is definitely something you should have memorized.  To first order, the Taylor expansion for $e^x$ goes
+\begin{equation}
+e^x \approx 1 + x.
+\end{equation}
+
+The denominator isn't as common, and you might not necessarily know it off the top of your head.  That's okay though\--- if we're really stuck we can take some derivatives, but in this case the denominator contains the numerator, and we can use \emph{its} Taylor expansion to get the expansion of the whole denominator.
+
+Take the denominator, $(e^x-1)^2$,  expand $e^x\rightarrow1+x$, and do some arithmetic:
+\begin{align}
+(1+x - 1)^2 &= x^2.
+\end{align}
+So to second order, $(e^x-1)^2 \approx x^2$.  Putting this into our original equation,
+\begin{align}
+C &= 3kN_A\left(\frac{h\nu}{kT}\right)^2\frac{e^{h\nu/kT}}{\left(e^{h\nu/kT}-1\right)^2},\\
+&\frac{h\nu}{kT} \rightarrow x,\\
+&= 3kN_Ax^2\frac{e^{x}}{\left(e^{x}-1\right)^2},\\
+&\approx 3kN_Ax^2\frac{1+x}{x^2},\\
+&= 3kN_A\left(1+x\right).
+\end{align}
+The last equality above came from canceling the $x^2$'s.  In the limit as $x\rightarrow0$ now, all terms with $x$ vanish, leaving
+\begin{align}
+\lim_{x\rightarrow0} 3kN_A\left(1+x\right) = 3kN_A.
+\end{align}
+
+\answer{D}
+
+\section{Combined half-life}
+I'll go over a rigorous method first to show where the solution comes from, then go over a speed-friendly way to conceptualize the answer.
+
+\subsubsection*{Rigorous solution}
+Radioactive \emph{decay} is described by a \emph{decay}ing exponential.  That is to say, the total amount of stuff at a given time is described by an equation of the form
+
+\begin{equation}
+N(t) = N_0 \left(\frac{1}{2}\right)^{t/T_{\frac{1}{2}}},
+\end{equation}
+where $N_0$ is the original amount of stuff, and $T_{\frac{1}{2}}$ is the ``half-life'', a constant describing the amount of time required for the half of the sample to decay\footnote{The formulation used here is in terms of the half-life (notice it's $1/2$ being exponentiated), but you might be more familiar with the formulation in terms of a so-called ``decay constant'', $\lambda \equiv \ln{2}\left(1/T_{\frac{1}{2}}\right)$, which goes $N(t) = N_0 e^{-\lambda t}$.}.
+
+So for this problem, a sample is decaying simultaneously via two processes with half-lives $T_{\gamma\frac{1}{2}}$ and $T_{\beta\frac{1}{2}}$, and we're asked to find the effective half-life of the whole sample.  The way I did this was to say that each process has its own decay function $N_\gamma(t)$ and $N_\beta(t)$, and the amount of the whole sample would be the sum of these two decay functions, $N(t) = N_\gamma(t) + N_\beta(t)$.  $N(t)$ would then have a half-life of its own which we could just read off the equation.
+
+Adding $N_\gamma(t)$ and $N_\beta(t)$ isn't straightforward though, because their half-lives are stuck inside exponentials, which don't add in a nice way.  To deal with this, I took their derivatives and added those derivatives.
+
+\begin{align}
+N(t) &= N_\gamma(t) + N_\beta(t),\\
+\Rightarrow\frac{d}{dt}N(t) &= \frac{d}{dt}N_\gamma(t) + \frac{d}{dt}N_\beta(t),\\
+\Rightarrow\frac{\ln{\left(2\right)}}{T_{\frac{1}{2}}}N(t)&= \frac{\ln{\left({2}\right)}}{T_{\gamma\frac{1}{2}}}N(t) + \frac{\ln{\left(2\right)}}{T_{\beta\frac{1}{2}}}N(t),\\
+\Rightarrow \frac{1}{T_\frac{1}{2}} &= \frac{1}{T_{\gamma\frac{1}{2}}} + \frac{1}{T_{\beta\frac{1}{2}}}.
+\end{align}
+A-ha! That confirms what we already knew about decaying functions(even if we forgot it before doing this problem):  The \emph{reciprocals} of half-lives add.  (This should look a lot like how capacitors and resistors add in series and parallel, respectively.  The derivations are very similar.)  Solving for $T_{\frac{1}{2}}$, then,
+
+\begin{align}
+T_{\frac{1}{2}} &= \frac{T_{\gamma\frac{1}{2}}T_{\beta\frac{1}{2}}}{T_{\gamma\frac{1}{2}}+T_{\beta\frac{1}{2}}},\\
+&=\frac{24\times36}{24+36},\\
+&=\frac{864}{60},\\
+&=14.4.
+\end{align}
+
+\subsubsection*{Qualitative solution}
+So if you forget all that about decaying functions, here's an argument you can make to get close to the right answer.  You know that if both processes had the same half-life, then the effective half-life for the whole sample would be half that.  This gives an upper and lower bound on the answer.  If both processes had the faster half-life, then the whole sample would have a half-life of $24/2 = 12$ minutes.  If they were both the slower half life, it would the effective half-life would be $36/2 = 18$ minutes.  Therefore, the answer will be somewhere in between $12$ and $18$, and there is only one answer available which is that.\\
+
+\answer{D}
+
+\section{Binding energy}
+For any bound system, the ``binding energy'' is the work required to assemble the system.  Binding energy is a relevant quantity for things like orbital systems, collections of charges, and atomic nuclei.  In the latter case, it is an intrinsic property due to the strong force, and is responsible for making the rest mass slightly higher than simply the sum of the constituent nucleons.  Importantly, because binding energy represents how far down a potential well a particle sits, it is a \emph{negative} energy.  There is a possible answer in this problem which takes advantage of the possible mix-up.
+
+In this problem, we are given the number of nucleons of an atom of uranium, and the amount of energy per nucleon.  We are then told it splits into two equal pieces, each of which has $100\text{ MeV}$ of kinetic energy.  That means that there's a total of $2\times100\text{ MeV} = 200\text{ MeV}$ of energy which is \emph{not} used in binding the daughter nuclei.  So, the binding energy per nucleon in the daughter nuclei is going to be half the parent binding energy minus the energy which went into imparting a kinetic energy on the daughter nuclei.
+
+The process which occurs is
+\begin{equation}
+{}^{238}\text{U} \rightarrow {}^{119}\text{X} + {}^{119}\text{X} + 200\text{ MeV},
+\end{equation}
+where $\text{X}$ is some unknown daughter nucleus.  The change in energy of this process is
+\begin{equation}
+238 \times -7.6 = 119 \times -E_B + 119 \times -E_B + 200,
+\end{equation}
+where $E_B$ is the binding energy per nucleon of the daughter nucleus, X.  Notice I've stuck negative signs on all the energies for the reason stated above.  Now, we can solve for $E_B$.  For the sake of computation, I make the approximation of $238 \approx 240$ and $119\approx 120$.
+\begin{align}
+240 \times -7.6 &= 120 \times -E_B + 120 \times -E_B + 200,\\
+-240 \times -7.6 &= -240 \times E_B + 200,\\
+\Rightarrow E_B &= \frac{-240\times7.6-200}{-240},\\
+&=7.6+\frac{5}{7},\\
+&=8.3.
+\end{align}
+Or, if you don't have time to figure out $5/7$, you know that the answer is greater than $7.6$, and there is only one such answer available.\\
+
+\answer{E}
+
+\section{Possible decay modes of Beryllium}
+It is sufficient for this problem to know what the numbers on the left side of an atomic symbol mean.  For a generic nucleus $\text{X}$, ${}^A_Z \text{X}$ gives the number of protons, $Z$ (the ``atomic number'') and the number of protons-plus-neutrons, $A$ (the total number of nucleons or ``mass number'').  In the decay process given, ${}^7_4\text{Be}\rightarrow{}^7_3\text{Li}$, it is apparent that the nucleus loses one proton ($4\rightarrow3$), while the total number of nucleons stays the same ($7\rightarrow7$).  Going through the available answers:
+
+(A): An alpha particle is a neutral helium atom, with two protons and two neutrons.  If the beryllium atom were to lose an alpha particle, then its mass number would be $A = 7-4=3$ and its atomic number would be $Z=3-2=1$.  This is not the case.
+
+(B): Emitting an electron by itself does nothing to change the number of nucleons.
+
+(C): Emitting a neutron would change $A = 7-1=6$ and do nothing to $Z$.  This is not the case.
+
+(D): Emitting a positron by itself would also do nothing to the nucleus.
+
+(E): When a proton collides with a neutron, it creates a neutron and a neutrino: $p + e^- \rightarrow n + \nu$.  This both makes the atomic number decrease by one, while leaving the mass number the same.\\
+
+\answer{E} 
+
+\section{Thin-film refraction}
+Something you should absolutely have memorized is the equation for thin-film interference.  For a beam of light of wavelength $\lambda$ going from one medium with refractive index $n_1$ to another with index $n_2$ at an angle $\theta$ to the horizontal, there are conditions on the thickness $d$ of the first medium and the relative sizes of $n_1$ and $n_2$ if the reflected light is going to constructively interfere.  They are inverses of each other, and are summed up in the table below:
+\begin{table}[h]
+\centering
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{lll}
+                                  & $n_1<n_2$  & $n_1>n_2$     \\ \cline{2-3} 
+\multicolumn{1}{l|}{constructive} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = m\lambda$} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = \left(m+\frac{1}{2}\right)\lambda$} \\ \cline{2-3} 
+\multicolumn{1}{l|}{destructive}  & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = \left(m+\frac{1}{2}\right)\lambda$} & \multicolumn{1}{l|}{$2dn_1\cos{\theta} = m\lambda$} \\ \cline{2-3} 
+\end{tabular}
+\egroup
+\end{table}
+
+Here, $m$ is an integer, meaning that there are multiple lengths which will allow for interference.  The justifications for this table come from the fact that an index of refraction is defined as $n=c/v$, where $v$ is the speed of light in a medium.  Then, if $n_1>n_2$, there will be a phase change of $180\degree$ in the reflected light.  That puts a constraint on how thick the medium can be because the you need a whole wavelength of light to travel the thickness of the film, and the light's speed is determined by the index of refraction\footnote{For a full derivation, see Griffiths E\&M 3ed., p.384-9.}.
+
+In this case, the light travels from oil ($n_1 = 1.2$) to glass ($n_2 = 1.6$) and reflects ``most strongly'' at normal incidence.  That means that it experiences constructive interference at $\theta = 0$.  That the question wants the smallest non-zero possible size of the film means $m=1$.  Referring to the table above, we want the equation describing constructive interference for $n_1<n_2$.  Therefore, we have
+\begin{align}
+2dn_1\cos{\theta} &= m\lambda,\\
+\Rightarrow d &= \frac{m\lambda}{2n_1\cos{\theta}},\\
+&=\frac{1\times480}{2\times1.2\times1},\\
+&=\frac{480}{2}\frac{10}{12},\\
+&=200.
+\end{align}
+
+\answer{B}
+
+\section{Diffraction}
+Like problem \hyperlink{section.69}{69}, this requires having memorized the equations for constructive and destructive interference for single- and double-slit refraction.  Arranged in a table, they are
+\begin{table}[h]
+\centering
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{lll}
+                                  & single-slit  & double-slit    \\ \cline{2-3} 
+\multicolumn{1}{l|}{constructive} & \multicolumn{1}{l|}{$a\sin{\theta} = (m+\frac{1}{2})\lambda$} & \multicolumn{1}{l|}{$a\sin{\theta} = m\lambda$} \\ \cline{2-3} 
+\multicolumn{1}{l|}{destructive}  & \multicolumn{1}{l|}{$a\sin{\theta} = m\lambda$} & \multicolumn{1}{l|}{$a\sin{\theta} = \left(m+\frac{1}{2}\right)\lambda$} \\ \cline{2-3} 
+\end{tabular}
+\egroup
+\end{table}
+
+here, $a$ is the distance between the slits, and $\theta$ is the angle between the slit and the maximum or minimum.  That means that the quantity $a\sin{\theta}$ is the distance between maxima or minima on the screen. Annoyingly and confusingly, it's the inverse table for constructive interference in multiple media from problem \hyperlink{section.69}{69}.  I know of no good mnemonic to remember this; please email me if you have one.
+
+However, for this problem, you need to know surprisingly little about which equation to use.  Instead, it is sufficient to know that they are all linear in $\lambda$, and that they describe the distance between maxima or minima (it doesn't matter which).  So, because the separation is proportional to $\lambda$, it will be \emph{inversely} proportional to $\nu$ by the fact that $\lambda = c/\nu$.
+
+\begin{align}
+a\sin{\theta}  = k\frac{c}{\nu} &= 1\text{ mm}, \text{ (for some arbitrary constant k)}\\
+\Rightarrow k\frac{c}{2\nu} &= \frac{1}{2}\text{ mm}.
+\end{align}
+
+\answer{B}
+
+\section{Doppler shift for light}
+The relativistic doppler shift is given by
+\begin{equation}
+\lambda = \sqrt{\frac{c+v}{c-v}}\bar{\lambda},
+\end{equation}
+where $\lambda$ is the wavelength in the lab frame, and $\bar{\lambda}$ is the wavelength in the moving frame, which is traveling at $v$ with respect to the lab.  In this case, the direction of travel is the sign of the velocity in the numerator.  If the object is moving towards the observer, the signs in the numerator and denominator are switched.
+
+In this case, we know that the wavelength is increasing, so the object is moving away from the observer.  Furthermore, we have
+\begin{align}
+\lambda &= \sqrt{\frac{c+v}{c-v}}\bar{\lambda},\\
+\Rightarrow v &= \frac{(\lambda/\bar{\lambda}^2-1}{(\lambda/\bar{\lambda})^2+1}c,\\
+&\approx \frac{(600/120)^2-1}{(600/120)^2+1}c,\\
+&= \frac{5^2-1}{5^2+1}c,\\
+&=\frac{24}{26}c = \frac{12}{13}c>.9c
+\end{align}
+
+\answer{D}
+
+\section{Two masses on a spring}
+Surprisingly little work is needed for this.  The rigorous solution is two applications of Hooke's law, but there are several conceptual arguments I can make that require very little math.
+\subsubsection*{Rigorous solution}
+When the string breaks, the force exerted on the top block ($m_1$) by the spring ($F_s$) is proportional to how far the spring is displaced.  This is determined by how much gravity pulls ($F_g$) the bottom block ($m_2$) before the string breaks.  We can solve for this because nothing is accelerating so the net force is 0:
+\begin{align}
+F_s - F_g &= 0,\\
+\Rightarrow kx_2 &= -mg,\\
+\Rightarrow x_2 &= -\frac{mg}{k}.
+\end{align}
+Here, we have defined the coordinate system so that gravity is pulling in the negative direction, and the spring is pulling $m_2$ in the opposite direction.
+
+When the string breaks, the force on $m_1$ due to the spring is proportional to the difference in the displacements of $m_1$ and $m_2$,
+\begin{equation}
+F_{m_1} = m\ddot{x}_1 = -k(x_2-x_1).
+\end{equation}
+
+But we know $x_1$ and $x_2$ at the very moment the string breaks.  $x_1$ is at its equilibrium position, it's $0$, and we solved for $x_2$ above.  Therefore, the total force on $m_1$ is the spring force plus the force due to gravity,
+
+\begin{align}
+F_T =m\ddot{x}_1&= -k(\frac{mg}{k}-0) -mg,\\
+&= -mg-mg= -2mg,\\
+\Rightarrow\ddot{x}_1 &= -2g.
+\end{align}
+
+\subsubsection*{Qualitative solution}
+One way to think of this is to see that the center of mass of the system doesn't care about the spring, and will fall like a point object.  That means we have a system of mass $2m$, and we're looking for the acceleration solely due to gravity on an $m$-sized piece of it: $m\ddot{x} = -2mg \Rightarrow \ddot{x} = -2g$.
+
+But I think a solution that requires still \emph{less} work is to realize that the upper block will necessarily be accelerating faster than $g$, because it's being pulled both by gravity and the spring.  There is only one answer available which is greater than $g$.\\
+
+\answer{E}
+
+\section{Suspending a mass with friction}
+The general prescription I followed to solve this was to first find the normal force $F_B$, which is supporting $B$ against gravity.  This gives me $B$'s acceleration, and I know that $A$ must be accelerating at the same rate.  The force is then the sum of their masses times this acceleration.
+
+Because $B$ is stopped, its net force is 0, and we can solve for the acceleration:
+\begin{align}
+\mu F_B &= m_Bg,\\
+\Rightarrow \mu (m_B a) &= m_Bg,\\
+\Rightarrow a &= \frac{g}{\mu}.
+\end{align}
+
+Then, the force required to apply this acceleration to both $A$ and $B$ is
+\begin{align}
+F &= (m_A + m_B)a,\\
+&= (m_A + m_B)\frac{g}{\mu},\\
+&= (16 + 4)\times\frac{10}{1/2},\\
+&=400\text{ N}.
+\end{align}
+
+\answer{D}
+
+
+\section{A Lagrangian}
+Calculus of variations gives an equation of motion \--- the path which minimizes the time integral of the Lagrangian \--- as
+\begin{equation}
+\frac{d}{dt}\left(\frac{d L}{d\dot{q}}\right) - \frac{dL}{dq} = 0,
+\end{equation}
+where $q$ is a generalized coordinate.  Calculating the relevant quantities,
+\begin{align}
+\frac{d L}{d\dot{q}} = 2a\dot{q}, &\text{	} \frac{dL}{dq} = 4bq^3,\\
+\Rightarrow\frac{d}{dt}\left(\frac{d L}{d\dot{q}}\right) - \frac{dL}{dq} &= 2a\ddot{q} - 4bq^3 = 0,\\
+\Rightarrow\ddot{q} &= \frac{2a}{b}q^3.
+\end{align}
+
+\answer{D}
+
+\section{Rotations}
+For me, this problem is all about knowing how matrix multiplication works.  The given equation,
+\begin{equation}
+\begin{pmatrix}
+a_x\\
+a_y\\
+a_z\\
+\end{pmatrix}
+\begin{pmatrix}
+1/2 & \sqrt{3}/2 & 0\\
+-\sqrt{3}/2 & 1/2 & 0\\
+0 & 0 &1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_x'\\
+a_y'\\
+a_z'\\
+\end{pmatrix},
+\end{equation}
+gives a prescription for how to find the components of the primed vector.  They are
+\begin{align}
+a_x' &= \frac{1}{2}a_x + \frac{\sqrt{3}}{2}a_y, \\
+ a_y' &= -\frac{\sqrt{3}}{2}a_x + \frac{1}{2}a_y,\\
+ a_z' &= a_z.
+\end{align}
+So we can take a simple vector and see what it becomes.  By the relationship above, we can transform the vector (1,0,0) like this:
+\begin{equation}
+\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}
+\begin{pmatrix}
+1/2 & \sqrt{3}/2 & 0\\
+-\sqrt{3}/2 & 1/2 & 0\\
+0 & 0 &1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1/2\\
+-\sqrt{3}/2\\
+0
+\end{pmatrix}.
+\end{equation}
+So this transformation has taken a vector pointing to the right and shrunk its $x$-component, and made its $y$-component negative.  The z-component stays the same.  This is a counter-clockwise rotation about its z-axis, reducing the possible answers down to (B) and (E).  We can get the angle from the fact that the sine of the angle will be equal to the change in $x$: $\sin{\theta} = \sqrt{3}/2 \Rightarrow \theta = 60\degree$.  This requires knowing your unit circle.\\
+
+\answer{E}
+
+\section{Kinetic energy of conduction band electrons}
+This problem is mostly just a bunch of trivia, with little hope of figuring it out with no knowledge \emph{a priori}.  Going through the options:
+
+(A): Electrons are bound within the potential wells of atoms, and so actually have fewer degrees of freedom than atoms do.
+
+(B): If this were true, then the metal would be radiating energy somehow.  In my experience, metals generally just sit there.
+
+(C): In an ideal Fermi gas, the interactions of the fermions themselves (in this case, the electrons) contribute to the total energy, because no more than two particles with the same quantum numbers can coexist in the same state.  In this case, conduction band electrons are generally treated as a Fermi gas.
+
+(D): While the electrons move randomly at highly relativistic speeds, their aggregate motion is actually quite slow.
+
+(E): Electrons and phonons have much different length and energy scales (as phonons are waves in the lattice itself), so they do not interact with each other very strongly.\\
+
+\answer{C}
+
+\section{Number of particles in a state given the energy}
+
+Have memorized the equation for number of particles in a state $i$ given its energy, $E_i$ and degeneracy $g_i$:
+
+\begin{equation}
+N_i = g_ie^{-E_i/kT}.
+\end{equation}
+
+Then, for this problem, $E_A = E_B+.1$ so
+\begin{align}
+\frac{N_A}{N_B} &= \frac{g e^{-(E_B+0.1)/kT}}{g e^{-(E_B)/kT}},\\
+&=e^{-[(E_B+0.1)+E_B]/kT},\\
+&=e^{-0.1/.025},\\
+&=e^{-4}.
+\end{align}
+
+Alternatively, if you don't remember the above equation, you might remember that a state with higher energy is less likely than a state with lower energy, so you would expect the exponent to be negative.  Then, if you're comparing two states, you might guess that the ratio between the energy difference of the states and $kT$ is an important quantity.\\
+
+\answer{E}
+
+\section{Conservation in a particle decay}
+
+For questions of lepton and baryon number conservation I have a mnemonic:  \textbf{L}eptons are the \textbf{l}ittle, fast things like electrons, muons, and neutrinos.  \textbf{B}aryons are the \textbf{b}ig, slow things, like protons and neutrons.  Not sophisticated, but it works.
+
+Then, I know that regular particles (not anti-particles) contribute $+1$ to lepton and baryon numbers, and anti-particles contribute $-1$.  Then, I check to see if the number of leptons and baryons are the same on either side of the reaction.
+
+So, which of the given quantities both has an associated conservation law and is not conserved in the hypothetical decay of a muon into an electron and neutrino?
+
+(A): Charge seems like it's conserved.  Muons have negative charge, as do electrons, while neutrinos have no charge (\emph{neu}trinos are \emph{neu}tral).  So, on both sides of the reaction, charge is $-1$.
+
+(B): There is no law of conservation of mass in particle physics, because mass and energy are the same thing.
+
+(C): There is nothing stopping energy and momentum from being conserved here.
+
+(D): There are no baryons on either side of the equation, so baryon number is conserved (it's $0$ on both sides).
+
+(E): Every particle involved here is a lepton, but where there is only one at the beginning (the muon), there are two at the end (electron and neutrino).  It is a generally accepted truth among the learned that $1\neq2$, so we can conclude that lepton number is not conserved.\\
+
+\answer{E}
+
+\section{Relativistic momentum II}
+Like problem \hyperlink{section.32}{32}, this is asking for an application of the equation for relativistic energy,
+
+\begin{equation}
+E^2 = p^2c^2 + m^2c^4,
+\end{equation}
+where E is the total energy of a particle of rest mass $m$ and momentum $p$.  Solving for $m$ and plugging in, we have 
+\begin{align}
+m &= \sqrt{\frac{E^2}{c^4}-\frac{p^2}{c^2}},\\
+&= \sqrt{100-64},\\
+&=\sqrt{36} = 6\text{ GeV}/c^2.
+\end{align}
+\answer{D}
+
+\section{Speed in a moving reference frame}
+This question requires you to know two things.  First, that the index of refraction is defined
+\begin{equation}
+n\equiv c/v,
+\end{equation}
+where $v$ is the speed of light in the medium.  Second, how one combines velocity in relativistic reference frames.  If a particle (or whatever) is traveling with speed $\bar{v}$ in a frame which itself is moving with speed $V$ with respect to the lab frame, then the lab will measure that particle traveling at a speed
+\begin{equation}
+v = \frac{V + \bar{v}}{1+\frac{V\bar{v}}{c^2}}.
+\end{equation}
+
+So in this problem, we use the index of refraction of water to get the speed of light in the moving reference frame, then use the above equation to get the speed as measured in the lab.
+
+The index of refraction is given as $n = 4/3$, so the local speed of light in the moving frame is $\bar{v} = 3/4 c$.  Then, the tube of water is moving at $V = c/2$ with respect to the lab, so the speed of light as measured in the lab is going to be
+\begin{align}
+v &= \frac{1/2c + 3/4c}{1+\frac{1/2c\times3/4 c}{c^2}},\\
+&= \frac{5/4c}{1+3/8},\\
+&=\frac{5}{4}\frac{8}{11}c =\frac{10}{11}c.
+\end{align}
+
+\answer{D}
+
+\section{Orbital angular momentum eigenvalues}
+
+For states like hydrogenic electrons, which can be broken into radial and angular solutions, the angular piece needs to contain information for both the total angular momentum and the momentum in the $z$-direction.  This is generally denoted $Y^m_l(\theta,\phi)$, for $z$-angular momentum $m$ and total angular momentum $l$.  Then, we know that the operators for total angular momentum squared and $z$-angular momentum have the eigenvalues
+\begin{align}
+L_zY^m_l(\theta,\phi) &= \hbar m Y^m_l(\theta,\phi),\\
+\mathbf{L}^2Y^m_l(\theta,\phi) &= \hbar^2 l(l+1)Y^m_l(\theta,\phi).
+\end{align}
+
+So we want to find the angular momentum wave function with $z$-angular momentum $-\hbar$ and total angular momentum squared $6\hbar^2$.  The $z$-direction is easiest: $\hbar m = -\hbar\Rightarrow m=-1$.  That narrows down the possible solutions to (B) and (E).  Solving for the total angular momentum squared, we find
+\begin{align}
+\hbar^2 l(l+1) = 6\hbar^2,\\
+\Rightarrow l =2.
+\end{align}
+
+\answer{B}
+
+\section{Spin eigenfunctions for a triplet state}
+The solution to this problem really comes from knowing what the ``triplet state'' is and why it's called that, and that comes from a discussion of the addition of angular momenta\footnote{This solution is largely a summary of Griffith's QM 3ed. p. 165-167, which I strongly suggest you check out if you're having trouble with this problem and problem \hyperlink{section.83}{83}.}.
+
+First, a quick review of angular momentum in quantum mechanics:  In general, angular momentum comes in two, distinct flavors: orbital and spin.  Orbital angular momentum comes from solving the Schr\"{o}dinger equation in three dimensions, and separating the solution into a radial and angular component.  The angular component, the $Y_l^m(\theta,\phi)$ in problem \hyperlink{section.81}{81}, is the orbital angular momentum.  This is a continuous function of $\theta$ and $\phi$ and is largely analogous with its classical counterpart.
+
+Spin angular momentum, on the other hand, is a distinct, immutable quantity possessed by every particle.  It's not a function (it's just a number), and it is not really a ``spin'' \--- that concept is poorly defined for something with no spatial extent, like an electron.  However, it is mathematically identical to any other kind of angular momentum.  It commutes just like in problem \hyperlink{section.43}{43}, and a change in spin angular momentum imparts a torque on the particle, just like a classical angular momentum.
+
+Furthermore, spin has the same observables as orbital angular momentum: total spin, $s$, and $z$-component, $m$.  They have certain allowed values, depending on what kind of particle they refer to:
+\begin{equation}
+s = 0, \frac{1}{2}, 1, \frac{3}{2},\dots;\text{	}m = -s,-s+1,\dots,s-1,s.
+\end{equation}
+For each of these values, there is an assumed factor of $\hbar/2$.
+
+Notationally, one writes the ket of a particle's spin as $\ket{sm}$.  In the case of two particles with the same total momentum, it is common to assume that $s$ is known, and to only care about the sign of $m$.  In other words, if you were talking about two electrons, or a state with an electron and a proton (which are both spin-$1/2$ particles), you might write the state of the system as $\ket{\uparrow\uparrow}$, if they both had $m=1/2$.  In general, there are four ways to arrange the $z$-directions of the spins of a two-particle system:
+\begin{equation}
+\ket{\uparrow\uparrow},\ket{\uparrow\downarrow},\ket{\downarrow\uparrow},\ket{\downarrow\downarrow}.
+\end{equation}
+
+These states refer to two particles simultaneously, but they are perfectly normal quantum states, and we can act on them with operators like we would on any old single-particle state.  Specifically, we can act on the two-particle state with spin angular-momentum operators and ask what the total spin is of the complete system.  It turns out that there are three ways to combine the above four states such that they have total spin angular momentum of $s=1$.  This is the ``triplet state''.  Similarly, it turns out that the only remaining option is to have $s=0$, and this is the ``singlet state''.
+
+Now, to know what the triplet state is, you really have to know how angular momenta add.  If I want to measure the total spin of a two-particle state, I can define the operator
+\begin{equation}
+\mathbf{S} = \mathbf{S}^{(1)}+\mathbf{S}^{(2)}, 
+\end{equation}
+where the two operators with $(1)$ and $(2)$ exponents act only on particles 1 and 2, respectively.  As in the Griffiths cited, you find that the $z$-components of a generic state add, $m=m_1+m_2$:
+\begin{align}
+S_z\chi_1\chi_2 &= (S^{(1)}+S^{(2)})\chi_1\chi_2,\\
+&=\left(S^{(1)}\chi_1\right)\chi_2 + \chi_1\left(S^{(2)}\chi_2\right),\\
+&=\left(\hbar m_1\chi_1\right)\chi_2 + \chi_1\left(\hbar m_2 \chi_2\right),\\
+&=\hbar(m_1+m_2)\chi_1\chi_2.
+\end{align}
+
+So if the $z$-component of the spin angular momentum simply adds, for a two-particle state with two spin-$1/2$ particles, there are 4 options for the value of $m$:
+\begin{align}
+&\ket{\uparrow\uparrow}:m=1;\\
+&\ket{\uparrow\downarrow}:m=0;\\
+&\ket{\downarrow\uparrow}:m=0;\\
+&\ket{\downarrow\downarrow}:m=-1.
+\end{align}
+
+That there are two states with the same value of $m$ should tip you off that something's wrong, because $m$ should go from $-s$ to $s$ in half-integer steps. The answer is that the four states above are \emph{not} the eigenstates of the total angular momentum operator $S^2$, and so are not states of definite $s$.  We can get these eigenfunctions, and from them the values of $s$, by applying the lowering operator to $\ket{\uparrow\uparrow}$\footnote{It would also work to apply $S_+$ to $\ket{\downarrow\downarrow}$.  I suggest doing so for practice.}:
+\begin{align}
+S_-\ket{\uparrow\uparrow} &= \left(S^{(1)}_-+S^{(2)}_-\right)\ket{\uparrow\uparrow},\\
+&=\left(S^{(1)}_-\uparrow\right)\uparrow + \uparrow\left(S^{(2)}_-\uparrow\right),\\
+&=\left(\hbar\sqrt{s(s+1)-m(m-1)}\downarrow\right)\uparrow + \uparrow\left(\hbar\sqrt{s(s+1)-m(m-1)}\downarrow\right),\\
+&=\hbar\sqrt{\frac{1}{2}\left(\frac{1}{2}+1\right)-\frac{1}{2}\left(\frac{1}{2}-1\right)}\left(\downarrow\uparrow + \uparrow\downarrow\right),\\
+&=\hbar\sqrt{\frac{1}{2}\times\frac{3}{2}+\frac{1}{4}}\left(\downarrow\uparrow + \uparrow\downarrow\right),\\
+&=\hbar\left(\downarrow\uparrow + \uparrow\downarrow\right).
+\end{align}
+This is one of the eigenfuncions of $S^2$ for a two-particle system, and provides the answer to this question.
+
+Now, applying the lowering operator to this state, we have
+\begin{align}
+S_-\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right) &=\left(S^{(1)}_-+S^{(2)}_-\right)\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right),\\
+&=\left(S_-^{(1)}\downarrow\right)\uparrow+\left(S_-^{(1)}\uparrow\right)\downarrow+\downarrow\left(S_-^{(2)}\uparrow\right)+\uparrow\left(S_-^{(2)}\downarrow\right),\\
+&=0+\hbar\downarrow\downarrow + \hbar\downarrow\downarrow+0,\\
+&=2\hbar\ket{\downarrow\downarrow}.
+\end{align}
+Writing the three states together, we have, for all states for eigenstates of $S^2$ with $s=1$,
+
+\begin{table}[h]
+\centering
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{ll}
+state                   & $m$                       \\ \hline
+\multicolumn{1}{|l|}{$\ket{\uparrow\uparrow}$} & \multicolumn{1}{l|}{1}  \\ \hline
+\multicolumn{1}{|l|}{$\frac{1}{\sqrt{2}}\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right)$} & \multicolumn{1}{l|}{0}  \\ \hline
+\multicolumn{1}{|l|}{$\ket{\downarrow\downarrow}$} & \multicolumn{1}{l|}{-1} \\ \hline
+\end{tabular}
+\egroup
+\end{table}
+This is the triplet state.  The coefficients are slightly different for the sake of normalization.
+
+The remaining state with $m=0$ is the state which has $s=0$:$\frac{1}{\sqrt{2}}(\ket{\downarrow\uparrow}-\ket{\downarrow\uparrow})$.  This is the singlet state.
+
+For an intuitive approach about why $m$ can be $0$ in two distinct states, I think of the triplet $m=0$ state as being like if all of the spin is in, say, the $x$-direction, but both electrons are spinning up.  So the total spin angular momentum will still be 1, but none of it will be in the $z$-direction.  The singlet $m=0$ might also have both electrons spinning in entirely the $x$-direction (or whatever) but where one is spinning up, the other is spinning down, so their total spin is 0.  This is, of course, not rigorous and should not be given too much consideration, but I find it nonetheless helpful.
+
+So to answer the question, we are given that $\ket{\alpha} = \ket{\uparrow}$ and $\ket{\beta} = \ket{\downarrow}$.  By inspection, we can see that options I and III are members of the triplet state.\\
+
+\answer{D}
+
+\section{Eigenstates of $S_x$}
+Despite the language about spin, this problem is more about knowing how to find the eigensystem of a matrix than it is about quantum.  The problem gives you the eigenvectors and eigenvalues of a matrix (the functions of definite $z$-spin), and asks you to find the eigenfunctions of another matrix, and to give them in terms of the eigenfunctions of the first.  That is, it wants the eigenfunctions of the $\sigma_x$ operator written as linear combinations of the $S_z$ operator.  Specifically, it wants the function associated with the eigenvalue $-\hbar/2$.  Because we're dealing with the Pauli spin matrix, we can actually assume the $\hbar/2$ and just look for the vector associated with the eigenvalue of $-1$.
+
+For the sake of simplicity, let's say that
+\begin{equation}
+\ket{\uparrow} = 
+\begin{pmatrix}
+1\\0
+\end{pmatrix},
+\text{ and } 
+\ket{\downarrow} = 
+\begin{pmatrix}
+0\\1
+\end{pmatrix}.
+\end{equation}
+
+Then, to find the eigenvalues of the $\sigma_x$, we solve the characteristic equation:
+\begin{align}
+\det\left(\sigma_x - \lambda I\right) &= 0,\\
+\Rightarrow \begin{vmatrix}
+-\lambda & 1\\
+1 & -\lambda
+\end{vmatrix}
+&=0.\\
+\Rightarrow \lambda^2 -1&= 0,\\
+\Rightarrow \lambda &= \pm 1.
+\end{align}
+
+So our eigenvalues are $\pm1$.  To find the vectors associated with these, we can take a generic vector $(\alpha,\beta)$, multiply it by $\sigma_x$, and set the result equal to multiplying it by an eigenvalue.
+
+Because the problem asks for the state with eigenvalue $-\hbar/2$, we will just look at the $-1$ case:
+\begin{align}
+\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\alpha\\
+\beta
+\end{pmatrix}
+&= - \begin{pmatrix}
+\alpha\\
+\beta
+\end{pmatrix},\\
+\Rightarrow\begin{pmatrix}
+\beta\\
+\alpha
+\end{pmatrix}
+&= -\begin{pmatrix}
+\alpha\\
+\beta
+\end{pmatrix}.
+\end{align}
+So we have the constraint that $\alpha = -\beta$ and vice-versa.  The smallest whole numbers which satisfy this constraint are $\alpha = 1$ and $\beta = -1$.  This gives a vector of
+\begin{align}
+\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}
+ &= \begin{pmatrix}
+1\\
+0
+\end{pmatrix}
+-\begin{pmatrix}
+0\\
+1
+\end{pmatrix},\\
+&=\ket{\uparrow}-\ket{\downarrow}.
+\end{align}
+Throw in a factor of $1/\sqrt{2}$ for normalization, and you get the answer.\\
+
+\answer{C}
+
+\section{Transition selection rules}
+
+Selection rules come from applying time-independent perturbation to hydrogen, and specifically the likelihood of spontaneous emission and absorption\footnote{See p.306, and p.315-318 of Griffiths QM, 3ed. for a complete treatment.}.  When you do this, it turns out that there are many transitions for which the expectation value is 0.
+
+
+A quick review: you can reduce the problem of spontaneous emission from state $\psi_1$ to $\psi_2$ to calculating the matrix elements of $\bra{\psi_2}\mathbf{r}\ket{\psi_1}$.  In the case of hydrogen, symmetry permits you to rewrite this in terms of the quantum numbers $\bra{nlm}\mathbf{r}\ket{n'l'm'}$, where the primed numbers refer to the original state.  Then, in the words of David Griffiths, ``clever exploitation of angular momentum commutation relations and the hermiticity of the angular momentum operators yields a set of powerful constraints on [the matrix elements of the expectation value of spontaneous emission].''\footnote{Griffiths QM, 3ed. p.315}
+
+Doing the math results in the following selection rules, which you should memorize:
+\begin{center}
+\fbox{\parbox{0.35\textwidth}{\emph{No transitions occur unless}:
+\begin{enumerate}
+\item $\Delta m = 0 \text{ or } \pm 1$.
+\item $\Delta l = \pm 1$.
+\item Therefore, $\Delta j = 0 \text{ or } \pm 1$.
+\end{enumerate}}}
+\end{center}
+
+Answering this problem then requires looking at the transitions provided and figuring out which of them are allowed by the rules.  Going through the options:
+
+$A$: $\Delta l = 0$, so we can right away rule it out as an option.
+
+$B$: $\Delta l = -1$, and $\Delta j = 1$, so this is allowed.
+
+$C$: $\Delta l = -1$, and $\Delta j = 0$, so this is allowed.
+
+I think that the diagram is pretty confusing though; it looks like transition $C$ starts at the same level as $A$ starts, where $l=0$.  Instead, the $l$ labels are more like headers to columns, and path $C$ starts with the same $l$ as $B$, 1.\\
+
+\answer{D}
+
+\section{Nichrome wire}
+The only ``new'' piece of information this problem requires is that in a wire of some thickness (as opposed to the infinitesimally thin lines we generally work with), the resistance is equal to
+\begin{equation}
+	R = \frac{\rho L}{A},
+\end{equation}
+where $\rho, L$, and $A$ are the wire's resistivity, length, and cross-sectional area, respectively.  Then, after you solve for the resistance, the answer takes one or two applications of Ohm's law.  It turns out that the configuration in the problem is equivalent to a voltage divider.  In using Ohm's law, we inadvertently derive the equation for the output voltage of a voltage divider.
+
+To apply Ohm's law, the prescription will go roughly like this: 1. Get the effective resistance of both wires. 2. Get the current across both wires, because this is always constant across simple DC circuits like this.  3. Use this current to get the voltage drop across the skinnier wire.
+
+So, the two wires, one with length $2L$ and cross-sectional area $A$ and the other with length $L$ and area $2A$ have resistances
+\begin{equation}
+	R_\text{skinny} = 2\frac{\rho L}{A}, \text{ and } R_\text{thick} = \frac{\rho L}{2A}.
+\end{equation}
+The wires are arranged in series, so the resistances add normally:
+\begin{align}
+	R_\text{eff.} &= 2\frac{\rho L}{A} + \frac{\rho L}{2A},\\
+	&=\frac{5}{2}\frac{\rho L}{A}.
+\end{align}
+To get the current running along the two wires, we need the voltage drop across them.  We are given the voltages at the free ends of both wires, so the voltage drop across both wires will be the difference between these two numbers:
+\begin{equation}
+	\Delta V_\text{both} = 8-1 = 7.
+\end{equation}
+So, the current running through the wires is
+\begin{align}
+	I &= \frac{\Delta V_\text{both}}{R_\text{eff.}},\\
+	&= 7\times\frac{2}{5}\frac{A}{\rho L},\\
+	&= \frac{14}{5}\frac{A}{\rho L}.
+\end{align}
+Finally, we want the voltage $V_\text{out}$ at the fixed end of the skinny wire, and we know the voltage at the free end $V_\text{in} = 8 \text{V}$, the current running through it, and its resistance.  The current and the resistance gives us the voltage drop $\Delta V_\text{skinny}$ across the skinny wire, and we can get the voltage at the junction by subtracting this drop from the input voltage at the free end: $V_\text{out} = V_\text{in}-\Delta V$.
+\begin{align}
+	\Delta V_\text{skinny} &= IR_\text{skinny},\\
+	&= \frac{14}{5}\frac{A}{\rho L}\times 2\frac{\rho L}{A},\\
+	&= \frac{28}{5},\\
+	\Rightarrow V_\text{out} &= 8-\frac{28}{5},\\
+	&= 2.4 \text{V}.
+\end{align}
+
+Now, if you know what a voltage divider looks like, you might notice that the arrangement described is exactly that of a resistive divider.  The two wires are the two resistors, and the junction is $V_\text{out}$.  Furthermore, if you plug in the equation for $R_\text{eff.}$ into $I$ and then the resulting equation for $I$ into $V_\text{out}$, you get exactly the equation of a voltage divider:
+\begin{equation}
+	V_\text{out} = \frac{R_\text{thick}}{R_\text{thick}+R_\text{skinny}}V_\text{in}.
+\end{equation}
+This would facilitate the calculation significantly.\\
+
+\answer{A}
+
+\section{Current induced in a spinning coil}
+This problem requires you to be comfortable with the induced voltage in a circuit.  Generally, in one circuit, the induced voltage will be equal to the negative time derivative of the magnetic flux, $\phi$:
+\begin{equation}
+	\varepsilon = -\frac{d \phi}{dt}.
+\end{equation}
+When you stick $N$ circuits together, this total voltage will be multiplied by $N$:
+\begin{equation}
+	\varepsilon = -N\frac{d \phi}{dt}.
+\end{equation}
+Such is the case with a solenoid of $N$ coils of wire.  Each coil of wire acts as a little circuit generating $-\dot{\phi}$ volts.
+
+Magnetic flux is defined as the integral of the magnetic field which is passing through a surface of area which is perpendicular to the conductor in question $d\mathbf{A}$:
+\begin{equation}
+	\phi = \int \mathbf{B}\cdot d\mathbf{A}.
+\end{equation}
+In this case, $\mathbf{B} = -B_0\mathbf{\hat{x}}$, and we are told that the coils are of radius $r = 1 \text{ cm}$.  Furthermore, we are given an initial condition saying that at $t=0$, the $d\mathbf{A}$ vector is pointing perpendicularly to the magnetic field.  This means that at $t=0$, the coils are aligned along the $x$-axis, and the magnetic flux is 0.  Later, when the coils are perpendicular to the magnetic field, and so the normal vector is parallel and the dot product is maximized, the magnetic field will be fluxing through a circle of radius $r$, giving a total area of $\pi r^2$.  Labeling the angle that the coils make with the $x$-axis as $\theta = \omega t$ (for angular velocity $\omega$), we want the flux to be minimized at $\theta = 0$, so we will use $\sin(\omega t)$:
+\begin{equation}
+	\phi = -B_0 \sin\left(\omega t\right)\pi r^2,
+\end{equation}
+and therefore
+\begin{equation}
+	\frac{d\phi}{dt} = B_0 \omega \pi r^2 \cos\left(\omega t\right).
+\end{equation}
+Then, we can use the equation above for induced voltage with Ohm's law to get the induced current:
+\begin{align}
+	\varepsilon &= -N\frac{d\phi}{dt} = IR,\\
+	\Rightarrow I &= -\frac{N}{R}\frac{d\phi}{dt},\\
+	&= \frac{N}{R}B_0 \omega \pi r^2 \cos\left(\omega t\right),\\
+	&= \frac{15}{9}\times 0.5\times 300 \pi \cos\left(\omega t\right),\\
+	&= \frac{225}{9}\pi \cos\left(\omega t\right),\\
+	&= 25\pi\cos\left(\omega t\right).
+\end{align}
+
+Because the question asked for the answer in milliamperes, I said that the radius was 1 instead of 0.01, because the powers of ten would work out.\\
+
+\answer{E}
+
+\section{Two balls and a point charge}
+The ball that the point charge $q$ is in does not contribute to the force on $q$ because the field inside a hollow sphere is 0 everywhere.  That means that $q$ is only feeling the force due to a sphere of charge $Q$ a distance $r = 10d - d/2$ away:
+\begin{align}
+	\mathbf{F} &= \frac{qQ}{4\pi \epsilon_0 r^2}\mathbf{\hat{r}},\\
+	&= \frac{qQ}{4\pi \epsilon_0}\frac{1}{\left(10d-\frac{1}{2}d\right)^2}\mathbf{\hat{r}},\\
+	&= \frac{qQ}{4\pi \epsilon_0}\frac{4}{361d^2}\mathbf{\hat{r}},\\
+	&= \frac{qQ}{361\pi\epsilon_0d^2}\mathbf{\hat{r}}.
+\end{align}
+
+Both charges are positive, so $q$ will be repelled, which in this case means the force is to the left.\\
+
+\answer{A}
+
+\section{The magnetic field of a bent wire}
+Recall the Biot-Savart law for computing the magnetic field due to a current, $I$:
+\begin{equation}
+	\mathbf{B}\left(\mathbf{r}\right) = \frac{\mu_0}{4\pi} \int \frac{Id\mathbf{l}\cross\mathbf{\hat{r}'}}{|\mathbf{r'}|^2},
+\end{equation}
+where $d\mathbf{l}$ is an element of wire and $\mathbf{r'}=\mathbf{l}-\mathbf{r}$ is the displacement vector between the point at which $\mathbf{B}$ is being calculated and the bit of wire being integrated.
+
+Now, the wire in the question has three distinct pieces: two straight bits and a curved bit.  The straight bits contribute nothing: They are arranged radially with respect to $P$, so $d\mathbf{l}$ will be parallel with $\mathbf{r}'$, rendering the cross product 0.  The curved bit is the only thing which contributes to the magnetic field.  Because it is circular, $\mathbf{r}'$ is always perpendicular to $d\mathbf{l}$, so the integral will be the fraction of circumference defined by the angle $\theta$.  If $2\pi$ radians of a circle has circumference $2\pi R$, then $\theta$ radians of a circle will have a circumference $\theta R$.  Therefore, the magnetic field will be
+\begin{align}
+	\mathbf{B}\left(\mathbf{r}\right) &= \frac{\mu_0 I \theta R}{4\pi R^2},\\
+	&= \frac{\mu_0 I \theta}{4\pi R}.
+\end{align}
+
+\answer{C}
+
+\section{Child on a merry-go-round}
+This question is all about conservation of angular momentum.  When the child is at the edge of the disk, the moment of inertia of the child-disk system is the moment of the disk plus the moment of the child standing a distance $R$ from the center:
+\begin{align}
+	I &= I_d + I_c,\\
+	&= \frac{1}{2}m_dR^2 + m_cR^2.
+\end{align}
+
+When the child walks to the center, however, $R$ vanishes for the child, and so the child's mass does not contribute anything to the system's moment of inertia.  So the total moment of inertia becomes only that of the disk.  Setting the angular momenta before and after equal and solving for the final angular speed, we have
+\begin{align}
+	I_1 \omega_1 &= I_2 \omega_2,\\
+	\Rightarrow \omega_2 &= \frac{I_1 \omega_1}{I_2},\\
+	&= \frac{\omega_1\left(\frac{1}{2}m_dR^2 + m_cR^2\right)}{\frac{1}{2}m_dR^2},\\
+	&=\frac{\omega_1\left(\frac{1}{2}m_d + m_c\right)}{\frac{1}{2}m_d},\\
+	&=\frac{2\times\left(\frac{1}{2}\times200 + 40\right)}{\frac{1}{2}\times200},\\
+	&= 2\times\frac{140}{100},\\
+	&=2\times\frac{7}{5} = 2.8.
+	\end{align}
+	
+\answer{E}
+
+\section{Series and parallel springs}
+There are a few ways to do this, and the one which makes the most sense is to look at the energies of the two scenarios.  You can also look at the forces, but this is a bit more involved\footnote{A full treatment of the force method can be found, at the time of this writing, on the Wikipedia page \url{https://en.wikipedia.org/wiki/Series_and_parallel_springs}.}.
+
+A spring with spring constant $k$ has the potential
+\begin{equation}
+	U = \frac{1}{2}kx^2,
+\end{equation}
+where $x$ is the spring's displacement from equilibrium.  A particle of mass $m$ suspended by such a spring will undergo oscillation with a frequency $\omega = \sqrt{k/m}$.  The period will then be the reciprocal of this frequency multiplied by $2\pi$.  To answer this question, we must figure out the effective spring constant of either scenario.
+
+Starting with the parallel springs in figure 1, we see that there is only one important displacement, because the springs are starting from the same position.  But, there are two of them, so the potential energy doubles:
+\begin{align}
+	U_p &= 2\left(\frac{1}{2}kx^2\right),\\
+	&=kx^2.
+\end{align}
+
+We say that the effective spring constant is then $k_p = 2k$, because $U_p$ is equivalent to the potential for a single spring of spring constant $2k$.  This means the parallel case has a period of
+\begin{equation}
+	T_p = 2\pi \sqrt{\frac{m}{2k}}.
+\end{equation}
+
+The springs in series are slightly different, because each spring has a unique displacement.  Call the first spring's displacement from equilibrium $x_1$ and the second spring's $x_2$.  Then,
+\begin{align}
+	U_s &= \frac{1}{2}kx_1^2 + \frac{1}{2}kx_2^2,\\
+	&= \frac{k}{2}\left(x_1^2 + x_2^2\right),
+\end{align}
+which implies an effective spring constant of $k_s = k/2$, and a period of 
+\begin{equation}
+	T_s = 2\pi \sqrt{\frac{2m}{k}}.
+\end{equation}
+
+Dividing $T_p$ by $T_s$ then, we have
+\begin{equation}
+	\frac{T_p}{T_s} = \sqrt{\frac{m}{2k}}\sqrt{\frac{k}{2m}} = \frac{1}{2}.
+\end{equation}
+
+\answer{A}
+
+\section{Determining a cylinder's moment of inertia}
+
+For this problem, you need to conserve energy for a spinning thing and solve for the moment of inertia.  If a thing with mass $M$ and moment of inertia $I$ is moving linearly with speed $v$, and rotating with an angular speed $\omega$, then it will have kinetic energy
+\begin{equation}
+	T = \frac{1}{2}Mv^2 + \frac{1}{2}I\omega^2.
+\end{equation}
+
+In this problem, the cylinder starts out stopped, so conservation of energy tells us that the cylinder's kinetic energy at the bottom of the block will be equal to its potential energy at the top, $U = MgH$.  The plan is then to set $T=U$ and solve for $I$.
+
+One detail which might be tricky is that we aren't given $\omega$.  In this specific problem, though, the cylinder is said to be rolling without slipping.  That means that the angular speed is related to the translational speed by $\omega = v/R$.
+
+\begin{align}
+	T &= \frac{1}{2}Mv^2 + \frac{1}{2}I\omega^2 = MgH,\\
+	\Rightarrow I &= 2M\frac{\left(gH - \frac{1}{2}v^2\right)}{\omega^2},\\
+	\omega&\rightarrow \frac{v}{R}, v\rightarrow\sqrt{\frac{8}{7}gH},\\
+	I &= 2MR^2\frac{\left(gH - \frac{1}{2}\times\frac{8}{7}gH\right)}{\frac{8}{7}gH},\\
+	&= 2MR^2\left(1-\frac{8}{14}\right)\left(\frac{7}{8}\right),\\
+	&= \frac{3}{4}MR^2.
+\end{align}
+
+\answer{B}
+
+\section{Hamiltonian for two particles on spring}
+
+The Hamiltonian for a classical system is defined
+\begin{equation}
+	H\equiv T+U,
+\end{equation}
+for kinetic and potential energies $T$ and $U$, respectively.  Right away, we can reduce the possible answers to (B) and (E), because, as discussed in problem \hyperlink{section.90}{90}, the potential energy for a spring is $U = \frac{1}{2}kx^2$.  That means that there should not be any minus signs anywhere in the Hamiltonian.  Then, (B) would imply that the spring's potential went as $kx^2$, which it doesn't.\\
+
+\answer{E}
+
+\section{The most likely position of a ground-state hydrogenic electron}
+
+It's probably a good idea to memorize that this is the definition of the Bohr radius, which gives you the answer.  Other than that, the only ways I can think of to pare down the answers without math is to say that it shouldn't be zero because that's the nucleus, and infinity doesn't make much sense, which leaves you guessing between 3 answers.
+
+To solve this rigorously, we want to maximize the probability for the position of an electron in the ground state of hydrogen.  As usual, the probability of finding a particle between $a$ and $b$ is given by
+\begin{equation}
+	P_{a,b} = \int_a^b \left|\psi(\mathbf{r})^2\right|d\mathbf{r}.
+\end{equation}
+In spherical coordinates, $d\mathbf{r}$ is given by $d\mathbf{r} = r^2\sin\theta drd\theta d\phi$, so the probability becomes
+\begin{equation}
+	P_{a,b} = \int_a^b\int_0^\pi\int_0^{2\pi} \left|\psi(\mathbf{r})^2\right|r^2\sin\theta drd\theta d\phi = 4\pi\int_a^b\left|\psi(\mathbf{r})^2\right|r^2 dr.
+\end{equation}
+In the specific case of the ground state of hydrogen, taking the absolute square of the wave function renders this probability
+\begin{equation}
+	P_{a,b} = \frac{4\pi}{\pi a_0^3}\int_a^b e^{-2r/a_0}r^2 dr.
+\end{equation}
+
+So, now we need to solve $\frac{d}{dr}P_{a,b} = 0$ for $r$:
+
+\begin{align}
+	\frac{d}{dr}P_{a,b} &= \frac{4\pi}{\pi a_0^3}\frac{d}{dr} e^{-2r/a_0}r^2,\\
+	&= \frac{4\pi}{\pi a_0^3}\left(-\frac{2}{a_0}e^{-2r/a_0}r^2 + 2re^{-2r/a_0}\right) = 0,\\
+	\Rightarrow 2re^{-2r/a_0} &= \frac{2r^2}{a_0}e^{-2r/a_0},\\
+	\Rightarrow r&=a_0.
+\end{align}
+
+\answer{C}
+
+\section{Perturbation on the QHO Hamiltonian}
+
+If you have a Hamiltonian that looks a lot like some simple Hamiltonian except for a little perturbation, you can Taylor expand around the perturbation and write the Hamiltonian as
+\begin{equation}
+	H = H_0 + \Delta H,
+\end{equation}
+where $\Delta H$ is the perturbation.  In this case, we're perturbing the quantum harmonic oscillator ($H_0 = \frac{1}{2}kx^2$) by a linear combination of ladder operators, $\Delta H = V\left(a + a^\dagger\right)^2$, where $V$ is some constant.
+
+Ladder operators are operators which act on quantum harmonic oscillator energy states and return either the next higher or the next lower state scaled by some number:
+\begin{align}
+	a\ket{n} &= \sqrt{n}\ket{n-1},\\
+	a^\dagger\ket{n} &= \sqrt{n+1}\ket{n+1}.
+\end{align}
+
+Then, the important thing to remember about perturbation theory, and what David Griffiths says ``may well be the most important equation in quantum mechanics,'' \textbf{the first-order correction to the energy is given by the expectation value of the perturbation on the unperturbed state}\footnote{For a full derivation, see Griffiths QM, 3ed. p.222-3.}:
+\begin{equation}
+	E_1 = \bra{n}\Delta H\ket{n}.
+\end{equation}
+
+And this tells us how to answer this problem: Expand out the operator $\Delta H$ and take the inner product on some arbitrary state $\ket{n}$, and plug in for $n=2$.  This will be the first-order correction to that state of definite energy.
+
+To do this, expand $\Delta H$ and calculate.  I will first calculate $\Delta H\ket{n}$ and then take the inner product with $\bra{n}$.  The tricky thing in expanding $\Delta H$ here is in remembering that operators do not commute, so the expansion goes like this:
+\begin{align}
+	&V\left(a+a^\dagger\right)^2\ket{n} = V\left[aa + aa^\dagger + a^\dagger a + a^\dagger a^\dagger\right]\ket{n},\\
+	&= V\left[aa\ket{n} + aa^\dagger\ket{n} + a^\dagger a\ket{n} + a^\dagger a^\dagger\ket{n}\right],\\
+	&= V\left[a\sqrt{n}\ket{n-1} + a\sqrt{n+1}\ket{n+1} + a^\dagger \sqrt{n}\ket{n-1} + a^\dagger \sqrt{n+1}\ket{n+1}\right],\\
+	&=V\left[\sqrt{n(n-1)}\ket{n-2} + (n+1)\ket{n} + n\ket{n} + \sqrt{(n+1)(n+2)}\ket{n+2}\right].
+\end{align}
+Now, when taking the inner product of this with $\bra{n}$, the first and last wave functions vanish:  States of definite energy form an orthonormal basis, so $\ket{n-2}$ and $\ket{n+2}$ are orthogonal to $\ket{n}$ and thus their inner product will be 0.
+
+However, because $\bra{n}\ket{n}=1$, we can say
+\begin{equation}
+	E_1 = \bra{n}V\left(a+a^\dagger\right)^2\ket{n} = V\left[(n+1) + n\right],
+\end{equation}
+so, for $n=2$,
+\begin{equation}
+	E_1 = V(3+2) = 5V.
+\end{equation}
+
+\answer{E}
+
+\section{Electric field inside a medium}
+This problem can (and should, I think) be solved with dimensional analysis and some logic.  First, we're looking for an answer with units of electric field.  We know that $K$ is unitless because $\epsilon = K\epsilon_0$.  That means that the only answers with the units of electric field are (A), (C), and (E).  Then, we expect the field inside the medium to be \emph{less} than $E_0$ because it takes energy to move the charges around in a dielectric.  There is only one answer which is less than $E_0$.\\
+
+\answer{A}
+
+\section{Radiation from a pulsing sphere}
+Radiation is the bits of electromagnetic energy that make it to infinity.  Specifically, the power radiated what you get when you take the limit at infinity of the surface integral of the Poynting vector $\mathbf{S}$ (recall that the Poynting vector has units of power per area):
+\begin{equation}
+	P_\text{rad} = \lim_{r\rightarrow\infty}P(\mathbf{r}) = \lim_{r\rightarrow\infty} \int \frac{1}{\mu_0}\left(\mathbf{E}\cross\mathbf{B}\right) \cdot d\mathbf{a}.
+\end{equation}
+This implies that the only way to get radiated power is if $P(\mathbf{r})\propto 1/r$, which can only happen if $\mathbf{S} \propto 1/r^2$.  This presents a problem: If $\mathbf{S}=\frac{1}{\mu_0}\left(\mathbf{E}\cross\mathbf{B}\right)$, then the only way for it to go as $1/r^2$ is if $\mathbf{E}$ and $\mathbf{B}$ both go as $1/r$.
+
+This immediately shows that you cannot get static sources to radiate, because the slowest a static field will decay is $1/r^2$.  It turns out that the simplest fields which go as $1/r$ are those of accelerating electric dipole moments\footnote{As usual, see Griffiths E\&M, chapter 11 for a full discussion.}.
+
+And that brings us to the answer.  The pulsing sphere is an accelerating monopole, and so its dipole term will be zero.  Therefore, it has no field component which will decay at $1/r$.
+
+Alternative reasoning is that, by symmetry, you can see that the sphere will have no magnetic field, and that therefore $\mathbf{S}=0$.\\
+
+\answer{E}
+
+\section{Predicting the spread of refracted light}
+This problem requires remembering Snell's law and being comfortable with Taylor approximation.  Snell's law says that if a beam of light hits a new medium at an angle $\theta_1$ (as measured with respect to the plane normal to the medium), then you can determine the angle at which it refracts if you know the indices of refraction of the two media.  Specifically, for wavelength-specific indices of the two media $n_1$ and $n_2$,
+\begin{equation}
+	\frac{\sin\theta_1}{\sin\theta_2} = \frac{n_1}{n_2}.
+\end{equation}
+In this case, because we're not dealing with monochromatic light, the light coming in will have a range of wavelengths $\lambda\pm\delta\lambda$.  Then, each individual wavelength will be refracted according to the unknown function $n(\lambda)$, producing a range of refraction angles of $\theta'\pm\delta\theta'$.  Because we're told at the outset that both $\delta\lambda$ and $\delta\theta'$ are small, that should tip us off that we might use Taylor approximation.
+
+So, the beam of light starts in vacuum, with $n_1 = 1$, and it's all going at the same angle, so $\theta_1 = \theta$ for all wavelengths.  We're asked to find $\delta\theta'$, which is the spread in refraction angle.  Without explicitly having an expression for $\delta\theta'$, we can at least use Snell's law to get expressions for the extremal wavelengths:
+\begin{align}
+	\frac{\sin\left(\theta' + \delta\theta'\right)}{\sin\left(\theta\right)} &= n(\lambda + \delta\lambda),\\
+	\frac{\sin\left(\theta' - \delta\theta'\right)}{\sin\left(\theta\right)} &= n(\lambda - \delta\lambda).
+\end{align}
+Dividing one by the other, we have
+\begin{equation}
+	\frac{\sin\left(\theta' + \delta\theta'\right)}{\sin\left(\theta' - \delta\theta'\right)} = \frac{n(\lambda + \delta\lambda)}{n(\lambda - \delta\lambda)}.
+\end{equation}
+Now, as stated above, because $\delta\lambda$ and $\delta\theta'$ are small, we can expand both $n(\lambda)$ and $\sin(\theta')$ to extract the $\delta$'s.  Using the first-order expansion $f(x+\delta x)\approx f(x) + \delta xf'(x)$, we can say
+
+\begin{align}
+	n(\lambda \pm \delta\lambda)&\approx n(\lambda) \pm \delta\lambda \frac{d n(\lambda)}{d\lambda},\\
+	\sin\left(\theta' \pm \delta\theta'\right)&\approx\sin(\theta') \pm \delta\theta'\cos(\theta').
+\end{align}
+
+Inserting this approximation into Snell's law, we have
+
+\begin{equation}
+	\frac{\sin(\theta') + \delta\theta'\cos(\theta')}{\sin(\theta') - \delta\theta'\cos(\theta')} = \frac{n(\lambda) + \delta\lambda \frac{d n(\lambda)}{d\lambda}}{n(\lambda) - \delta\lambda \frac{d n(\lambda)}{d\lambda}}.
+\end{equation}
+Solve this for $\delta\theta'$, and you have the answer.  This took me more time than I expected.  I eventually got it by simplifying the notation, and solving
+\begin{equation}
+	\frac{x+ky}{x-ky} = \frac{a+cb}{a-cb}
+\end{equation}
+for $k$.  This amounted to an annoying exercise in algebraic manipulation, but it works out:
+\begin{align}
+	\frac{x+ky}{x-ky} &= \frac{a+cb}{a-cb},\\
+	\Rightarrow (a-cb)(x+ky) &= (a+cb)(a-cb),\\
+	\Rightarrow ax - cbx + aky - cbky &= ax-aky+cbx-cbky,\\
+	\Rightarrow 2kay &= 2cbx,\\
+	\Rightarrow k &=\frac{cbx}{ay}. 
+\end{align}
+Filling in the placeholders,
+\begin{align}
+	\delta\theta' &= \left|\frac{\delta\lambda\frac{dn(\lambda)}{d\lambda}\sin\theta'}{n\cos\theta}\right|,\\
+	&=\left|\frac{\tan\theta'}{n}\frac{dn(\lambda)}{d\lambda}\delta\lambda\right|.
+\end{align}
+The absolute value signs come from the fact that $\delta\theta'$ is an angular distance, and so must be positive.
+
+If you didn't have enough time to go through all this algebra, you can make a reasonable guess by first doing dimensional analysis.  The answer, an angle, is unitless, and only three of the answers are unitless: (B), (D), and (E).  Then you might choose the one with $\tan\theta'$ because the Taylor expansion gives you both $\sin\theta'$ and $\cos\theta'$, so you might expect the answer to combine them.\\
+
+\answer{E}
+
+\section{A quantum state in thermal equilibrium}
+This problem is perfect for dimensional analysis.  If you know that $kT$ has dimensions of energy, then $e^{-E_i/kT}$ is dimensionless.  Therefore,
+\begin{equation}
+	\frac{\sum\limits_i E_i e^{-E_i/kT}}{\sum\limits_i e^{-E_i/kT}}
+\end{equation}
+will have units of energy.  There is only one answer with such units.
+
+Alternatively, you can see that the expression is dividing some kind of energy by the total number of something, and that sounds a lot like a kind of average.  This is more obvious if you remember that $e^{-E_i/kT}$ is the partition function, which is related to the probability that a given particle is in a state $i$.\\
+
+\answer{A}
+
+\section{Relativistic energy and momentum conservation}
+This is a classic energy and momentum conservation problem.  Starting with the initial kinetic energies, we have the photon and the electron at rest:
+\begin{equation}
+	T_i = p_\gamma c + mc^2,
+\end{equation}
+for photon momentum $p_\gamma$ and electron rest mass $m$.  Then, after the photon strikes the electron, the final kinetic energy will be that of the two electrons and single positron.  These energies are all the same, because all the particles have the same mass and are going the same speed:
+\begin{equation}
+	T_f = 3\sqrt{m^2c^4 + p_e^2c^2},
+\end{equation}
+for electron and positron momentum $p_e$.  The bit that eluded me for a while was the fact that because all of the daughter particles are going the same direction, at the same speed, and they all have the same rest mass, they will all have an equal amount of the photon's initial momentum.  Therefore, $p_e = p_\gamma/3$, and we can obtain an equation for the photon's energy, $E_\gamma = p_\gamma c$.
+
+Setting $T_i = T_f$, we have
+
+\begin{align}
+	p_\gamma c + mc^2 &= 3\sqrt{m^2c^4 + p_e^2c^2},\\
+	\Rightarrow \left(p_\gamma c+mc^2\right)^2 &= 9\left(m^2c^4 + p_e^2c^2\right),\\
+	\Rightarrow p_\gamma^2c^2 + 2p_\gamma mc^3 + m^2c^4 &= 9m^2c^4 + 9p_e^2c^2,\\
+	p_e &\rightarrow\frac{p_\gamma}{3},\\
+	\Rightarrow p_\gamma^2c^2 + 2p_\gamma mc^3 + m^2c^4 &= 9m^2c^4 + p_\gamma^2 c^2,\\
+	\Rightarrow 2p_\gamma mc^3 &= 8m^2c^4,\\
+	\Rightarrow p_\gamma c &= 4mc^2.
+\end{align}
+
+\answer{D}
+
+\section{Michelson interferometer}
+The light that is redirected to the movable mirror has to take a longer path than the light that is not.  The difference in path length is $2d$, because it has to go out to the mirror and back again.  Therefore, you expect a maximum (a fringe) whenever this extra path length is equal to at least one wavelength, or $2d = \lambda \Rightarrow d=\lambda/2$.  If it's equal to multiple wavelengths, then you'll get multiple fringes.  Therefore, the condition on $d$ for getting a fringe in an interferometer is
+\begin{equation}
+	d = \frac{m\lambda}{2},
+\end{equation}
+where $m$ is the number of fringes, an integer.
+
+In this case, we know the wavelength of red light, $\lambda_r$ and the number of fringes it produces, $m_r$.  Using this, we can solve for the distance:
+\begin{equation}
+	d = \frac{m_r\lambda_r}{2}.
+\end{equation}
+
+Now we can get the wavelength of green light:
+
+\begin{align}
+	d = \frac{m_r\lambda_r}{2} &= \frac{m_g\lambda_g}{2},\\
+	\Rightarrow \lambda_g &= \frac{m_r\lambda_r}{m_g},\\
+	&= \frac{85865 \times 632.82 \text{ nm}}{100000},\\
+	&\approx 86 \times 6.3\text{ nm},\\
+	&= 86\times6\text{ nm} + 86/3\text{ nm},\\
+	&= 544\text{ nm}.
+\end{align}
+\answer{B}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
