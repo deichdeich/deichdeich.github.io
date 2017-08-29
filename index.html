@@ -144,7 +144,6 @@ document.getElementById("a2").innerHTML = "+ Particle Dynamics in a Time-Depende
 document.getElementById("a3").innerHTML = "+ Population Statistics of Young Stars in Andromeda"
 document.getElementById("a4").innerHTML = "+ Physics of a Modified E&M"
 document.getElementById("a5").innerHTML = "+ Photometry of VVV Survey Data"
-document.getElementById("a6").innerHTML = "+ Time-Resolved Spectroscopy of LARPs"
 document.getElementById("a7").innerHTML = "+ Small Projects"
 document.getElementById("newbox").innerHTML = ""
 }
@@ -185,13 +184,7 @@ function addDescription(section){
             document.getElementById("newbox").style.height="550px"
             document.getElementById("newbox").innerHTML = "<p><center><img src = \"deichdeich.github.io/images/vvvclusters.png\"></center><br>In 2013, I worked at the Cerro-Tololo Interamerican Observatory (CTIO) in La Serena, Chile.  This was an NSF-funded Research Experience for Undergraduates (REU).  While there, I worked with Dr. Alexandre Roman-Lopes of the Universidad de La Serena and Andrea Kunder of CTIO in characterizing data from the Vista Variables in the Via Lactea (VVV) Survey.  I applied PSF and aperture photometry to the data with the DAOPHOT package, and wrote numerous data analysis scripts in Python.  By matching sources with the 2MASS survey, I derived correlation functions between the two surveys, which significantly reduced error, and has wider application in the use of VVV data.  I presented the project at the winter 2014 meeting of the AAS conference in Washington, DC.</p>"
         }
-        else if(section == 6){
-        clearLinks()
-            document.getElementById("a6").innerHTML="<u>&mdash; Time-Resolved Spectroscopy of LARPs</u>";
 
-        document.getElementById("newbox").style.height="400px"
-        document.getElementById("newbox").innerHTML = "<center><img src = \"http://www.ess.sunysb.edu/fwalter/PHY515/mag-accretn-garlick.jpg\" size = \"50%\"></center><br><small><small>image copyright M. Garlick</small></small><br><p>I assisted Dr. Ryan Campbell at Humboldt State University in Arcata, California, in photometric and spectroscopic studies of Low-Accretion Rate Polars (LARPs).  My duties included CCD image reduction with IRAF as well as Python and FORTRAN scripting. By using time-resolved spectroscopy, we were able to create a three-dimensional model of the LARP, indicating where the accretion columns were on the surface.  The model was obtained with a genetic algorithm built using the PyEvolve package.</p>"
-        }
         else if(section == 7){
         clearLinks()
             document.getElementById("a7").innerHTML="<u>&mdash; Small Projects</u>";
