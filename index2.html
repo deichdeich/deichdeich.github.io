@@ -18,12 +18,75 @@ Alex Deich
         url(deichdeich.github.io/swedensans-webfont.eot) format('eot'),
         url(deichdeich.github.io/swedensans-webfont.svg) format('svg');
 }
-div.blah{
+html *
+{
+    font-family: SwedenSans !important;
+    color: #333333;
+}
+div.colophon{
+    font-size: 40;
+    margin-left: 5%;
+    margin-top: 4%;
+}
+div.subtitle{
     font-size: 20;
-    font-family: Helvetica;
-    font-family: SwedenSans;
+    color: #666666;
+}
+div.menu{
+    font-size: 15;
+    margin-top: 10px;
+}
+div.menu a{
+    padding-right: 5%;
+}
+div.email{
+    text-align: right;
+    font-size: 20;
+    margin-right: 20px;
+}
+div.font{
+    position: absolute;
+    text-align: right;
+    font-size: 15;
+    right: 5%;
+    bottom: 10%;
+    }
+div.font a{
+    color: #999999;
+}
+div.background{
+    align: center;
+}
+div.background img{
+    max-width: 40%;
+    height: auto;
+    padding-left:30%
 }
 </style>
 </head>
-<div class="blah">Alex Deich</div>
+<div class = "colophon">
+    Alex Deich
+    <div class = "subtitle">
+        Physics graduate student at Montana State University
+    </div>
+    
+    <div class = "menu">
+        <a href = "#">CV</a>
+        <a href = "#">Publications</a>
+        <a href = "#">Articles for Entertainment</a>
+        <a href = "#">Code</a>
+    </div>
+    
+    <div class = "email">
+        alexanderdeich (at) montana.edu
+    </div>
+</div>
+<div class = "background">
+    <img src = "http://deichdeich.github.io/poincare1.png">
+</div>
+<div class = "font">
+    <a href = "https://www.theguardian.com/world/2014/nov/14/sweden-sans-designers-create-national-font" target="new">
+        About this font
+    </a>
+</div>
 </html>
