@@ -23,7 +23,7 @@ html *{
     color: #333333;
 }
 div.colophon{
-    font-size: 40;
+    font-size: 30;
     margin-left: 5%;
     margin-top: 4%;
 }
@@ -53,86 +53,51 @@ div.font{
 div.font a{
     color: #999999;
 }
-div.background{
+#stuff > div{
     align: center;
+    padding-left:11.2%;
+    padding-top:3%;
 }
-div.background img{
+#stuff hed{
+font-size:20;
+}
+#background > div{
+    align: center;
+    position: absolute;
+    top:20%;
+}
+#background img{
     max-width: 40%;
     height: auto;
     padding-left:30%;
     padding-top: 5%;
 }
-
-
-/* Popup container - can be anything you want */
-div.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+th, td {
+  padding-left: 50px;
+  font-size: 14;
 }
 
-/* The actual popup */
-div.popup .popuptext {
-  visibility: hidden;
-  width: 250px;
-  background-color: #fff;
-  color: #333;
-  text-align: center;
-  border-radius: 6px;
-  border-color: #666;
-  border-width: 2px;
-  border-style: solid;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  top: 125%;
-  left: 50%;
-  margin-left: -120px;
-}
 
-/* Popup arrow */
-div.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: transparent transparent #666 transparent;
-}
+               /* Fade-In Effect */
+               div.visible
+               {
+                       visibility: visible;
+                       opacity: 1;
+                       transition: opacity .3s linear;
+               }                
+               /* Fade-Out Effect */
+               div.hidden
+               {
+                       visibility: hidden;
+                       opacity: 0;
+                       transition: visibility 0s .3s, opacity .3s linear;
+               }                
 
-/* Toggle this class - hide and show the popup */
-div.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn .4s;
-  animation: fadeIn .4s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
 
 
 </style>
 </head>
-<script>
-function popup() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
-</script>
+
 
 <div class = "colophon">
     Alex Deich
@@ -141,19 +106,103 @@ function popup() {
     </div>
     
     <span class = "menu">
+        <div id = "blah">
         <a href = "http://deichdeich.github.io/deichdeich.github.io/docs/AlexDeichResume.pdf" target = "new">CV</a>
         <a href = "#">Things I've Done</a>
+        </div>
     </span>
     <div class = "email">
     alexanderdeich (at) montana.edu
     </div>
 </div>
-<div class = "background">
-    <img src = "http://deichdeich.github.io/poincare1.png">
+<div id = "stuff">
+    <div class="hidden">
+    
+    <table style="width:70%">
+    <tr>
+    <td width="57%">
+    <hed>Things for Entertainment</hed>
+    </td>
+    <td>
+        <hed>Publications</hed>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <b>How Deep Can You Swim and Still Fart?</b>: <a href = \"deichdeich.github.io/docs/fart.pdf\" target=\"new\">PDF</a><br>
+    The deeper you swim, the higher the ambient water pressure.<br>
+    When does that equal the pressure of a fart?
+    </td>
+    <td>
+    "Transgenic Mouse Facial Nerve Model of Synkinesis"<br>
+    Mostafa M Ahmed, <b>Alex Deich</b>, et al.<br>
+    Forthcoming, 2019.
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <b>How Can Feet Make an Earthquake?</b>: <a href = \"https://github.com/deichdeich/deichdeich.github.io/blob/master/earthquake.ipynb\" target=\"new\">jupyter notebook</a><br>
+    Why do millions of randomly stomping feet make an earthquake instead of<br>
+    generally canceling out?  There's a nice answer to this that I explore<br>
+    in this Jupyter notebook.
+    </td>
+    <td>"Automating the Swift Scheduling Pipeline"<br>
+    <b>A. Deich</b>, J. Gropp, S. LaPorte, A. Tohuvavohu<br>
+    Conference paper, presented at SPIE July 2018
+    </td>
+    </tr>  
+    <tr>
+    <td>
+    <b>Aphysical Extensions of the Coin Flipping Problem</b>: <a href = \"deichdeich.github.io/docs/coin_flipping.pdf\", target=\"new\">PDF</a><br>
+    How can you predict which side a coin will land on, given the initial<br>
+    conditions on its velocity and angular speed?  In this write-up I consider<br>
+    aphysical extensions of this old problem.
+    </td>
+    <td>"Off-axis emission of short gamma-ray bursts and the detectability of
+    electromagnetic counterparts of gravitational-wave-detected binary mergers"<br>
+    D. Lazzati, <b>A. Deich</b>, B. Morsony, J. Workman.<br>
+    MNRAS, 471, 2, October 2017</td>
+    </tr>
+    <tr>
+    <td>
+    <b>Annotated solution manual to the 2001 Physics GRE</b>:
+    <a href = \"http://deichdeich.github.io/docs/gre_study/2001/solutions/2001_solutions.pdf\">PDF</a><br>
+    As a way to study for the GRE myself, I wrote a solution guide with full solutions to
+    the 2001 GRE made available by ETS.  The guide solves and discusses every problem.
+    It also contains a formula sheet and explores test-taking strategies.
+    </td>
+    <td>
+    </td>
+    </tr>
+    </table>  
+      </div>
 </div>
+<div id = "background">
+    <div class="visible">
+    <img src = "http://deichdeich.github.io/poincare1.png">
+      </div>
+</div>
+
 <div class = "font">
     <a href = "https://www.theguardian.com/world/2014/nov/14/sweden-sans-designers-create-national-font" target="new">
         About this font
     </a>
 </div>
+<script>
+var hideButtonClick = document.querySelector("#blah a:nth-of-type(2)"),
+    content1 = document.querySelector("#background > div");
+    content2 = document.querySelector("#stuff > div");
+    //Hide wrapper div content
+               hideButtonClick.addEventListener("click", function () {
+                       if(content1.className == "visible"){
+                       content1.className = "hidden";
+                       content2.className = "visible";
+                       }
+                       else if(content1.className == "hidden"){
+                       content2.className = "hidden";
+                       content1.className = "visible";
+                       }
+               }, false);
+
+</script>
 </html>
