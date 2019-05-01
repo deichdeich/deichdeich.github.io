@@ -53,6 +53,13 @@ div.font{
 div.font a{
     color: #999999;
 }
+#about > div{
+    align: center;
+    padding-left:15%;
+    top:28%;
+    width:50%;
+    position: absolute;
+}
 #stuff > div{
     align: center;
     padding-left:15%;
@@ -109,6 +116,7 @@ th, td {
     <span class = "menu">
         <div id = "blah">
         <a href = "http://deichdeich.github.io/deichdeich.github.io/docs/AlexDeichResume.pdf" target = "new">CV</a>
+        <a href = "#">About Me</a>
         <a href = "#">Things I've Done</a>
         </div>
     </span>
@@ -178,6 +186,26 @@ th, td {
     </table>  
       </div>
 </div>
+<div id = "about">
+    <div class="hidden">
+        <p>
+            I'm a graduate student in the physics department at Montana State University.  I'm interested
+            in novel observational tests of gravity, multimessenger astronomy, and numerically modeling
+            complex astrophysical phenomena.
+        </p>
+        <p>
+            I graduated from Reed College in 2016, and since then have worked at Oregon State University,
+            where I worked on modeling the emission from off-axis gamma ray bursts. Following this, I
+            worked for the Swift space telescope where I focused on automating the mission planning
+            software.  Additionally, I'm interested in interdisciplinary projects where mathematical
+            and computational techniques might not yet be commonplace, such as my work modeling mouse nerve response
+        </p>
+        <p>
+            From time to time, I come upon a small problem I find some delight in.  This usually results in a
+            light-hearted piece of writing, which I often post here.
+        </p>
+</div>
+</div>
 <div id = "background">
     <div class="visible">
     <img src = "http://deichdeich.github.io/poincare1.png" title="My current project involves making these pretty pictures">
@@ -190,20 +218,53 @@ th, td {
     </a>
 </div>
 <script>
-var hideButtonClick = document.querySelector("#blah a:nth-of-type(2)"),
-    content1 = document.querySelector("#background > div");
-    content2 = document.querySelector("#stuff > div");
-    //Hide wrapper div content
-               hideButtonClick.addEventListener("click", function () {
-                       if(content1.className == "visible"){
-                       content1.className = "hidden";
-                       content2.className = "visible";
-                       }
-                       else if(content1.className == "hidden"){
-                       content2.className = "hidden";
-                       content1.className = "visible";
-                       }
-               }, false);
 
+var content1 = document.querySelector("#background > div");
+var content2 = document.querySelector("#stuff > div");
+var content3 = document.querySelector("#about > div");
+var oldnum = 0
+var aboutbutton = document.querySelector("#blah a:nth-of-type(2)");
+               aboutbutton.addEventListener("click", function () {
+                showstuff(1);
+               }, false);
+var thingsbutton = document.querySelector("#blah a:nth-of-type(3)");
+
+    //Hide wrapper div content
+               thingsbutton.addEventListener("click", function () {
+                showstuff(2);
+               }, false);
+function showstuff(num){
+    if (content1.className=="hidden"){
+        if (num == oldnum){
+        content2.className="hidden";
+        content3.className="hidden";
+        content1.className="visible";
+        }
+        else{
+        if (num==1){
+            content2.className="hidden";
+            content3.className="visibile";
+            oldnum = num;
+            }
+        else if(num==2){
+            content3.className="hidden";
+            content2.className="visibile";
+            oldnum = num;
+            }
+        }
+    }
+    else if (content1.className=="visible"){
+        content1.className="hidden";
+        if (num==1){
+            content2.className="hidden";
+            content3.className="visible";
+        }
+        else if(num==2){
+            content3.className="hidden";
+            content2.className="visible";
+            }
+        oldnum = num;
+        }
+}
 </script>
 </html>
