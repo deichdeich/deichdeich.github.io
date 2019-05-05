@@ -4,14 +4,14 @@
 define(['lib/Vector'],function(Vector){
   "use strict";
 
-  function Particle(point,velocity){
+  function Particle(point,velocity,size){
     this.position     = point;
     this.velocity     = velocity;
     this.acceleration = new Vector(0,0);
     this.ttl          = -1;
     this.lived        = 0;
+    this.size         = size;
   }
-
   Particle.size = 2;
   Particle.color = [66,167,222,225];
   //Particle.GLOBAL_DRAW_COLOR = [166,67,0,255];
