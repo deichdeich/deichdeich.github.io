@@ -27,7 +27,7 @@ html *{
 
 
 canvas {
-position:absolute;
+position: absolute;
 top:0;
 left:0;
 width:100%;
@@ -57,14 +57,14 @@ div.email{
     font-size: 15;
     margin-right: 5%;
 }
-div.font{
+span.font{
     position: absolute;
     text-align: right;
     font-size: 15;
     right: 5%;
     bottom: 10%;
     }
-div.font a{
+span.font a{
     color: #999999;
 }
 #about > div{
@@ -114,7 +114,79 @@ th, td {
                }                
 
 
+.popup{
+    position: absolute;
+    text-align: left;
+    font-size: 15;
+    left: 5%;
+    bottom: 10%;
+    color: #ffffff;
+    }
+.popup .popuptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #555;
+  color: #FFFFFF;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 10;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+.popup .popuptext p{
+  color: #BBBBBB;
+}
+.popup .popuptext i{
+  color: #BBBBBB;
+}
 
+.popup .popuptext a{
+color: #FFFFFF;
+}
+span.popup a{
+color: #999999;
+}
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -30%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+.popup .hide {
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
+.popup .gone{
+visibility: hidden;
+}
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+@-webkit-keyframes fadeOut {
+  from {opacity: 1;} 
+  to {opacity: 0;}
+}
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
 </style>
 </head>
 
@@ -224,13 +296,36 @@ th, td {
       </div>
 </div>
 
-<div class = "font">
+<span class = "font">
     <a href = "https://www.theguardian.com/world/2014/nov/14/sweden-sans-designers-create-national-font" target="new">
         About this font
     </a>
-</div>
+</span>
+<span class="popup" onclick="myFunction()"><a href="#">What am I seeing?</a>
+  <span class="popuptext" id="myPopup"><p>A lot of my work has concerned simulation of orbital systems, so I
+  made a na&iuml;ve one to decorate the background of my website.  Pictured are 5,000 particles orbiting
+  a central body with a simple Newtonian gravitational force.</p><p><a href = "#.html">Reloading</a> the website will reveal other initial conditions, each showing a simulacrum of one of three galaxy morphologies:  Shell, ring, and spiral.  It should be noted that these are <i>purely</i> aesthetic&mdash;  Spirals, in particular, are governed by complex N-body dynamics, which are not reproduced here.  As a result, the spiral structures will dissipate after a few orbits.</p></span>
+</span>
 <script>
+var popped = 0
+function myFunction() {
+if (popped == 0){
+  var popup = document.getElementById("myPopup");
+  popup.classList.remove("gone");
+  popup.classList.remove("hide");
+  popup.classList.add("show");
 
+  popped = 1;
+}
+else if (popped ==1 ){
+    var popup = document.getElementById("myPopup");
+    popup.classList.add("hide");
+    popped = 0;
+    setTimeout(function() {
+    popup.classList.add("gone");
+    },1000);
+}
+}
 var content1 = document.querySelector("#background > div");
 var content2 = document.querySelector("#stuff > div");
 var content3 = document.querySelector("#about > div");
