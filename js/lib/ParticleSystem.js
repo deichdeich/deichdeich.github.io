@@ -136,7 +136,7 @@ define(
         if (this.draw.objects) {
           this.drawFields();
           this.drawEmitters();
-        }
+          }
       },
       onAfterDraw : function (evt) {
         if (this.display.draw.info) {
@@ -214,12 +214,37 @@ define(
         var Th_dir = (Math.random()<0.5) ? -1 : 1;
         for (var i = 0; i < nparticles; i++){
             var r_dot = 0.;
-            var rad = Math.randomGaussian(100,25);
-            var Th_dot = Math.pow(rad, -3/2);
+            var plusminus =(Math.random()<0.5) ? -1 : 1;
+            if (size == 1){
+                if (Math.random()<0.5){
+                    var Th = Math.randomGaussian(Math.PI/2,0.5);
+                    var rad = Th * Math.randomGaussian(100,3)/1.5;
+                }
+                else{
+                    var Th = Math.random()*Math.PI*2;
+                    var rad = Math.randomGaussian(100,30);
+                    Th += Math.randomGaussian(0.03, 0.3);
+                    }
+                rad += Math.randomGaussian(10,5);
+                Th += Math.randomGaussian(0.03, 0.03);
+            }
+            else if (size == 2){
+                var Th = Math.random()*Math.PI*2;
+                var rad = Math.randomGaussian(100,30)
+                rad += Math.randomGaussian(30,20)
+                }
+            else if (size == 3){
+                var Th = Math.random()*Math.PI*2;
+                var rad = Math.randomGaussian(100,30)
+                rad += Math.randomGaussian(150,10)
+            }
+            var Th_dot = -Math.pow(this.fields[0].mass, 1/2) * Math.pow(rad, -3/2);
+            if (plusminus == 1){
+            Th += Math.PI;
+            }
             r_dot += (Math.random()-0.5) / 1000;
-            Th_dot += (Math.random()-0.5) / 5000;
-            Th_dot *= Th_dir;
-            var Th = Math.random() * Math.PI * 2;
+            /*Th_dot += (Math.random()-0.5) / 10000;*/
+            /*Th_dot *= Th_dir;*/
             var partx = px + rad * Math.cos(Th);
             var party = py + rad * Math.sin(Th);
             var partvx = r_dot * Math.cos(Th) - rad * Th_dot * Math.sin(Th);
@@ -227,7 +252,7 @@ define(
             this.particles.push(new Particle(new Vector(partx, party),
                                              new Vector(partvx,
                                                         partvy),
-                                             size));
+                                             1));
         }
       },
       plotParticles : function (boundsX, boundsY) {
