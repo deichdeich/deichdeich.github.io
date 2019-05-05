@@ -27,7 +27,7 @@ require(
     var x = window.innerWidth / 2;
     var y = window.innerHeight / 2;
 
-    var nparts = [3000, 1000, 2000];
+    var nparts = [800, 1500, 2000];
     var sizes = [1, 1, 1];
     var choice = Math.floor(Math.random() * nparts.length);
     var nparticles = nparts[choice]; 
