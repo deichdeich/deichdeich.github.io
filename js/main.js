@@ -29,11 +29,13 @@ require(
 
     var nparts = [5000, 5000, 5000];
     var sizes = [1, 2, 3];
+    var masses = [.1, .1, 1];
     var choice = Math.floor(Math.random() * nparts.length);
     var nparticles = nparts[choice]; 
     var size = sizes[choice]; 
+    var mass = masses[choice]
     /*particleSystem.addEmitter(new Vector(700,170),Vector.fromAngle(0,2));*/
-    particleSystem.addField(new Vector(x,y), .1);
+    particleSystem.addField(new Vector(x,y), mass);
     particleSystem.addParticleDisk(x, y, nparticles, size);
 
     function resize() {
