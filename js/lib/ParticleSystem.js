@@ -210,14 +210,15 @@ define(
         }.bind(this);
         _(this.emitters).each(emitParticles);
       },
-      addParticleDisk : function (px, py) {
-        var nparticles = 4000;
+      addParticleDisk : function (px, py, nparticles, size) {
+        var Th_dir = (Math.random()<0.5) ? -1 : 1;
         for (var i = 0; i < nparticles; i++){
-            var r_dot = 0.01;
-            var Th_dot = .013;
-            var rad = Math.randomGaussian(250,30);
-            r_dot += (Math.random()-0.5) / 300;
-            Th_dot += (Math.random()-0.5) / 200;
+            var r_dot = 0.;
+            var rad = Math.randomGaussian(100,25);
+            var Th_dot = Math.pow(rad, -3/2);
+            r_dot += (Math.random()-0.5) / 1000;
+            Th_dot += (Math.random()-0.5) / 5000;
+            Th_dot *= Th_dir;
             var Th = Math.random() * Math.PI * 2;
             var partx = px + rad * Math.cos(Th);
             var party = py + rad * Math.sin(Th);
@@ -225,7 +226,8 @@ define(
             var partvy = r_dot * Math.sin(Th) + rad * Th_dot * Math.cos(Th);
             this.particles.push(new Particle(new Vector(partx, party),
                                              new Vector(partvx,
-                                                        partvy)));
+                                                        partvy),
+                                             size));
         }
       },
       plotParticles : function (boundsX, boundsY) {
@@ -242,10 +244,12 @@ define(
         var display = this.display;
         //display.context.globalCompositeOperation = 'darker';
         display.context.fillStyle = 'rgba(' + Particle.color.join(',') + ')';
-        var size = Particle.size;
         _(this.particles).each(function(particle){
+          var size = particle.size;
           var point = particle.position;
-          display.context.fillRect(point.x,point.y,size,size);
+          display.context.beginPath()
+          display.context.arc(point.x,point.y,size,0, 2*Math.PI);
+          display.context.fill();
         });
       },
       drawAccelerations : function () {
