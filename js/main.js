@@ -29,7 +29,7 @@ require(
 
     var nparts = [5000, 5000, 5000];
     var sizes = [1, 2, 3];
-    var masses = [.1, .1, 3];
+    var masses = [.1, 1, 3];
     var choice = Math.floor(Math.random() * nparts.length);
     var nparticles = nparts[choice]; 
     var size = sizes[choice]; 
