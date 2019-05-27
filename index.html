@@ -40,6 +40,7 @@ div.colophon{
     font-size: 30;
     margin-left: 5%;
     margin-top: 4%;
+    width:40%;
 }
 div.subtitle{
     font-size: 20;
@@ -77,6 +78,9 @@ span.font a{
 #stuff > div{
     align: center;
     padding-left:15%;
+    height:0%;
+    width:0%;
+    z-index:-1;
     padding-top:3%;
 }
 #stuff hed{
@@ -300,10 +304,10 @@ visibility: hidden;
 <div id = "background">
     <div class="visible">
         <canvas id = "canvas"></canvas>
-        <span class="popup"><a href="#" onclick="myFunction()">What am I seeing?</a>
+       <span class="popup"><a href="#" onclick="myFunction()">What am I seeing?</a>
   <span class="popuptext" id="myPopup"><p>A lot of my work has concerned simulation of orbital systems, so I
-  made a na&iuml;ve one to decorate the background of my website.  Pictured are 5,000 randomly generated particles orbiting
-  a central body with a simple Newtonian gravitational force.</p><p><a href = "http://deichdeich.github.io/">Reloading</a> the website will reveal other initial conditions, each showing a simulacrum of one of three galaxy morphologies:  Shell, ring, and spiral.  It should be noted that these are <i>purely</i> aesthetic&mdash;  Spirals, in particular, are governed by complex N-body dynamics, which are not reproduced here.  As a result, the spiral structures will dissipate after a few orbits.</p></span>
+  made a na&iuml;ve one to decorate the background of my website.  Pictured are 5,000 particles orbiting
+  a central body with a simple Newtonian gravitational force.</p><p><a href = "#.html">Reloading</a> the website will reveal other initial conditions, each showing a simulacrum of one of three galaxy morphologies:  Shell, ring, and spiral.  It should be noted that these are <i>mostly</i> aesthetic&mdash;  Spirals, in particular, are governed by complex N-body dynamics, which are not reproduced here.  As a result, the spiral structures will dissipate after a few orbits.  Try clicking on the particles and see what happens.</p></span>
 </span>
       </div>
       
