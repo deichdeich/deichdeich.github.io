@@ -27,7 +27,7 @@ require(
     var x = window.innerWidth / 2;
     var y = window.innerHeight / 2;
 
-    var nparts = [5000, 5000, 5000];
+    var nparts = [50000, 50000, 50000];
     var sizes = [1, 2, 3];
     var masses = [.1, 5, 5];
     var choice = Math.floor(Math.random() * nparts.length);
