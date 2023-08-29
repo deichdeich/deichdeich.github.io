@@ -95,6 +95,42 @@ span.font a{
 #stuff hed{
 font-size:20;
 }
+
+#pubs > div{
+    align: center;
+    padding-left:15%;
+    height:0%;
+    z-index:2;
+    padding-top:1%;
+}
+
+#pubs p{
+max-width: 40%;
+padding: 1%;
+align: center;
+}
+
+#pubs hed{
+font-size:20;
+}
+
+#entertain > div{
+    align: center;
+    padding-left:15%;
+    height:0%;
+    z-index:2;
+    padding-top:1%;
+}
+#entertain hed{
+font-size:20;
+}
+
+#entertain p{
+max-width: 60%;
+padding: 1%;
+align: center;
+}
+
 #background > div{
 top:5%;
 }
@@ -111,22 +147,20 @@ th, td {
 }
 
 
-               /* Fade-In Effect */
-               div.visible
-               {
-                       visibility: visible;
-                       opacity: 1;
-                       transition: opacity .3s linear;
-                       z-index: -1;
-               }                
-               /* Fade-Out Effect */
-               div.hidden
-               {
-                       visibility: hidden;
-                       opacity: 0;
-                       transition: visibility 0s .3s, opacity .3s linear;
-                     z-index: 1;
-               }                
+/* Fade-In Effect */
+div.visible {
+	visibility: visible;
+    opacity: 1;
+    transition: opacity .3s linear;
+    z-index: -1;
+}                
+/* Fade-Out Effect */
+div.hidden {
+	visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .3s, opacity .3s linear;
+    z-index: 1;
+}                
 
 
 .popup{
@@ -218,96 +252,82 @@ visibility: hidden;
         <div id = "blah">
         <a href = "https://deichdeich.github.io/docs/alex_deich_cv_2023.pdf" target = "new">CV</a>
         <a href = "#">About Me</a>
-        <a href = "#">Things I've Done</a>
+        <a href = "#">Publications</a>
+        <a href = "#">Things for Entertainment</a>
         </div>
     </span>
    </div>
     <div class = "email">
     adeich2 (at) illinois.edu
     </div>
-<div id = "stuff">
+<div id = "pubs">
     <div class="hidden">
-    
-    <table style="width:70%">
-    <tr>
-    <td width="53%">
-    <hed>Things for Entertainment</hed>
-    </td>
-    <td>
-        <hed>Publications</hed>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <b>Self-Consistent Theory of Sandwich Identification</b> <a href = "https://deichdeich.github.io/docs/breadspin.pdf" target="new">PDF</a><br>
-     Twitter user @Phosphatide <a href = "https://twitter.com/Phosphatide/status/974067376894328833">posted</a> a model of how to
-      distinguish if a given food is a sandwich or a taco or burrito based on where the starch is.  I formalize this model as a Hilbert space with the appropriate symmetries to apply the structure of spinors.
-    </td>
-       <td>"Lyapunov Exponents to Test General Relativity" <a href="https://arxiv.org/pdf/2308.07232.pdf" target="new">PDF</a><br>
+    <h2>Publications</h2>
+    <p>
+    "Lyapunov Exponents to Test General Relativity" <a href="https://arxiv.org/pdf/2308.07232.pdf" target="new">PDF</a><br>
            <b>Alex Deich</b>, Nicolás Yunes, Charles Gammie<br>
           2023
-        </td>
-       </tr>
-       <tr>
-          <td>
-    <b>How Deep Can You Swim and Still Fart?</b> <a href = "https://deichdeich.github.io/docs/fart.pdf" target="new">PDF</a><br>
-    The deeper you swim, the higher the ambient water pressure.
-    When does that equal the pressure of a fart?
-    </td>
-      <td>"Accuracy of the slow-rotation approximation for black holes in modified gravity in light of astrophysical observables" <a href="https://arxiv.org/pdf/2305.15341.pdf" target="new">PDF</a><br>
+    </p>
+    <p>
+    "Accuracy of the slow-rotation approximation for black holes in modified gravity in light of astrophysical observables" <a href="https://arxiv.org/pdf/2305.15341.pdf" target="new">PDF</a><br>
           Pablo Cano, <b>Alex Deich</b>, Nicolás Yunes<br>
          2023
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <b>How Can Feet Make an Earthquake?</b> <a href = "https://github.com/deichdeich/deichdeich.github.io/blob/master/earthquake.ipynb" target="new">jupyter notebook</a><br>
+    </p>
+    <p>"A Tiny Needle in a Messy Haystack: Chaos in Quadratic Gravity" <a href = "https://arxiv.org/pdf/2203.00524.pdf" target="new">PDF</a><br>
+          <b>Alex Deich</b>, Alejandro Cárdenas-Avendaño, Nicolás Yunes<br>
+          2022
+    </p>
+    <p>
+    "Transgenic Mouse Facial Nerve Model of Synkinesis"<br>
+    Mostafa M Ahmed, <b>Alex Deich</b>, et al.<br>
+         2020
+    </p>
+    <p>
+    "Automating the Swift Scheduling Pipeline"<br>
+    <b>A. Deich</b>, J. Gropp, S. LaPorte, A. Tohuvavohu<br>
+    Conference paper, presented at SPIE July 2018
+    </p>
+    <p>
+    "Off-axis emission of short gamma-ray bursts and the detectability of
+    electromagnetic counterparts of gravitational-wave-detected binary mergers" <a href = "https://arxiv.org/pdf/1610.01157.pdf" target="new">PDF</a><br>
+    D. Lazzati, <b>A. Deich</b>, B. Morsony, J. Workman.<br>
+    MNRAS, 471, 2, October 2017
+    </p>
+    </div>
+</div>
+<div id = "entertain">
+<div class="hidden">
+<h2>Things for Entertainment</h2>
+<p>
+<b>Self-Consistent Theory of Sandwich Identification</b> <a href = "https://deichdeich.github.io/docs/breadspin.pdf" target="new">PDF</a><br>
+     Twitter user @Phosphatide <a href = "https://twitter.com/Phosphatide/status/974067376894328833">posted</a> a model of how to
+      distinguish if a given food is a sandwich or a taco or burrito based on where the starch is.  I formalize this model as a Hilbert space with the appropriate symmetries to apply the structure of spinors.
+</p>
+<p>
+<b>How Deep Can You Swim and Still Fart?</b> <a href = "https://deichdeich.github.io/docs/fart.pdf" target="new">PDF</a><br>
+    The deeper you swim, the higher the ambient water pressure.
+    When does that equal the pressure of a fart?
+</p>
+<p>
+<b>How Can Feet Make an Earthquake?</b> <a href = "https://github.com/deichdeich/deichdeich.github.io/blob/master/earthquake.ipynb" target="new">jupyter notebook</a><br>
     Why do millions of randomly stomping feet make an earthquake instead of
     generally canceling out?  There's a nice answer to this that I explore
     in this Jupyter notebook.
-    </td>
-        <td>"A Tiny Needle in a Messy Haystack:<br>Chaos in Quadratic Gravity" <a href = "https://arxiv.org/pdf/2203.00524.pdf" target="new">PDF</a><br>
-          <b>Alex Deich</b>, Alejandro Cárdenas-Avendaño, Nicolás Yunes<br>
-          2022
-    </td>
-       </tr>
-       <tr>
-    <td>
-    <b>Aphysical Extensions of the Coin Flipping Problem</b>: <a href = "https://deichdeich.github.io/docs/coin_flipping.pdf", target="new">PDF</a><br>
+</p>
+<p>
+<b>Aphysical Extensions of the Coin Flipping Problem</b> <a href = "https://deichdeich.github.io/docs/coin_flipping.pdf", target="new">PDF</a><br>
     How can you predict which side a coin will land on, given the initial
     conditions on its velocity and angular speed?  In this write-up I consider
     aphysical extensions of this old problem.
-    </td>
-           <td>"Transgenic Mouse Facial Nerve Model of Synkinesis"<br>
-    Mostafa M Ahmed, <b>Alex Deich</b>, et al.<br>
-         2020
-       </td>
-    </tr>
-    <tr>
-    <td>
-    <b>Annotated solution manual to the 2001 Physics GRE</b>:
+</p>
+<p>
+<b>Annotated solution manual to the 2001 Physics GRE</b>
     <a href = "https://deichdeich.github.io/docs/gre_study/2001/solutions/2001_solutions.pdf">PDF</a><br>
     As a way to study for the GRE myself, I wrote a solution guide with full solutions to
     the 2001 GRE made available by ETS.  The guide solves and discusses every problem.
     It also contains a formula sheet and explores test-taking strategies.
-    </td>
-          <td>"Automating the Swift Scheduling Pipeline"<br>
-    <b>A. Deich</b>, J. Gropp, S. LaPorte, A. Tohuvavohu<br>
-    Conference paper, presented at SPIE July 2018
-          </td>
-       <tr>
-          <td>
-          </td>
-          <td>"Off-axis emission of short gamma-ray bursts and the detectability of
-    electromagnetic counterparts of gravitational-wave-detected binary mergers" <a href = "https://arxiv.org/pdf/1610.01157.pdf" target="new">PDF</a><br>
-    D. Lazzati, <b>A. Deich</b>, B. Morsony, J. Workman.<br>
-    MNRAS, 471, 2, October 2017
-          </td>
-       </tr>
-    </td>
-    </tr>
-    </table>  
-      </div>
+</p>
+</div>
 </div>
 <div id = "about">
     <div class="hidden">
@@ -367,35 +387,50 @@ else if (popped ==1 ){
 }
 }
 var content1 = document.querySelector("#background > div");
-var content2 = document.querySelector("#stuff > div");
+var content2 = document.querySelector("#pubs > div");
 var content3 = document.querySelector("#about > div");
+var content4 = document.querySelector("#entertain > div");
 var oldnum = 0
 var aboutbutton = document.querySelector("#blah a:nth-of-type(2)");
                aboutbutton.addEventListener("click", function () {
                 showstuff(1);
                }, false);
 var thingsbutton = document.querySelector("#blah a:nth-of-type(3)");
-
-    //Hide wrapper div content
                thingsbutton.addEventListener("click", function () {
                 showstuff(2);
                }, false);
+
+var entertainbutton = document.querySelector("#blah a:nth-of-type(4)");
+               entertainbutton.addEventListener("click", function () {
+                showstuff(3);
+               }, false);
+
+
 function showstuff(num){
     if (content1.className=="hidden"){
         if (num == oldnum){
         content2.className="hidden";
         content3.className="hidden";
+        content4.className="hidden";
         content1.className="visible";
         }
         else{
         if (num==1){
             content2.className="hidden";
+            content4.className="hidden";
             content3.className="visibile";
             oldnum = num;
             }
         else if(num==2){
             content3.className="hidden";
+            content4.className="hidden";
             content2.className="visibile";
+            oldnum = num;
+            }
+        else if(num==3){
+            content3.className="hidden";
+            content4.className="visibile";
+            content2.className="hidden";
             oldnum = num;
             }
         }
@@ -404,11 +439,18 @@ function showstuff(num){
         content1.className="hidden";
         if (num==1){
             content2.className="hidden";
+            content4.className="hidden";
             content3.className="visible";
         }
         else if(num==2){
             content3.className="hidden";
+            content4.className="hidden";
             content2.className="visible";
+            }
+        else if(num==3){
+            content3.className="hidden";
+            content2.className="hidden";
+            content4.className="visible";
             }
         oldnum = num;
         }
